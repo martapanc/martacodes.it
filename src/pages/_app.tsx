@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 
 import '@/styles/globals.css';
 
@@ -8,7 +9,11 @@ import '@/styles/globals.css';
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;

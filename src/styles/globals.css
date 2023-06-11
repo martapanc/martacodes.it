@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+  /* Default theme */
+  --background: white;
+  --foreground: black;
+
   /* #region  /**=========== Primary Color =========== */
   --tw-color-primary-50: 239 246 255;
   --tw-color-primary-100: 219 234 254;
@@ -27,6 +31,12 @@
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #1e3a8a */
   --color-primary-950: rgb(var(--tw-color-primary-950)); /* #172554 */
   /* #endregion  /**======== Primary Color =========== */
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
 }
 
 @layer base {
