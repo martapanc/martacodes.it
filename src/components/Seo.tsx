@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'MartaCodes.it',
+  title: 'Marta codes it!',
   siteName: 'MartaCodes.it',
   description: '',
   url: 'https://martacodes.it',
