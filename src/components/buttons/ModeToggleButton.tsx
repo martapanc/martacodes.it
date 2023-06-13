@@ -21,11 +21,9 @@ export default function ModeToggleButton({
   return (
     <button
       className={clsx(
-        'rounded-md p-2 focus:outline-none md:p-2.5',
-        'border dark:border-gray-600',
-        'hover:border-primary-300 hover:text-primary-300 dark:hover:border-primary-300 dark:hover:text-primary-300',
-        'focus-visible:border-primary-300 focus-visible:text-primary-300 dark:focus-visible:border-primary-300 dark:focus-visible:text-primary-300',
-        'text-lg md:text-xl',
+        'flex items-center justify-center rounded-md border-2 ' +
+          'border-grey-300 ring-grey-300 bg-transparent p-2 transition-all hover:ring-2 hover:ring-offset-2 ' +
+          'dark:border-grey-700 dark:ring-grey-200 dark:bg-transparent dark:hover:ring-2 dark:hover:ring-offset-2',
         className
       )}
       {...rest}

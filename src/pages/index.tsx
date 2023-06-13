@@ -3,7 +3,6 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 
@@ -59,12 +58,12 @@ export default function HomePage() {
               />
             </UnstyledLink>
 
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
+            {/*<footer className='absolute bottom-2 text-gray-700'>*/}
+            {/*  © {new Date().getFullYear()} By{' '}*/}
+            {/*  <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>*/}
+            {/*    Theodorus Clarence*/}
+            {/*  </UnderlineLink>*/}
+            {/*</footer>*/}
           </div>
         </section>
       </main>
