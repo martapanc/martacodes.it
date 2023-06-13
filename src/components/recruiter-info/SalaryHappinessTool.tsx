@@ -15,71 +15,59 @@ export interface SalaryHappinessProps {
   };
 }
 
+const roundNum = (num: number) => {
+  return Math.round(num / 5000) * 5000;
+};
+
 const SalaryHappinessTool = ({ salaryData, config }: SalaryHappinessProps) => {
-  let { median } = salaryData;
-  median = median * config.forexMultiplier;
+  const { median } = salaryData;
+  const medianInCurrency = median * config.forexMultiplier;
 
-  const roundNum = (num: number) => {
-    return Math.round(num / 5000) * 5000;
-  };
-
-  const minVisible = roundNum(median * 0.5);
-  const minSad = roundNum(median * 0.6);
-  const stillSad = roundNum(median * 0.7);
-  const minAcceptable = roundNum(median * 0.8);
-  const veryHappy = roundNum(median * 1.2);
-  const overTheMoon = roundNum(median * 1.3);
-  const maxVisible = roundNum(median * 1.5);
+  const minVisible = roundNum(medianInCurrency * 0.5);
+  const minSad = roundNum(medianInCurrency * 0.6);
+  const stillSad = roundNum(medianInCurrency * 0.7);
+  const minAcceptable = roundNum(medianInCurrency * 0.8);
+  const veryHappy = roundNum(medianInCurrency * 1.2);
+  const overTheMoon = roundNum(medianInCurrency * 1.3);
+  const maxVisible = roundNum(medianInCurrency * 1.5);
 
   const [selectedSalary, setSelectedSalary] = useState(minAcceptable);
-  const [emoji, setEmoji] = useState('❓');
-  const [title, setTitle] = useState('❓');
+  const [happinessScore, setHappinessScore] = useState({
+    emoji: '❓',
+    title: '',
+  });
 
   useEffect(() => {
     let emoji;
     let title;
 
-    switch (true) {
-      case selectedSalary < minSad:
-        emoji = '🤬';
-        title = 'Are you serious?';
-        break;
-      case selectedSalary >= minSad && selectedSalary < stillSad:
-        emoji = '😭';
-        title = 'Way too low';
-        break;
-      case selectedSalary >= stillSad && selectedSalary < minAcceptable:
-        emoji = '😢';
-        title = 'Still low';
-        break;
-      case selectedSalary >= minAcceptable && selectedSalary < median:
-        emoji = '😏';
-        title = 'Getting there';
-        break;
-      case selectedSalary >= median && selectedSalary < veryHappy:
-        emoji = '🙂';
-        title = 'Pretty good';
-        break;
-      case selectedSalary >= veryHappy && selectedSalary < overTheMoon:
-        emoji = '😀';
-        title = 'Even better';
-        break;
-      case selectedSalary >= overTheMoon && selectedSalary < maxVisible:
-        emoji = '😃';
-        title = "That's amazing";
-        break;
-      case selectedSalary >= maxVisible:
-        emoji = '🤑';
-        title = 'Make it rain!';
-        break;
-      default:
-        emoji = '';
-        title = '';
-        break;
+    if (selectedSalary < minSad) {
+      emoji = '🤬';
+      title = 'Are you serious?';
+    } else if (selectedSalary < stillSad) {
+      emoji = '😭';
+      title = 'Way too low';
+    } else if (selectedSalary < minAcceptable) {
+      emoji = '😢';
+      title = 'Still low';
+    } else if (selectedSalary < median) {
+      emoji = '😏';
+      title = 'Getting there';
+    } else if (selectedSalary < veryHappy) {
+      emoji = '🙂';
+      title = 'Pretty good';
+    } else if (selectedSalary < overTheMoon) {
+      emoji = '😀';
+      title = 'Even better';
+    } else if (selectedSalary < maxVisible) {
+      emoji = '😃';
+      title = "That's amazing";
+    } else {
+      emoji = '🤑';
+      title = 'Make it rain!';
     }
 
-    setEmoji(emoji);
-    setTitle(title);
+    setHappinessScore({ emoji, title });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSalary]);
 
@@ -109,8 +97,12 @@ const SalaryHappinessTool = ({ salaryData, config }: SalaryHappinessProps) => {
 
       <p>
         <strong>Happiness Score:</strong>
-        <span className='text-3xl' data-testid='emoji' title={title}>
-          {` ${emoji}`}
+        <span
+          className='text-3xl'
+          data-testid='emoji'
+          title={happinessScore.title}
+        >
+          {` ${happinessScore.emoji}`}
         </span>
       </p>
     </Box>

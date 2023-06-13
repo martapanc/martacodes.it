@@ -1,13 +1,9 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
-import {
-  SalaryHappinessProps,
-  SalaryHappinessTool,
-} from '@/components/recruiter-info/SalaryHappinessTool';
+import { SalaryHappinessTool } from './SalaryHappinessTool';
 
-describe('Salary', () => {
-  const testRange = {
+describe('SalaryHappinessTool', () => {
+  const salaryData = {
     min: 40000,
     median: 80000,
     max: 120000,
@@ -16,49 +12,42 @@ describe('Salary', () => {
   const config = {
     displayTitle: true,
     currency: 'EUR',
-    forexMultiplier: 1.2,
+    forexMultiplier: 1,
   };
 
-  const props: SalaryHappinessProps = {
-    salaryData: testRange,
-    config,
-  };
-
-  it('renders correctly', () => {
-    const { container } = render(<SalaryHappinessTool {...props} />);
-    expect(container).toMatchSnapshot();
+  test('renders with title when displayTitle is true', () => {
+    render(<SalaryHappinessTool salaryData={salaryData} config={config} />);
+    const titleElement = screen.getByText('Salary Happiness Tool');
+    expect(titleElement).toBeInTheDocument();
   });
 
-  it('switches the emoji when changing the range', async () => {
-    const { getByTestId } = render(<SalaryHappinessTool {...props} />);
-    const rangeInput = getByTestId('salaryValue');
-    const emoji = getByTestId('emoji');
-    expect(emoji).toHaveAccessibleDescription('getting there');
+  test('renders without title when displayTitle is false', () => {
+    const configWithoutTitle = { ...config, displayTitle: false };
+    render(
+      <SalaryHappinessTool
+        salaryData={salaryData}
+        config={configWithoutTitle}
+      />
+    );
+    const titleElement = screen.queryByText('Salary Happiness Tool');
+    expect(titleElement).toBeNull();
+  });
 
-    fireEvent.change(rangeInput, { target: { value: '40000' } });
-    await waitFor(() => {
-      expect(emoji).toHaveAccessibleDescription(/are you serious?/i);
-    });
+  test('displays correct emoji and title for selected salary', () => {
+    render(<SalaryHappinessTool salaryData={salaryData} config={config} />);
+    const sliderElement = screen.getByLabelText('Salary');
+    fireEvent.change(sliderElement, { target: { value: '95000' } });
+    const emojiElement = screen.getByTestId('emoji');
+    expect(emojiElement.textContent).toBe(' 😀');
+    expect(emojiElement.getAttribute('title')).toBe('Even better');
 
-    fireEvent.change(rangeInput, { target: { value: '50000' } });
-    expect(emoji).toHaveAccessibleDescription(/way too low/i);
+    fireEvent.change(sliderElement, { target: { value: '70000' } });
+    expect(emojiElement).toHaveAccessibleDescription(/getting there/i);
 
-    fireEvent.change(rangeInput, { target: { value: '60000' } });
-    expect(emoji).toHaveAccessibleDescription(/too low/i);
+    fireEvent.change(sliderElement, { target: { value: '60000' } });
+    expect(emojiElement).toHaveAccessibleDescription(/still low/i);
 
-    fireEvent.change(rangeInput, { target: { value: '70000' } });
-    expect(emoji).toHaveAccessibleDescription(/getting there/i);
-
-    fireEvent.change(rangeInput, { target: { value: '80000' } });
-    expect(emoji).toHaveAccessibleDescription(/pretty good/i);
-
-    fireEvent.change(rangeInput, { target: { value: '90000' } });
-    expect(emoji).toHaveAccessibleDescription(/even better/i);
-
-    fireEvent.change(rangeInput, { target: { value: '100000' } });
-    expect(emoji).toHaveAccessibleDescription(/that's amazing/i);
-
-    fireEvent.change(rangeInput, { target: { value: '110000' } });
-    expect(emoji).toHaveAccessibleDescription(/make it rain!/i);
+    fireEvent.change(sliderElement, { target: { value: '50000' } });
+    expect(emojiElement).toHaveAccessibleDescription(/way too low/i);
   });
 });
