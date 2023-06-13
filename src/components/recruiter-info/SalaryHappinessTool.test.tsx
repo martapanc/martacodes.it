@@ -1,7 +1,10 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import React from 'react';
 
-import { SalaryHappinessTool } from '@/components/recruiter-info/SalaryHappinessTool';
+import {
+  SalaryHappinessProps,
+  SalaryHappinessTool,
+} from '@/components/recruiter-info/SalaryHappinessTool';
 
 describe('Salary', () => {
   const testRange = {
@@ -10,17 +13,24 @@ describe('Salary', () => {
     max: 120000,
   };
 
+  const config = {
+    displayTitle: true,
+    currency: 'EUR',
+    forexMultiplier: 1.2,
+  };
+
+  const props: SalaryHappinessProps = {
+    salaryData: testRange,
+    config,
+  };
+
   it('renders correctly', () => {
-    const { container } = render(
-      <SalaryHappinessTool salaryData={testRange} />
-    );
+    const { container } = render(<SalaryHappinessTool {...props} />);
     expect(container).toMatchSnapshot();
   });
 
   it('switches the emoji when changing the range', async () => {
-    const { getByTestId } = render(
-      <SalaryHappinessTool salaryData={testRange} />
-    );
+    const { getByTestId } = render(<SalaryHappinessTool {...props} />);
     const rangeInput = getByTestId('salaryValue');
     const emoji = getByTestId('emoji');
     expect(emoji).toHaveAccessibleDescription('getting there');
