@@ -14,12 +14,16 @@
     "test": "jest",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
+    "style": "yarn lint:strict && yarn format",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.5",
     "clsx": "^1.2.1",
     "inquirer-fuzzy-path": "^2.3.0",
     "next": "^13.4.4",
