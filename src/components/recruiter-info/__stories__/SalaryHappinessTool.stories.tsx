@@ -1,6 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta } from '@storybook/react';
 
-import SalaryHappinessTool from '@/components/recruiter-info/SalaryHappinessTool';
+import {
+  SalaryHappinessProps,
+  SalaryHappinessTool,
+} from '@/components/recruiter-info/SalaryHappinessTool';
 
 const meta: Meta<typeof SalaryHappinessTool> = {
   title: 'Components/Recruiter-Info/SalaryHappinessTool',
@@ -10,6 +13,15 @@ const meta: Meta<typeof SalaryHappinessTool> = {
 
 export default meta;
 
-type Story = StoryObj<typeof SalaryHappinessTool>;
+export const SalaryStory = (args: SalaryHappinessProps) => (
+  <SalaryHappinessTool {...args} />
+);
 
-export const Euros: Story = {};
+SalaryStory.storyName = 'Salary';
+SalaryStory.args = {
+  salaryData: {
+    min: 40000,
+    median: 80000,
+    max: 120000,
+  },
+};
