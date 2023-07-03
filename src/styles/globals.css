@@ -145,7 +145,7 @@
   }
 
   .burger-icon span {
-    /*@apply light:bg-black dark:bg-white;*/
+    @apply bg-black dark:bg-white;
     display: block;
     position: absolute;
     height: 3px;

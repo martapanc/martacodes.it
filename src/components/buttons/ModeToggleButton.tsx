@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 type ThemeButtonProps = React.ComponentPropsWithoutRef<'button'>;
@@ -10,12 +11,12 @@ export default function ModeToggleButton({
   ...rest
 }: ThemeButtonProps) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  React.useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), []);
 
   function toggleMode() {
-    return theme === 'dark' ? setTheme('light') : setTheme('dark');
+    return setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   return (
