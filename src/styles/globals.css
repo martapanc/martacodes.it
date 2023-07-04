@@ -115,15 +115,32 @@
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
   }
+
+  .animated-underline-2 {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(
+        to right,
+        var(--color-primary-600),
+        var(--color-primary-800)
+      );
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
-    .animated-underline {
+    .animated-underline,
+    .animated-underline-2 {
       transition: 0.3s ease;
       transition-property: background-size, color, background-color,
         border-color;
     }
   }
   .animated-underline:hover,
-  .animated-underline:focus-visible {
+  .animated-underline-2:hover,
+  .animated-underline:focus-visible,
+  .animated-underline-2:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
 }

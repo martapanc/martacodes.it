@@ -58,13 +58,7 @@ export default function Header() {
           <nav className='m-4 flex w-full items-center justify-between'>
             <UnstyledLink
               href='/'
-              className={`font-bold 
-            ${
-              theme === 'dark'
-                ? 'text-blue-50 hover:text-blue-200'
-                : 'text-slate-900 hover:text-slate-700'
-            } 
-          `}
+              className='font-bold text-slate-900 hover:text-slate-700 dark:text-blue-50 dark:hover:text-blue-200'
             >
               Home
             </UnstyledLink>
@@ -74,11 +68,7 @@ export default function Header() {
                 <li key={`${href}${label}`}>
                   <UnstyledLink
                     href={href}
-                    className={`${
-                      theme === 'dark'
-                        ? 'text-blue-50 hover:text-blue-200'
-                        : 'text-slate-900 hover:text-slate-700'
-                    }`}
+                    className='animated-underline-2 dark:animated-underline rounded-sm font-medium text-slate-950 dark:text-blue-50'
                   >
                     {label}
                   </UnstyledLink>
