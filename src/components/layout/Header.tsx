@@ -21,6 +21,8 @@ export const links = [
   { href: '/contact', label: 'Contact' },
 ];
 
+//TODO: Menu style
+
 export default function Header() {
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);

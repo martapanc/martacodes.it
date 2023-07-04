@@ -6,7 +6,9 @@ import {
   SiGoodreads,
   SiInstagram,
   SiLinkedin,
-  SiTwitter,
+  SiMedium,
+  SiSteam,
+  SiYoutube,
 } from 'react-icons/si';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -23,13 +25,15 @@ export default function Footer() {
       }`}
     >
       <main className='layout flex flex-col items-center py-6'>
-        <FooterLinks />
+        <div className='flex flex-wrap justify-center gap-x-8 gap-y-4'>
+          <FooterLinks />
+        </div>
 
-        <p className='mt-12 font-medium text-blue-600 dark:text-blue-300'>
-          Reach out to me
-        </p>
+        <div className='mt-4 flex w-full flex-col-reverse items-center md:flex-row md:justify-between'>
+          <Copyright />
 
-        <SocialLinks />
+          <SocialLinks />
+        </div>
       </main>
     </footer>
   );
@@ -55,8 +59,8 @@ function SocialLinks() {
   const emailAddress = 'info@martacodes.it';
 
   return (
-    <div className='mt-2 flex space-x-4'>
-      <div className='flex items-center justify-center'>
+    <div className='mt-8 flex space-x-4 md:mt-2'>
+      <div className='flex items-center'>
         <a
           href={'mailto:' + emailAddress}
           className='focus-visible:ring-primary-300 rounded-sm align-middle focus:outline-none focus-visible:ring'
@@ -77,11 +81,21 @@ function SocialLinks() {
   );
 }
 
+function Copyright() {
+  const year = new Date().getFullYear();
+
+  return <div className='mt-10 flex md:mt-0'>© {year} Marta Pancaldi</div>;
+}
+
 type FooterLink = {
   href: string;
   label: string;
 };
 const footerLinks: FooterLink[] = [
+  {
+    href: 'https://martas.links',
+    label: 'Links',
+  },
   {
     href: 'https://github.com/martapanc/martacodes.it',
     label: 'Source Code',
@@ -130,13 +144,25 @@ const socialLinks: SocialLink[] = [
     id: 'Instagram',
   },
   {
+    href: 'https://medium.com/@marta.panc',
+    icon: SiMedium,
+    id: 'Medium',
+  },
+  {
     href: 'https://www.goodreads.com/topolinamarta',
     icon: SiGoodreads,
     id: 'Goodreads',
   },
   {
-    href: 'https://twitter.com/_pancakem_',
-    icon: SiTwitter,
-    id: 'Twitter',
+    href: 'https://www.youtube.com/channel/UCvQWDSKE8fY7srB8hO1vWNw',
+    icon: SiYoutube,
+    id: 'Youtube',
+  },
+  {
+    href: 'https://steamcommunity.com/id/martap/',
+    icon: SiSteam,
+    id: 'Steam',
   },
 ];
+
+//TODO: extract links
