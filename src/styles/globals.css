@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+  /* Default theme */
+  --background: white;
+  --foreground: black;
+
   /* #region  /**=========== Primary Color =========== */
   --tw-color-primary-50: 239 246 255;
   --tw-color-primary-100: 219 234 254;
@@ -27,6 +31,12 @@
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #1e3a8a */
   --color-primary-950: rgb(var(--tw-color-primary-950)); /* #172554 */
   /* #endregion  /**======== Primary Color =========== */
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
 }
 
 @layer base {
@@ -105,15 +115,107 @@
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
   }
+
+  .animated-underline-2 {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(
+        to right,
+        var(--color-primary-600),
+        var(--color-primary-800)
+      );
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
-    .animated-underline {
+    .animated-underline,
+    .animated-underline-2 {
       transition: 0.3s ease;
       transition-property: background-size, color, background-color,
         border-color;
     }
   }
   .animated-underline:hover,
-  .animated-underline:focus-visible {
+  .animated-underline-2:hover,
+  .animated-underline:focus-visible,
+  .animated-underline-2:focus-visible {
     background-size: 0 2px, 100% 2px;
+  }
+}
+
+@layer components {
+  .burger-icon {
+    width: 32px;
+    height: 24px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .burger-icon span {
+    @apply bg-black dark:bg-white;
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  .burger-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .burger-icon span:nth-child(2),
+  .burger-icon span:nth-child(3) {
+    top: 12px;
+  }
+
+  .burger-icon span:nth-child(4) {
+    top: 24px;
+  }
+
+  .burger-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .burger-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .burger-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .burger-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
   }
 }
