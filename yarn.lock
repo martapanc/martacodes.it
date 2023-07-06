@@ -3768,7 +3768,19 @@
     "@sanity/client" "^6.1.5"
     "@types/react" "^18.0.25"
 
-"@sanity/ui@^1.0.0", "@sanity/ui@^1.6.0":
+"@sanity/ui@^1.0.0":
+  version "1.7.1"
+  resolved "https://verdaccio.mein-recycling.de/@sanity%2fui/-/ui-1.7.1.tgz#7656bd6da97a9b15b5e84b49e82abdb36c71fe6a"
+  integrity sha512-N8X/4ZVVvSs4YmfJrfohWX1YtFq8ASnbIADw1/Ak9qQgBzJ7aazILfzxfmqy8HH5KcmXTpXFrZ5WKBIp4x3mWg==
+  dependencies:
+    "@floating-ui/react-dom" "2.0.0"
+    "@sanity/color" "^2.2.5"
+    "@sanity/icons" "^2.3.1"
+    csstype "^3.1.2"
+    framer-motion "^10.12.16"
+    react-refractor "^2.1.7"
+
+"@sanity/ui@^1.6.0":
   version "1.7.0"
   resolved "https://verdaccio.mein-recycling.de/@sanity%2fui/-/ui-1.7.0.tgz#e2b06a2ffee2588174cff8ad14ad7e4360e54a0a"
   integrity sha512-c5agnwG8i/f3n9MdWiNbupPzXLrpojpeoxFtM8L/gmOUQ5ebUvxBsDnwXs7LR12hDxpxxs3+YE7Czfe7X7nLqg==
