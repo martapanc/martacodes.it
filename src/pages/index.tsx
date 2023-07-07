@@ -14,6 +14,14 @@ import Seo from '@/components/Seo';
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
 // import Vercel from '~/svg/Vercel.svg';
+//
+// const getData = async () => {
+//   const skills: Skill[] = await sanityClient.fetch(skillQuery);
+//
+//   return {
+//     skills
+//   }
+// }
 
 export default function HomePage() {
   return (
@@ -23,6 +31,15 @@ export default function HomePage() {
       <main>
         <section className='dark:bg-dark bg-white'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
+            {/*{skills[0].name}*/}
+            {/*{*/}
+            {/*  skills.map((skill) => (*/}
+            {/*    <span key={skill.name}>*/}
+            {/*      {skill.title}*/}
+            {/*    </span>*/}
+            {/*  ))*/}
+            {/*}*/}
+
             {/*<Vercel className='text-5xl' />*/}
             {/*<h1 className='mt-4'>*/}
             {/*  Next.js + Tailwind CSS + TypeScript Starter*/}

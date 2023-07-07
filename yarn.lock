@@ -3799,6 +3799,18 @@
   dependencies:
     diff-match-patch "^1.0.4"
 
+"@sanity/document-internationalization@^2.0.1":
+  version "2.0.1"
+  resolved "https://verdaccio.mein-recycling.de/@sanity%2fdocument-internationalization/-/document-internationalization-2.0.1.tgz#39e784e0995b4166ce76d33ea3e082f023845d32"
+  integrity sha512-pfLx7rfu2rfTn9xRm4hTpKGSK2HwE8oTA91CNfxWrRjvfgF/pgJ2nzTTEbLZ1FfIn/EEQ+MgQwrS2GqbE3uhfw==
+  dependencies:
+    "@sanity/icons" "^2.2.2"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^1.2.2"
+    "@sanity/uuid" "^3.0.1"
+    sanity-plugin-internationalized-array "^1.6.0"
+    sanity-plugin-utils "^1.6.2"
+
 "@sanity/eventsource@5", "@sanity/eventsource@^5.0.0":
   version "5.0.0"
   resolved "https://verdaccio.mein-recycling.de/@sanity%2feventsource/-/eventsource-5.0.0.tgz#45410c8259e0bb80b4e308e1872846439590805a"
@@ -3848,7 +3860,7 @@
   resolved "https://verdaccio.mein-recycling.de/@sanity%2ficons/-/icons-1.3.10.tgz#df934a94ae6669fe6b15515d800afb221cba0498"
   integrity sha512-5wVG/vIiGuGrSmq+Bl3PY7XDgQrGv0fyHdJI64FSulnr2wH3NMqZ6C59UFxnrZ93sr7kOt0zQFoNv2lkPBi0Cg==
 
-"@sanity/icons@^2.0.0", "@sanity/icons@^2.3.1", "@sanity/icons@^2.4.0":
+"@sanity/icons@^2.0.0", "@sanity/icons@^2.2.2", "@sanity/icons@^2.3.1", "@sanity/icons@^2.4.0":
   version "2.4.1"
   resolved "https://verdaccio.mein-recycling.de/@sanity%2ficons/-/icons-2.4.1.tgz#34ce2c5b58f53c7369ff926b651ea57c4e3c0a8c"
   integrity sha512-/yxcIT0k1RxStI/pP/oHM44fHI6Oxiygf0jPcdV06Ce0xfFo+51UEqJSfE8hQ3fh+uFkat8ZZObZjq5v1ceJzw==
@@ -3889,6 +3901,16 @@
   dependencies:
     "@sanity/icons" "^1.3"
     react-copy-to-clipboard "^5.1.0"
+
+"@sanity/language-filter@^3.1.2":
+  version "3.1.2"
+  resolved "https://verdaccio.mein-recycling.de/@sanity%2flanguage-filter/-/language-filter-3.1.2.tgz#8ac7507f667a1182dd135238b39cbfa0fa71c23b"
+  integrity sha512-Z4yILQoRqVbhnIDE6WGAQx/6gVvcwk75y1wVXu0drjKwRFTouVLaMQyHjsEWbMl+wQz5QFbVMpL9WEKB9z3p2A==
+  dependencies:
+    "@sanity/icons" "^2.0.0"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^1.0.0"
+    "@sanity/util" "^3.0.0"
 
 "@sanity/logos@^2.0.2":
   version "2.1.2"
@@ -3972,7 +3994,7 @@
     "@sanity/client" "^6.1.5"
     "@types/react" "^18.0.25"
 
-"@sanity/ui@^1.0.0", "@sanity/ui@^1.7.0":
+"@sanity/ui@^1.0.0", "@sanity/ui@^1.2.2", "@sanity/ui@^1.7.0":
   version "1.7.1"
   resolved "https://verdaccio.mein-recycling.de/@sanity%2fui/-/ui-1.7.1.tgz#7656bd6da97a9b15b5e84b49e82abdb36c71fe6a"
   integrity sha512-N8X/4ZVVvSs4YmfJrfohWX1YtFq8ASnbIADw1/Ak9qQgBzJ7aazILfzxfmqy8HH5KcmXTpXFrZ5WKBIp4x3mWg==
@@ -3996,7 +4018,7 @@
     framer-motion "^10.12.16"
     react-refractor "^2.1.7"
 
-"@sanity/util@3.14.1":
+"@sanity/util@3.14.1", "@sanity/util@^3.0.0":
   version "3.14.1"
   resolved "https://verdaccio.mein-recycling.de/@sanity%2futil/-/util-3.14.1.tgz#cbeda86ee0045e1f0095ee50a6dc1fa5b00313e1"
   integrity sha512-kSO+RodwjggVYMbue4SGoqlAjBW85SHJ9svXthhvSRzGiylNNXNEJy2hkRwuiyBF60o3Rj2MNr16C8Wxt0NxXw==
@@ -14240,6 +14262,19 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
+sanity-plugin-internationalized-array@^1.6.0, sanity-plugin-internationalized-array@^1.7.0:
+  version "1.7.0"
+  resolved "https://verdaccio.mein-recycling.de/sanity-plugin-internationalized-array/-/sanity-plugin-internationalized-array-1.7.0.tgz#f4c503a238b20d2ecd7ca4ec8b19f6827d1b24a8"
+  integrity sha512-pVcot//jK/e6Fje2igum4iqeA6dfR2ok+Z72KAlwZqHXr0/EmzpvW5TnQA01xEeSu36RMOsCOQ4ph16bNsJ8Gw==
+  dependencies:
+    "@sanity/icons" "^2.2.2"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/language-filter" "^3.1.2"
+    "@sanity/ui" "^1.2.2"
+    fast-deep-equal "^3.1.3"
+    lodash.get "^4.4.2"
+    suspend-react "^0.0.8"
+
 sanity-plugin-media@^2.2.1:
   version "2.2.1"
   resolved "https://verdaccio.mein-recycling.de/sanity-plugin-media/-/sanity-plugin-media-2.2.1.tgz#94c2f4c6e10d94dd2b27bdc45dcd02d04b613324"
@@ -14268,6 +14303,15 @@ sanity-plugin-media@^2.2.1:
     redux-observable "^2.0.0"
     rxjs "^7.0.0"
     zod "^3.21.4"
+
+sanity-plugin-utils@^1.6.2:
+  version "1.6.2"
+  resolved "https://verdaccio.mein-recycling.de/sanity-plugin-utils/-/sanity-plugin-utils-1.6.2.tgz#f9770cc7beffe825b5f42b73964167e1cf5b392f"
+  integrity sha512-zn4sKLaLG5ZcibPNB8RfTjU32sear2XIHPxIoIWJCHXO3yD+JEq+/MvkwW7CnfdEcZeXPfb5DEx1CGjIQwO3Iw==
+  dependencies:
+    "@sanity/icons" "^2.2.2"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    styled-components "^5.3.6"
 
 sanity@^3.0.0:
   version "3.14.1"
@@ -15028,7 +15072,7 @@ style-mod@^4.0.0:
   resolved "https://verdaccio.mein-recycling.de/style-mod/-/style-mod-4.0.3.tgz#136c4abc905f82a866a18b39df4dc08ec762b1ad"
   integrity sha512-78Jv8kYJdjbvRwwijtCevYADfsI0lGzYJe4mMFdceO8l75DFFDoqBhR1jVDicDRRaX4//g1u9wKeo+ztc2h1Rw==
 
-styled-components@^5.2.0:
+styled-components@^5.2.0, styled-components@^5.3.6:
   version "5.3.11"
   resolved "https://verdaccio.mein-recycling.de/styled-components/-/styled-components-5.3.11.tgz#9fda7bf1108e39bf3f3e612fcc18170dedcd57a8"
   integrity sha512-uuzIIfnVkagcVHv9nE0VPlHPSCmXIUGKfJ42LNjxCCTDTL5sgnJ8Z7GZBq0EnLYGln77tPpEpExt2+qa+cZqSw==
@@ -15107,6 +15151,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+suspend-react@^0.0.8:
+  version "0.0.8"
+  resolved "https://verdaccio.mein-recycling.de/suspend-react/-/suspend-react-0.0.8.tgz#b0740c1386b4eb652f17affe4339915ee268bd31"
+  integrity sha512-ZC3r8Hu1y0dIThzsGw0RLZplnX9yXwfItcvaIzJc2VQVi8TGyGDlu92syMB5ulybfvGLHAI5Ghzlk23UBPF8xg==
 
 svg-parser@^2.0.4:
   version "2.0.4"
