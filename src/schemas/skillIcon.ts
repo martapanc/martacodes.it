@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'skillIcon',
-  title: 'SkillIcon',
+  title: 'Skill Icon',
   type: 'document',
   fields: [
     defineField({

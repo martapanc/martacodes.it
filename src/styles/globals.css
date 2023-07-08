@@ -5,7 +5,7 @@
 :root {
   /* Default theme */
   --background: white;
-  --foreground: black;
+  --foreground: #0c1018;
 
   /* #region  /**=========== Primary Color =========== */
   --tw-color-primary-50: 239 246 255;
@@ -35,7 +35,7 @@
 
 /* Dark theme */
 [data-theme='dark'] {
-  --background: black;
+  --background: #0c1018;
   --foreground: white;
 }
 
