@@ -42,7 +42,7 @@
 @layer base {
   /* inter var - latin */
   @font-face {
-    font-family: 'Inter';
+    font-family: 'Roboto Light';
     font-style: normal;
     font-weight: 100 900;
     font-display: optional;
@@ -221,5 +221,19 @@
     top: 18px;
     width: 0%;
     left: 50%;
+  }
+
+  p a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+  }
+
+  p a:hover {
+    color: var(--color-primary-700);
+    text-decoration: underline;
+  }
+
+  .short-p {
+    text-justify: distribute;
   }
 }

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        primary: ['Roboto Thin', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
