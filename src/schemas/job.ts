@@ -6,8 +6,8 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'id',
-      title: 'Id',
+      name: 'name',
+      title: 'Name',
       type: 'string',
     }),
     defineField({
@@ -55,6 +55,18 @@ export default defineType({
       of: [{ type: 'block' }],
     }),
     defineField({
+      name: 'mainColor',
+      title: 'MainColor',
+      type: 'string',
+      initialValue: '#000000',
+    }),
+    defineField({
+      name: 'darkColor',
+      title: 'DarkColor',
+      type: 'string',
+      initialValue: '#FFFFFF',
+    }),
+    defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
@@ -64,5 +76,12 @@ export default defineType({
         },
       ],
     }),
+  ],
+  orderings: [
+    {
+      title: 'Most Recent',
+      name: 'jobDateDesc',
+      by: [{ field: 'endYear', direction: 'desc' }],
+    },
   ],
 });

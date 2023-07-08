@@ -1,12 +1,17 @@
-export interface Skill {
-  id: string;
+import { TypedObject } from '@portabletext/types';
+
+export interface Job {
+  _id: string;
+  name: string;
   company: string;
-  icon: string;
+  iconUrl: string;
   location: string;
   jobTitle: string;
   startYear: number;
   endYear: number;
   isCurrentJob: boolean;
-  description: object;
+  description: TypedObject;
+  mainColor: string;
+  darkColor: string;
   technologies: string[];
 }

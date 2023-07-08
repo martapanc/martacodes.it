@@ -236,4 +236,14 @@
   .short-p {
     text-justify: distribute;
   }
+
+  .skill-description > ul {
+    list-style: disc;
+    padding-left: 32px;
+  }
+
+  .skill-description > ul > li {
+    padding-left: 8px;
+    margin-bottom: 4px;
+  }
 }
