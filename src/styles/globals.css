@@ -246,4 +246,14 @@
     padding-left: 8px;
     margin-bottom: 4px;
   }
+
+  .sm-skill-description > ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  .sm-skill-description > ul > li {
+    padding-left: 4px;
+    margin-bottom: 4px;
+  }
 }

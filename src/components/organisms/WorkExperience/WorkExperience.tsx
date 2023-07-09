@@ -26,8 +26,8 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
             key={job._id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
-            {/* Start Job Header */}
-            <div className='flex border-b-2 border-slate-200 pb-2'>
+            {/* Start Job Header - Desktop */}
+            <div className='hidden border-b-2 border-slate-200 pb-2 md:flex'>
               <Image
                 className='me-3 rounded-sm'
                 src={job.iconUrl}
@@ -55,7 +55,39 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
                 </div>
               </div>
             </div>
-            {/* End Job Header */}
+            {/* End Job Header - Desktop*/}
+
+            {/* Start Job Header - Mobile */}
+            <div className='flex flex-col border-b-2 border-slate-200 pb-2 md:hidden'>
+              <div className='flex'>
+                <Image
+                  className='me-3 rounded-sm'
+                  src={job.iconUrl}
+                  alt={job.company}
+                  width={60}
+                  height={60}
+                />
+
+                <div className='flex w-full justify-between'>
+                  <div className='flex flex-col'>
+                    <span className='text-sm font-semibold'>
+                      {job.company} {job.location && `~`} {job.location}
+                    </span>
+
+                    <span className='text-sm'>{job.jobTitle}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className='flex justify-end'>
+                <span className='text-xs font-medium'>
+                  {format(job.startDate)}
+                  &nbsp; — &nbsp;
+                  {job.isCurrentJob ? `present` : format(job.endDate)}
+                </span>
+              </div>
+            </div>
+            {/* End Job Header - Mobile*/}
 
             {/* Start Job Content */}
             <div className='job-content pt-4'>
@@ -63,7 +95,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
                 <PortableText value={job.description} />
               </div>
 
-              <div className='mb-2 flex justify-end'>
+              <div className='mb-2 flex flex-wrap justify-end md:w-full'>
                 {job.technologies.map((tech) => (
                   <div
                     key={tech}
@@ -71,7 +103,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
                       backgroundColor:
                         theme === 'dark' ? job.darkColor : job.mainColor,
                     }}
-                    className='ms-2 rounded-md px-2 py-0.5 text-white dark:text-black'
+                    className='mb-1 ms-1 rounded-sm px-1 py-0.5 text-xs text-white dark:text-black md:ms-2 md:rounded-md md:px-2 md:text-base'
                   >
                     {tech}
                   </div>

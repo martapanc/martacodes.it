@@ -2,7 +2,6 @@
 
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
-// import {useTheme} from "next-themes";
 import * as React from 'react';
 
 import { School } from '@/types/School';
@@ -12,8 +11,6 @@ export interface EducationProps {
 }
 
 const Education = ({ schools }: EducationProps) => {
-  // const { theme } = useTheme();
-
   return (
     <div className=''>
       <div className='m-2 flex'>
@@ -26,8 +23,8 @@ const Education = ({ schools }: EducationProps) => {
             key={school._id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
-            {/* Start School Header */}
-            <div className='flex border-b-2 border-slate-200 pb-2'>
+            {/* Start School Header - Desktop */}
+            <div className='hidden border-b-2 border-slate-200 pb-2 md:flex'>
               <Image
                 className='me-3 rounded-sm'
                 src={school.schoolIcon}
@@ -69,11 +66,52 @@ const Education = ({ schools }: EducationProps) => {
                 </div>
               </div>
             </div>
-            {/* End School Header */}
+            {/* End School Header - Desktop */}
+
+            {/* Start School Header - Mobile */}
+            <div className='flex flex-col border-b-2 border-slate-200 pb-2 md:hidden'>
+              <div className='flex'>
+                <Image
+                  className='me-3 rounded-sm'
+                  src={school.schoolIcon}
+                  alt={school.schoolName}
+                  width={60}
+                  height={60}
+                />
+
+                <div className='flex w-full justify-between'>
+                  <div className='flex flex-col'>
+                    <div className='flex flex-row justify-between'>
+                      <h4 className='me-4'>
+                        <a href={school.degreeUrl}>{school.schoolName}</a>
+                      </h4>
+
+                      <Image
+                        src={school.flagUrl}
+                        alt={school.schoolName}
+                        width={20}
+                        height={20}
+                      />
+                    </div>
+
+                    <h5 className='font-medium'>{school.degreeName}</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div className='-mt-1 flex flex-row justify-end'>
+                <span className='me-8 text-sm font-normal'>{school.grade}</span>
+
+                <span className='text-sm font-normal'>
+                  {school.startYear}&nbsp; — &nbsp;{school.endYear}
+                </span>
+              </div>
+            </div>
+            {/* End School Header - Mobile */}
 
             {/* Start School Content */}
             <div className='job-content pt-4'>
-              <div className='skill-description pb-2 text-justify font-light'>
+              <div className='sm-skill-description md:skill-description pb-2 text-justify font-light'>
                 <PortableText value={school.description} />
               </div>
             </div>
