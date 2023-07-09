@@ -1,14 +1,14 @@
 'use client';
 
-// import { PortableText } from '@portabletext/react';
-// import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
 // import {useTheme} from "next-themes";
 import * as React from 'react';
 
-import { Job } from '@/types/Job';
+import { School } from '@/types/School';
 
 export interface EducationProps {
-  schools: Job[];
+  schools: School[];
 }
 
 const Education = ({ schools }: EducationProps) => {
@@ -20,60 +20,67 @@ const Education = ({ schools }: EducationProps) => {
         <h2>Education</h2>
       </div>
 
-      {schools[0].isCurrentJob}
+      <div>
+        {schools.map((school) => (
+          <div
+            key={school._id}
+            className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
+          >
+            {/* Start School Header */}
+            <div className='flex border-b-2 border-slate-200 pb-2'>
+              <Image
+                className='me-3 rounded-sm'
+                src={school.schoolIcon}
+                alt={school.schoolName}
+                width={60}
+                height={60}
+              />
 
-      {/*<div>*/}
-      {/*  {jobs.map((job) => (*/}
-      {/*    <div key={job._id} className='rounded-md p-4 mb-4 shadow-md dark:bg-slate-900'>*/}
-      {/*      /!* Start Job Header *!/*/}
-      {/*      <div className='flex border-b-2 border-slate-200 pb-2'>*/}
-      {/*        <Image*/}
-      {/*          className='me-3 rounded-sm'*/}
-      {/*          src={job.iconUrl}*/}
-      {/*          alt={job.company}*/}
-      {/*          width={60}*/}
-      {/*          height={60}*/}
-      {/*        />*/}
+              <div className='flex w-full justify-between'>
+                <div className='flex flex-col'>
+                  <div className='flex flex-row'>
+                    <h4 className='me-4'>
+                      <a href={school.degreeUrl}>{school.schoolName}</a>
+                    </h4>
 
-      {/*        <div className='flex w-full justify-between'>*/}
-      {/*          <div className='flex flex-col'>*/}
-      {/*            <h4>*/}
-      {/*              {job.company} ~ {job.location}*/}
-      {/*            </h4>*/}
-      {/*            <h5 className='font-medium'>{job.jobTitle}</h5>*/}
-      {/*          </div>*/}
+                    <Image
+                      src={school.flagUrl}
+                      alt={school.schoolName}
+                      width={28}
+                      height={28}
+                    />
+                  </div>
 
-      {/*          <div className='flex flex-col justify-center'>*/}
-      {/*            <h4>*/}
-      {/*              {job.startYear} – {job.isCurrentJob ? ` present` : job.endYear}*/}
-      {/*            </h4>*/}
-      {/*          </div>*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*      /!* End Job Header *!/*/}
+                  <h5 className='font-medium'>{school.degreeName}</h5>
+                </div>
 
-      {/*      /!* Start Job Content *!/*/}
-      {/*      <div className='job-content pt-4'>*/}
-      {/*        <div className='skill-description pb-2 text-justify font-light'>*/}
-      {/*          <PortableText value={job.description} />*/}
-      {/*        </div>*/}
+                <div className='flex'>
+                  <div className='me-20 flex flex-col justify-center'>
+                    <span className='text-lg font-semibold'>
+                      {school.grade}
+                    </span>
+                  </div>
 
-      {/*        <div className='mb-2 flex justify-end'>*/}
-      {/*          {job.technologies.map((tech) => (*/}
-      {/*            <div*/}
-      {/*              key={tech}*/}
-      {/*              style={{backgroundColor: theme === 'dark' ? job.darkColor : job.mainColor}}*/}
-      {/*              className='ms-2 rounded-md px-2 py-0.5 text-white dark:text-black'*/}
-      {/*            >*/}
-      {/*              {tech}*/}
-      {/*            </div>*/}
-      {/*          ))}*/}
-      {/*        </div>*/}
-      {/*      </div>*/}
-      {/*      /!* End Job Content *!/*/}
-      {/*    </div>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
+                  <div className='flex flex-col justify-center'>
+                    <span className='text-lg font-semibold'>
+                      {school.startYear}&nbsp; — &nbsp;{school.endYear}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* End School Header */}
+
+            {/* Start School Content */}
+            <div className='job-content pt-4'>
+              <div className='skill-description pb-2 text-justify font-light'>
+                <PortableText value={school.description} />
+              </div>
+            </div>
+            {/* End School Content */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

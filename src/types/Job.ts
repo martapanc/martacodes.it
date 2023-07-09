@@ -7,8 +7,8 @@ export interface Job {
   iconUrl: string;
   location: string;
   jobTitle: string;
-  startYear: number;
-  endYear: number;
+  startDate: string;
+  endDate: string;
   isCurrentJob: boolean;
   description: TypedObject;
   mainColor: string;

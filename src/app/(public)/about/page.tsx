@@ -2,15 +2,18 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
 
+import Education from '@/components/organisms/Education/Education';
 import WorkExperience from '@/components/organisms/WorkExperience/WorkExperience';
 
 import { jobsQuery } from '@/queries/jobs';
+import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
 
 import { sanityClient } from '../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
+import { School } from '@/types/School';
 import { ShortText } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
 import { SkillIcon } from '@/types/SkillIcon';
@@ -23,19 +26,22 @@ export const metadata = {
 const getData = async () => {
   const jobs: Job[] = await sanityClient.fetch(jobsQuery);
 
+  const schools: School[] = await sanityClient.fetch(schoolsQuery);
+
   const skills: Skill[] = await sanityClient.fetch(skillQuery);
 
   const shortTexts: ShortText[] = await sanityClient.fetch(shortTextQuery);
 
   return {
     jobs,
+    schools,
     shortTexts,
     skills,
   };
 };
 
 const AboutPage = async () => {
-  const { jobs, shortTexts, skills } = await getData();
+  const { jobs, schools, shortTexts, skills } = await getData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -107,6 +113,8 @@ const AboutPage = async () => {
           </div>
 
           <WorkExperience jobs={jobs} />
+
+          <Education schools={schools} />
         </div>
       </section>
     </main>

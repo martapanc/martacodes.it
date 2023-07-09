@@ -31,16 +31,22 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'startYear',
-      title: 'Start Year',
-      type: 'number',
-      initialValue: new Date().getFullYear() - 3,
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+      options: {
+        dateFormat: 'MMM YYYY',
+      },
+      initialValue: 'Mar 2020',
     }),
     defineField({
-      name: 'endYear',
+      name: 'endDate',
       title: 'End Year',
-      type: 'number',
-      initialValue: new Date().getFullYear() - 1,
+      type: 'date',
+      options: {
+        dateFormat: 'MMM YYYY',
+      },
+      initialValue: 'Mar 2022',
     }),
     defineField({
       name: 'isCurrentJob',
@@ -81,7 +87,7 @@ export default defineType({
     {
       title: 'Most Recent',
       name: 'jobDateDesc',
-      by: [{ field: 'endYear', direction: 'desc' }],
+      by: [{ field: 'startDate', direction: 'desc' }],
     },
   ],
 });

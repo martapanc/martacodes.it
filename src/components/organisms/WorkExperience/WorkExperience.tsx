@@ -39,16 +39,19 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
               <div className='flex w-full justify-between'>
                 <div className='flex flex-col'>
                   <h4>
-                    {job.company} ~ {job.location}
+                    {job.company} {job.location && `~`} {job.location}
                   </h4>
                   <h5 className='font-medium'>{job.jobTitle}</h5>
                 </div>
 
                 <div className='flex flex-col justify-center'>
-                  <h4>
-                    {job.startYear} –{' '}
-                    {job.isCurrentJob ? ` present` : job.endYear}
-                  </h4>
+                  <span className='text-lg font-semibold'>
+                    <>
+                      {format(job.startDate)}
+                      &nbsp; — &nbsp;
+                      {job.isCurrentJob ? `present` : format(job.endDate)}
+                    </>
+                  </span>
                 </div>
               </div>
             </div>
@@ -82,5 +85,13 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
     </div>
   );
 };
+
+function format(inputDate: string): string {
+  const date = new Date(inputDate);
+  return Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: 'short',
+  }).format(date);
+}
 
 export default WorkExperience;
