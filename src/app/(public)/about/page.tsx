@@ -3,9 +3,11 @@ import Image from 'next/image';
 import * as React from 'react';
 
 import Education from '@/components/organisms/Education/Education';
+import Languages from '@/components/organisms/Languages/Languages';
 import WorkExperience from '@/components/organisms/WorkExperience/WorkExperience';
 
 import { jobsQuery } from '@/queries/jobs';
+import { languageQuery } from '@/queries/languages';
 import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
@@ -13,6 +15,7 @@ import { skillQuery } from '@/queries/skills';
 import { sanityClient } from '../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
+import { Language } from '@/types/Language';
 import { School } from '@/types/School';
 import { ShortText } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
@@ -26,6 +29,8 @@ export const metadata = {
 const getData = async () => {
   const jobs: Job[] = await sanityClient.fetch(jobsQuery);
 
+  const languages: Language[] = await sanityClient.fetch(languageQuery);
+
   const schools: School[] = await sanityClient.fetch(schoolsQuery);
 
   const skills: Skill[] = await sanityClient.fetch(skillQuery);
@@ -34,6 +39,7 @@ const getData = async () => {
 
   return {
     jobs,
+    languages,
     schools,
     shortTexts,
     skills,
@@ -41,7 +47,7 @@ const getData = async () => {
 };
 
 const AboutPage = async () => {
-  const { jobs, schools, shortTexts, skills } = await getData();
+  const { jobs, languages, schools, shortTexts, skills } = await getData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -115,6 +121,8 @@ const AboutPage = async () => {
           <WorkExperience jobs={jobs} />
 
           <Education schools={schools} />
+
+          <Languages languages={languages} />
         </div>
       </section>
     </main>
