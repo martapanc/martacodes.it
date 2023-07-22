@@ -4,10 +4,12 @@ import * as React from 'react';
 
 import Education from '@/components/organisms/Education/Education';
 import Languages from '@/components/organisms/Languages/Languages';
+import Publications from '@/components/organisms/Publications/Publications';
 import WorkExperience from '@/components/organisms/WorkExperience/WorkExperience';
 
 import { jobsQuery } from '@/queries/jobs';
 import { languageQuery } from '@/queries/languages';
+import { publicationQuery } from '@/queries/publications';
 import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
@@ -16,6 +18,7 @@ import { sanityClient } from '../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
+import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
 import { ShortText } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
@@ -31,6 +34,10 @@ const getData = async () => {
 
   const languages: Language[] = await sanityClient.fetch(languageQuery);
 
+  const publications: Publication[] = await sanityClient.fetch(
+    publicationQuery
+  );
+
   const schools: School[] = await sanityClient.fetch(schoolsQuery);
 
   const skills: Skill[] = await sanityClient.fetch(skillQuery);
@@ -40,6 +47,7 @@ const getData = async () => {
   return {
     jobs,
     languages,
+    publications,
     schools,
     shortTexts,
     skills,
@@ -47,7 +55,8 @@ const getData = async () => {
 };
 
 const AboutPage = async () => {
-  const { jobs, languages, schools, shortTexts, skills } = await getData();
+  const { jobs, languages, publications, schools, shortTexts, skills } =
+    await getData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -123,6 +132,8 @@ const AboutPage = async () => {
           <Education schools={schools} />
 
           <Languages languages={languages} />
+
+          <Publications publications={publications} />
         </div>
       </section>
     </main>

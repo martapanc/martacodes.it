@@ -11,16 +11,16 @@ export interface LanguageProps {
 
 const Languages = ({ languages }: LanguageProps) => {
   return (
-    <div>
+    <div className='mb-6'>
       <div className='m-2 flex'>
         <h2>Languages</h2>
       </div>
 
-      <div className='flex flex-col md:w-full md:flex-row md:justify-between'>
+      <div className='grid grid-cols-1 gap-3 md:grid-cols-4 md:gap-6'>
         {languages.map((language) => (
           <div
             key={language.id}
-            className='mb-4 flex flex-row items-center rounded-md p-4 shadow-md dark:bg-slate-900 md:w-64'
+            className='flex flex-row items-center rounded-md p-4 shadow-md dark:bg-slate-900 md:w-64'
           >
             <Image
               src={language.flagUrl}
