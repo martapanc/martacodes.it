@@ -96,7 +96,7 @@ export default function Header() {
                   }}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link href='/about/work'>👔 Work</Link>
+                    <Link href='/about/work'>👔 Work & Career</Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <Link href='/about/free-time'>🪁 Free Time</Link>

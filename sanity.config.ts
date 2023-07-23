@@ -8,6 +8,7 @@ import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { media } from 'sanity-plugin-media';
 
+import { customStructure } from './sanity/deskStructure';
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from './sanity/env';
 import { schema } from './sanity/schema';
@@ -20,7 +21,9 @@ export default defineConfig({
   schema,
   plugins: [
     codeInput(),
-    deskTool(),
+    deskTool({
+      structure: customStructure,
+    }),
     media(),
     visionTool({ defaultApiVersion: apiVersion }),
   ],

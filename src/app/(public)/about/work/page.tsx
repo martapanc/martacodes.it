@@ -2,10 +2,10 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
 
-import Education from '@/components/organisms/Education/Education';
-import Languages from '@/components/organisms/Languages/Languages';
-import Publications from '@/components/organisms/Publications/Publications';
-import WorkExperience from '@/components/organisms/WorkExperience/WorkExperience';
+import Education from '@/components/organisms/about-work/Education';
+import Languages from '@/components/organisms/about-work/Languages';
+import Publications from '@/components/organisms/about-work/Publications';
+import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 
 import { jobsQuery } from '@/queries/jobs';
 import { languageQuery } from '@/queries/languages';
@@ -16,13 +16,13 @@ import { skillQuery } from '@/queries/skills';
 
 import { sanityClient } from '../../../../../sanity/lib/client';
 
+import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
 import { ShortText } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
-import { SkillIcon } from '@/types/SkillIcon';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -71,7 +71,7 @@ const AboutPage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>Work</h1>
+          <h1 className='mb-5'>Work & Career</h1>
 
           {softwareDevelopment && (
             <div>
@@ -107,7 +107,7 @@ const AboutPage = async () => {
                 className='skill-container rounded p-4 shadow-md dark:bg-slate-900 dark:drop-shadow-md'
               >
                 <div className='flex'>
-                  {skill.icons.map((icon: SkillIcon) => (
+                  {skill.icons.map((icon: Icon) => (
                     <Image
                       key={icon._id}
                       height={iconDimension}
