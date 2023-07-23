@@ -1,10 +1,14 @@
 'use client';
 
+import { MenuItem } from '@mui/material';
+import { Menu } from '@mui/material';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
+import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 
@@ -14,7 +18,6 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
 
 export const links = [
-  { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
   { href: '/cv', label: 'CV' },
   { href: '/uses', label: 'Uses' },
@@ -24,6 +27,15 @@ export const links = [
 export default function Header() {
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const pathname = usePathname();
 
@@ -62,6 +74,36 @@ export default function Header() {
             </UnstyledLink>
 
             <ul className='hidden items-center justify-between space-x-6 text-lg md:flex'>
+              <li>
+                <span
+                  className='animated-underline-2 dark:animated-underline flex items-center rounded-sm font-medium text-slate-950 dark:text-blue-50'
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup='true'
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  About
+                  {!open && <AiFillCaretDown className='ms-1.5' />}
+                  {open && <AiFillCaretUp className='ms-1.5' />}
+                </span>
+                <Menu
+                  id='basic-menu'
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <Link href='/about/work'>👔 Work</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link href='/about/free-time'>🪁 Free Time</Link>
+                  </MenuItem>
+                </Menu>
+              </li>
+
               {links.map(({ href, label }) => (
                 <li key={`${href}${label}`}>
                   <UnstyledLink

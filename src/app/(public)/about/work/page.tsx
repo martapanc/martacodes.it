@@ -14,7 +14,7 @@ import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
 
-import { sanityClient } from '../../../../sanity/lib/client';
+import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
@@ -25,7 +25,7 @@ import { Skill } from '@/types/Skill';
 import { SkillIcon } from '@/types/SkillIcon';
 
 export const metadata = {
-  title: 'About | MartaCodes.it',
+  title: 'About my Work | MartaCodes.it',
   description: 'About page',
 };
 
@@ -71,7 +71,7 @@ const AboutPage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>About</h1>
+          <h1 className='mb-5'>Work</h1>
 
           {softwareDevelopment && (
             <div>
