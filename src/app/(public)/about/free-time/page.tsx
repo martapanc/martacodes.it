@@ -2,14 +2,17 @@ import * as React from 'react';
 
 import Books from '@/components/organisms/about-free-time/Books';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
+import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
 import { booksQuery } from '@/queries/books';
 import { podcastsQuery } from '@/queries/podcasts';
+import { videoGamesQuery } from '@/queries/video-games';
 
 import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
+import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
@@ -21,14 +24,17 @@ const getData = async () => {
 
   const podcasts: Podcast[] = await sanityClient.fetch(podcastsQuery);
 
+  const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
+
   return {
     books,
     podcasts,
+    videoGames,
   };
 };
 
 const AboutFreeTimePage = async () => {
-  const { books, podcasts } = await getData();
+  const { books, podcasts, videoGames } = await getData();
 
   return (
     <main className='min-h-main'>
@@ -48,6 +54,8 @@ const AboutFreeTimePage = async () => {
           <Books books={books} />
 
           <Podcasts podcasts={podcasts} />
+
+          <VideoGames videoGames={videoGames} />
         </div>
       </section>
     </main>

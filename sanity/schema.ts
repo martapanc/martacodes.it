@@ -9,6 +9,7 @@ import school from '../src/schemas/school';
 import shortText from '../src/schemas/shortText';
 import skill from '../src/schemas/skill';
 import skillIcon from '../src/schemas/skillIcon';
+import videoGame from '../src/schemas/videoGame';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -21,5 +22,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     shortText,
     skill,
     skillIcon,
+    videoGame,
   ],
 };
