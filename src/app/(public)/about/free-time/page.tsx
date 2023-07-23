@@ -1,11 +1,29 @@
 import * as React from 'react';
 
+import Books from '@/components/organisms/about-free-time/Books';
+
+import { booksQuery } from '@/queries/books';
+
+import { sanityClient } from '../../../../../sanity/lib/client';
+
+import { Book } from '@/types/Book';
+
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
   description: 'About page',
 };
 
+const getData = async () => {
+  const books: Book[] = await sanityClient.fetch(booksQuery);
+
+  return {
+    books,
+  };
+};
+
 const AboutFreeTimePage = async () => {
+  const { books } = await getData();
+
   return (
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
@@ -20,6 +38,8 @@ const AboutFreeTimePage = async () => {
               my free time :)
             </p>
           </div>
+
+          <Books books={books} />
         </div>
       </section>
     </main>

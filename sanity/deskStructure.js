@@ -1,4 +1,5 @@
 const workSection = ['job', 'language', 'publication', 'school', 'skill'];
+const freeTimeSection = ['book'];
 const sharedSection = ['shortText', 'skillIcon'];
 
 export const customStructure = (S) =>
@@ -12,6 +13,15 @@ export const customStructure = (S) =>
             .title('Work Documents')
             .items(
               workSection.map((section) => S.documentTypeListItem(section))
+            )
+        ),
+      S.listItem()
+        .title('Free Time')
+        .child(
+          S.list()
+            .title('Free Time Documents')
+            .items(
+              freeTimeSection.map((section) => S.documentTypeListItem(section))
             )
         ),
       S.listItem()
