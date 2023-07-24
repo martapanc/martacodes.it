@@ -17,11 +17,11 @@ const Books = ({ books }: BookProps) => {
       </div>
 
       <div className='rounded p-3 dark:bg-slate-900'>
-        <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-4 overflow-x-auto px-4 pb-6 md:mx-0 md:w-full md:px-0'>
+        <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-3 overflow-x-auto px-4 pb-6 md:mx-0 md:w-full md:px-0'>
           {books.map((book) => (
             <li
               key={book._id}
-              className='h-[128px] w-[100px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-blue-400 hover:to-blue-700'
+              className='h-[168px] w-[120px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600'
             >
               <a
                 href={book.goodreadsLink}
@@ -32,8 +32,8 @@ const Books = ({ books }: BookProps) => {
                   className='rounded-md'
                   alt={book.title}
                   src={book.cover}
-                  width={90}
-                  height={90}
+                  width={114}
+                  height={114}
                 />
               </a>
             </li>
