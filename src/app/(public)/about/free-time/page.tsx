@@ -2,16 +2,19 @@ import * as React from 'react';
 
 import Books from '@/components/organisms/about-free-time/Books';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
+import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
 import { booksQuery } from '@/queries/books';
 import { podcastsQuery } from '@/queries/podcasts';
+import { tvSeriesQuery } from '@/queries/tv-series';
 import { videoGamesQuery } from '@/queries/video-games';
 
 import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
+import { TvShow } from '@/types/TvSeries';
 import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
@@ -24,17 +27,20 @@ const getData = async () => {
 
   const podcasts: Podcast[] = await sanityClient.fetch(podcastsQuery);
 
+  const tvSeries: TvShow[] = await sanityClient.fetch(tvSeriesQuery);
+
   const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
 
   return {
     books,
     podcasts,
+    tvSeries,
     videoGames,
   };
 };
 
 const AboutFreeTimePage = async () => {
-  const { books, podcasts, videoGames } = await getData();
+  const { books, podcasts, tvSeries, videoGames } = await getData();
 
   return (
     <main className='min-h-main'>
@@ -56,6 +62,8 @@ const AboutFreeTimePage = async () => {
           <Podcasts podcasts={podcasts} />
 
           <VideoGames videoGames={videoGames} />
+
+          <TvSeries tvSeries={tvSeries} />
         </div>
       </section>
     </main>
