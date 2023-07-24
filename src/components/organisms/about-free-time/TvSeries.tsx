@@ -12,7 +12,7 @@ export interface TvSeriesProps {
 const TvSeries = ({ tvSeries }: TvSeriesProps) => {
   return (
     <div className='mb-6'>
-      <div className='m-2 flex'>
+      <div className='my-2 flex'>
         <h2>Favourite TV Series</h2>
       </div>
 

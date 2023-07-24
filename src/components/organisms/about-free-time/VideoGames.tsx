@@ -12,7 +12,7 @@ export interface VideoGameProps {
 const VideoGames = ({ videoGames }: VideoGameProps) => {
   return (
     <div className='mb-6'>
-      <div className='m-2 flex'>
+      <div className='my-2 flex'>
         <h2>Games I'm addicted to</h2>
       </div>
 

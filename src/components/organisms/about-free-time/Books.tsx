@@ -12,7 +12,7 @@ export interface BookProps {
 const Books = ({ books }: BookProps) => {
   return (
     <div className='mb-6'>
-      <div className='m-2 flex'>
+      <div className='my-2 flex'>
         <h2>Best books ever written</h2>
       </div>
 

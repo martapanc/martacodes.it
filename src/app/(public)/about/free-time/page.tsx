@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Books from '@/components/organisms/about-free-time/Books';
+import Music from '@/components/organisms/about-free-time/Music';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
@@ -64,6 +65,8 @@ const AboutFreeTimePage = async () => {
           <VideoGames videoGames={videoGames} />
 
           <TvSeries tvSeries={tvSeries} />
+
+          <Music />
         </div>
       </section>
     </main>

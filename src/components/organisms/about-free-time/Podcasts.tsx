@@ -12,7 +12,7 @@ export interface PodcastProps {
 const Podcasts = ({ podcasts }: PodcastProps) => {
   return (
     <div className='mb-6'>
-      <div className='m-2 flex'>
+      <div className='my-2 flex'>
         <h2>Podcasts I follow</h2>
       </div>
 
