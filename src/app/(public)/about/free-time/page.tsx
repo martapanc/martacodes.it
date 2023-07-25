@@ -3,6 +3,7 @@ import * as React from 'react';
 import Books from '@/components/organisms/about-free-time/Books';
 import Music from '@/components/organisms/about-free-time/Music';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
+import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
@@ -67,6 +68,8 @@ const AboutFreeTimePage = async () => {
           <TvSeries tvSeries={tvSeries} />
 
           <Music />
+
+          <RandomFacts />
         </div>
       </section>
     </main>
