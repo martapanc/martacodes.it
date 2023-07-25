@@ -1,4 +1,3 @@
-import { useTheme } from 'next-themes';
 import { IconType } from 'react-icons';
 import { FiMail } from 'react-icons/fi';
 import {
@@ -14,16 +13,8 @@ import {
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 export default function Footer() {
-  const { theme } = useTheme();
-
   return (
-    <footer
-      className={`${
-        theme === 'dark'
-          ? 'to-dark bg-gradient-to-r from-sky-950'
-          : 'bg-gradient-to-r from-blue-300 to-sky-100'
-      }`}
-    >
+    <footer className='dark:to-dark bg-gradient-to-r from-blue-300 to-sky-100 dark:from-sky-950'>
       <main className='layout flex flex-col items-center py-6'>
         <div className='flex flex-wrap justify-center gap-x-8 gap-y-4'>
           <FooterLinks />
