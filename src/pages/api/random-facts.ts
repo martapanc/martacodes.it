@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { shuffleArray } from '@/lib/helper';
+
 import {
   falseRandomFactsQuery,
   trueRandomFactsQuery,
@@ -18,9 +20,12 @@ const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
     falseRandomFactsQuery
   );
 
+  const oneFalseRandomFact: RandomFact = shuffleArray(falseFacts)[0];
+
   res.status(200).json({
     true: trueFacts,
     false: falseFacts,
+    oneFalse: oneFalseRandomFact,
   });
 };
 

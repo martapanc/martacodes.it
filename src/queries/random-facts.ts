@@ -1,16 +1,20 @@
 import { groq } from 'next-sanity';
 
 export const trueRandomFactsQuery = groq`
-*[_type == "randomFact" && isFactTrue == true] {
+*[_type == "randomFact" && isFactTrue == true && name != "Correspondence"] 
+{
   _id,
   name,
+  headline,
   description
 }`;
 
 export const falseRandomFactsQuery = groq`
-*[_type == "randomFact" && isFactTrue == false] {
+*[_type == "randomFact" && isFactTrue == false] 
+{
   _id,
   name,
+  headline,
   description,
   explanation
 }`;

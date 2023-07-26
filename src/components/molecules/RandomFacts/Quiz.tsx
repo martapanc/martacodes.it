@@ -1,3 +1,5 @@
+'use client';
+
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
@@ -9,21 +11,14 @@ import Button from '@/components/buttons/Button';
 
 const localStorageKey = 'alreadyPlayed';
 
-export enum Option {
-  A = 'a',
-  B = 'b',
-  C = 'c',
-  D = 'd',
-}
-
 export interface QuizOption {
   headline: string;
-  key: Option;
+  key?: string;
 }
 
 export interface QuizProps {
   options: QuizOption[];
-  falseOption: Option;
+  falseOption?: string;
 }
 
 const Quiz = ({ options, falseOption }: QuizProps) => {
@@ -41,11 +36,12 @@ const Quiz = ({ options, falseOption }: QuizProps) => {
     localStorage.setItem(localStorageKey, 'true');
 
     setSubmitted(true);
-
     const answeredRight = falseOption === selectedAnswer;
 
     // eslint-disable-next-line no-console
-    console.log(submitted && answeredRight ? 'Correct!' : 'Wrong!');
+    console.log(submitted);
+    // eslint-disable-next-line no-console
+    console.log(answeredRight ? 'Correct!' : 'Wrong!');
   };
 
   return (
