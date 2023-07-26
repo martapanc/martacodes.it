@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import {
   SalaryHappinessProps,
   SalaryHappinessTool,
-} from '@/components/recruiter-info/SalaryHappinessTool';
+} from '@/components/molecules/RecruiterInfo/SalaryHappinessTool';
 
 const meta: Meta<typeof SalaryHappinessTool> = {
   title: 'Components/Recruiter-Info/SalaryHappinessTool',
