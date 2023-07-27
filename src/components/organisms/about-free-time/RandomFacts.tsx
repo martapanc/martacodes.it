@@ -4,6 +4,7 @@ import * as React from 'react';
 import { useState } from 'react';
 
 import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
+import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
 
 const localStorageKey = 'alreadyPlayed';
 
@@ -47,11 +48,11 @@ const RandomFacts = ({ options, falseOption }: QuizData) => {
         />
       )}
       {submitted && alreadyPlayed && (
-        <div className='rounded bg-gray-200 p-4'>
-          <p className='text-gray-800'>
-            You're {answerCorrect ? `correct` : `wrong`}!
-          </p>
-        </div>
+        <QuizAnswers
+          answers={options}
+          falseOption={falseOption}
+          answeredCorrectly={answerCorrect}
+        />
       )}
       {!submitted && alreadyPlayed && <div>Already played :)</div>}
     </div>
