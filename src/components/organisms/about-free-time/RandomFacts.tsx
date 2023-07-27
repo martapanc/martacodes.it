@@ -3,17 +3,28 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import Quiz, { QuizProps } from '@/components/molecules/RandomFacts/Quiz';
+import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
 
 const localStorageKey = 'alreadyPlayed';
 
-const RandomFacts = ({ options, falseOption }: QuizProps) => {
-  const [submitted] = useState(false);
+const RandomFacts = ({ options, falseOption }: QuizData) => {
+  const [submitted, setSubmitted] = useState(false);
+  const [answerCorrect, setAnswerCorrect] = useState(false);
 
-  const [alreadyPlayed] = useState(() => {
+  const [alreadyPlayed, setAlreadyPlayed] = useState(() => {
     const alreadyPlayed = localStorage.getItem(localStorageKey);
     return alreadyPlayed ? JSON.parse(alreadyPlayed) : false;
   });
+
+  const handleAnswerSubmission = (isCorrect: boolean) => {
+    setSubmitted(true);
+    setAnswerCorrect(isCorrect);
+
+    if (!alreadyPlayed) {
+      localStorage.setItem(localStorageKey, JSON.stringify(true));
+      setAlreadyPlayed(true);
+    }
+  };
 
   return (
     <div className='mb-6'>
@@ -21,12 +32,25 @@ const RandomFacts = ({ options, falseOption }: QuizProps) => {
         <h2>Random facts about me</h2>
       </div>
 
+      {!alreadyPlayed && (
+        <div className='mb-3'>
+          Here's a little game for you! Which of the following statements about
+          me is <strong>false</strong>?
+        </div>
+      )}
+
       {!submitted && !alreadyPlayed && (
-        <Quiz options={options} falseOption={falseOption} />
+        <Quiz
+          options={options}
+          falseOption={falseOption}
+          onAnswerSubmission={handleAnswerSubmission}
+        />
       )}
       {submitted && alreadyPlayed && (
         <div className='rounded bg-gray-200 p-4'>
-          <p className='text-gray-800'>Thank you for your submission!</p>
+          <p className='text-gray-800'>
+            You're {answerCorrect ? `correct` : `wrong`}!
+          </p>
         </div>
       )}
       {!submitted && alreadyPlayed && <div>Already played :)</div>}

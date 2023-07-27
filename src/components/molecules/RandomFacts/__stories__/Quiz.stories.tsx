@@ -1,7 +1,6 @@
 import { Meta } from '@storybook/react';
 
 import Quiz, {
-  Option,
   QuizOption,
   QuizProps,
 } from '@/components/molecules/RandomFacts/Quiz';
@@ -16,20 +15,20 @@ export default meta;
 
 const options: QuizOption[] = [
   {
-    key: Option.A,
+    key: 'a',
     headline:
       'I have been officially excommunicated by the Roman Catholic Church ⛪',
   },
   {
-    key: Option.B,
+    key: 'b',
     headline: 'I studied oboe at the music school for more than 12 years 🎶',
   },
   {
-    key: Option.C,
+    key: 'c',
     headline: 'I know flags and capitals of all 195 countries in the world 🇰🇲',
   },
   {
-    key: Option.D,
+    key: 'd',
     headline:
       'I was an extra-actor in a movie once: "Correspondence" by Giuseppe Tornatore 🎬',
   },
@@ -38,5 +37,5 @@ const options: QuizOption[] = [
 export const SampleStory = (args: QuizProps) => <Quiz {...args} />;
 SampleStory.args = {
   options,
-  falseOption: Option.C,
+  falseOption: 'c',
 };

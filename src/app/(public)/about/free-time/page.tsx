@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { shuffleArray } from '@/lib/helper';
 
-import { QuizOption, QuizProps } from '@/components/molecules/RandomFacts/Quiz';
+import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
 import Books from '@/components/organisms/about-free-time/Books';
 import Music from '@/components/organisms/about-free-time/Music';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
@@ -48,7 +48,7 @@ const getData = async () => {
 
   const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
 
-  const randomFacts: QuizProps = await loadRandomFactsForQuiz();
+  const randomFacts: QuizData = await loadRandomFactsForQuiz();
 
   return {
     books,

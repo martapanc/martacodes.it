@@ -16,15 +16,19 @@ export interface QuizOption {
   key?: string;
 }
 
-export interface QuizProps {
+export interface QuizData {
   options: QuizOption[];
   falseOption?: string;
 }
 
-const Quiz = ({ options, falseOption }: QuizProps) => {
-  const [selectedAnswer, setSelectedAnswer] = useState('');
+export interface QuizProps {
+  options: QuizOption[];
+  falseOption?: string;
+  onAnswerSubmission: (isCorrect: boolean) => void;
+}
 
-  const [submitted, setSubmitted] = useState(false);
+const Quiz = ({ options, falseOption, onAnswerSubmission }: QuizProps) => {
+  const [selectedAnswer, setSelectedAnswer] = useState('');
 
   const isButtonDisabled = selectedAnswer === '';
 
@@ -35,13 +39,7 @@ const Quiz = ({ options, falseOption }: QuizProps) => {
   const submitAnswer = () => {
     localStorage.setItem(localStorageKey, 'true');
 
-    setSubmitted(true);
-    const answeredRight = falseOption === selectedAnswer;
-
-    // eslint-disable-next-line no-console
-    console.log(submitted);
-    // eslint-disable-next-line no-console
-    console.log(answeredRight ? 'Correct!' : 'Wrong!');
+    onAnswerSubmission(falseOption === selectedAnswer);
   };
 
   return (
