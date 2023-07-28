@@ -72,10 +72,12 @@ const loadRandomFactsForQuiz = async () => {
 
   const options: QuizOption[] = threeTrueFacts.map((fact) => ({
     headline: fact.headline,
+    explanation: fact.explanation,
   }));
 
   options.push({
     headline: oneFalseFact.headline,
+    explanation: oneFalseFact.explanation,
   });
 
   const shuffledOptions = shuffleArray(options);
@@ -85,6 +87,7 @@ const loadRandomFactsForQuiz = async () => {
   for (let i = 0; i < 4; i++) {
     preparedOptions.push({
       headline: shuffledOptions[i].headline,
+      explanation: shuffledOptions[i].explanation,
       key: keys[i],
     });
   }

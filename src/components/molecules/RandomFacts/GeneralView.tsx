@@ -1,5 +1,6 @@
 'use client';
 
+import { PortableText } from '@portabletext/react';
 import * as React from 'react';
 
 import { shuffleArray } from '@/lib/helper';
@@ -22,7 +23,9 @@ const GeneralView = ({ facts }: GeneralViewProps) => {
 
   return (
     <div className='p4 rounded dark:bg-slate-900'>
-      <div className='mb-5'>{randomFact.description}</div>
+      <div className='mb-5'>
+        <PortableText value={randomFact.description} />
+      </div>
 
       <div className='flex justify-center'>
         <Button>Load another random fact</Button>

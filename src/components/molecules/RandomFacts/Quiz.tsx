@@ -4,6 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import { TypedObject } from '@portabletext/types/src';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ const localStorageKey = 'alreadyPlayed';
 
 export interface QuizOption {
   headline: string;
+  explanation?: TypedObject;
   key?: string;
 }
 
@@ -57,7 +59,7 @@ const Quiz = ({ options, falseOption, onAnswerSubmission }: QuizProps) => {
               className='mb-2 md:mb-0'
               key={option.key}
               value={option.key}
-              control={<Radio />}
+              control={<Radio className='dark:quiz-radio-button' />}
               label={option.headline}
             />
           ))}

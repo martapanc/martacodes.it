@@ -6,7 +6,8 @@ export const trueRandomFactsQuery = groq`
   _id,
   name,
   headline,
-  description
+  description,
+  explanation,
 }`;
 
 export const falseRandomFactsQuery = groq`
@@ -16,7 +17,7 @@ export const falseRandomFactsQuery = groq`
   name,
   headline,
   description,
-  explanation
+  explanation,
 }`;
 
 export const randomFactsQuery = groq`
@@ -24,5 +25,6 @@ export const randomFactsQuery = groq`
   _id,
   name,
   description,
+  explanation,
   isFactTrue
 }`;

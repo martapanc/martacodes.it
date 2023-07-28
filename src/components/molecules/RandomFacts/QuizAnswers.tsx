@@ -1,15 +1,13 @@
 'use client';
 
+import { PortableText } from '@portabletext/react';
 import * as React from 'react';
 import { BsFillCheckCircleFill, BsFillXSquareFill } from 'react-icons/bs';
 
-export interface QuizAnswer {
-  headline: string;
-  key?: string;
-}
+import { QuizOption } from '@/components/molecules/RandomFacts/Quiz';
 
 export interface QuizAnswersProps {
-  answers: QuizAnswer[];
+  answers: QuizOption[];
   falseOption?: string;
   answeredCorrectly: boolean;
 }
@@ -20,29 +18,36 @@ const QuizAnswers = ({
   answeredCorrectly,
 }: QuizAnswersProps) => {
   return (
-    <div className='p4 rounded dark:bg-slate-900'>
-      <ul>
-        {answers.map((answer) => (
-          <li className='mb-4 flex flex-row' key={answer.key}>
-            <span className='me-3 text-xl'>
-              {answer.key == falseOption ? (
-                <BsFillXSquareFill className='fill-current text-red-600' />
-              ) : (
-                <BsFillCheckCircleFill className='fill-current text-green-600' />
-              )}
-            </span>
-            {answer.headline}
-          </li>
-        ))}
-      </ul>
-
-      <div className='rounded bg-gray-200 p-4'>
-        <p className='text-gray-800'>
+    <div className='flex flex-col items-center rounded px-4 py-2 dark:bg-slate-900'>
+      <div className='mb-4 mt-0 w-fit rounded bg-gray-200 p-4 dark:bg-slate-700'>
+        <p className='text-gray-800 dark:text-gray-50'>
           {answeredCorrectly
-            ? "You're correct! 🥳"
+            ? "Congratulations, you're correct! 🥳"
             : 'Too bad, better luck next time ✌️'}
         </p>
       </div>
+
+      <ul>
+        {answers.map((answer) => (
+          <li className='mb-5 flex flex-col' key={answer.key}>
+            <div className='mb-2 flex flex-row'>
+              <span className='me-3 flex items-center text-xl'>
+                {answer.key == falseOption ? (
+                  <BsFillXSquareFill className='fill-current text-red-600' />
+                ) : (
+                  <BsFillCheckCircleFill className='fill-current text-green-600' />
+                )}
+              </span>
+              <span>{answer.headline}</span>
+            </div>
+            <div className='rounded bg-blue-100 px-3 py-2 text-xs dark:bg-blue-950'>
+              {answer.explanation && (
+                <PortableText value={answer.explanation} />
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

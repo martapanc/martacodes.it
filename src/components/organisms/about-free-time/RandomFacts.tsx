@@ -29,14 +29,15 @@ const RandomFacts = ({ options, falseOption }: QuizData) => {
 
   return (
     <div className='mb-6'>
-      <div className='mb-6 mt-2 flex'>
+      <div className='mb-4 mt-2 flex'>
         <h2>Random facts about me</h2>
       </div>
 
       {!alreadyPlayed && (
-        <div className='mb-3'>
+        <div className='mb-3 font-serif font-semibold'>
           Here's a little game for you! Which of the following statements about
-          me is <strong>false</strong>?
+          me is{' '}
+          <strong className='text-red-600 dark:text-red-400'>false</strong>?
         </div>
       )}
 

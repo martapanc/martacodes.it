@@ -256,4 +256,8 @@
     padding-left: 4px;
     margin-bottom: 4px;
   }
+
+  .quiz-radio-button {
+    color: white;
+  }
 }
