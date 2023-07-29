@@ -10,6 +10,8 @@ import { useState } from 'react';
 
 import Button from '@/components/buttons/Button';
 
+import { RandomFact } from '@/types/RandomFact';
+
 const localStorageKey = 'alreadyPlayed';
 
 export interface QuizOption {
@@ -21,6 +23,7 @@ export interface QuizOption {
 export interface QuizData {
   options: QuizOption[];
   falseOption?: string;
+  trueFacts: RandomFact[];
 }
 
 export interface QuizProps {

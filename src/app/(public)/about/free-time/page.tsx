@@ -14,6 +14,7 @@ import { booksQuery } from '@/queries/books';
 import { podcastsQuery } from '@/queries/podcasts';
 import {
   falseRandomFactsQuery,
+  selectedTrueRandomFactsQuery,
   trueRandomFactsQuery,
 } from '@/queries/random-facts';
 import { tvSeriesQuery } from '@/queries/tv-series';
@@ -31,13 +32,6 @@ export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
   description: 'About page',
 };
-
-export enum Option {
-  A = 'a',
-  B = 'b',
-  C = 'c',
-  D = 'd',
-}
 
 const getData = async () => {
   const books: Book[] = await sanityClient.fetch(booksQuery);
@@ -63,12 +57,18 @@ const loadRandomFactsForQuiz = async () => {
   const falseFacts: RandomFact[] = await sanityClient.fetch(
     falseRandomFactsQuery
   );
+  const selectedTrueFacts: RandomFact[] = await sanityClient.fetch(
+    selectedTrueRandomFactsQuery
+  );
   const trueFacts: RandomFact[] = await sanityClient.fetch(
     trueRandomFactsQuery
   );
 
   const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
-  const threeTrueFacts: RandomFact[] = shuffleArray(trueFacts).slice(0, 3);
+  const threeTrueFacts: RandomFact[] = shuffleArray(selectedTrueFacts).slice(
+    0,
+    3
+  );
 
   const options: QuizOption[] = threeTrueFacts.map((fact) => ({
     headline: fact.headline,
@@ -99,6 +99,7 @@ const loadRandomFactsForQuiz = async () => {
   return {
     options: preparedOptions,
     falseOption: falseOptionKey,
+    trueFacts,
   };
 };
 
@@ -134,6 +135,7 @@ const AboutFreeTimePage = async () => {
           <RandomFacts
             options={randomFacts.options}
             falseOption={randomFacts.falseOption}
+            trueFacts={randomFacts.trueFacts}
           />
         </div>
       </section>

@@ -4,7 +4,7 @@ import { shuffleArray } from '@/lib/helper';
 
 import {
   falseRandomFactsQuery,
-  trueRandomFactsQuery,
+  selectedTrueRandomFactsQuery,
 } from '@/queries/random-facts';
 
 import { sanityClient } from '../../../sanity/lib/client';
@@ -13,7 +13,7 @@ import { RandomFact } from '@/types/RandomFact';
 
 const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const trueFacts: RandomFact[] = await sanityClient.fetch(
-    trueRandomFactsQuery
+    selectedTrueRandomFactsQuery
   );
 
   const falseFacts: RandomFact[] = await sanityClient.fetch(

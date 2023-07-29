@@ -1,8 +1,15 @@
 import { Meta } from '@storybook/react';
+import { useEffect, useState } from 'react';
+
+import { shuffleArray } from '@/lib/helper';
 
 import GeneralView, {
   GeneralViewProps,
 } from '@/components/molecules/RandomFacts/GeneralView';
+
+import { trueRandomFactsQuery } from '@/queries/random-facts';
+
+import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { RandomFact } from '@/types/RandomFact';
 
@@ -14,21 +21,29 @@ const meta: Meta<typeof GeneralView> = {
 
 export default meta;
 
-const facts: RandomFact[] = [
-  {
-    _id: 'a',
-    name: 'name',
-    headline: '',
-    description:
-      'I have been officially excommunicated by the Roman Catholic Church ⛪',
-    trueFact: true,
-    explanation: '',
-  },
-];
+export const SampleStory = (args: GeneralViewProps) => {
+  const [randomFacts, setRandomFacts] = useState<RandomFact[]>([]);
 
-export const SampleStory = (args: GeneralViewProps) => (
-  <GeneralView {...args} />
-);
-SampleStory.args = {
-  facts,
+  useEffect(() => {
+    const fetchFacts = async () => {
+      try {
+        const randomFactsData = await sanityClient.fetch(trueRandomFactsQuery);
+
+        setRandomFacts(shuffleArray(randomFactsData));
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching randomFacts:', error);
+      }
+    };
+
+    fetchFacts();
+  }, []);
+
+  return (
+    <>
+      {randomFacts.length > 0 && (
+        <GeneralView {...args} randomFacts={randomFacts} />
+      )}
+    </>
+  );
 };

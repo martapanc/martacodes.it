@@ -3,12 +3,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import GeneralView from '@/components/molecules/RandomFacts/GeneralView';
 import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
 import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
 
 const localStorageKey = 'alreadyPlayed';
 
-const RandomFacts = ({ options, falseOption }: QuizData) => {
+const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
   const [submitted, setSubmitted] = useState(false);
   const [answerCorrect, setAnswerCorrect] = useState(false);
 
@@ -55,7 +56,7 @@ const RandomFacts = ({ options, falseOption }: QuizData) => {
           answeredCorrectly={answerCorrect}
         />
       )}
-      {!submitted && alreadyPlayed && <div>Already played :)</div>}
+      {!submitted && alreadyPlayed && <GeneralView randomFacts={trueFacts} />}
     </div>
   );
 };
