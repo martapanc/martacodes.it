@@ -10,7 +10,7 @@ const Music = () => {
   const widgetTheme = theme === 'dark' ? '&theme=0' : '';
 
   return (
-    <div className='mb-6'>
+    <div className='mb-10'>
       <div className='mb-6 mt-2 flex'>
         <h2>Very old music I listen to</h2>
       </div>

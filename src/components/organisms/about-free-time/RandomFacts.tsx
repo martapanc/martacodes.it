@@ -1,32 +1,54 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { getFromLocalStorage, saveToLocalStorage } from '@/lib/helper';
 
 import GeneralView from '@/components/molecules/RandomFacts/GeneralView';
 import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
 import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
 
-const localStorageKey = 'alreadyPlayed';
+export const localStorageKey = 'alreadyPlayed';
 
 const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
   const [submitted, setSubmitted] = useState(false);
   const [answerCorrect, setAnswerCorrect] = useState(false);
 
-  const [alreadyPlayed, setAlreadyPlayed] = useState(() => {
-    const alreadyPlayed = localStorage.getItem(localStorageKey);
-    return alreadyPlayed ? JSON.parse(alreadyPlayed) : false;
-  });
+  const [loading, setLoading] = useState(true);
+  const [alreadyPlayed, setAlreadyPlayed] = useState(false);
+
+  useEffect(() => {
+    const fetchDataFromLocalStorage = () => {
+      const alreadyPlayedValue = getFromLocalStorage(localStorageKey);
+      setAlreadyPlayed(
+        alreadyPlayedValue ? JSON.parse(alreadyPlayedValue) : false
+      );
+
+      setLoading(false);
+    };
+
+    fetchDataFromLocalStorage();
+  }, []);
 
   const handleAnswerSubmission = (isCorrect: boolean) => {
     setSubmitted(true);
     setAnswerCorrect(isCorrect);
 
     if (!alreadyPlayed) {
-      localStorage.setItem(localStorageKey, JSON.stringify(true));
+      saveToLocalStorage(localStorageKey, JSON.stringify(true));
+
       setAlreadyPlayed(true);
     }
   };
+
+  if (loading) {
+    return (
+      <div className='mt-4 flex items-center justify-center p-4'>
+        <div className='dot-flashing'></div>
+      </div>
+    );
+  }
 
   return (
     <div className='mb-6'>

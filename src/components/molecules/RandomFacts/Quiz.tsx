@@ -8,11 +8,12 @@ import { TypedObject } from '@portabletext/types/src';
 import * as React from 'react';
 import { useState } from 'react';
 
+import { saveToLocalStorage } from '@/lib/helper';
+
 import Button from '@/components/buttons/Button';
+import { localStorageKey } from '@/components/organisms/about-free-time/RandomFacts';
 
 import { RandomFact } from '@/types/RandomFact';
-
-const localStorageKey = 'alreadyPlayed';
 
 export interface QuizOption {
   headline: string;
@@ -42,13 +43,13 @@ const Quiz = ({ options, falseOption, onAnswerSubmission }: QuizProps) => {
   };
 
   const submitAnswer = () => {
-    localStorage.setItem(localStorageKey, 'true');
+    saveToLocalStorage(localStorageKey, 'true');
 
     onAnswerSubmission(falseOption === selectedAnswer);
   };
 
   return (
-    <div className='p4 rounded dark:bg-slate-900'>
+    <div className='rounded p-4 dark:bg-slate-900'>
       <FormControl>
         <RadioGroup
           className='mb-4'

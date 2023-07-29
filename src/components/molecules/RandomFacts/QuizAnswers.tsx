@@ -18,7 +18,7 @@ const QuizAnswers = ({
   answeredCorrectly,
 }: QuizAnswersProps) => {
   return (
-    <div className='flex flex-col items-center rounded px-4 py-2 dark:bg-slate-900'>
+    <div className='flex flex-col items-center rounded px-4 pb-0 pt-3 dark:bg-slate-900'>
       <div className='mb-4 mt-0 w-fit rounded bg-gray-200 p-4 dark:bg-slate-700'>
         <p className='text-gray-800 dark:text-gray-50'>
           {answeredCorrectly

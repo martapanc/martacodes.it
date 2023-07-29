@@ -26,6 +26,13 @@ export function openGraph({
   }`;
 }
 
+export function saveToLocalStorage(key: string, value: string): string | null {
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem(key, value);
+  }
+  return null;
+}
+
 export function getFromLocalStorage(key: string): string | null {
   if (typeof window !== 'undefined') {
     return window.localStorage.getItem(key);
