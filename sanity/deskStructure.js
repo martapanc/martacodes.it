@@ -1,5 +1,11 @@
 const workSection = ['job', 'language', 'publication', 'school', 'skill'];
-const freeTimeSection = ['book', 'podcast', 'tvSeries', 'videoGame'];
+const freeTimeSection = [
+  'book',
+  'podcast',
+  'randomFact',
+  'tvSeries',
+  'videoGame',
+];
 const sharedSection = ['shortText', 'skillIcon'];
 
 export const customStructure = (S) =>

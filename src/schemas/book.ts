@@ -19,6 +19,7 @@ export default defineType({
       name: 'fiction',
       title: 'Fiction?',
       type: 'boolean',
+      initialValue: false,
     }),
     defineField({
       name: 'cover',

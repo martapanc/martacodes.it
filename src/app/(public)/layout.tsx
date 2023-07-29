@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import '@/styles/globals.css';
+import '@/styles/animations.css';
 
 import LayoutClient from '@/app/(public)/layout-client';
 

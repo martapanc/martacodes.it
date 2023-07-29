@@ -4,7 +4,6 @@ import { MenuItem } from '@mui/material';
 import { Menu } from '@mui/material';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
@@ -25,7 +24,6 @@ export const links = [
 ];
 
 export default function Header() {
-  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -57,15 +55,9 @@ export default function Header() {
 
   return (
     <Headroom style={{ zIndex: 50 }}>
-      <header
-        className={`sticky top-0 z-50 py-6 ${
-          theme === 'dark'
-            ? 'bg-gradient-to-r from-sky-900 to-blue-950'
-            : 'bg-gradient-to-r from-sky-300 to-blue-400'
-        }`}
-      >
+      <header className='sticky top-0 z-50 bg-gradient-to-r from-sky-300 to-blue-400 py-6 dark:from-sky-900 dark:to-blue-950'>
         <div className='layout flex h-12 w-full items-center justify-between'>
-          <nav className='m-4 flex w-full items-center justify-between'>
+          <nav className='m-4 flex w-full items-center justify-between text-xl'>
             <UnstyledLink
               href='/'
               className='font-bold text-slate-900 hover:text-slate-700 dark:text-blue-50 dark:hover:text-blue-200'

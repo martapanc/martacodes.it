@@ -1,13 +1,22 @@
 import * as React from 'react';
 
+import { shuffleArray } from '@/lib/helper';
+
+import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
 import Books from '@/components/organisms/about-free-time/Books';
 import Music from '@/components/organisms/about-free-time/Music';
 import Podcasts from '@/components/organisms/about-free-time/Podcasts';
+import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
 import { booksQuery } from '@/queries/books';
 import { podcastsQuery } from '@/queries/podcasts';
+import {
+  falseRandomFactsQuery,
+  selectedTrueRandomFactsQuery,
+  trueRandomFactsQuery,
+} from '@/queries/random-facts';
 import { tvSeriesQuery } from '@/queries/tv-series';
 import { videoGamesQuery } from '@/queries/video-games';
 
@@ -15,6 +24,7 @@ import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
+import { RandomFact } from '@/types/RandomFact';
 import { TvShow } from '@/types/TvSeries';
 import { VideoGame } from '@/types/VideoGame';
 
@@ -32,16 +42,70 @@ const getData = async () => {
 
   const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
 
+  const randomFacts: QuizData = await loadRandomFactsForQuiz();
+
   return {
     books,
     podcasts,
     tvSeries,
     videoGames,
+    randomFacts,
+  };
+};
+
+const loadRandomFactsForQuiz = async () => {
+  const falseFacts: RandomFact[] = await sanityClient.fetch(
+    falseRandomFactsQuery
+  );
+  const selectedTrueFacts: RandomFact[] = await sanityClient.fetch(
+    selectedTrueRandomFactsQuery
+  );
+  const trueFacts: RandomFact[] = await sanityClient.fetch(
+    trueRandomFactsQuery
+  );
+
+  const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
+  const threeTrueFacts: RandomFact[] = shuffleArray(selectedTrueFacts).slice(
+    0,
+    3
+  );
+
+  const options: QuizOption[] = threeTrueFacts.map((fact) => ({
+    headline: fact.headline,
+    explanation: fact.explanation,
+  }));
+
+  options.push({
+    headline: oneFalseFact.headline,
+    explanation: oneFalseFact.explanation,
+  });
+
+  const shuffledOptions = shuffleArray(options);
+
+  const keys = ['a', 'b', 'c', 'd'];
+  const preparedOptions: QuizOption[] = [];
+  for (let i = 0; i < 4; i++) {
+    preparedOptions.push({
+      headline: shuffledOptions[i].headline,
+      explanation: shuffledOptions[i].explanation,
+      key: keys[i],
+    });
+  }
+
+  const falseOptionKey: string = preparedOptions.find(
+    (option) => option.headline === oneFalseFact.headline
+  )!.key!;
+
+  return {
+    options: preparedOptions,
+    falseOption: falseOptionKey,
+    trueFacts,
   };
 };
 
 const AboutFreeTimePage = async () => {
-  const { books, podcasts, tvSeries, videoGames } = await getData();
+  const { books, podcasts, tvSeries, videoGames, randomFacts } =
+    await getData();
 
   return (
     <main className='min-h-main'>
@@ -67,6 +131,12 @@ const AboutFreeTimePage = async () => {
           <TvSeries tvSeries={tvSeries} />
 
           <Music />
+
+          <RandomFacts
+            options={randomFacts.options}
+            falseOption={randomFacts.falseOption}
+            trueFacts={randomFacts.trueFacts}
+          />
         </div>
       </section>
     </main>

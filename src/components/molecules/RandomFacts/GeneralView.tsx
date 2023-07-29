@@ -1,0 +1,47 @@
+'use client';
+
+import { PortableText } from '@portabletext/react';
+import * as React from 'react';
+import { useState } from 'react';
+
+import Button from '@/components/buttons/Button';
+
+import { RandomFact } from '@/types/RandomFact';
+
+export interface GeneralViewProps {
+  randomFacts: RandomFact[];
+}
+
+const GeneralView = ({ randomFacts }: GeneralViewProps) => {
+  const [factIndex, setFactIndex] = useState<number>(0);
+
+  const loadNewFact = () => {
+    if (factIndex < randomFacts.length) {
+      setFactIndex(factIndex + 1);
+    }
+  };
+
+  return (
+    <div className=''>
+      <div className='mb-5 min-h-fit rounded bg-sky-200 p-6 dark:bg-slate-800'>
+        {factIndex < randomFacts.length && (
+          <PortableText value={randomFacts[factIndex].description} />
+        )}
+        {factIndex === randomFacts.length && (
+          <div className='text-center'>
+            That was the last cool fact I could think of... come back in some
+            time for more :)
+          </div>
+        )}
+      </div>
+
+      <div className='flex justify-center'>
+        {factIndex < randomFacts.length && (
+          <Button onClick={loadNewFact}>Load another random fact</Button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default GeneralView;

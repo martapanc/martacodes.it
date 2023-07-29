@@ -26,6 +26,13 @@ export function openGraph({
   }`;
 }
 
+export function saveToLocalStorage(key: string, value: string): string | null {
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem(key, value);
+  }
+  return null;
+}
+
 export function getFromLocalStorage(key: string): string | null {
   if (typeof window !== 'undefined') {
     return window.localStorage.getItem(key);
@@ -38,4 +45,13 @@ export function getFromSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }
   return null;
+}
+
+export function shuffleArray<T>(array: T[]): T[] {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
