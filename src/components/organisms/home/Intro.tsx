@@ -1,76 +1,19 @@
-import Image from 'next/image';
 import React from 'react';
+
+import Code from '@/components/organisms/home/Code';
+import Photo from '@/components/organisms/home/Photo';
 
 const Intro = () => {
   return (
-    <>
-      <p className='pb-4 text-base'>
-        Hey there 👋🏻 I'm Marta, a software engineer based in Turin, Italy, and I
-        am currently working at
-        <a
-          href='https://resourcify.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/c0f36368549d879ad790c46fd32f7ea10e3e258f-600x115.webp'
-            alt='Resourcify'
-            width='110'
-            height='25'
-          />
-        </a>
-        .
-      </p>
+    <div className='mb-12 flex h-96 flex-col pb-12'>
+      <h1 className='pb-4 text-5xl antialiased'>Hey there, I'm Marta 👋🏻</h1>
 
-      <p className='pb-4 text-base'>
-        I hold a MSc in Advanced Computer Science from the University of
-        Manchester, and have four years of experience at
-        <a href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
-          <Image
-            className='mx-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/0c8cfb9083cafb314b46b195ab99a27daf2f639d-280x150.webp'
-            alt='BJSS'
-            width='45'
-            height='25'
-          />
-        </a>
-        and
-        <a
-          href='https://booking.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/a9bb3876e39ba378769bcc9b881ad8860dcbb9df-2500x424.svg'
-            alt='Booking.com'
-            width='115'
-            height='25'
-          />
-        </a>
-        .
-      </p>
+      <div className='mt-8 flex flex-col md:flex-row'>
+        <Code />
 
-      <div className='pb-4'>
-        My skill set embraces a range of programming languages, including Java,
-        Kotlin, Python, C# and TypeScript, as well as frontend frameworks such
-        as React and Angular.
+        <Photo />
       </div>
-
-      <div className='pb-4'>
-        While I have a solid foundation in backend development, my heart truly
-        lies in the exciting realm of full-stack engineering. The thrill of
-        bringing together the best of both worlds, seamlessly integrating robust
-        server-side solutions with captivating user interfaces, is what drives
-        my passion for this craft.
-      </div>
-
-      <div className='pb-4'>
-        In my free time, I’m a fiction writer, an avid bookworm, an oboist and
-        alto singer, and a travel photographer.
-      </div>
-    </>
+    </div>
   );
 };
 
