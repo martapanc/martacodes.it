@@ -6,7 +6,7 @@ const freeTimeSection = [
   'tvSeries',
   'videoGame',
 ];
-const sharedSection = ['shortText', 'skillIcon'];
+const sharedSection = ['codeSnippet', 'shortText', 'skillIcon'];
 
 export const customStructure = (S) =>
   S.list()

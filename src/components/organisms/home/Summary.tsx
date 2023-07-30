@@ -4,7 +4,7 @@ import React from 'react';
 const Summary = () => {
   return (
     <>
-      <p className='pb-4 text-base antialiased'>
+      <div className='pb-4 text-base antialiased'>
         I'm a software engineer based in Turin, Italy, and I am currently
         working at
         <a
@@ -21,7 +21,7 @@ const Summary = () => {
           />
         </a>
         .
-      </p>
+      </div>
 
       <p className='pb-4 text-base antialiased'>
         I hold a MSc in Advanced Computer Science from the University of

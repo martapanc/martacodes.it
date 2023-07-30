@@ -4,22 +4,26 @@ import Intro from '@/components/organisms/home/Intro';
 import Summary from '@/components/organisms/home/Summary';
 import Seo from '@/components/Seo';
 
-// import {homeContentQuery} from '@/queries/homeContent';
-//
-// import {sanityClient} from '../../../sanity/lib/client';
-//
-// import {HomeContent} from '@/types/HomeContent';
+import { codeSnippetsQuery } from '@/queries/codeSnippets';
 
-// const getData = async () => {
-//   const homeData: HomeContent[] = await sanityClient.fetch(homeContentQuery);
-//
-//   return {
-//     homeContent: homeData[0],
-//   };
-// };
+import { sanityClient } from '../../../sanity/lib/client';
+
+import { CodeSnippet } from '@/types/CodeSnippet';
+
+const getData = async () => {
+  // const homeData: HomeContent[] = await sanityClient.fetch(homeContentQuery);
+  const codeSnippets: CodeSnippet[] = await sanityClient.fetch(
+    codeSnippetsQuery
+  );
+
+  return {
+    codeSnippets,
+    // homeContent: homeData[0],
+  };
+};
 
 const HomePage = async () => {
-  // const {homeContent} = await getData();
+  const { codeSnippets } = await getData();
 
   return (
     <main className='min-h-main'>
@@ -27,7 +31,7 @@ const HomePage = async () => {
 
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-16 md:py-24'>
-          <Intro />
+          <Intro codeSnippets={codeSnippets} />
 
           <Summary />
         </div>
