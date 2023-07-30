@@ -3,7 +3,7 @@ import React from 'react';
 
 const Photo = () => {
   return (
-    <div className='h-84 flex w-full justify-start md:w-1/2 md:justify-end'>
+    <div className='h-68 flex w-full justify-start md:w-1/2 md:justify-end'>
       <div className='mx-6 flex flex-row-reverse p-3 md:flex-row'>
         <Image
           className='rounded-full'

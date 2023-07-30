@@ -57,7 +57,7 @@ const Code = ({ codeSnippets }: CodeSnippetsProps) => {
   }, [loading]);
 
   return (
-    <div className='me-4 h-72 w-full rounded border-double bg-slate-200 px-4 pb-12 pt-6 dark:bg-slate-800 md:w-1/2'>
+    <div className='h-92 me-4 w-full rounded border-double bg-slate-200 px-4 pb-12 pt-6 dark:bg-slate-800 md:w-1/2'>
       <div id='typed-strings'>
         {loading ? <span className='cursor-blink'>_</span> : null}
         {!loading &&

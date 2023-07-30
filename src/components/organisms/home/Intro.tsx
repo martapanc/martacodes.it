@@ -7,7 +7,7 @@ import Photo from '@/components/organisms/home/Photo';
 
 const Intro = ({ codeSnippets }: CodeSnippetsProps) => {
   return (
-    <div className='mb-12 flex h-fit flex-col pb-12 md:h-96'>
+    <div className='mb-6 flex h-fit flex-col pb-6 md:h-96'>
       <h1 className='pb-4 text-5xl antialiased'>Hey there, I'm Marta 👋🏻</h1>
 
       <div className='mt-8 flex flex-col md:flex-row'>
