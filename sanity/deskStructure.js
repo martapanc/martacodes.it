@@ -39,4 +39,12 @@ export const customStructure = (S) =>
               sharedSection.map((section) => S.documentTypeListItem(section))
             )
         ),
+      S.listItem()
+        .title('Single Pages')
+        .child(
+          S.editor()
+            .id('homeContent')
+            .schemaType('homeContent')
+            .documentId('homeContent')
+        ),
     ]);

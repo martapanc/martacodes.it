@@ -1,5 +1,6 @@
 import { type SchemaTypeDefinition } from 'sanity';
 
+import homeContent from '@/schemas/homeContent';
 import randomFact from '@/schemas/randomFact';
 
 import book from '../src/schemas/book';
@@ -17,6 +18,7 @@ import videoGame from '../src/schemas/videoGame';
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     book,
+    homeContent,
     job,
     language,
     podcast,
