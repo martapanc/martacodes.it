@@ -260,4 +260,14 @@
   .quiz-radio-button {
     color: white;
   }
+
+  .cursor-blink {
+    animation: blinker 1s steps(2) infinite;
+  }
+
+  @keyframes blinker {
+    0% {
+      opacity: 0;
+    }
+  }
 }

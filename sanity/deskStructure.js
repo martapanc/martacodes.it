@@ -6,7 +6,7 @@ const freeTimeSection = [
   'tvSeries',
   'videoGame',
 ];
-const sharedSection = ['shortText', 'skillIcon'];
+const sharedSection = ['codeSnippet', 'shortText', 'skillIcon'];
 
 export const customStructure = (S) =>
   S.list()
@@ -38,5 +38,13 @@ export const customStructure = (S) =>
             .items(
               sharedSection.map((section) => S.documentTypeListItem(section))
             )
+        ),
+      S.listItem()
+        .title('Single Pages')
+        .child(
+          S.editor()
+            .id('homeContent')
+            .schemaType('homeContent')
+            .documentId('homeContent')
         ),
     ]);
