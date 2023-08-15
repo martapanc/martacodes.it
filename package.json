@@ -23,6 +23,7 @@
     "sanity:prod": "sanity build && sanity start"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.5",
@@ -40,6 +41,7 @@
     "clsx": "^1.2.1",
     "focus-trap-react": "^10.1.4",
     "framer-motion": "^10.12.18",
+    "graphql": "^16.8.0",
     "inquirer-fuzzy-path": "^2.3.0",
     "next": "^13.4.9",
     "next-sanity": "5.1.0",
@@ -54,6 +56,7 @@
     "sanity": "^3.0.0",
     "sanity-plugin-internationalized-array": "^1.7.0",
     "sanity-plugin-media": "^2.2.1",
+    "strapi-flatten-graphql": "^0.1.0",
     "styled-components": "^5.2.0",
     "tailwind-merge": "^1.12.0",
     "typed.js": "^2.0.16"

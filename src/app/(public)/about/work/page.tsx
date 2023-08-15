@@ -1,6 +1,8 @@
+import { gql } from '@apollo/client';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
+import { flattenEntityResponseCollection } from 'strapi-flatten-graphql';
 
 import Education from '@/components/organisms/about-work/Education';
 import Languages from '@/components/organisms/about-work/Languages';
@@ -14,6 +16,7 @@ import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
 
+import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Icon } from '@/types/Icon';
@@ -54,9 +57,48 @@ const getData = async () => {
   };
 };
 
+const queryData = async () => {
+  const { data } = await apolloClient.query({
+    query: gql`
+      query {
+        jobs(locale: "en") {
+          data {
+            id
+            attributes {
+              CompanyName
+              Icon {
+                data {
+                  id
+                  attributes {
+                    name
+                    url
+                    alternativeText
+                  }
+                }
+              }
+              Title
+              Location
+              Description
+              From
+              To
+              CurrentJob
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    jobs: flattenEntityResponseCollection(data.jobs),
+  };
+};
+
 const AboutPage = async () => {
   const { jobs, languages, publications, schools, shortTexts, skills } =
     await getData();
+
+  const js = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -66,6 +108,9 @@ const AboutPage = async () => {
 
   const iconDimension = 36;
   const titleIconDimension = 42;
+
+  // eslint-disable-next-line no-console
+  console.log(js);
 
   return (
     <main className='min-h-main'>
