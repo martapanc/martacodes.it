@@ -2,7 +2,11 @@ import { gql } from '@apollo/client';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
-import { flattenEntityResponseCollection } from 'strapi-flatten-graphql';
+import {
+  FlattenArray,
+  flattenEntityResponseCollection,
+  StrapiEntityResponseCollection,
+} from 'strapi-flatten-graphql';
 
 import Education from '@/components/organisms/about-work/Education';
 import Languages from '@/components/organisms/about-work/Languages';
@@ -21,6 +25,7 @@ import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
+import { Job2 } from '@/types/Job2';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
@@ -89,8 +94,11 @@ const queryData = async () => {
     `,
   });
 
+  const jobs: FlattenArray<StrapiEntityResponseCollection<Job2>> =
+    flattenEntityResponseCollection(data.jobs);
+  // const jobs = flattenEntityResponseCollection(data.jobs);
   return {
-    jobs: flattenEntityResponseCollection(data.jobs),
+    jobs,
   };
 };
 
@@ -98,7 +106,7 @@ const AboutPage = async () => {
   const { jobs, languages, publications, schools, shortTexts, skills } =
     await getData();
 
-  const js = await queryData();
+  const js: Job2[] = (await queryData()).jobs;
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -110,7 +118,7 @@ const AboutPage = async () => {
   const titleIconDimension = 42;
 
   // eslint-disable-next-line no-console
-  console.log(js);
+  console.log(js[0].Description);
 
   return (
     <main className='min-h-main'>
