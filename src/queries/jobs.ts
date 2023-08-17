@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const jobsQuery = groq`
@@ -15,3 +16,35 @@ export const jobsQuery = groq`
   mainColor,
   darkColor,
 }`;
+
+export const jobsQueryQL = gql`
+  query {
+    jobs(locale: "en") {
+      data {
+        id
+        attributes {
+          companyName
+          icon {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+          title
+          location
+          description
+          startDate
+          endDate
+          isCurrentJob
+          mainColor
+          darkColor
+          technologies
+        }
+      }
+    }
+  }
+`;

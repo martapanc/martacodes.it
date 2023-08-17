@@ -1,9 +1,17 @@
-import { flattenEntityResponseCollection } from 'strapi-flatten-graphql';
+import {
+  flattenEntityResponseCollection,
+  StrapiEntityResponseCollection,
+} from 'strapi-flatten-graphql';
 
-// type StrapiEntityResponseCollection<T> = {
-//   data: T[];
-// };
+// export function toCollection<T extends object>(entityResponse: unknown): T[] {
+//   // @ts-ignore
+//   const collection: FlattenArray<StrapiEntityResponseCollection<T>> = flattenEntityResponseCollection(entityResponse);
+//   return collection;
+// }
 
-function _toCollection<T>(entityResponse: object): T[] {
-  return flattenEntityResponseCollection(entityResponse);
+export function flattenToArray<T extends object>(
+  entityResponse: StrapiEntityResponseCollection<T>
+): T[] {
+  const flattenedData = flattenEntityResponseCollection(entityResponse);
+  return flattenedData as T[];
 }

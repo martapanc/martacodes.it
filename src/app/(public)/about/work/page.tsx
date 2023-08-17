@@ -1,19 +1,15 @@
-import { gql } from '@apollo/client';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
-import {
-  FlattenArray,
-  flattenEntityResponseCollection,
-  StrapiEntityResponseCollection,
-} from 'strapi-flatten-graphql';
+
+import { flattenToArray } from '@/lib/graphqlUtils';
 
 import Education from '@/components/organisms/about-work/Education';
 import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
 import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 
-import { jobsQuery } from '@/queries/jobs';
+import { jobsQuery, jobsQueryQL } from '@/queries/jobs';
 import { languageQuery } from '@/queries/languages';
 import { publicationQuery } from '@/queries/publications';
 import { schoolsQuery } from '@/queries/schools';
@@ -64,41 +60,12 @@ const getData = async () => {
 
 const queryData = async () => {
   const { data } = await apolloClient.query({
-    query: gql`
-      query {
-        jobs(locale: "en") {
-          data {
-            id
-            attributes {
-              CompanyName
-              Icon {
-                data {
-                  id
-                  attributes {
-                    name
-                    url
-                    alternativeText
-                  }
-                }
-              }
-              Title
-              Location
-              Description
-              From
-              To
-              CurrentJob
-            }
-          }
-        }
-      }
-    `,
+    query: jobsQueryQL,
   });
 
-  const jobs: FlattenArray<StrapiEntityResponseCollection<Job2>> =
-    flattenEntityResponseCollection(data.jobs);
-  // const jobs = flattenEntityResponseCollection(data.jobs);
+  const jobs: Job2[] = flattenToArray<Job2>(data.jobs);
   return {
-    jobs,
+    jobs2: jobs,
   };
 };
 
@@ -106,7 +73,7 @@ const AboutPage = async () => {
   const { jobs, languages, publications, schools, shortTexts, skills } =
     await getData();
 
-  const js: Job2[] = (await queryData()).jobs;
+  const { jobs2 } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -118,7 +85,7 @@ const AboutPage = async () => {
   const titleIconDimension = 42;
 
   // eslint-disable-next-line no-console
-  console.log(js[0].Description);
+  console.log(jobs2[0]);
 
   return (
     <main className='min-h-main'>
