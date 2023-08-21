@@ -1,14 +1,14 @@
 'use client';
 
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 
-import { Job } from '@/types/Job';
+import { Job2 } from '@/types/Job2';
 
 export interface WorkExperienceProps {
-  jobs: Job[];
+  jobs: Job2[];
 }
 
 const WorkExperience = ({ jobs }: WorkExperienceProps) => {
@@ -23,15 +23,15 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
       <div>
         {jobs.map((job) => (
           <div
-            key={job._id}
+            key={job.id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
             {/* Start Job Header - Desktop */}
             <div className='hidden border-b-2 border-slate-200 pb-2 md:flex'>
               <Image
                 className='me-3 rounded-sm'
-                src={job.iconUrl}
-                alt={job.company}
+                src={job.icon.url}
+                alt={job.companyName}
                 width={60}
                 height={60}
               />
@@ -39,9 +39,9 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
               <div className='flex w-full justify-between'>
                 <div className='flex flex-col'>
                   <h4>
-                    {job.company} {job.location && `~`} {job.location}
+                    {job.companyName} {job.location && `~`} {job.location}
                   </h4>
-                  <h5 className='font-medium'>{job.jobTitle}</h5>
+                  <h5 className='font-medium'>{job.title}</h5>
                 </div>
 
                 <div className='flex flex-col justify-center'>
@@ -62,8 +62,8 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
               <div className='flex'>
                 <Image
                   className='me-3 rounded-sm'
-                  src={job.iconUrl}
-                  alt={job.company}
+                  src={job.icon.url}
+                  alt={job.companyName}
                   width={60}
                   height={60}
                 />
@@ -71,10 +71,10 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
                 <div className='flex w-full justify-between'>
                   <div className='flex flex-col'>
                     <span className='text-sm font-semibold'>
-                      {job.company} {job.location && `~`} {job.location}
+                      {job.companyName} {job.location && `~`} {job.location}
                     </span>
 
-                    <span className='text-sm'>{job.jobTitle}</span>
+                    <span className='text-sm'>{job.title}</span>
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
             {/* Start Job Content */}
             <div className='job-content pt-4'>
               <div className='skill-description pb-2 text-justify font-light'>
-                <PortableText value={job.description} />
+                <ReactMarkdown>{job.description}</ReactMarkdown>
               </div>
 
               <div className='mb-2 flex flex-wrap justify-end md:w-full'>

@@ -65,15 +65,15 @@ const queryData = async () => {
 
   const jobs: Job2[] = flattenToArray<Job2>(data.jobs);
   return {
-    jobs2: jobs,
+    jobs: jobs,
   };
 };
 
 const AboutPage = async () => {
-  const { jobs, languages, publications, schools, shortTexts, skills } =
+  const { languages, publications, schools, shortTexts, skills } =
     await getData();
 
-  const { jobs2 } = await queryData();
+  const { jobs } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -83,9 +83,6 @@ const AboutPage = async () => {
 
   const iconDimension = 36;
   const titleIconDimension = 42;
-
-  // eslint-disable-next-line no-console
-  console.log(jobs2[0]);
 
   return (
     <main className='min-h-main'>

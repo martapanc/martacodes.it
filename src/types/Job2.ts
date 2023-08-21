@@ -1,8 +1,10 @@
+import { Icon2 } from '@/types/Icon2';
+
 export interface Job2 {
   id: string;
   title: string;
   companyName: string;
-  icon: object;
+  icon: Icon2;
   location: string;
   startDate: string;
   endDate: string;
