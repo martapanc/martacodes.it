@@ -15,12 +15,12 @@ import { publicationQueryQL } from '@/queries/publications';
 import { schoolsQueryQL } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQueryQL } from '@/queries/skills';
-import { Icon } from '@/sanityTypes/Icon';
 import { ShortText } from '@/sanityTypes/ShortText';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
 
+import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
@@ -155,7 +155,7 @@ const AboutPage = async () => {
                       key={icon.id}
                       height={iconDimension}
                       width={iconDimension}
-                      alt={icon.title}
+                      alt={icon.name}
                       src={icon.url}
                     />
                   ))}
