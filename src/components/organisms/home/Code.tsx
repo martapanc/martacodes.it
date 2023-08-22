@@ -9,7 +9,7 @@ import {
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Typed, { TypedOptions } from 'typed.js';
 
-import { CodeSnippet } from '@/types/CodeSnippet';
+import { CodeSnippet } from '@/sanityTypes/CodeSnippet';
 
 export interface CodeSnippetsProps {
   codeSnippets: CodeSnippet[];

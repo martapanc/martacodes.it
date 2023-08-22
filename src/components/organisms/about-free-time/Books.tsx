@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { Book } from '@/types/Book';
+import { Book } from '@/sanityTypes/Book';
 
 export interface BookProps {
   books: Book[];

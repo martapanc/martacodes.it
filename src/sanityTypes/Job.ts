@@ -1,15 +1,16 @@
-import { Icon } from '@/types/Icon';
+import { TypedObject } from '@portabletext/types';
 
 export interface Job {
-  id: string;
-  title: string;
-  companyName: string;
-  icon: Icon;
+  _id: string;
+  name: string;
+  company: string;
+  iconUrl: string;
   location: string;
+  jobTitle: string;
   startDate: string;
   endDate: string;
   isCurrentJob: boolean;
-  description: string;
+  description: TypedObject;
   mainColor: string;
   darkColor: string;
   technologies: string[];

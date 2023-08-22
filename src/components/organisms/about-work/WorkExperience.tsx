@@ -5,10 +5,10 @@ import { useTheme } from 'next-themes';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Job2 } from '@/types/Job2';
+import { Job } from '@/types/Job';
 
 export interface WorkExperienceProps {
-  jobs: Job2[];
+  jobs: Job[];
 }
 
 const WorkExperience = ({ jobs }: WorkExperienceProps) => {

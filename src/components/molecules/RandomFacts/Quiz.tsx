@@ -13,7 +13,7 @@ import { saveToLocalStorage } from '@/lib/helper';
 import Button from '@/components/buttons/Button';
 import { localStorageKey } from '@/components/organisms/about-free-time/RandomFacts';
 
-import { RandomFact } from '@/types/RandomFact';
+import { RandomFact } from '@/sanityTypes/RandomFact';
 
 export interface QuizOption {
   headline: string;

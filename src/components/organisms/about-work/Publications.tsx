@@ -5,7 +5,7 @@ import { AiOutlineFilePdf } from 'react-icons/ai';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { Publication } from '@/types/Publication';
+import { Publication } from '@/sanityTypes/Publication';
 
 export interface PublicationProps {
   publications: Publication[];

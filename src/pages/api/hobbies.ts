@@ -4,13 +4,12 @@ import { booksQuery } from '@/queries/books';
 import { podcastsQuery } from '@/queries/podcasts';
 import { tvSeriesQuery } from '@/queries/tv-series';
 import { videoGamesQuery } from '@/queries/video-games';
+import { Book } from '@/sanityTypes/Book';
+import { Podcast } from '@/sanityTypes/Podcast';
+import { TvShow } from '@/sanityTypes/TvSeries';
+import { VideoGame } from '@/sanityTypes/VideoGame';
 
 import { sanityClient } from '../../../sanity/lib/client';
-
-import { Book } from '@/types/Book';
-import { Podcast } from '@/types/Podcast';
-import { TvShow } from '@/types/TvSeries';
-import { VideoGame } from '@/types/VideoGame';
 
 const hobbiesApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const books: Book[] = await sanityClient.fetch(booksQuery);

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { VideoGame } from '@/types/VideoGame';
+import { VideoGame } from '@/sanityTypes/VideoGame';
 
 export interface VideoGameProps {
   videoGames: VideoGame[];

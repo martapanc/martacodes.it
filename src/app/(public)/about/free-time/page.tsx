@@ -19,14 +19,13 @@ import {
 } from '@/queries/random-facts';
 import { tvSeriesQuery } from '@/queries/tv-series';
 import { videoGamesQuery } from '@/queries/video-games';
+import { Book } from '@/sanityTypes/Book';
+import { Podcast } from '@/sanityTypes/Podcast';
+import { RandomFact } from '@/sanityTypes/RandomFact';
+import { TvShow } from '@/sanityTypes/TvSeries';
+import { VideoGame } from '@/sanityTypes/VideoGame';
 
 import { sanityClient } from '../../../../../sanity/lib/client';
-
-import { Book } from '@/types/Book';
-import { Podcast } from '@/types/Podcast';
-import { RandomFact } from '@/types/RandomFact';
-import { TvShow } from '@/types/TvSeries';
-import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',

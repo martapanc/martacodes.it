@@ -1,6 +1,6 @@
 import { TypedObject } from '@portabletext/types';
 
-import { Icon } from '@/types/Icon';
+import { Icon } from '@/sanityTypes/Icon';
 
 export interface Skill {
   name: string;

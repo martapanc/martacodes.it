@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { TvShow } from '@/types/TvSeries';
+import { TvShow } from '@/sanityTypes/TvSeries';
 
 export interface TvSeriesProps {
   tvSeries: TvShow[];

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { Podcast } from '@/types/Podcast';
+import { Podcast } from '@/sanityTypes/Podcast';
 
 export interface PodcastProps {
   podcasts: Podcast[];

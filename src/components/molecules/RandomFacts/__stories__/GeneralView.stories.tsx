@@ -8,10 +8,9 @@ import GeneralView, {
 } from '@/components/molecules/RandomFacts/GeneralView';
 
 import { trueRandomFactsQuery } from '@/queries/random-facts';
+import { RandomFact } from '@/sanityTypes/RandomFact';
 
 import { sanityClient } from '../../../../../sanity/lib/client';
-
-import { RandomFact } from '@/types/RandomFact';
 
 const meta: Meta<typeof GeneralView> = {
   title: 'Components/Random Facts/General View',

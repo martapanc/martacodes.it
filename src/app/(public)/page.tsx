@@ -5,10 +5,9 @@ import Summary from '@/components/organisms/home/Summary';
 import Seo from '@/components/Seo';
 
 import { codeSnippetsQuery } from '@/queries/codeSnippets';
+import { CodeSnippet } from '@/sanityTypes/CodeSnippet';
 
 import { sanityClient } from '../../../sanity/lib/client';
-
-import { CodeSnippet } from '@/types/CodeSnippet';
 
 const getData = async () => {
   // const homeData: HomeContent[] = await sanityClient.fetch(homeContentQuery);

@@ -15,18 +15,17 @@ import { publicationQuery } from '@/queries/publications';
 import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
+import { Icon } from '@/SanityTypes/Icon';
+import { Language } from '@/SanityTypes/Language';
+import { Publication } from '@/SanityTypes/Publication';
+import { School } from '@/SanityTypes/School';
+import { ShortText } from '@/SanityTypes/ShortText';
+import { Skill } from '@/SanityTypes/Skill';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
 
-import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
-import { Job2 } from '@/types/Job2';
-import { Language } from '@/types/Language';
-import { Publication } from '@/types/Publication';
-import { School } from '@/types/School';
-import { ShortText } from '@/types/ShortText';
-import { Skill } from '@/types/Skill';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -63,7 +62,7 @@ const queryData = async () => {
     query: jobsQueryQL,
   });
 
-  const jobs: Job2[] = flattenToArray<Job2>(data.jobs);
+  const jobs: Job[] = flattenToArray<Job>(data.jobs);
   return {
     jobs: jobs,
   };

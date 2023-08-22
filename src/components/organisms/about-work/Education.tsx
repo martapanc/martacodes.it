@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
 
-import { School } from '@/types/School';
+import { School } from '@/sanityTypes/School';
 
 export interface EducationProps {
   schools: School[];

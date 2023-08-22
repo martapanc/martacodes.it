@@ -1,5 +1,6 @@
 export interface Icon {
-  _id: string;
-  title: string;
+  id: string;
+  name: string;
   url: string;
+  alternativeText?: string;
 }
