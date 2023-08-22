@@ -5,7 +5,7 @@ import { AiOutlineFilePdf } from 'react-icons/ai';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { Publication } from '@/sanityTypes/Publication';
+import { Publication } from '@/types/Publication';
 
 export interface PublicationProps {
   publications: Publication[];
@@ -36,9 +36,9 @@ const Publications = ({ publications }: PublicationProps) => {
 
               <div className='flex flex-col self-end'>
                 <UnstyledLink
-                  key={publication._id}
+                  key={publication.id}
                   className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
-                  href={publication.link}
+                  href={publication.file.url}
                 >
                   <AiOutlineFilePdf className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300' />
                 </UnstyledLink>

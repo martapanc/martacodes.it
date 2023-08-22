@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const publicationQuery = groq`
@@ -10,3 +11,29 @@ export const publicationQuery = groq`
   year,
   "link": file.asset->url
 }`;
+
+export const publicationQueryQL = gql`
+  query {
+    publications(locale: "en", sort: "rank") {
+      data {
+        id
+        attributes {
+          title
+          description
+          publisher
+          year
+          file {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

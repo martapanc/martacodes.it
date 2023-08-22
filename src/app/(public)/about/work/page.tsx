@@ -11,12 +11,11 @@ import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 
 import { jobsQueryQL } from '@/queries/jobs';
 import { languagesQueryQL } from '@/queries/languages';
-import { publicationQuery } from '@/queries/publications';
-import { schoolsQuery, schoolsQueryQL } from '@/queries/schools';
+import { publicationQueryQL } from '@/queries/publications';
+import { schoolsQueryQL } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
 import { Icon } from '@/sanityTypes/Icon';
-import { Publication } from '@/sanityTypes/Publication';
 import { ShortText } from '@/sanityTypes/ShortText';
 import { Skill } from '@/sanityTypes/Skill';
 
@@ -25,6 +24,7 @@ import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
+import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
 
 export const metadata = {
@@ -33,19 +33,11 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const publications: Publication[] = await sanityClient.fetch(
-    publicationQuery
-  );
-
-  const schools: School[] = await sanityClient.fetch(schoolsQuery);
-
   const skills: Skill[] = await sanityClient.fetch(skillQuery);
 
   const shortTexts: ShortText[] = await sanityClient.fetch(shortTextQuery);
 
   return {
-    publications,
-    schools,
     shortTexts,
     skills,
   };
@@ -57,6 +49,14 @@ async function queryJobs() {
   });
 
   return flattenToArray<Job>(data.jobs);
+}
+
+async function queryPublications() {
+  const { data } = await apolloClient.query({
+    query: publicationQueryQL,
+  });
+
+  return flattenToArray<Publication>(data.publications);
 }
 
 async function querySchools() {
@@ -78,19 +78,21 @@ async function queryLanguages() {
 const queryData = async () => {
   const jobs = await queryJobs();
   const languages = await queryLanguages();
+  const publications = await queryPublications();
   const schools = await querySchools();
 
   return {
     jobs,
     languages,
+    publications,
     schools,
   };
 };
 
 const AboutPage = async () => {
-  const { publications, shortTexts, skills } = await getData();
+  const { shortTexts, skills } = await getData();
 
-  const { jobs, languages, schools } = await queryData();
+  const { jobs, languages, publications, schools } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
