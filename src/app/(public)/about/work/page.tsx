@@ -1,6 +1,6 @@
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
@@ -14,10 +14,9 @@ import { languagesQueryQL } from '@/queries/languages';
 import { publicationQueryQL } from '@/queries/publications';
 import { schoolsQueryQL } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
-import { skillQuery } from '@/queries/skills';
+import { skillQueryQL } from '@/queries/skills';
 import { Icon } from '@/sanityTypes/Icon';
 import { ShortText } from '@/sanityTypes/ShortText';
-import { Skill } from '@/sanityTypes/Skill';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
@@ -26,6 +25,7 @@ import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
+import { Skill } from '@/types/Skill';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -33,13 +33,10 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const skills: Skill[] = await sanityClient.fetch(skillQuery);
-
   const shortTexts: ShortText[] = await sanityClient.fetch(shortTextQuery);
 
   return {
     shortTexts,
-    skills,
   };
 };
 
@@ -67,6 +64,14 @@ async function querySchools() {
   return flattenToArray<School>(data.schools);
 }
 
+async function querySkills() {
+  const { data } = await apolloClient.query({
+    query: skillQueryQL,
+  });
+
+  return flattenToArray<Skill>(data.skills);
+}
+
 async function queryLanguages() {
   const { data } = await apolloClient.query({
     query: languagesQueryQL,
@@ -80,19 +85,21 @@ const queryData = async () => {
   const languages = await queryLanguages();
   const publications = await queryPublications();
   const schools = await querySchools();
+  const skills = await querySkills();
 
   return {
     jobs,
     languages,
     publications,
     schools,
+    skills,
   };
 };
 
 const AboutPage = async () => {
-  const { shortTexts, skills } = await getData();
+  const { shortTexts } = await getData();
 
-  const { jobs, languages, publications, schools } = await queryData();
+  const { jobs, languages, publications, schools, skills } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
@@ -139,13 +146,13 @@ const AboutPage = async () => {
           <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6'>
             {skills.map((skill: Skill) => (
               <div
-                key={skill.name}
+                key={skill.title}
                 className='skill-container rounded p-4 shadow-md dark:bg-slate-900 dark:drop-shadow-md'
               >
                 <div className='flex'>
                   {skill.icons.map((icon: Icon) => (
                     <Image
-                      key={icon._id}
+                      key={icon.id}
                       height={iconDimension}
                       width={iconDimension}
                       alt={icon.title}
@@ -157,7 +164,7 @@ const AboutPage = async () => {
                 <h3>{skill.title}</h3>
 
                 <span className='skill-description text-justify font-light'>
-                  <PortableText value={skill.description} />
+                  <ReactMarkdown>{skill.description}</ReactMarkdown>
                 </span>
               </div>
             ))}
