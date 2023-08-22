@@ -23,7 +23,7 @@ const Languages = ({ languages }: LanguageProps) => {
             className='flex flex-row items-center rounded-md p-4 shadow-md dark:bg-slate-900 md:w-64'
           >
             <Image
-              src={language.flagUrl}
+              src={language.flag.url}
               alt={language.name}
               width={40}
               height={40}

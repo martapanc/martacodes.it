@@ -9,23 +9,23 @@ import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
 import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 
-import { jobsQuery, jobsQueryQL } from '@/queries/jobs';
-import { languageQuery } from '@/queries/languages';
+import { jobsQueryQL } from '@/queries/jobs';
+import { languagesQueryQL } from '@/queries/languages';
 import { publicationQuery } from '@/queries/publications';
 import { schoolsQuery } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
-import { Icon } from '@/SanityTypes/Icon';
-import { Language } from '@/SanityTypes/Language';
-import { Publication } from '@/SanityTypes/Publication';
-import { School } from '@/SanityTypes/School';
-import { ShortText } from '@/SanityTypes/ShortText';
-import { Skill } from '@/SanityTypes/Skill';
+import { Icon } from '@/sanityTypes/Icon';
+import { Publication } from '@/sanityTypes/Publication';
+import { School } from '@/sanityTypes/School';
+import { ShortText } from '@/sanityTypes/ShortText';
+import { Skill } from '@/sanityTypes/Skill';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
+import { Language } from '@/types/Language';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -33,10 +33,6 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const jobs: Job[] = await sanityClient.fetch(jobsQuery);
-
-  const languages: Language[] = await sanityClient.fetch(languageQuery);
-
   const publications: Publication[] = await sanityClient.fetch(
     publicationQuery
   );
@@ -48,8 +44,6 @@ const getData = async () => {
   const shortTexts: ShortText[] = await sanityClient.fetch(shortTextQuery);
 
   return {
-    jobs,
-    languages,
     publications,
     schools,
     shortTexts,
@@ -57,22 +51,36 @@ const getData = async () => {
   };
 };
 
-const queryData = async () => {
+async function queryJobs() {
   const { data } = await apolloClient.query({
     query: jobsQueryQL,
   });
 
-  const jobs: Job[] = flattenToArray<Job>(data.jobs);
+  return flattenToArray<Job>(data.jobs);
+}
+
+async function queryLanguages() {
+  const { data } = await apolloClient.query({
+    query: languagesQueryQL,
+  });
+
+  return flattenToArray<Language>(data.languages);
+}
+
+const queryData = async () => {
+  const jobs = await queryJobs();
+  const languages = await queryLanguages();
+
   return {
-    jobs: jobs,
+    jobs,
+    languages,
   };
 };
 
 const AboutPage = async () => {
-  const { languages, publications, schools, shortTexts, skills } =
-    await getData();
+  const { publications, schools, shortTexts, skills } = await getData();
 
-  const { jobs } = await queryData();
+  const { jobs, languages } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'

@@ -19,7 +19,7 @@ export const jobsQuery = groq`
 
 export const jobsQueryQL = gql`
   query {
-    jobs(locale: "en") {
+    jobs(locale: "en", sort: "startDate:desc") {
       data {
         id
         attributes {

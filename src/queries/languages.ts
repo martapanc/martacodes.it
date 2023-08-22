@@ -13,12 +13,15 @@ export const languagesQueryQL = gql`
   query {
     languages(locale: "en") {
       data {
+        id
         attributes {
           name
           level
           flag {
             data {
+              id
               attributes {
+                name
                 url
                 alternativeText
               }
