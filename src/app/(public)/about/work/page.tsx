@@ -38,41 +38,31 @@ async function queryIntro() {
 }
 
 async function queryJobs() {
-  const { data } = await apolloClient.query({
-    query: jobsQueryQL,
-  });
+  const { data } = await apolloClient.query({ query: jobsQueryQL });
 
   return flattenToArray<Job>(data.jobs);
 }
 
 async function queryPublications() {
-  const { data } = await apolloClient.query({
-    query: publicationQueryQL,
-  });
+  const { data } = await apolloClient.query({ query: publicationQueryQL });
 
   return flattenToArray<Publication>(data.publications);
 }
 
 async function querySchools() {
-  const { data } = await apolloClient.query({
-    query: schoolsQueryQL,
-  });
+  const { data } = await apolloClient.query({ query: schoolsQueryQL });
 
   return flattenToArray<School>(data.schools);
 }
 
 async function querySkills() {
-  const { data } = await apolloClient.query({
-    query: skillQueryQL,
-  });
+  const { data } = await apolloClient.query({ query: skillQueryQL });
 
   return flattenToArray<Skill>(data.skills);
 }
 
 async function queryLanguages() {
-  const { data } = await apolloClient.query({
-    query: languagesQueryQL,
-  });
+  const { data } = await apolloClient.query({ query: languagesQueryQL });
 
   return flattenToArray<Language>(data.languages);
 }
@@ -100,7 +90,7 @@ const AboutPage = async () => {
   const { intro, jobs, languages, publications, schools, skills } =
     await queryData();
 
-  const noOfYears = new Date().getFullYear() - 2015;
+  const noOfYears = (new Date().getFullYear() - 2015).toString();
 
   const iconDimension = 36;
   const titleIconDimension = 42;
