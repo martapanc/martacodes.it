@@ -123,7 +123,7 @@ const Education = ({ schools }: EducationProps) => {
   );
 };
 
-function format(inputDate: string): string {
+function format(inputDate: string): number {
   const date = new Date(inputDate);
   return date.getFullYear();
 }
