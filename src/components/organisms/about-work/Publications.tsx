@@ -21,7 +21,7 @@ const Publications = ({ publications }: PublicationProps) => {
       <div className='grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-8'>
         {publications.map((publication) => (
           <div
-            key={publication._id}
+            key={publication.id}
             className='flex h-32 flex-col justify-between rounded-md p-4 shadow-md dark:bg-slate-900 md:h-40'
           >
             <span className='font-semibold'>{publication.title}</span>

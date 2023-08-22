@@ -2,7 +2,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { flattenToArray } from '@/lib/graphqlUtils';
+import { flattenToArray, flattenToObject } from '@/lib/graphqlUtils';
 
 import Education from '@/components/organisms/about-work/Education';
 import Languages from '@/components/organisms/about-work/Languages';
@@ -13,18 +13,17 @@ import { jobsQueryQL } from '@/queries/jobs';
 import { languagesQueryQL } from '@/queries/languages';
 import { publicationQueryQL } from '@/queries/publications';
 import { schoolsQueryQL } from '@/queries/schools';
-import { shortTextQuery } from '@/queries/short-texts';
+import { softwareDevIntroQuery } from '@/queries/short-texts';
 import { skillQueryQL } from '@/queries/skills';
-import { ShortText } from '@/sanityTypes/ShortText';
 
 import apolloClient from '../../../../../apollo/apollo-client';
-import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
 import { School } from '@/types/School';
+import { SoftwareDevIntro } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
 
 export const metadata = {
@@ -32,13 +31,11 @@ export const metadata = {
   description: 'About page',
 };
 
-const getData = async () => {
-  const shortTexts: ShortText[] = await sanityClient.fetch(shortTextQuery);
+async function queryIntro() {
+  const { data } = await apolloClient.query({ query: softwareDevIntroQuery });
 
-  return {
-    shortTexts,
-  };
-};
+  return flattenToObject<SoftwareDevIntro>(data.softwareDevelopmentIntro);
+}
 
 async function queryJobs() {
   const { data } = await apolloClient.query({
@@ -81,6 +78,8 @@ async function queryLanguages() {
 }
 
 const queryData = async () => {
+  const intro = await queryIntro();
+
   const jobs = await queryJobs();
   const languages = await queryLanguages();
   const publications = await queryPublications();
@@ -88,6 +87,7 @@ const queryData = async () => {
   const skills = await querySkills();
 
   return {
+    intro,
     jobs,
     languages,
     publications,
@@ -97,13 +97,8 @@ const queryData = async () => {
 };
 
 const AboutPage = async () => {
-  const { shortTexts } = await getData();
-
-  const { jobs, languages, publications, schools, skills } = await queryData();
-
-  const softwareDevelopment: ShortText | undefined = shortTexts.find(
-    (item) => item.name === 'software-development'
-  );
+  const { intro, jobs, languages, publications, schools, skills } =
+    await queryData();
 
   const noOfYears = new Date().getFullYear() - 2015;
 
@@ -116,32 +111,25 @@ const AboutPage = async () => {
         <div className='layout relative flex flex-col py-12'>
           <h1 className='mb-5'>Work & Career</h1>
 
-          {softwareDevelopment && (
-            <div>
-              <div className='m-2 flex'>
-                <Image
-                  className='mr-2 h-auto'
-                  src={softwareDevelopment.iconUrl}
-                  alt={softwareDevelopment.title}
-                  width={titleIconDimension}
-                  height={titleIconDimension}
-                />
+          <div>
+            <div className='m-2 flex'>
+              <Image
+                className='mr-2 h-auto'
+                src={intro.icon.url}
+                alt={intro.title}
+                width={titleIconDimension}
+                height={titleIconDimension}
+              />
 
-                <h2>{softwareDevelopment.title}</h2>
-              </div>
-
-              <div className='mb-5'>
-                <p>
-                  Software development has been both my passion and my work for{' '}
-                  {noOfYears} years. Below is a quick overview of my main
-                  technical skill sets and technologies I use. Want to find out
-                  more about my experience? Check out my{' '}
-                  <a href='/cv'>online CV</a> and{' '}
-                  <a href='/projects'>project portfolio</a>.
-                </p>
-              </div>
+              <h2>{intro.title}</h2>
             </div>
-          )}
+
+            <div className='mb-5'>
+              <ReactMarkdown>
+                {intro.content.replace('8', noOfYears)}
+              </ReactMarkdown>
+            </div>
+          </div>
 
           <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6'>
             {skills.map((skill: Skill) => (
