@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const schoolsQuery = groq`
@@ -14,3 +15,42 @@ export const schoolsQuery = groq`
   endYear,
   description,
 }`;
+
+export const schoolsQueryQL = gql`
+  query {
+    schools(locale: "en", sort: "start:DESC") {
+      data {
+        id
+        attributes {
+          schoolName
+          degreeName
+          degreeUrl
+          grade
+          start
+          end
+          description
+          flag {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+          icon {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

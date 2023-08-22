@@ -1,10 +1,10 @@
 'use client';
 
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import * as React from 'react';
+import ReactMarkdown from 'react-markdown';
 
-import { School } from '@/sanityTypes/School';
+import { School } from '@/types/School';
 
 export interface EducationProps {
   schools: School[];
@@ -20,14 +20,14 @@ const Education = ({ schools }: EducationProps) => {
       <div>
         {schools.map((school) => (
           <div
-            key={school._id}
+            key={school.id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
             {/* Start School Header - Desktop */}
             <div className='hidden border-b-2 border-slate-200 pb-2 md:flex'>
               <Image
                 className='me-3 rounded-sm'
-                src={school.schoolIcon}
+                src={school.icon.url}
                 alt={school.schoolName}
                 width={60}
                 height={60}
@@ -41,7 +41,7 @@ const Education = ({ schools }: EducationProps) => {
                     </h4>
 
                     <Image
-                      src={school.flagUrl}
+                      src={school.flag.url}
                       alt={school.schoolName}
                       width={28}
                       height={28}
@@ -60,7 +60,7 @@ const Education = ({ schools }: EducationProps) => {
 
                   <div className='flex flex-col justify-center'>
                     <span className='text-lg font-semibold'>
-                      {school.startYear}&nbsp; — &nbsp;{school.endYear}
+                      {format(school.start)}&nbsp; — &nbsp;{format(school.end)}
                     </span>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ const Education = ({ schools }: EducationProps) => {
               <div className='flex'>
                 <Image
                   className='me-3 rounded-sm'
-                  src={school.schoolIcon}
+                  src={school.icon.url}
                   alt={school.schoolName}
                   width={60}
                   height={60}
@@ -87,7 +87,7 @@ const Education = ({ schools }: EducationProps) => {
                       </h4>
 
                       <Image
-                        src={school.flagUrl}
+                        src={school.flag.url}
                         alt={school.schoolName}
                         width={20}
                         height={20}
@@ -103,7 +103,7 @@ const Education = ({ schools }: EducationProps) => {
                 <span className='me-8 text-sm font-normal'>{school.grade}</span>
 
                 <span className='text-sm font-normal'>
-                  {school.startYear}&nbsp; — &nbsp;{school.endYear}
+                  {format(school.start)}&nbsp; — &nbsp;{format(school.end)}
                 </span>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Education = ({ schools }: EducationProps) => {
             {/* Start School Content */}
             <div className='job-content pt-4'>
               <div className='sm-skill-description md:skill-description pb-2 text-justify font-light'>
-                <PortableText value={school.description} />
+                <ReactMarkdown>{school.description}</ReactMarkdown>
               </div>
             </div>
             {/* End School Content */}
@@ -122,5 +122,10 @@ const Education = ({ schools }: EducationProps) => {
     </div>
   );
 };
+
+function format(inputDate: string): string {
+  const date = new Date(inputDate);
+  return date.getFullYear();
+}
 
 export default Education;

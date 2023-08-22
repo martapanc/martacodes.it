@@ -12,12 +12,11 @@ import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 import { jobsQueryQL } from '@/queries/jobs';
 import { languagesQueryQL } from '@/queries/languages';
 import { publicationQuery } from '@/queries/publications';
-import { schoolsQuery } from '@/queries/schools';
+import { schoolsQuery, schoolsQueryQL } from '@/queries/schools';
 import { shortTextQuery } from '@/queries/short-texts';
 import { skillQuery } from '@/queries/skills';
 import { Icon } from '@/sanityTypes/Icon';
 import { Publication } from '@/sanityTypes/Publication';
-import { School } from '@/sanityTypes/School';
 import { ShortText } from '@/sanityTypes/ShortText';
 import { Skill } from '@/sanityTypes/Skill';
 
@@ -26,6 +25,7 @@ import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
+import { School } from '@/types/School';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -59,6 +59,14 @@ async function queryJobs() {
   return flattenToArray<Job>(data.jobs);
 }
 
+async function querySchools() {
+  const { data } = await apolloClient.query({
+    query: schoolsQueryQL,
+  });
+
+  return flattenToArray<School>(data.schools);
+}
+
 async function queryLanguages() {
   const { data } = await apolloClient.query({
     query: languagesQueryQL,
@@ -70,17 +78,19 @@ async function queryLanguages() {
 const queryData = async () => {
   const jobs = await queryJobs();
   const languages = await queryLanguages();
+  const schools = await querySchools();
 
   return {
     jobs,
     languages,
+    schools,
   };
 };
 
 const AboutPage = async () => {
-  const { publications, schools, shortTexts, skills } = await getData();
+  const { publications, shortTexts, skills } = await getData();
 
-  const { jobs, languages } = await queryData();
+  const { jobs, languages, schools } = await queryData();
 
   const softwareDevelopment: ShortText | undefined = shortTexts.find(
     (item) => item.name === 'software-development'
