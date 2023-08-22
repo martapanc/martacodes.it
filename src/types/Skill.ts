@@ -1,4 +1,4 @@
-import { Icon } from '@/sanityTypes/Icon';
+import { Icon } from '@/types/Icon';
 
 export interface Skill {
   title: string;
