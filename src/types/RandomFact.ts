@@ -2,7 +2,7 @@ export interface RandomFact {
   id: string;
   name: string;
   headline: string;
-  description: TypedObject;
+  description: string;
   isFactTrue: boolean;
-  explanation: TypedObject;
+  explanation: string;
 }
