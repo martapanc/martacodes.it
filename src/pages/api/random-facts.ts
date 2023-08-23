@@ -2,21 +2,21 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { shuffleArray } from '@/lib/helper';
 
+import { queryRandomFacts } from '@/app/(public)/about/free-time/page';
 import {
-  falseRandomFactsQuery,
-  selectedTrueRandomFactsQuery,
+  falseRandomFactsQueryQL,
+  selectedTrueRandomFactsQueryQL,
 } from '@/queries/random-facts';
-import { RandomFact } from '@/sanityTypes/RandomFact';
 
-import { sanityClient } from '../../../sanity/lib/client';
+import { RandomFact } from '@/types/RandomFact';
 
 const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  const trueFacts: RandomFact[] = await sanityClient.fetch(
-    selectedTrueRandomFactsQuery
+  const trueFacts: RandomFact[] = await queryRandomFacts(
+    selectedTrueRandomFactsQueryQL
   );
 
-  const falseFacts: RandomFact[] = await sanityClient.fetch(
-    falseRandomFactsQuery
+  const falseFacts: RandomFact[] = await queryRandomFacts(
+    falseRandomFactsQueryQL
   );
 
   const oneFalseRandomFact: RandomFact = shuffleArray(falseFacts)[0];

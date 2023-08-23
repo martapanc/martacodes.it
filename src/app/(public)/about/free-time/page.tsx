@@ -1,3 +1,4 @@
+import { DocumentNode } from 'graphql/language';
 import * as React from 'react';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
@@ -14,19 +15,18 @@ import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 import { booksQueryQL } from '@/queries/books';
 import { podcastsQueryQL } from '@/queries/podcasts';
 import {
-  falseRandomFactsQuery,
-  selectedTrueRandomFactsQuery,
-  trueRandomFactsQuery,
+  falseRandomFactsQueryQL,
+  selectedTrueRandomFactsQueryQL,
+  trueRandomFactsQueryQL,
 } from '@/queries/random-facts';
 import { tvShowsQueryQL } from '@/queries/tv-shows';
 import { videoGamesQueryQL } from '@/queries/video-games';
-import { RandomFact } from '@/sanityTypes/RandomFact';
 
 import apolloClient from '../../../../../apollo/apollo-client';
-import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
+import { RandomFact } from '@/types/RandomFact';
 import { TvShow } from '@/types/TvShow';
 import { VideoGame } from '@/types/VideoGame';
 
@@ -59,6 +59,12 @@ async function queryVideoGames() {
   return flattenToArray<VideoGame>(data.videoGames);
 }
 
+export async function queryRandomFacts(query: DocumentNode) {
+  const { data } = await apolloClient.query({ query });
+
+  return flattenToArray<RandomFact>(data.randomFacts);
+}
+
 const getData = async () => {
   const randomFacts: QuizData = await loadRandomFactsForQuiz();
 
@@ -82,14 +88,16 @@ const queryData = async () => {
 };
 
 const loadRandomFactsForQuiz = async () => {
-  const falseFacts: RandomFact[] = await sanityClient.fetch(
-    falseRandomFactsQuery
+  const falseFacts: RandomFact[] = await queryRandomFacts(
+    falseRandomFactsQueryQL
   );
-  const selectedTrueFacts: RandomFact[] = await sanityClient.fetch(
-    selectedTrueRandomFactsQuery
+
+  const selectedTrueFacts: RandomFact[] = await queryRandomFacts(
+    selectedTrueRandomFactsQueryQL
   );
-  const trueFacts: RandomFact[] = await sanityClient.fetch(
-    trueRandomFactsQuery
+
+  const trueFacts: RandomFact[] = await queryRandomFacts(
+    trueRandomFactsQueryQL
   );
 
   const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
