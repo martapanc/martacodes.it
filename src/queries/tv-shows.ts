@@ -1,24 +1,24 @@
 import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
-export const videoGamesQuery = groq`
-*[_type == "videoGame"] | order(year desc) {
+export const tvSeriesQuery = groq`
+*[_type == "tvSeries"] | order(year desc) {
   _id,
   title,
   year,
-  "cover": cover.asset->url,
+  "poster": poster.asset->url,
   mediaLink,
 }`;
 
-export const videoGamesQueryQL = gql`
+export const tvShowsQueryQL = gql`
   query {
-    videoGames(sort: "year:DESC") {
+    tvShows(sort: "year:DESC") {
       data {
         id
         attributes {
           title
           year
-          cover {
+          poster {
             data {
               id
               attributes {

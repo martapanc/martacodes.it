@@ -18,17 +18,17 @@ import {
   selectedTrueRandomFactsQuery,
   trueRandomFactsQuery,
 } from '@/queries/random-facts';
-import { tvSeriesQuery } from '@/queries/tv-series';
-import { videoGamesQuery } from '@/queries/video-games';
+import { tvShowsQueryQL } from '@/queries/tv-shows';
+import { videoGamesQueryQL } from '@/queries/video-games';
 import { RandomFact } from '@/sanityTypes/RandomFact';
-import { TvShow } from '@/sanityTypes/TvSeries';
-import { VideoGame } from '@/sanityTypes/VideoGame';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
+import { TvShow } from '@/types/TvSeries';
+import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
@@ -47,16 +47,22 @@ async function queryPodcasts() {
   return flattenToArray<Podcast>(data.podcasts);
 }
 
+async function queryTvShows() {
+  const { data } = await apolloClient.query({ query: tvShowsQueryQL });
+
+  return flattenToArray<TvShow>(data.tvShows);
+}
+
+async function queryVideoGames() {
+  const { data } = await apolloClient.query({ query: videoGamesQueryQL });
+
+  return flattenToArray<VideoGame>(data.videoGames);
+}
+
 const getData = async () => {
-  const tvSeries: TvShow[] = await sanityClient.fetch(tvSeriesQuery);
-
-  const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
-
   const randomFacts: QuizData = await loadRandomFactsForQuiz();
 
   return {
-    tvSeries,
-    videoGames,
     randomFacts,
   };
 };
@@ -64,10 +70,14 @@ const getData = async () => {
 const queryData = async () => {
   const books = await queryBooks();
   const podcasts = await queryPodcasts();
+  const tvShows = await queryTvShows();
+  const videoGames = await queryVideoGames();
 
   return {
     books,
     podcasts,
+    tvShows,
+    videoGames,
   };
 };
 
@@ -122,9 +132,9 @@ const loadRandomFactsForQuiz = async () => {
 };
 
 const AboutFreeTimePage = async () => {
-  const { tvSeries, videoGames, randomFacts } = await getData();
+  const { randomFacts } = await getData();
 
-  const { books, podcasts } = await queryData();
+  const { books, podcasts, tvShows, videoGames } = await queryData();
 
   return (
     <main className='min-h-main'>
@@ -147,7 +157,7 @@ const AboutFreeTimePage = async () => {
 
           <VideoGames videoGames={videoGames} />
 
-          <TvSeries tvSeries={tvSeries} />
+          <TvSeries tvShows={tvShows} />
 
           <Music />
 
