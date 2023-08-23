@@ -41,7 +41,9 @@ const QuizAnswers = ({
               <span>{answer.headline}</span>
             </div>
             <div className='rounded bg-blue-100 px-3 py-2 text-xs dark:bg-blue-950'>
-              <ReactMarkdown>{answer.explanation}</ReactMarkdown>
+              {answer.explanation && (
+                <ReactMarkdown>{answer.explanation}</ReactMarkdown>
+              )}
             </div>
           </li>
         ))}
