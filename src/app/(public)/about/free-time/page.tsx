@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
@@ -10,8 +11,8 @@ import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
-import { booksQuery } from '@/queries/books';
-import { podcastsQuery } from '@/queries/podcasts';
+import { booksQueryQL } from '@/queries/books';
+import { podcastsQueryQL } from '@/queries/podcasts';
 import {
   falseRandomFactsQuery,
   selectedTrueRandomFactsQuery,
@@ -19,24 +20,34 @@ import {
 } from '@/queries/random-facts';
 import { tvSeriesQuery } from '@/queries/tv-series';
 import { videoGamesQuery } from '@/queries/video-games';
-import { Book } from '@/sanityTypes/Book';
-import { Podcast } from '@/sanityTypes/Podcast';
 import { RandomFact } from '@/sanityTypes/RandomFact';
 import { TvShow } from '@/sanityTypes/TvSeries';
 import { VideoGame } from '@/sanityTypes/VideoGame';
 
+import apolloClient from '../../../../../apollo/apollo-client';
 import { sanityClient } from '../../../../../sanity/lib/client';
+
+import { Book } from '@/types/Book';
+import { Podcast } from '@/types/Podcast';
 
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
   description: 'About page',
 };
 
+async function queryBooks() {
+  const { data } = await apolloClient.query({ query: booksQueryQL });
+
+  return flattenToArray<Book>(data.books);
+}
+
+async function queryPodcasts() {
+  const { data } = await apolloClient.query({ query: podcastsQueryQL });
+
+  return flattenToArray<Podcast>(data.podcasts);
+}
+
 const getData = async () => {
-  const books: Book[] = await sanityClient.fetch(booksQuery);
-
-  const podcasts: Podcast[] = await sanityClient.fetch(podcastsQuery);
-
   const tvSeries: TvShow[] = await sanityClient.fetch(tvSeriesQuery);
 
   const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
@@ -44,11 +55,19 @@ const getData = async () => {
   const randomFacts: QuizData = await loadRandomFactsForQuiz();
 
   return {
-    books,
-    podcasts,
     tvSeries,
     videoGames,
     randomFacts,
+  };
+};
+
+const queryData = async () => {
+  const books = await queryBooks();
+  const podcasts = await queryPodcasts();
+
+  return {
+    books,
+    podcasts,
   };
 };
 
@@ -103,8 +122,9 @@ const loadRandomFactsForQuiz = async () => {
 };
 
 const AboutFreeTimePage = async () => {
-  const { books, podcasts, tvSeries, videoGames, randomFacts } =
-    await getData();
+  const { tvSeries, videoGames, randomFacts } = await getData();
+
+  const { books, podcasts } = await queryData();
 
   return (
     <main className='min-h-main'>
