@@ -27,7 +27,7 @@ import { sanityClient } from '../../../../../sanity/lib/client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
-import { TvShow } from '@/types/TvSeries';
+import { TvShow } from '@/types/TvShow';
 import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
