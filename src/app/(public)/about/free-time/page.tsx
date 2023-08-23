@@ -59,7 +59,7 @@ async function queryVideoGames() {
   return flattenToArray<VideoGame>(data.videoGames);
 }
 
-export async function queryRandomFacts(query: DocumentNode) {
+async function queryRandomFacts(query: DocumentNode) {
   const { data } = await apolloClient.query({ query });
 
   return flattenToArray<RandomFact>(data.randomFacts);
