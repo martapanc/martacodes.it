@@ -1,16 +1,19 @@
 import { Meta } from '@storybook/react';
+import { DocumentNode } from 'graphql/language';
 import { useEffect, useState } from 'react';
 
+import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import GeneralView, {
   GeneralViewProps,
 } from '@/components/molecules/RandomFacts/GeneralView';
 
-import { trueRandomFactsQuery } from '@/queries/random-facts';
-import { RandomFact } from '@/sanityTypes/RandomFact';
+import { trueRandomFactsQueryQL } from '@/queries/random-facts';
 
-import { sanityClient } from '../../../../../sanity/lib/client';
+import apolloClient from '../../../../../apollo/apollo-client';
+
+import { RandomFact } from '@/types/RandomFact';
 
 const meta: Meta<typeof GeneralView> = {
   title: 'Components/Random Facts/General View',
@@ -26,7 +29,7 @@ export const SampleStory = (args: GeneralViewProps) => {
   useEffect(() => {
     const fetchFacts = async () => {
       try {
-        const randomFactsData = await sanityClient.fetch(trueRandomFactsQuery);
+        const randomFactsData = await queryRandomFacts(trueRandomFactsQueryQL);
 
         setRandomFacts(shuffleArray(randomFactsData));
       } catch (error) {
@@ -46,3 +49,9 @@ export const SampleStory = (args: GeneralViewProps) => {
     </>
   );
 };
+
+async function queryRandomFacts(query: DocumentNode) {
+  const { data } = await apolloClient.query({ query });
+
+  return flattenToArray<RandomFact>(data.randomFacts);
+}
