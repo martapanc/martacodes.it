@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 
 import Button from '@/components/buttons/Button';
 
-import { RandomFact } from '@/types/RandomFact';
+import { RandomFact } from '@/sanityTypes/RandomFact';
 
 export interface GeneralViewProps {
   randomFacts: RandomFact[];
