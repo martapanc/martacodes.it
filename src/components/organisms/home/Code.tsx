@@ -9,7 +9,7 @@ import {
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Typed, { TypedOptions } from 'typed.js';
 
-import { CodeSnippet } from '@/sanityTypes/CodeSnippet';
+import { CodeSnippet } from '@/types/CodeSnippet';
 
 export interface CodeSnippetsProps {
   codeSnippets: CodeSnippet[];
@@ -64,7 +64,7 @@ const Code = ({ codeSnippets }: CodeSnippetsProps) => {
           codeSnippets.map((snippet) => (
             <SyntaxHighlighter
               className='text-xs md:text-base'
-              key={snippet._id}
+              key={snippet.id}
               language={snippet.language}
               style={ideStyle}
               wrapLongLines={true}
