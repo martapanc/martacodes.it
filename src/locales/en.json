@@ -1,0 +1,25 @@
+{
+  "aboutWork": {
+    "title": "Work & Career",
+    "softwareDevelopment": {
+      "title": "Software Development",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg"
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/work_f1bb1eb3dd.svg"
+    },
+    "education": {
+      "title": "Education",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/school_bbe225685d.svg"
+    },
+    "languages": {
+      "title": "Work Experience",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/internet_60bf166c34.svg"
+    },
+    "publications": {
+      "title": "Publications",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/newspaper_e15ec94d21.svg"
+    }
+  }
+}

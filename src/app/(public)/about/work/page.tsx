@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { flattenToArray, flattenToObject } from '@/lib/graphqlUtils';
 
+import Heading from '@/components/atoms/Heading';
 import Education from '@/components/organisms/about-work/Education';
 import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
@@ -99,7 +100,7 @@ const AboutPage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>Work & Career</h1>
+          <Heading title='aboutWork.title' />
 
           <div>
             <div className='m-2 flex'>
