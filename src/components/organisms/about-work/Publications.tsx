@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { AiOutlineFilePdf } from 'react-icons/ai';
 
+import SectionHeading from '@/components/atoms/SectionHeading';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 import { Publication } from '@/types/Publication';
@@ -13,12 +14,10 @@ export interface PublicationProps {
 
 const Publications = ({ publications }: PublicationProps) => {
   return (
-    <div className='mb-6'>
-      <div className='m-2 flex'>
-        <h2>Publications</h2>
-      </div>
+    <div className='mb-6 mt-4'>
+      <SectionHeading titlePrefix='aboutWork.publications' />
 
-      <div className='grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-8'>
+      <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-8'>
         {publications.map((publication) => (
           <div
             key={publication.id}

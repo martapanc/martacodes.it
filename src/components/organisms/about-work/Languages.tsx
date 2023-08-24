@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import * as React from 'react';
 
+import SectionHeading from '@/components/atoms/SectionHeading';
+
 import { Language } from '@/types/Language';
 
 export interface LanguageProps {
@@ -11,12 +13,10 @@ export interface LanguageProps {
 
 const Languages = ({ languages }: LanguageProps) => {
   return (
-    <div className='mb-6'>
-      <div className='m-2 flex'>
-        <h2>Languages</h2>
-      </div>
+    <div className='mb-6 mt-4'>
+      <SectionHeading titlePrefix='aboutWork.languages' />
 
-      <div className='grid grid-cols-1 gap-3 md:grid-cols-4 md:gap-6'>
+      <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-4 md:gap-6'>
         {languages.map((language) => (
           <div
             key={language.id}

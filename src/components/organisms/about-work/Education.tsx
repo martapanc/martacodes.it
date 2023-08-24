@@ -4,6 +4,8 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import SectionHeading from '@/components/atoms/SectionHeading';
+
 import { School } from '@/types/School';
 
 export interface EducationProps {
@@ -12,10 +14,8 @@ export interface EducationProps {
 
 const Education = ({ schools }: EducationProps) => {
   return (
-    <div className=''>
-      <div className='m-2 flex'>
-        <h2>Education</h2>
-      </div>
+    <div className='my-4'>
+      <SectionHeading titlePrefix='aboutWork.education' />
 
       <div>
         {schools.map((school) => (

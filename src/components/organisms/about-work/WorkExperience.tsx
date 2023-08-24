@@ -5,6 +5,8 @@ import { useTheme } from 'next-themes';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import SectionHeading from '@/components/atoms/SectionHeading';
+
 import { Job } from '@/types/Job';
 
 export interface WorkExperienceProps {
@@ -15,10 +17,8 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
   const { theme } = useTheme();
 
   return (
-    <div className=''>
-      <div className='m-2 flex'>
-        <h2>Work Experience</h2>
-      </div>
+    <div className='my-4'>
+      <SectionHeading titlePrefix='aboutWork.workExperience' />
 
       <div>
         {jobs.map((job) => (

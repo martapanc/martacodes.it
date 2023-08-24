@@ -6,6 +6,7 @@ import { flattenToArray, flattenToObject } from '@/lib/graphqlUtils';
 
 import Heading from '@/components/atoms/Heading';
 import Education from '@/components/organisms/about-work/Education';
+import Intro from '@/components/organisms/about-work/Intro';
 import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
 import WorkExperience from '@/components/organisms/about-work/WorkExperience';
@@ -91,10 +92,7 @@ const AboutPage = async () => {
   const { intro, jobs, languages, publications, schools, skills } =
     await queryData();
 
-  const noOfYears = (new Date().getFullYear() - 2015).toString();
-
   const iconDimension = 36;
-  const titleIconDimension = 42;
 
   return (
     <main className='min-h-main'>
@@ -102,25 +100,7 @@ const AboutPage = async () => {
         <div className='layout relative flex flex-col py-12'>
           <Heading title='aboutWork.title' />
 
-          <div>
-            <div className='m-2 flex'>
-              <Image
-                className='mr-2 h-auto'
-                src={intro.icon.url}
-                alt={intro.title}
-                width={titleIconDimension}
-                height={titleIconDimension}
-              />
-
-              <h2>{intro.title}</h2>
-            </div>
-
-            <div className='mb-5'>
-              <ReactMarkdown>
-                {intro.content.replace('8', noOfYears)}
-              </ReactMarkdown>
-            </div>
-          </div>
+          <Intro intro={intro} />
 
           <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6'>
             {skills.map((skill: Skill) => (
@@ -149,11 +129,19 @@ const AboutPage = async () => {
             ))}
           </div>
 
+          <hr />
+
           <WorkExperience jobs={jobs} />
+
+          <hr />
 
           <Education schools={schools} />
 
+          <hr />
+
           <Languages languages={languages} />
+
+          <hr />
 
           <Publications publications={publications} />
         </div>
