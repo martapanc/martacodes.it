@@ -129,7 +129,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </div>
         )}
-        {children}
+        <>{children}</>
         {RightIcon && (
           <div
             className={clsxm([
