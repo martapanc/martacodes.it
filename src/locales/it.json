@@ -1,4 +1,24 @@
 {
+  "headerMenu": {
+    "about": "Su di me",
+    "aboutWork": "Carriera Lavorativa",
+    "aboutWorkMobile": "Su di me - Carriera Lavorativa",
+    "aboutFreeTime": "Tempo Libero",
+    "aboutFreeTimeMobile": "Su di me - Tempo Libero",
+    "projects": "Progetti",
+    "cv": "CV",
+    "uses": "Uses",
+    "contact": "Contatti"
+  },
+  "footerMenu": {
+    "links": "Link",
+    "sourceCode": "Codice Sorgente",
+    "blog": "Blog",
+    "updates": "Aggiornamenti",
+    "analytics": "Analytics",
+    "guestbook": "Libro degli Ospiti",
+    "feedback": "Feedback"
+  },
   "aboutWork": {
     "title": "Carriera Lavorativa",
     "softwareDevelopment": {

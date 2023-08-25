@@ -1,4 +1,24 @@
 {
+  "headerMenu": {
+    "about": "About",
+    "aboutWork": "Work & Career",
+    "aboutWorkMobile": "About - Work & Career",
+    "aboutFreeTime": "Free Time",
+    "aboutFreeTimeMobile": "About - Free Time",
+    "projects": "Projects",
+    "cv": "CV",
+    "uses": "Uses",
+    "contact": "Contact"
+  },
+  "footerMenu": {
+    "links": "Links",
+    "sourceCode": "Source Code",
+    "blog": "Blog",
+    "updates": "Updates",
+    "analytics": "Analytics",
+    "guestbook": "Guestbook",
+    "feedback": "Feedback"
+  },
   "aboutWork": {
     "title": "Work & Career",
     "softwareDevelopment": {
@@ -21,5 +41,6 @@
       "title": "Publications",
       "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/newspaper_e15ec94d21.svg"
     }
-  }
+  },
+  "aboutFreeTime": {}
 }
