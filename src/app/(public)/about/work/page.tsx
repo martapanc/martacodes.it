@@ -14,7 +14,7 @@ import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 import { jobsQueryQL } from '@/queries/jobs';
 import { languagesQueryQL } from '@/queries/languages';
 import { publicationQueryQL } from '@/queries/publications';
-import { schoolsQueryQL } from '@/queries/schools';
+import { querySchools } from '@/queries/schools';
 import { softwareDevIntroQuery } from '@/queries/short-texts';
 import { skillQueryQL } from '@/queries/skills';
 
@@ -24,7 +24,6 @@ import { Icon } from '@/types/Icon';
 import { Job } from '@/types/Job';
 import { Language } from '@/types/Language';
 import { Publication } from '@/types/Publication';
-import { School } from '@/types/School';
 import { SoftwareDevIntro } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
 
@@ -49,12 +48,6 @@ async function queryPublications() {
   const { data } = await apolloClient.query({ query: publicationQueryQL });
 
   return flattenToArray<Publication>(data.publications);
-}
-
-async function querySchools() {
-  const { data } = await apolloClient.query({ query: schoolsQueryQL });
-
-  return flattenToArray<School>(data.schools);
 }
 
 async function querySkills() {

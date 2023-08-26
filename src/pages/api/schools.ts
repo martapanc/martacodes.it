@@ -1,12 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { schoolsQuery } from '@/queries/schools';
+import { querySchools } from '@/queries/schools';
 import { School } from '@/sanityTypes/School';
 
-import { sanityClient } from '../../../sanity/lib/client';
-
 const schoolsApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  const schools: School[] = await sanityClient.fetch(schoolsQuery);
+  const schools: School[] = await querySchools();
 
   res.status(200).json(schools);
 };
