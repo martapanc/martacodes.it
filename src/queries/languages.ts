@@ -7,12 +7,12 @@ import apolloClient from '../../apollo/apollo-client';
 import { Language } from '@/types/Language';
 
 export async function queryLanguages() {
-  const { data } = await apolloClient.query({ query: languagesQueryQL });
+  const { data } = await apolloClient.query({ query: languagesQuery });
 
   return flattenToArray<Language>(data.languages);
 }
 
-export const languagesQueryQL = gql`
+const languagesQuery = gql`
   query {
     languages(locale: "en") {
       data {

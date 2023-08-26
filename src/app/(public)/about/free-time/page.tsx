@@ -1,7 +1,5 @@
-import { DocumentNode } from 'graphql/language';
 import * as React from 'react';
 
-import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
@@ -12,58 +10,23 @@ import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
-import { booksQueryQL } from '@/queries/books';
-import { podcastsQueryQL } from '@/queries/podcasts';
+import { queryBooks } from '@/queries/books';
+import { queryPodcasts } from '@/queries/podcasts';
 import {
-  falseRandomFactsQueryQL,
-  selectedTrueRandomFactsQueryQL,
-  trueRandomFactsQueryQL,
+  falseRandomFactsQuery,
+  queryRandomFacts,
+  selectedTrueRandomFactsQuery,
+  trueRandomFactsQuery,
 } from '@/queries/random-facts';
-import { tvShowsQueryQL } from '@/queries/tv-shows';
-import { videoGamesQueryQL } from '@/queries/video-games';
+import { queryTvShows } from '@/queries/tv-shows';
+import { queryVideoGames } from '@/queries/video-games';
 
-import apolloClient from '../../../../../apollo/apollo-client';
-
-import { Book } from '@/types/Book';
-import { Podcast } from '@/types/Podcast';
 import { RandomFact } from '@/types/RandomFact';
-import { TvShow } from '@/types/TvShow';
-import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
   title: 'About my Free Time | MartaCodes.it',
   description: 'About page',
 };
-
-async function queryBooks() {
-  const { data } = await apolloClient.query({ query: booksQueryQL });
-
-  return flattenToArray<Book>(data.books);
-}
-
-async function queryPodcasts() {
-  const { data } = await apolloClient.query({ query: podcastsQueryQL });
-
-  return flattenToArray<Podcast>(data.podcasts);
-}
-
-async function queryTvShows() {
-  const { data } = await apolloClient.query({ query: tvShowsQueryQL });
-
-  return flattenToArray<TvShow>(data.tvShows);
-}
-
-async function queryVideoGames() {
-  const { data } = await apolloClient.query({ query: videoGamesQueryQL });
-
-  return flattenToArray<VideoGame>(data.videoGames);
-}
-
-async function queryRandomFacts(query: DocumentNode) {
-  const { data } = await apolloClient.query({ query });
-
-  return flattenToArray<RandomFact>(data.randomFacts);
-}
 
 const getData = async () => {
   const randomFacts: QuizData = await loadRandomFactsForQuiz();
@@ -89,16 +52,14 @@ const queryData = async () => {
 
 const loadRandomFactsForQuiz = async () => {
   const falseFacts: RandomFact[] = await queryRandomFacts(
-    falseRandomFactsQueryQL
+    falseRandomFactsQuery
   );
 
   const selectedTrueFacts: RandomFact[] = await queryRandomFacts(
-    selectedTrueRandomFactsQueryQL
+    selectedTrueRandomFactsQuery
   );
 
-  const trueFacts: RandomFact[] = await queryRandomFacts(
-    trueRandomFactsQueryQL
-  );
+  const trueFacts: RandomFact[] = await queryRandomFacts(trueRandomFactsQuery);
 
   const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
   const threeTrueFacts: RandomFact[] = shuffleArray(selectedTrueFacts).slice(

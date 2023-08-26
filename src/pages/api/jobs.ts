@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { queryJobs } from '@/queries/jobs';
-import { Job } from '@/sanityTypes/Job';
+
+import { Job } from '@/types/Job';
 
 const jobsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const jobs: Job[] = await queryJobs();

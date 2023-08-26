@@ -12,7 +12,7 @@ export async function queryIntro() {
   return flattenToObject<SoftwareDevIntro>(data.softwareDevelopmentIntro);
 }
 
-export const softwareDevIntroQuery = gql`
+const softwareDevIntroQuery = gql`
   query {
     softwareDevelopmentIntro {
       data {

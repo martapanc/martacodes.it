@@ -1,16 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const videoGamesQuery = groq`
-*[_type == "videoGame"] | order(year desc) {
-  _id,
-  title,
-  year,
-  "cover": cover.asset->url,
-  mediaLink,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const videoGamesQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { VideoGame } from '@/types/VideoGame';
+
+export async function queryVideoGames() {
+  const { data } = await apolloClient.query({ query: videoGamesQuery });
+
+  return flattenToArray<VideoGame>(data.videoGames);
+}
+
+const videoGamesQuery = gql`
   query {
     videoGames(sort: "year:DESC") {
       data {

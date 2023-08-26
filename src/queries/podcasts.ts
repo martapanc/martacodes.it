@@ -1,17 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const podcastsQuery = groq`
-*[_type == "podcast"] | order(author asc) {
-  _id,
-  name,
-  author,
-  language,
-  "cover": cover.asset->url,
-  mediaLink,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const podcastsQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { Podcast } from '@/types/Podcast';
+
+export async function queryPodcasts() {
+  const { data } = await apolloClient.query({ query: podcastsQuery });
+
+  return flattenToArray<Podcast>(data.podcasts);
+}
+
+const podcastsQuery = gql`
   query {
     podcasts(sort: "author:ASC") {
       data {

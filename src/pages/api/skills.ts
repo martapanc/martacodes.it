@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { querySkills } from '@/queries/skills';
-import { Skill } from '@/sanityTypes/Skill';
+
+import { Skill } from '@/types/Skill';
 
 const skillsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const skills: Skill[] = await querySkills();

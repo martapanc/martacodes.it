@@ -5,8 +5,8 @@ import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import {
-  falseRandomFactsQueryQL,
-  selectedTrueRandomFactsQueryQL,
+  falseRandomFactsQuery,
+  selectedTrueRandomFactsQuery,
 } from '@/queries/random-facts';
 
 import apolloClient from '../../../apollo/apollo-client';
@@ -15,11 +15,11 @@ import { RandomFact } from '@/types/RandomFact';
 
 const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const trueFacts: RandomFact[] = await queryRandomFacts(
-    selectedTrueRandomFactsQueryQL
+    selectedTrueRandomFactsQuery
   );
 
   const falseFacts: RandomFact[] = await queryRandomFacts(
-    falseRandomFactsQueryQL
+    falseRandomFactsQuery
   );
 
   const oneFalseRandomFact: RandomFact = shuffleArray(falseFacts)[0];

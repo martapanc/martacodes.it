@@ -7,12 +7,12 @@ import apolloClient from '../../apollo/apollo-client';
 import { Publication } from '@/types/Publication';
 
 export async function queryPublications() {
-  const { data } = await apolloClient.query({ query: publicationQueryQL });
+  const { data } = await apolloClient.query({ query: publicationQuery });
 
   return flattenToArray<Publication>(data.publications);
 }
 
-export const publicationQueryQL = gql`
+const publicationQuery = gql`
   query {
     publications(locale: "en", sort: "rank") {
       data {
