@@ -1,21 +1,16 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const jobsQuery = groq`
-*[_type == "job"] | order(endDate desc) {
-  _id,
-  company,
-  "iconUrl": icon.asset->url,
-  location,
-  jobTitle,
-  startDate,
-  endDate,
-  isCurrentJob,
-  description,
-  technologies,
-  mainColor,
-  darkColor,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
+
+import apolloClient from '../../apollo/apollo-client';
+
+import { Job } from '@/types/Job';
+
+export async function queryJobs() {
+  const { data } = await apolloClient.query({ query: jobsQueryQL });
+
+  return flattenToArray<Job>(data.jobs);
+}
 
 export const jobsQueryQL = gql`
   query {

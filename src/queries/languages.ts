@@ -1,13 +1,16 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const languageQuery = groq`
-*[_type == "language"] | order(id asc) {
-  _id,
-  name,
-  level,
-  "flagUrl": flag.asset->url
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
+
+import apolloClient from '../../apollo/apollo-client';
+
+import { Language } from '@/types/Language';
+
+export async function queryLanguages() {
+  const { data } = await apolloClient.query({ query: languagesQueryQL });
+
+  return flattenToArray<Language>(data.languages);
+}
 
 export const languagesQueryQL = gql`
   query {

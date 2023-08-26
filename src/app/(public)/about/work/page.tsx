@@ -2,8 +2,6 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { flattenToArray, flattenToObject } from '@/lib/graphqlUtils';
-
 import Heading from '@/components/atoms/Heading';
 import Education from '@/components/organisms/about-work/Education';
 import Intro from '@/components/organisms/about-work/Intro';
@@ -11,56 +9,20 @@ import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
 import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 
-import { jobsQueryQL } from '@/queries/jobs';
-import { languagesQueryQL } from '@/queries/languages';
-import { publicationQueryQL } from '@/queries/publications';
+import { queryJobs } from '@/queries/jobs';
+import { queryLanguages } from '@/queries/languages';
+import { queryPublications } from '@/queries/publications';
 import { querySchools } from '@/queries/schools';
-import { softwareDevIntroQuery } from '@/queries/short-texts';
-import { skillQueryQL } from '@/queries/skills';
-
-import apolloClient from '../../../../../apollo/apollo-client';
+import { queryIntro } from '@/queries/short-texts';
+import { querySkills } from '@/queries/skills';
 
 import { Icon } from '@/types/Icon';
-import { Job } from '@/types/Job';
-import { Language } from '@/types/Language';
-import { Publication } from '@/types/Publication';
-import { SoftwareDevIntro } from '@/types/ShortText';
 import { Skill } from '@/types/Skill';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
   description: 'About page',
 };
-
-async function queryIntro() {
-  const { data } = await apolloClient.query({ query: softwareDevIntroQuery });
-
-  return flattenToObject<SoftwareDevIntro>(data.softwareDevelopmentIntro);
-}
-
-async function queryJobs() {
-  const { data } = await apolloClient.query({ query: jobsQueryQL });
-
-  return flattenToArray<Job>(data.jobs);
-}
-
-async function queryPublications() {
-  const { data } = await apolloClient.query({ query: publicationQueryQL });
-
-  return flattenToArray<Publication>(data.publications);
-}
-
-async function querySkills() {
-  const { data } = await apolloClient.query({ query: skillQueryQL });
-
-  return flattenToArray<Skill>(data.skills);
-}
-
-async function queryLanguages() {
-  const { data } = await apolloClient.query({ query: languagesQueryQL });
-
-  return flattenToArray<Language>(data.languages);
-}
 
 const queryData = async () => {
   const intro = await queryIntro();

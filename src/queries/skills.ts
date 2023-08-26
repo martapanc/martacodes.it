@@ -1,17 +1,16 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const skillQuery = groq`
-*[_type == "skill"] {
-  name,
-  title,
-  description,
-  'icons': icons[]-> {
-    _id,
-    title,
-    "url": icon.asset->url
-  }
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
+
+import apolloClient from '../../apollo/apollo-client';
+
+import { Skill } from '@/types/Skill';
+
+export async function querySkills() {
+  const { data } = await apolloClient.query({ query: skillQueryQL });
+
+  return flattenToArray<Skill>(data.skills);
+}
 
 export const skillQueryQL = gql`
   query {
