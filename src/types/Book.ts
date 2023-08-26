@@ -1,8 +1,10 @@
+import { Icon } from '@/types/Icon';
+
 export interface Book {
-  _id: string;
+  id: string;
   title: string;
   author: string;
-  fiction: boolean;
-  cover: string;
+  genre: string;
+  cover: Icon;
   goodreadsLink: string;
 }

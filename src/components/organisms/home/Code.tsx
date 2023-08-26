@@ -64,7 +64,7 @@ const Code = ({ codeSnippets }: CodeSnippetsProps) => {
           codeSnippets.map((snippet) => (
             <SyntaxHighlighter
               className='text-xs md:text-base'
-              key={snippet._id}
+              key={snippet.id}
               language={snippet.language}
               style={ideStyle}
               wrapLongLines={true}

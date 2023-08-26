@@ -19,14 +19,14 @@ const VideoGames = ({ videoGames }: VideoGameProps) => {
       <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-3 overflow-x-auto px-4 pb-6 dark:bg-slate-900 md:mx-0 md:w-full md:px-0'>
         {videoGames.map((game) => (
           <li
-            key={game._id}
+            key={game.id}
             className='mt-2 h-[180px] w-[136px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-purple-300 hover:to-purple-700'
           >
-            <a href={game.mediaLink} target='_blank' rel='noopener noreferrer'>
+            <a href={game.link} target='_blank' rel='noopener noreferrer'>
               <Image
                 className='rounded-md'
                 alt={game.title}
-                src={game.cover}
+                src={game.cover.url}
                 width={130}
                 height={130}
               />

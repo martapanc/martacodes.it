@@ -1,10 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { publicationQuery } from '@/queries/publications';
+import { Publication } from '@/sanityTypes/Publication';
 
 import { sanityClient } from '../../../sanity/lib/client';
-
-import { Publication } from '@/types/Publication';
 
 const publicationsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const publications: Publication[] = await sanityClient.fetch(

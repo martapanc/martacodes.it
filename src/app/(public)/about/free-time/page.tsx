@@ -1,5 +1,7 @@
+import { DocumentNode } from 'graphql/language';
 import * as React from 'react';
 
+import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
@@ -10,22 +12,22 @@ import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
 import TvSeries from '@/components/organisms/about-free-time/TvSeries';
 import VideoGames from '@/components/organisms/about-free-time/VideoGames';
 
-import { booksQuery } from '@/queries/books';
-import { podcastsQuery } from '@/queries/podcasts';
+import { booksQueryQL } from '@/queries/books';
+import { podcastsQueryQL } from '@/queries/podcasts';
 import {
-  falseRandomFactsQuery,
-  selectedTrueRandomFactsQuery,
-  trueRandomFactsQuery,
+  falseRandomFactsQueryQL,
+  selectedTrueRandomFactsQueryQL,
+  trueRandomFactsQueryQL,
 } from '@/queries/random-facts';
-import { tvSeriesQuery } from '@/queries/tv-series';
-import { videoGamesQuery } from '@/queries/video-games';
+import { tvShowsQueryQL } from '@/queries/tv-shows';
+import { videoGamesQueryQL } from '@/queries/video-games';
 
-import { sanityClient } from '../../../../../sanity/lib/client';
+import apolloClient from '../../../../../apollo/apollo-client';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';
 import { RandomFact } from '@/types/RandomFact';
-import { TvShow } from '@/types/TvSeries';
+import { TvShow } from '@/types/TvShow';
 import { VideoGame } from '@/types/VideoGame';
 
 export const metadata = {
@@ -33,35 +35,69 @@ export const metadata = {
   description: 'About page',
 };
 
+async function queryBooks() {
+  const { data } = await apolloClient.query({ query: booksQueryQL });
+
+  return flattenToArray<Book>(data.books);
+}
+
+async function queryPodcasts() {
+  const { data } = await apolloClient.query({ query: podcastsQueryQL });
+
+  return flattenToArray<Podcast>(data.podcasts);
+}
+
+async function queryTvShows() {
+  const { data } = await apolloClient.query({ query: tvShowsQueryQL });
+
+  return flattenToArray<TvShow>(data.tvShows);
+}
+
+async function queryVideoGames() {
+  const { data } = await apolloClient.query({ query: videoGamesQueryQL });
+
+  return flattenToArray<VideoGame>(data.videoGames);
+}
+
+async function queryRandomFacts(query: DocumentNode) {
+  const { data } = await apolloClient.query({ query });
+
+  return flattenToArray<RandomFact>(data.randomFacts);
+}
+
 const getData = async () => {
-  const books: Book[] = await sanityClient.fetch(booksQuery);
-
-  const podcasts: Podcast[] = await sanityClient.fetch(podcastsQuery);
-
-  const tvSeries: TvShow[] = await sanityClient.fetch(tvSeriesQuery);
-
-  const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
-
   const randomFacts: QuizData = await loadRandomFactsForQuiz();
 
   return {
-    books,
-    podcasts,
-    tvSeries,
-    videoGames,
     randomFacts,
   };
 };
 
+const queryData = async () => {
+  const books = await queryBooks();
+  const podcasts = await queryPodcasts();
+  const tvShows = await queryTvShows();
+  const videoGames = await queryVideoGames();
+
+  return {
+    books,
+    podcasts,
+    tvShows,
+    videoGames,
+  };
+};
+
 const loadRandomFactsForQuiz = async () => {
-  const falseFacts: RandomFact[] = await sanityClient.fetch(
-    falseRandomFactsQuery
+  const falseFacts: RandomFact[] = await queryRandomFacts(
+    falseRandomFactsQueryQL
   );
-  const selectedTrueFacts: RandomFact[] = await sanityClient.fetch(
-    selectedTrueRandomFactsQuery
+
+  const selectedTrueFacts: RandomFact[] = await queryRandomFacts(
+    selectedTrueRandomFactsQueryQL
   );
-  const trueFacts: RandomFact[] = await sanityClient.fetch(
-    trueRandomFactsQuery
+
+  const trueFacts: RandomFact[] = await queryRandomFacts(
+    trueRandomFactsQueryQL
   );
 
   const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
@@ -104,8 +140,9 @@ const loadRandomFactsForQuiz = async () => {
 };
 
 const AboutFreeTimePage = async () => {
-  const { books, podcasts, tvSeries, videoGames, randomFacts } =
-    await getData();
+  const { randomFacts } = await getData();
+
+  const { books, podcasts, tvShows, videoGames } = await queryData();
 
   return (
     <main className='min-h-main'>
@@ -128,7 +165,7 @@ const AboutFreeTimePage = async () => {
 
           <VideoGames videoGames={videoGames} />
 
-          <TvSeries tvSeries={tvSeries} />
+          <TvSeries tvShows={tvShows} />
 
           <Music />
 

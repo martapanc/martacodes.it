@@ -1,15 +1,15 @@
-import { TypedObject } from '@portabletext/types';
+import { Icon } from '@/types/Icon';
 
 export interface School {
-  _id: string;
+  id: string;
   name: string;
   schoolName: string;
-  schoolIcon: string;
-  flagUrl: string;
+  icon: Icon;
+  flag: Icon;
   degreeName: string;
   degreeUrl: string;
   grade: string;
-  startYear: number;
-  endYear: number;
-  description: TypedObject;
+  start: string;
+  end: string;
+  description: string;
 }

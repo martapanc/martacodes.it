@@ -1,8 +1,8 @@
 'use client';
 
-import { PortableText } from '@portabletext/react';
 import * as React from 'react';
 import { BsFillCheckCircleFill, BsFillXSquareFill } from 'react-icons/bs';
+import ReactMarkdown from 'react-markdown';
 
 import { QuizOption } from '@/components/molecules/RandomFacts/Quiz';
 
@@ -42,7 +42,7 @@ const QuizAnswers = ({
             </div>
             <div className='rounded bg-blue-100 px-3 py-2 text-xs dark:bg-blue-950'>
               {answer.explanation && (
-                <PortableText value={answer.explanation} />
+                <ReactMarkdown>{answer.explanation}</ReactMarkdown>
               )}
             </div>
           </li>

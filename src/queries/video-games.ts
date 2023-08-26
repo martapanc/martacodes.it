@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const videoGamesQuery = groq`
@@ -8,3 +9,28 @@ export const videoGamesQuery = groq`
   "cover": cover.asset->url,
   mediaLink,
 }`;
+
+export const videoGamesQueryQL = gql`
+  query {
+    videoGames(sort: "year:DESC") {
+      data {
+        id
+        attributes {
+          title
+          year
+          cover {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+          link
+        }
+      }
+    }
+  }
+`;

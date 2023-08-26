@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
+import { useTranslation } from 'react-i18next';
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
@@ -17,13 +18,15 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
 
 export const links = [
-  { href: '/projects', label: 'Projects' },
-  { href: '/cv', label: 'CV' },
-  { href: '/uses', label: 'Uses' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/projects', label: 'headerMenu.projects' },
+  { href: '/cv', label: 'headerMenu.cv' },
+  { href: '/uses', label: 'headerMenu.uses' },
+  { href: '/contact', label: 'headerMenu.contact' },
 ];
 
 export default function Header() {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -74,7 +77,7 @@ export default function Header() {
                   aria-expanded={open ? 'true' : undefined}
                   onClick={handleClick}
                 >
-                  About
+                  {t('headerMenu.about')}
                   {!open && <AiFillCaretDown className='ms-1.5' />}
                   {open && <AiFillCaretUp className='ms-1.5' />}
                 </span>
@@ -88,10 +91,14 @@ export default function Header() {
                   }}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link href='/about/work'>👔 Work & Career</Link>
+                    <Link href='/about/work'>
+                      👔 {t('headerMenu.aboutWork')}
+                    </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link href='/about/free-time'>🪁 Free Time</Link>
+                    <Link href='/about/free-time'>
+                      🪁 {t('headerMenu.aboutFreeTime')}
+                    </Link>
                   </MenuItem>
                 </Menu>
               </li>
@@ -102,7 +109,7 @@ export default function Header() {
                     href={href}
                     className='animated-underline-2 dark:animated-underline rounded-sm font-medium text-slate-950 dark:text-blue-50'
                   >
-                    {label}
+                    {t(label)}
                   </UnstyledLink>
                 </li>
               ))}

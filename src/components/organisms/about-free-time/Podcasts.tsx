@@ -19,7 +19,7 @@ const Podcasts = ({ podcasts }: PodcastProps) => {
       <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-3 overflow-x-auto px-4 pb-6 dark:bg-slate-900 md:mx-0 md:w-full md:px-0'>
         {podcasts.map((podcast) => (
           <li
-            key={podcast._id}
+            key={podcast.id}
             className='mt-2 h-[136px] w-[136px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-700'
           >
             <a
@@ -30,7 +30,7 @@ const Podcasts = ({ podcasts }: PodcastProps) => {
               <Image
                 className='rounded-md'
                 alt={podcast.name}
-                src={podcast.cover}
+                src={podcast.cover.url}
                 width={130}
                 height={130}
               />

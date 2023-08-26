@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const skillQuery = groq`
@@ -11,3 +12,27 @@ export const skillQuery = groq`
     "url": icon.asset->url
   }
 }`;
+
+export const skillQueryQL = gql`
+  query {
+    skills(locale: "en", sort: "rank") {
+      data {
+        id
+        attributes {
+          title
+          description
+          icons {
+            data {
+              id
+              attributes {
+                name
+                url
+                alternativeText
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

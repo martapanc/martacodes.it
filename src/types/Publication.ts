@@ -1,9 +1,11 @@
+import { File } from '@/types/Icon';
+
 export interface Publication {
-  _id: string;
+  id: string;
   name: string;
   title: string;
   description: string;
   publisher: string;
-  year: number;
-  link: string;
+  year: string;
+  file: File;
 }

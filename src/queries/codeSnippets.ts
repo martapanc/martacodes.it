@@ -1,3 +1,4 @@
+import { gql } from '@apollo/client';
 import { groq } from 'next-sanity';
 
 export const codeSnippetsQuery = groq`
@@ -7,3 +8,17 @@ export const codeSnippetsQuery = groq`
   "code": code.code,
   "language": code.language,
 }`;
+
+export const codeSnippetsQueryQL = gql`
+  query {
+    codeSnippets {
+      data {
+        id
+        attributes {
+          language
+          code
+        }
+      }
+    }
+  }
+`;

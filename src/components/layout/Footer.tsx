@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { IconType } from 'react-icons';
 import { FiMail } from 'react-icons/fi';
 import {
@@ -31,6 +32,8 @@ export default function Footer() {
 }
 
 function FooterLinks() {
+  const { t } = useTranslation();
+
   return (
     <div className='flex flex-wrap justify-center gap-x-8 gap-y-4'>
       {footerLinks.map(({ href, label }) => (
@@ -39,7 +42,7 @@ function FooterLinks() {
           className='animated-underline focus-visible:ring-primary-300 rounded-sm text-sm font-medium text-blue-950 focus:outline-none focus-visible:ring dark:text-gray-200'
           href={href}
         >
-          {label}
+          {t(label)}
         </UnstyledLink>
       ))}
     </div>
@@ -85,31 +88,31 @@ type FooterLink = {
 const footerLinks: FooterLink[] = [
   {
     href: 'https://martas.links',
-    label: 'Links',
+    label: 'footerMenu.links',
   },
   {
     href: 'https://github.com/martapanc/martacodes.it',
-    label: 'Source Code',
+    label: 'footerMenu.sourceCode',
   },
   {
     href: 'https://martapancaldi.hashnode.dev/',
-    label: 'Blog',
+    label: 'footerMenu.blog',
   },
   {
     href: 'https://www.polywork.com/marta_pancaldi',
-    label: 'Updates',
+    label: 'footerMenu.updates',
   },
   {
     href: '/',
-    label: 'Analytics',
+    label: 'footerMenu.analytics',
   },
   {
     href: '/',
-    label: 'Guestbook',
+    label: 'footerMenu.guestbook',
   },
   {
     href: '/',
-    label: 'Feedback',
+    label: 'footerMenu.feedback',
   },
 ];
 

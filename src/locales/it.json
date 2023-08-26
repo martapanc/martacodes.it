@@ -1,0 +1,45 @@
+{
+  "headerMenu": {
+    "about": "Su di me",
+    "aboutWork": "Carriera Lavorativa",
+    "aboutWorkMobile": "Su di me - Carriera Lavorativa",
+    "aboutFreeTime": "Tempo Libero",
+    "aboutFreeTimeMobile": "Su di me - Tempo Libero",
+    "projects": "Progetti",
+    "cv": "CV",
+    "uses": "Uses",
+    "contact": "Contatti"
+  },
+  "footerMenu": {
+    "links": "Link",
+    "sourceCode": "Codice Sorgente",
+    "blog": "Blog",
+    "updates": "Aggiornamenti",
+    "analytics": "Analytics",
+    "guestbook": "Libro degli Ospiti",
+    "feedback": "Feedback"
+  },
+  "aboutWork": {
+    "title": "Carriera Lavorativa",
+    "softwareDevelopment": {
+      "title": "Sviluppo Software",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg"
+    },
+    "workExperience": {
+      "title": "Esperienza",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/work_f1bb1eb3dd.svg"
+    },
+    "education": {
+      "title": "Studi",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/school_bbe225685d.svg"
+    },
+    "languages": {
+      "title": "Lingue",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/internet_60bf166c34.svg"
+    },
+    "publications": {
+      "title": "Pubblicazioni",
+      "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/newspaper_e15ec94d21.svg"
+    }
+  }
+}

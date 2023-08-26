@@ -1,9 +1,7 @@
-import { TypedObject } from '@portabletext/types';
+import { Icon } from '@/types/Icon';
 
-export interface ShortText {
-  _id: string;
-  name: string;
+export interface SoftwareDevIntro {
   title: string;
-  content: TypedObject;
-  iconUrl: string;
+  content: string;
+  icon: Icon;
 }

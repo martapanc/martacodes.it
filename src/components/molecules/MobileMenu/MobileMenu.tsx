@@ -3,6 +3,7 @@
 import FocusTrap from 'focus-trap-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { NavigationItem } from '@/components/atoms/NavigationItem';
 import ModeToggleButton from '@/components/buttons/ModeToggleButton';
@@ -13,9 +14,11 @@ export interface MobileMenuProps {
 }
 
 export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
+  const { t } = useTranslation();
+
   const mobileLinks = [
-    { href: '/about/work', label: 'About - Work' },
-    { href: '/about/free-time', label: 'About - Free Time' },
+    { href: '/about/work', label: 'headerMenu.aboutWorkMobile' },
+    { href: '/about/free-time', label: 'headerMenu.aboutFreeTimeMobile' },
     ...links,
   ];
   const navigationVariants = {
@@ -47,7 +50,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 <NavigationItem
                   key={href}
                   href={href}
-                  title={label}
+                  title={t(label)}
                   variants={navigationVariants}
                   initial='hidden'
                   animate='visible'

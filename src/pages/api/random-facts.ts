@@ -1,23 +1,25 @@
+import { DocumentNode } from 'graphql/language';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { flattenToArray } from '@/lib/graphqlUtils';
 import { shuffleArray } from '@/lib/helper';
 
 import {
-  falseRandomFactsQuery,
-  selectedTrueRandomFactsQuery,
+  falseRandomFactsQueryQL,
+  selectedTrueRandomFactsQueryQL,
 } from '@/queries/random-facts';
 
-import { sanityClient } from '../../../sanity/lib/client';
+import apolloClient from '../../../apollo/apollo-client';
 
 import { RandomFact } from '@/types/RandomFact';
 
 const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  const trueFacts: RandomFact[] = await sanityClient.fetch(
-    selectedTrueRandomFactsQuery
+  const trueFacts: RandomFact[] = await queryRandomFacts(
+    selectedTrueRandomFactsQueryQL
   );
 
-  const falseFacts: RandomFact[] = await sanityClient.fetch(
-    falseRandomFactsQuery
+  const falseFacts: RandomFact[] = await queryRandomFacts(
+    falseRandomFactsQueryQL
   );
 
   const oneFalseRandomFact: RandomFact = shuffleArray(falseFacts)[0];
@@ -28,5 +30,11 @@ const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
     oneFalse: oneFalseRandomFact,
   });
 };
+
+async function queryRandomFacts(query: DocumentNode) {
+  const { data } = await apolloClient.query({ query });
+
+  return flattenToArray<RandomFact>(data.randomFacts);
+}
 
 export default randomFactsApi;

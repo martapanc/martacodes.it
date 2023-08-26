@@ -19,7 +19,7 @@ const Books = ({ books }: BookProps) => {
       <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-3 overflow-x-auto px-4 pb-6 dark:bg-slate-900 md:mx-0 md:w-full md:px-0'>
         {books.map((book) => (
           <li
-            key={book._id}
+            key={book.id}
             className='mt-2 h-[168px] w-[120px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600'
           >
             <a
@@ -30,7 +30,7 @@ const Books = ({ books }: BookProps) => {
               <Image
                 className='rounded-md'
                 alt={book.title}
-                src={book.cover}
+                src={book.cover.url}
                 width={114}
                 height={114}
               />

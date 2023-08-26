@@ -1,10 +1,7 @@
-import { TypedObject } from '@portabletext/types';
-
 import { Icon } from '@/types/Icon';
 
 export interface Skill {
-  name: string;
   title: string;
-  description: TypedObject;
+  description: string;
   icons: Icon[];
 }

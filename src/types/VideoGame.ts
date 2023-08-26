@@ -1,7 +1,9 @@
+import { Icon } from '@/types/Icon';
+
 export interface VideoGame {
-  _id: string;
+  id: string;
   title: string;
-  year: number;
-  cover: string;
-  mediaLink: string;
+  year: string;
+  cover: Icon;
+  link: string;
 }

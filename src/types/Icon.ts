@@ -1,5 +1,13 @@
 export interface Icon {
-  _id: string;
-  title: string;
+  id: string;
+  name: string;
   url: string;
+  alternativeText?: string;
+}
+
+export interface File {
+  id: string;
+  name: string;
+  url: string;
+  alternativeText?: string;
 }

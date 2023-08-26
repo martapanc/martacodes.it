@@ -1,8 +1,10 @@
+import { Icon } from '@/types/Icon';
+
 export interface Podcast {
-  _id: string;
+  id: string;
   name: string;
   author: string;
   language: string;
-  cover: string;
+  cover: Icon;
   mediaLink: string;
 }
