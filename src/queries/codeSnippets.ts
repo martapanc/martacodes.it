@@ -1,15 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const codeSnippetsQuery = groq`
-*[_type == "codeSnippet"] {
-  _id,
-  title,
-  "code": code.code,
-  "language": code.language,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const codeSnippetsQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { CodeSnippet } from '@/types/CodeSnippet';
+
+export async function queryCodeSnippets() {
+  const { data } = await apolloClient.query({ query: codeSnippetsQuery });
+
+  return flattenToArray<CodeSnippet>(data.codeSnippets);
+}
+
+const codeSnippetsQuery = gql`
   query {
     codeSnippets {
       data {
