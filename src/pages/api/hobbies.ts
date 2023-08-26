@@ -1,24 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { booksQuery } from '@/queries/books';
-import { podcastsQuery } from '@/queries/podcasts';
-import { tvSeriesQuery } from '@/queries/tv-shows';
-import { videoGamesQuery } from '@/queries/video-games';
-import { Book } from '@/sanityTypes/Book';
-import { Podcast } from '@/sanityTypes/Podcast';
-import { TvShow } from '@/sanityTypes/TvSeries';
-import { VideoGame } from '@/sanityTypes/VideoGame';
+import { queryBooks } from '@/queries/books';
+import { queryPodcasts } from '@/queries/podcasts';
+import { queryTvShows } from '@/queries/tv-shows';
+import { queryVideoGames } from '@/queries/video-games';
 
-import { sanityClient } from '../../../sanity/lib/client';
+import { Book } from '@/types/Book';
+import { Podcast } from '@/types/Podcast';
+import { TvShow } from '@/types/TvShow';
+import { VideoGame } from '@/types/VideoGame';
 
 const hobbiesApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  const books: Book[] = await sanityClient.fetch(booksQuery);
+  const books: Book[] = await queryBooks();
 
-  const podcasts: Podcast[] = await sanityClient.fetch(podcastsQuery);
+  const podcasts: Podcast[] = await queryPodcasts();
 
-  const tvShows: TvShow[] = await sanityClient.fetch(tvSeriesQuery);
+  const tvShows: TvShow[] = await queryTvShows();
 
-  const videoGames: VideoGame[] = await sanityClient.fetch(videoGamesQuery);
+  const videoGames: VideoGame[] = await queryVideoGames();
 
   res.status(200).json({
     books,

@@ -1,16 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const tvSeriesQuery = groq`
-*[_type == "tvSeries"] | order(year desc) {
-  _id,
-  title,
-  year,
-  "poster": poster.asset->url,
-  mediaLink,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const tvShowsQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { TvShow } from '@/types/TvShow';
+
+export async function queryTvShows() {
+  const { data } = await apolloClient.query({ query: tvShowsQuery });
+
+  return flattenToArray<TvShow>(data.tvShows);
+}
+
+const tvShowsQuery = gql`
   query {
     tvShows(sort: "year:DESC") {
       data {
@@ -18,6 +20,7 @@ export const tvShowsQueryQL = gql`
         attributes {
           title
           year
+          link
           poster {
             data {
               id
@@ -28,7 +31,6 @@ export const tvShowsQueryQL = gql`
               }
             }
           }
-          link
         }
       }
     }

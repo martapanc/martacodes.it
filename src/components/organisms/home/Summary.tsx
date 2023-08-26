@@ -14,7 +14,7 @@ const Summary = () => {
         >
           <Image
             className='ms-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/c0f36368549d879ad790c46fd32f7ea10e3e258f-600x115.webp'
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp'
             alt='Resourcify'
             width='110'
             height='25'
@@ -29,7 +29,7 @@ const Summary = () => {
         <a href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
           <Image
             className='mx-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/0c8cfb9083cafb314b46b195ab99a27daf2f639d-280x150.webp'
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp'
             alt='BJSS'
             width='45'
             height='25'
@@ -43,7 +43,7 @@ const Summary = () => {
         >
           <Image
             className='ms-2 inline'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/a9bb3876e39ba378769bcc9b881ad8860dcbb9df-2500x424.svg'
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg'
             alt='Booking.com'
             width='115'
             height='25'

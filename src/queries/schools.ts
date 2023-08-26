@@ -1,22 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const schoolsQuery = groq`
-*[_type == "school"] | order(endYear desc) {
-  _id,
-  name,
-  schoolName,
-  "schoolIcon": schoolIcon.asset->url,
-  "flagUrl": countryFlag.asset->url,
-  degreeName,
-  degreeUrl,
-  grade,
-  startYear,
-  endYear,
-  description,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const schoolsQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { School } from '@/types/School';
+
+export async function querySchools() {
+  const { data } = await apolloClient.query({ query: schoolsQuery });
+
+  return flattenToArray<School>(data.schools);
+}
+
+const schoolsQuery = gql`
   query {
     schools(locale: "en", sort: "start:DESC") {
       data {

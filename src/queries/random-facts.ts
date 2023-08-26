@@ -1,17 +1,19 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
+import { DocumentNode } from 'graphql/language';
 
-export const trueRandomFactsQuery = groq`
-*[_type == "randomFact" && isFactTrue == true] 
-{
-  _id,
-  name,
-  headline,
-  description,
-  explanation,
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const trueRandomFactsQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { RandomFact } from '@/types/RandomFact';
+
+export async function queryRandomFacts(query: DocumentNode) {
+  const { data } = await apolloClient.query({ query });
+
+  return flattenToArray<RandomFact>(data.randomFacts);
+}
+
+export const trueRandomFactsQuery = gql`
   query {
     randomFacts(locale: "en", filters: { isFactTrue: { eq: true } }) {
       data {
@@ -28,17 +30,7 @@ export const trueRandomFactsQueryQL = gql`
   }
 `;
 
-export const selectedTrueRandomFactsQuery = groq`
-*[_type == "randomFact" && isFactTrue == true && name != "Correspondence"] 
-{
-  _id,
-  name,
-  headline,
-  description,
-  explanation,
-}`;
-
-export const selectedTrueRandomFactsQueryQL = gql`
+export const selectedTrueRandomFactsQuery = gql`
   query {
     randomFacts(
       locale: "en"
@@ -58,17 +50,7 @@ export const selectedTrueRandomFactsQueryQL = gql`
   }
 `;
 
-export const falseRandomFactsQuery = groq`
-*[_type == "randomFact" && isFactTrue == false] 
-{
-  _id,
-  name,
-  headline,
-  description,
-  explanation,
-}`;
-
-export const falseRandomFactsQueryQL = gql`
+export const falseRandomFactsQuery = gql`
   query {
     randomFacts(locale: "en", filters: { isFactTrue: { eq: false } }) {
       data {
@@ -84,12 +66,3 @@ export const falseRandomFactsQueryQL = gql`
     }
   }
 `;
-
-export const randomFactsQuery = groq`
-*[_type == "randomFact"] {
-  _id,
-  name,
-  description,
-  explanation,
-  isFactTrue
-}`;

@@ -13,15 +13,15 @@ const Photo = () => {
         <div className='flex flex-col items-center'>
           <Image
             className='mb-3 rounded-full'
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/15c9b3d57800e2f07abb0f6971a9186f9ff54f68-553x553.png'
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693038096/avatar_md_292b112d97.png'
             alt='Avatar'
             width={190}
             height={0}
             style={{ height: '190px' }}
           />
           <Image
-            src='https://cdn.sanity.io/images/lj8a3h3g/production/b1fbe23d8efef11db38fd636e4035db81cfebdf6-941x189.webp'
-            alt='Avatar'
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693066829/signature_b64d54de16.webp'
+            alt='Signature'
             width={250}
             height={0}
             style={{ height: '50px' }}

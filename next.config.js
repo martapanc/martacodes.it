@@ -7,23 +7,16 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
-
   images: {
-    domains: ['cdn.sanity.io', 'res.cloudinary.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        port: '',
-        pathname: '/about/**',
-      },
-    ],
+    domains: ['res.cloudinary.com'],
+    // remotePatterns: [
+    //   {
+    //     protocol: 'https',
+    //     hostname: 'cdn.sanity.io',
+    //     port: '',
+    //     pathname: '/about/**',
+    //   },
+    // ],
   },
 
   // SVGR

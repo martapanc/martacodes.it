@@ -9,7 +9,7 @@ import GeneralView, {
   GeneralViewProps,
 } from '@/components/molecules/RandomFacts/GeneralView';
 
-import { trueRandomFactsQueryQL } from '@/queries/random-facts';
+import { trueRandomFactsQuery } from '@/queries/random-facts';
 
 import apolloClient from '../../../../../apollo/apollo-client';
 
@@ -29,7 +29,7 @@ export const SampleStory = (args: GeneralViewProps) => {
   useEffect(() => {
     const fetchFacts = async () => {
       try {
-        const randomFactsData = await queryRandomFacts(trueRandomFactsQueryQL);
+        const randomFactsData = await queryRandomFacts(trueRandomFactsQuery);
 
         setRandomFacts(shuffleArray(randomFactsData));
       } catch (error) {

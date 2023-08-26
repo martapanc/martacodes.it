@@ -1,18 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const publicationQuery = groq`
-*[_type == "publication"] | order(sortId asc) {
-  _id,
-  name,
-  title,
-  description,
-  publisher,
-  year,
-  "link": file.asset->url
-}`;
+import { flattenToArray } from '@/lib/graphqlUtils';
 
-export const publicationQueryQL = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { Publication } from '@/types/Publication';
+
+export async function queryPublications() {
+  const { data } = await apolloClient.query({ query: publicationQuery });
+
+  return flattenToArray<Publication>(data.publications);
+}
+
+const publicationQuery = gql`
   query {
     publications(locale: "en", sort: "rank") {
       data {

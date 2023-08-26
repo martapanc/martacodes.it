@@ -1,16 +1,18 @@
 import { gql } from '@apollo/client';
-import { groq } from 'next-sanity';
 
-export const shortTextQuery = groq`
-*[_type == "shortText"] {
-  _id,
-  name,
-  title,
-  content,
-  "iconUrl": icon.asset->url
-}`;
+import { flattenToObject } from '@/lib/graphqlUtils';
 
-export const softwareDevIntroQuery = gql`
+import apolloClient from '../../apollo/apollo-client';
+
+import { SoftwareDevIntro } from '@/types/ShortText';
+
+export async function queryIntro() {
+  const { data } = await apolloClient.query({ query: softwareDevIntroQuery });
+
+  return flattenToObject<SoftwareDevIntro>(data.softwareDevelopmentIntro);
+}
+
+const softwareDevIntroQuery = gql`
   query {
     softwareDevelopmentIntro {
       data {

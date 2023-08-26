@@ -1,14 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { codeSnippetsQuery } from '@/queries/codeSnippets';
-import { CodeSnippet } from '@/sanityTypes/CodeSnippet';
+import { queryCodeSnippets } from '@/queries/codeSnippets';
 
-import { sanityClient } from '../../../sanity/lib/client';
+import { CodeSnippet } from '@/types/CodeSnippet';
 
 const codeSnippetsApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  const codeSnippets: CodeSnippet[] = await sanityClient.fetch(
-    codeSnippetsQuery
-  );
+  const codeSnippets: CodeSnippet[] = await queryCodeSnippets();
 
   res.status(200).json({
     codeSnippets,
