@@ -18,9 +18,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "sanity:dev": "npx sanity dev",
-    "sanity:prod": "sanity build && sanity start"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",
