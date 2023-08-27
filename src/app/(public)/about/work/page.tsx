@@ -2,7 +2,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import Heading from '@/components/atoms/Heading';
+import Heading from '@/components/atoms/headings/Heading';
 import Education from '@/components/organisms/about-work/Education';
 import Intro from '@/components/organisms/about-work/Intro';
 import Languages from '@/components/organisms/about-work/Languages';

@@ -5,9 +5,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import LanguageSwitcherMobile from '@/components/atoms/LanguageSwitcher/LanguageSwitcherMobile';
 import { NavigationItem } from '@/components/atoms/NavigationItem';
 import ModeToggleButton from '@/components/buttons/ModeToggleButton';
 import { links } from '@/components/layout/Header';
+
+import languages from '@/locales/languages.json';
 
 export interface MobileMenuProps {
   isOpen: boolean;
@@ -65,6 +68,15 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 custom={0.5 + (links.length + 1) * 0.1}
               >
                 <ModeToggleButton />
+              </motion.li>
+              <motion.li
+                className='flex justify-center'
+                variants={navigationVariants}
+                initial='hidden'
+                animate='visible'
+                custom={0.5 + (links.length + 2) * 0.1}
+              >
+                <LanguageSwitcherMobile languages={languages} />
               </motion.li>
             </ul>
           </FocusTrap>

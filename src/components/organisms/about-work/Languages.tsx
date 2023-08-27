@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
 
 import { Language } from '@/types/Language';
 

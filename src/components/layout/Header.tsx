@@ -13,9 +13,14 @@ import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
+import LanguageSwitcher, {
+  LanguageDef,
+} from '@/components/atoms/LanguageSwitcher/LanguageSwitcher';
 import ModeToggleButton from '@/components/buttons/ModeToggleButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
+
+import languages from '@/locales/languages.json';
 
 export const links = [
   { href: '/projects', label: 'headerMenu.projects' },
@@ -26,6 +31,8 @@ export const links = [
 
 export default function Header() {
   const { t } = useTranslation();
+
+  const languageDefs = languages as LanguageDef[];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -115,7 +122,9 @@ export default function Header() {
               ))}
             </ul>
 
-            <div className='hidden md:block'>
+            <div className='hidden md:flex md:flex-row'>
+              <LanguageSwitcher languages={languageDefs} />
+
               <ModeToggleButton />
             </div>
           </nav>
