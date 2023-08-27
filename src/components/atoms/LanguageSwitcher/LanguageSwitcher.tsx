@@ -1,6 +1,6 @@
-import {InputLabel, MenuItem, SelectChangeEvent} from '@mui/material';
+import {InputLabel, MenuItem, Select, SelectChangeEvent} from '@mui/material';
 import FormControl from '@mui/material/FormControl';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import i18n from '@/app/(public)/i18n';
 import clsx from "clsx";
@@ -20,8 +20,13 @@ export interface LanguageDef {
 }
 
 const LanguageSwitcher = ({ languages } : LanguageSwitcherProps) => {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const isDarkMode = theme === 'dark';
+
+  const [mounted, setMounted] = useState(false);
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
 
   const [chosenLanguage, setChosenLanguage] = useState('');
 
@@ -47,48 +52,84 @@ const LanguageSwitcher = ({ languages } : LanguageSwitcherProps) => {
 
   return (
     <div className="p-2">
-      <select onChange={changeLanguage}
-        className="rounded-md border-2 dark:bg-transparent"
-      >
-        {languages.map(
-          (lang: LanguageDef) =>
-            !lang.disabled && (
-              <option
-                style={{fontSize: '14px', fontWeight: 300}}
-                key={lang.value}
-                value={lang.value}
-              >
-                {lang.label}
-              </option>
-            )
-        )}
-      </select>
-
-      {/*<FormControl sx={{m: 1, minWidth: 80, border: '2px solid white', color: isDarkMode ? 'white' : 'black'}} size='small'>*/}
-      {/*  <InputLabel id='demo-select-small-label'>{label}</InputLabel>*/}
-      {/*  <Select*/}
-      {/*    id='demo-select-small'*/}
-      {/*    labelId='demo-select-small-label'*/}
-      {/*    value={chosenLanguage}*/}
-      {/*    label={label}*/}
-      {/*    onChange={handleChange}*/}
-      {/*    style={{ fontSize: '14px' }}*/}
-      {/*  >*/}
-      {/*    {languages.map(*/}
+      {/*<Select*/}
+      {/*  labelId="demo-simple-select-helper-label"*/}
+      {/*  id="demo-simple-select-helper"*/}
+      {/*  value={theme}*/}
+      {/*  onChange={handleChange}*/}
+      {/*>*/}
+      {/*  {languages.map(*/}
       {/*      (lang: LanguageDef) =>*/}
       {/*        !lang.disabled && (*/}
-      {/*          <MenuItem*/}
-      {/*            className='font-light'*/}
+      {/*          <option*/}
+      {/*            className="option"*/}
       {/*            style={{fontSize: '14px', fontWeight: 300}}*/}
       {/*            key={lang.value}*/}
       {/*            value={lang.value}*/}
       {/*          >*/}
       {/*            {lang.label}*/}
-      {/*          </MenuItem>*/}
+      {/*          </option>*/}
       {/*        )*/}
       {/*    )}*/}
-      {/*  </Select>*/}
-      {/*</FormControl>*/}
+      {/*</Select>*/}
+
+      {/*<select onChange={changeLanguage}*/}
+      {/*  className="select rounded-md border-2 dark:bg-transparent"*/}
+      {/*>*/}
+      {/*  {languages.map(*/}
+      {/*    (lang: LanguageDef) =>*/}
+      {/*      !lang.disabled && (*/}
+      {/*        <option*/}
+      {/*          className="option"*/}
+      {/*          style={{fontSize: '14px', fontWeight: 300}}*/}
+      {/*          key={lang.value}*/}
+      {/*          value={lang.value}*/}
+      {/*        >*/}
+      {/*          {lang.label}*/}
+      {/*        </option>*/}
+      {/*      )*/}
+      {/*  )}*/}
+      {/*</select>*/}
+
+      <FormControl sx={{m: 1, minWidth: 80, fontSize: '1.5rem' }} size='small'>
+        <InputLabel id='demo-select-small-label'>{label}</InputLabel>
+        <Select
+          id='demo-select-small'
+          labelId='demo-select-small-label'
+          value={chosenLanguage}
+          label={label}
+          onChange={handleChange}
+          // style={{ fontSize: '14px' }}
+          // sx={{
+          //   '& .MuiOutlinedInput-notchedOutline': {
+          //     borderColor: isDarkMode ? 'white' : 'black'
+          //   },
+          //   '& .MuiSelect-iconOutlined': {
+          //     color: isDarkMode ? 'white' : 'black'
+          //   },
+          //   '& .MuiOutlinedInput-input': {
+          //     color: isDarkMode ? 'white' : 'black'
+          //   },
+          //   '& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
+          //     color: isDarkMode ? 'white' : 'black'
+          //   }
+          // }}
+        >
+          {languages.map(
+            (lang: LanguageDef) =>
+              !lang.disabled && (
+                <MenuItem
+                  className='font-light'
+                  style={{fontSize: '14px', fontWeight: 300}}
+                  key={lang.value}
+                  value={lang.value}
+                >
+                  {lang.label}
+                </MenuItem>
+              )
+          )}
+        </Select>
+      </FormControl>
     </div>
   );
 };
