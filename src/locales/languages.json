@@ -1,0 +1,15 @@
+[
+  {
+    "label": "🇬🇧 EN",
+    "value": "en"
+  },
+  {
+    "label": "🇮🇹 IT",
+    "value": "it"
+  },
+  {
+    "label": "🇩🇪 DE",
+    "value": "de",
+    "disabled": true
+  }
+]
