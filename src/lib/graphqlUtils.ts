@@ -6,16 +6,16 @@ import {
 } from 'strapi-flatten-graphql';
 
 export function flattenToArray<T extends object>(
-  entityResponseCollection: StrapiEntityResponseCollection<T>
+  entityResponseCollection: StrapiEntityResponseCollection<T>,
 ): T[] {
   const flattenedData = flattenEntityResponseCollection(
-    entityResponseCollection
+    entityResponseCollection,
   );
   return flattenedData as T[];
 }
 
 export function flattenToObject<T extends object>(
-  entityResponse: StrapiEntityResponse<T>
+  entityResponse: StrapiEntityResponse<T>,
 ): T {
   const flattenedData = flattenEntityResponse(entityResponse);
   return flattenedData as T;

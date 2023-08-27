@@ -52,11 +52,11 @@ const queryData = async () => {
 
 const loadRandomFactsForQuiz = async () => {
   const falseFacts: RandomFact[] = await queryRandomFacts(
-    falseRandomFactsQuery
+    falseRandomFactsQuery,
   );
 
   const selectedTrueFacts: RandomFact[] = await queryRandomFacts(
-    selectedTrueRandomFactsQuery
+    selectedTrueRandomFactsQuery,
   );
 
   const trueFacts: RandomFact[] = await queryRandomFacts(trueRandomFactsQuery);
@@ -64,7 +64,7 @@ const loadRandomFactsForQuiz = async () => {
   const oneFalseFact: RandomFact = shuffleArray(falseFacts)[0];
   const threeTrueFacts: RandomFact[] = shuffleArray(selectedTrueFacts).slice(
     0,
-    3
+    3,
   );
 
   const options: QuizOption[] = threeTrueFacts.map((fact) => ({
@@ -90,7 +90,7 @@ const loadRandomFactsForQuiz = async () => {
   }
 
   const falseOptionKey: string = preparedOptions.find(
-    (option) => option.headline === oneFalseFact.headline
+    (option) => option.headline === oneFalseFact.headline,
   )!.key!;
 
   return {
