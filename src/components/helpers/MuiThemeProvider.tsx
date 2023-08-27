@@ -1,18 +1,16 @@
-import { GlobalStyles } from "@mui/material";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { useTheme } from "next-themes";
-import { FC, useEffect, useState } from "react";
+import { GlobalStyles } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { useTheme } from 'next-themes';
+import { FC, useEffect, useState } from 'react';
 
-import { darkTheme, globalStyles, lightTheme } from "@/theme";
+import { darkTheme, globalStyles, lightTheme } from '@/theme';
 
-const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({
-                                                               children,
-                                                             }) => {
+const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { resolvedTheme } = useTheme();
   const [currentTheme, setCurrentTheme] = useState(lightTheme);
 
   useEffect(() => {
-    resolvedTheme === "light"
+    resolvedTheme === 'light'
       ? setCurrentTheme(lightTheme)
       : setCurrentTheme(darkTheme);
   }, [resolvedTheme]);
@@ -21,7 +19,7 @@ const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <GlobalStyles styles={globalStyles} />
-        {children}
+      {children}
     </ThemeProvider>
   );
 };

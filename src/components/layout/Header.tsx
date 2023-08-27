@@ -13,7 +13,9 @@ import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
-import LanguageSwitcher, {LanguageDef} from "@/components/atoms/LanguageSwitcher/LanguageSwitcher";
+import LanguageSwitcher, {
+  LanguageDef,
+} from '@/components/atoms/LanguageSwitcher/LanguageSwitcher';
 import ModeToggleButton from '@/components/buttons/ModeToggleButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
@@ -121,7 +123,7 @@ export default function Header() {
             </ul>
 
             <div className='hidden md:flex md:flex-row'>
-              <LanguageSwitcher languages={languageDefs}/>
+              <LanguageSwitcher languages={languageDefs} />
 
               <ModeToggleButton />
             </div>

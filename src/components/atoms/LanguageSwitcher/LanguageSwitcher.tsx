@@ -78,7 +78,7 @@ const LanguageSwitcher = ({ languages }: LanguageSwitcherProps) => {
                 >
                   {lang.label}
                 </MenuItem>
-              )
+              ),
           )}
         </Select>
       </FormControl>

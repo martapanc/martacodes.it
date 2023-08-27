@@ -41,5 +41,5 @@ export const SampleStory = (args: LanguageSwitcherProps) => {
   return <LanguageSwitcher {...args} />;
 };
 SampleStory.args = {
-  languages
-}
+  languages,
+};
