@@ -22,7 +22,7 @@ const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
     const fetchDataFromLocalStorage = () => {
       const alreadyPlayedValue = getFromLocalStorage(localStorageKey);
       setAlreadyPlayed(
-        alreadyPlayedValue ? JSON.parse(alreadyPlayedValue) : false
+        alreadyPlayedValue ? JSON.parse(alreadyPlayedValue) : false,
       );
 
       setLoading(false);

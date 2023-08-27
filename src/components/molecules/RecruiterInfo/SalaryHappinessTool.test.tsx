@@ -27,7 +27,7 @@ describe('SalaryHappinessTool', () => {
       <SalaryHappinessTool
         salaryData={salaryData}
         config={configWithoutTitle}
-      />
+      />,
     );
     const titleElement = screen.queryByText('Salary Happiness Tool');
     expect(titleElement).toBeNull();

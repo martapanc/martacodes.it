@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export const useOnKeyDown = (
   key: KeyboardEvent['key'],
-  handler: () => void
+  handler: () => void,
 ) => {
   useEffect(() => {
     const callHandlerOnKeyDown = (e: KeyboardEvent) => {

@@ -25,7 +25,7 @@ export default function ModeToggleButton({
         'flex items-center justify-center rounded-md border-2 ' +
           'border-grey-300 ring-grey-300 bg-transparent p-2 transition-all hover:ring-2 hover:ring-offset-2 ' +
           'dark:border-grey-700 dark:ring-grey-200 dark:bg-transparent dark:hover:ring-2 dark:hover:ring-offset-2',
-        className
+        className,
       )}
       {...rest}
       onClick={toggleMode}

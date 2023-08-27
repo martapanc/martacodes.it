@@ -15,11 +15,11 @@ import { RandomFact } from '@/types/RandomFact';
 
 const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const trueFacts: RandomFact[] = await queryRandomFacts(
-    selectedTrueRandomFactsQuery
+    selectedTrueRandomFactsQuery,
   );
 
   const falseFacts: RandomFact[] = await queryRandomFacts(
-    falseRandomFactsQuery
+    falseRandomFactsQuery,
   );
 
   const oneFalseRandomFact: RandomFact = shuffleArray(falseFacts)[0];
