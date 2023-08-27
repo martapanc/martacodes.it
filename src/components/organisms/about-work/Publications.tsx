@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { AiOutlineFilePdf } from 'react-icons/ai';
 
-import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 import { Publication } from '@/types/Publication';

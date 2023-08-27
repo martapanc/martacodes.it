@@ -3,7 +3,7 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import SectionHeading from '@/components/atoms/SectionHeading';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
 
 import { SoftwareDevIntro } from '@/types/ShortText';
 
