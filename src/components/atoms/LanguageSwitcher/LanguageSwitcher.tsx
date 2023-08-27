@@ -1,13 +1,10 @@
-import {InputLabel, MenuItem, Select, SelectChangeEvent} from '@mui/material';
+import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
-import {useEffect, useState} from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { HiLanguage } from 'react-icons/hi2';
 
 import i18n from '@/app/(public)/i18n';
-import clsx from "clsx";
-import {commonStyles} from "@/components/buttons/ModeToggleButton";
-import * as React from "react";
-import {HiLanguage} from "react-icons/hi2";
-import {useTheme} from "next-themes";
 
 export interface LanguageSwitcherProps {
   languages: LanguageDef[];
@@ -19,11 +16,8 @@ export interface LanguageDef {
   disabled?: boolean;
 }
 
-const LanguageSwitcher = ({ languages } : LanguageSwitcherProps) => {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-  const isDarkMode = theme === 'dark';
-
-  const [mounted, setMounted] = useState(false);
+const LanguageSwitcher = ({ languages }: LanguageSwitcherProps) => {
+  const [_, setMounted] = useState(false);
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
@@ -31,67 +25,35 @@ const LanguageSwitcher = ({ languages } : LanguageSwitcherProps) => {
   const [chosenLanguage, setChosenLanguage] = useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
-    console.log(i18n.language);
     const newLang = event.target.value;
     setChosenLanguage(newLang);
 
     i18n.changeLanguage(newLang);
-    console.log(i18n.language);
   };
 
-  const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(i18n.language);
-    const newLang = event.target.value;
-    setChosenLanguage(newLang);
-
-    i18n.changeLanguage(newLang);
-    console.log(i18n.language);
-  };
-
-  const label = <HiLanguage/>;
+  const label = <HiLanguage />;
 
   return (
-    <div className="p-2">
-      {/*<Select*/}
-      {/*  labelId="demo-simple-select-helper-label"*/}
-      {/*  id="demo-simple-select-helper"*/}
-      {/*  value={theme}*/}
-      {/*  onChange={handleChange}*/}
-      {/*>*/}
-      {/*  {languages.map(*/}
-      {/*      (lang: LanguageDef) =>*/}
-      {/*        !lang.disabled && (*/}
-      {/*          <option*/}
-      {/*            className="option"*/}
-      {/*            style={{fontSize: '14px', fontWeight: 300}}*/}
-      {/*            key={lang.value}*/}
-      {/*            value={lang.value}*/}
-      {/*          >*/}
-      {/*            {lang.label}*/}
-      {/*          </option>*/}
-      {/*        )*/}
-      {/*    )}*/}
-      {/*</Select>*/}
-
-      {/*<select onChange={changeLanguage}*/}
-      {/*  className="select rounded-md border-2 dark:bg-transparent"*/}
-      {/*>*/}
-      {/*  {languages.map(*/}
-      {/*    (lang: LanguageDef) =>*/}
-      {/*      !lang.disabled && (*/}
-      {/*        <option*/}
-      {/*          className="option"*/}
-      {/*          style={{fontSize: '14px', fontWeight: 300}}*/}
-      {/*          key={lang.value}*/}
-      {/*          value={lang.value}*/}
-      {/*        >*/}
-      {/*          {lang.label}*/}
-      {/*        </option>*/}
-      {/*      )*/}
-      {/*  )}*/}
-      {/*</select>*/}
-
-      <FormControl sx={{m: 1, minWidth: 80, fontSize: '1.5rem' }} size='small'>
+    <div>
+      <FormControl
+        size='small'
+        className='ring-offset-2'
+        sx={{
+          m: 1,
+          minWidth: 95,
+          '& .MuiFormLabel-root': {
+            fontSize: '1.5rem',
+          },
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderWidth: '2px',
+            borderColor: '#E5E7EB',
+            borderRadius: '0.375rem',
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#2562E8 !important',
+          },
+        }}
+      >
         <InputLabel id='demo-select-small-label'>{label}</InputLabel>
         <Select
           id='demo-select-small'
@@ -99,28 +61,18 @@ const LanguageSwitcher = ({ languages } : LanguageSwitcherProps) => {
           value={chosenLanguage}
           label={label}
           onChange={handleChange}
-          // style={{ fontSize: '14px' }}
-          // sx={{
-          //   '& .MuiOutlinedInput-notchedOutline': {
-          //     borderColor: isDarkMode ? 'white' : 'black'
-          //   },
-          //   '& .MuiSelect-iconOutlined': {
-          //     color: isDarkMode ? 'white' : 'black'
-          //   },
-          //   '& .MuiOutlinedInput-input': {
-          //     color: isDarkMode ? 'white' : 'black'
-          //   },
-          //   '& .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
-          //     color: isDarkMode ? 'white' : 'black'
-          //   }
-          // }}
+          sx={{
+            '& .MuiFormLabel-root': {
+              fontSize: '1.5rem',
+            },
+          }}
         >
           {languages.map(
             (lang: LanguageDef) =>
               !lang.disabled && (
                 <MenuItem
                   className='font-light'
-                  style={{fontSize: '14px', fontWeight: 300}}
+                  style={{ fontSize: '14px', fontWeight: 300 }}
                   key={lang.value}
                   value={lang.value}
                 >
