@@ -1,13 +1,13 @@
 {
   "headerMenu": {
-    "about": "Su di me",
-    "aboutWork": "Carriera Lavorativa",
-    "aboutWorkMobile": "Su di me - Carriera Lavorativa",
+    "about": "About",
+    "aboutWork": "Lavoro",
+    "aboutWorkMobile": "About ~ Lavoro",
     "aboutFreeTime": "Tempo Libero",
-    "aboutFreeTimeMobile": "Su di me - Tempo Libero",
+    "aboutFreeTimeMobile": "About ~ Tempo Libero",
     "projects": "Progetti",
     "cv": "CV",
-    "uses": "Uses",
+    "uses": "Cose che uso",
     "contact": "Contatti"
   },
   "footerMenu": {
