@@ -46,3 +46,5 @@ sitemap-*.xml
 
 dist
 .sanity/*
+
+graphql.config.yml
