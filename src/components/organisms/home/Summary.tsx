@@ -1,73 +1,100 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import reactStringReplace from 'react-string-replace';
 
-const Summary = () => {
+import { HomePage } from '@/types/HomePage';
+
+export interface SummaryProps {
+  homePage: HomePage;
+}
+
+interface LinkProps {
+  url: string;
+  classes: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+function _buildLink(link: LinkProps) {
   return (
-    <>
-      <div className='pb-4 text-base antialiased'>
-        I'm a software engineer based in Turin, Italy, and I am currently
-        working at
-        <a
-          href='https://resourcify.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp'
-            alt='Resourcify'
-            width='110'
-            height='25'
-          />
-        </a>
-        .
-      </div>
+    <Link href={link.url} target='_blank' rel='noopener noreferrer'>
+      <Image
+        className={link.classes}
+        src={link.image}
+        alt={link.alt}
+        width={link.width}
+        height={link.height}
+      />
+    </Link>
+  );
+}
 
-      <p className='pb-4 text-base antialiased'>
-        I hold a MSc in Advanced Computer Science from the University of
-        Manchester, and have four years of experience at
-        <a href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
-          <Image
-            className='mx-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp'
-            alt='BJSS'
-            width='45'
-            height='25'
-          />
-        </a>
-        and
-        <a
-          href='https://booking.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg'
-            alt='Booking.com'
-            width='115'
-            height='25'
-          />
-        </a>
-        .
-      </p>
+const Summary = ({ homePage }: SummaryProps) => {
+  const resourcifyLogo = (
+    <Link
+      href='https://resourcify.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <Image
+        className='ms-1 inline'
+        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp'
+        alt='Resourcify'
+        width='106'
+        height='21'
+      />
+    </Link>
+  );
 
-      <p className='pb-4 text-base antialiased'>
-        My skill set embraces a range of programming languages, including Java,
-        Kotlin, Python, C# and TypeScript, as well as frontend frameworks such
-        as React and Angular.
-      </p>
+  const bjssLogo = (
+    <Link href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
+      <Image
+        className='mx-1 inline'
+        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp'
+        alt='BJSS'
+        width='45'
+        height='25'
+      />
+    </Link>
+  );
 
-      <p className='pb-4 text-base antialiased'>
-        While I have a solid foundation in backend development, my heart truly
-        lies in the exciting realm of full-stack engineering.
-      </p>
+  const bookingLogo = (
+    <Link href='https://booking.com/' target='_blank' rel='noopener noreferrer'>
+      <Image
+        className='ms-1 inline'
+        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg'
+        alt='Booking.com'
+        width='115'
+        height='25'
+      />
+    </Link>
+  );
 
-      <p className='pb-4 text-base antialiased'>
-        In my free time, I’m a fiction writer, an avid bookworm, an oboist and
-        alto singer, and a travel photographer.
-      </p>
-    </>
+  const part1 = reactStringReplace(
+    homePage.introduction_1,
+    '{Resourcify}',
+    () => resourcifyLogo,
+  );
+
+  let part2 = reactStringReplace(
+    homePage.introduction_2,
+    '{BJSS}',
+    () => bjssLogo,
+  );
+  part2 = reactStringReplace(part2, '{Booking}', () => bookingLogo);
+
+  return (
+    <div className='text-base antialiased'>
+      <p className='mb-4 md:mb-1'>{part1}</p>
+      <p className='mb-4'>{part2}</p>
+      <ReactMarkdown className='mb-4'>{homePage.introduction_3}</ReactMarkdown>
+      <ReactMarkdown className='mb-4'>{homePage.introduction_4}</ReactMarkdown>
+      <ReactMarkdown className='mb-4'>{homePage.introduction_5}</ReactMarkdown>
+    </div>
   );
 };
 
