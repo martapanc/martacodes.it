@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { queryCodeSnippets } from '@/queries/codeSnippets';
+import { queryCodeSnippets } from '@/queries/code-snippets';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
 
