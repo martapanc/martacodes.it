@@ -1,5 +1,6 @@
 {
   "resourcify": {
+    "key": "{Resourcify}",
     "href": "https://resourcify.com/",
     "classes": "ms-1 inline",
     "image": "https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp",
@@ -8,6 +9,7 @@
     "height": 21
   },
   "bjss": {
+    "key": "{BJSS}",
     "href": "https://bjss.com/",
     "classes": "mx-1 inline",
     "image": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp",
@@ -16,6 +18,7 @@
     "height": 25
   },
   "booking": {
+    "key": "{Booking}",
     "href": "https://booking.com/",
     "classes": "ms-1 inline",
     "image": "https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg",
