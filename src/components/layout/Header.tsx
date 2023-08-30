@@ -12,6 +12,8 @@ import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 
+import languages from '@/data/languages.json';
+
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
 import LanguageSwitcher, {
   LanguageDef,
@@ -19,8 +21,6 @@ import LanguageSwitcher, {
 import ModeToggleButton from '@/components/buttons/ModeToggleButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
-
-import languages from '@/locales/languages.json';
 
 export const links = [
   { href: '/projects', label: 'headerMenu.projects' },

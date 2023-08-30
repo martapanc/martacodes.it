@@ -5,10 +5,10 @@ import { initReactI18next } from 'react-i18next';
 i18n.use(initReactI18next).init({
   resources: {
     en: {
-      translation: require('../../locales/en.json'),
+      translation: require('@/data/locales/en.json'),
     },
     it: {
-      translation: require('../../locales/it.json'),
+      translation: require('@/data/locales/it.json'),
     },
   },
   lng: 'en', // Default language

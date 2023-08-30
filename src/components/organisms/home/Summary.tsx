@@ -4,14 +4,12 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
 
+import jobs from '@/data/jobs.json';
+
 import { HomePage } from '@/types/HomePage';
 
-export interface SummaryProps {
-  homePage: HomePage;
-}
-
 interface LinkProps {
-  url: string;
+  href: string;
   classes: string;
   image: string;
   alt: string;
@@ -19,9 +17,13 @@ interface LinkProps {
   height: number;
 }
 
-function _buildLink(link: LinkProps) {
+export interface SummaryProps {
+  homePage: HomePage;
+}
+
+function buildLink(link: LinkProps) {
   return (
-    <Link href={link.url} target='_blank' rel='noopener noreferrer'>
+    <Link href={link.href} target='_blank' rel='noopener noreferrer'>
       <Image
         className={link.classes}
         src={link.image}
@@ -34,63 +36,25 @@ function _buildLink(link: LinkProps) {
 }
 
 const Summary = ({ homePage }: SummaryProps) => {
-  const resourcifyLogo = (
-    <Link
-      href='https://resourcify.com/'
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      <Image
-        className='ms-1 inline'
-        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp'
-        alt='Resourcify'
-        width='106'
-        height='21'
-      />
-    </Link>
-  );
-
-  const bjssLogo = (
-    <Link href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
-      <Image
-        className='mx-1 inline'
-        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp'
-        alt='BJSS'
-        width='45'
-        height='25'
-      />
-    </Link>
-  );
-
-  const bookingLogo = (
-    <Link href='https://booking.com/' target='_blank' rel='noopener noreferrer'>
-      <Image
-        className='ms-1 inline'
-        src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg'
-        alt='Booking.com'
-        width='115'
-        height='25'
-      />
-    </Link>
-  );
-
-  const part1 = reactStringReplace(
+  const introduction_1 = reactStringReplace(
     homePage.introduction_1,
     '{Resourcify}',
-    () => resourcifyLogo,
+    () => buildLink(jobs.resourcify),
   );
 
-  let part2 = reactStringReplace(
+  let introduction_2 = reactStringReplace(
     homePage.introduction_2,
     '{BJSS}',
-    () => bjssLogo,
+    () => buildLink(jobs.bjss),
   );
-  part2 = reactStringReplace(part2, '{Booking}', () => bookingLogo);
+  introduction_2 = reactStringReplace(introduction_2, '{Booking}', () =>
+    buildLink(jobs.booking),
+  );
 
   return (
     <div className='text-base antialiased'>
-      <p className='mb-4 md:mb-1'>{part1}</p>
-      <p className='mb-4'>{part2}</p>
+      <p className='mb-4 md:mb-1'>{introduction_1}</p>
+      <p className='mb-4'>{introduction_2}</p>
       <ReactMarkdown className='mb-4'>{homePage.introduction_3}</ReactMarkdown>
       <ReactMarkdown className='mb-4'>{homePage.introduction_4}</ReactMarkdown>
       <ReactMarkdown className='mb-4'>{homePage.introduction_5}</ReactMarkdown>
