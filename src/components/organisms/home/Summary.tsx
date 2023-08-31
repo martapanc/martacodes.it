@@ -1,9 +1,10 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
+
+import clsxm from '@/lib/clsxm';
 
 import jobs from '@/data/jobs.json';
 
@@ -23,7 +24,7 @@ function buildLink(link: LinkProps) {
   return (
     <Link href={link.href} target='_blank' rel='noopener noreferrer'>
       <Image
-        className={clsx(link.classes)}
+        className={clsxm(link.classes + ' inline')}
         src={link.image}
         alt={link.alt}
         width={link.width}
@@ -53,13 +54,22 @@ const Summary = ({ homePage }: SummaryProps) => {
     buildLink(jobs.booking),
   );
 
+  const introductionParts = [
+    homePage.introduction_3,
+    homePage.introduction_4,
+    homePage.introduction_5,
+  ];
+
   return (
     <div className='text-base antialiased'>
       <p className='mb-4 md:mb-1'>{introduction_1}</p>
       <p className='mb-4'>{introduction_2}</p>
-      <ReactMarkdown className='mb-4'>{homePage.introduction_3}</ReactMarkdown>
-      <ReactMarkdown className='mb-4'>{homePage.introduction_4}</ReactMarkdown>
-      <ReactMarkdown className='mb-4'>{homePage.introduction_5}</ReactMarkdown>
+
+      {introductionParts.map((introPart) => (
+        <ReactMarkdown key={introPart} className='mb-4'>
+          {introPart}
+        </ReactMarkdown>
+      ))}
     </div>
   );
 };
