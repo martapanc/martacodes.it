@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -22,7 +23,7 @@ function buildLink(link: LinkProps) {
   return (
     <Link href={link.href} target='_blank' rel='noopener noreferrer'>
       <Image
-        className={link.classes}
+        className={clsx(link.classes)}
         src={link.image}
         alt={link.alt}
         width={link.width}
