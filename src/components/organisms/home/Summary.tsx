@@ -24,7 +24,10 @@ function buildLink(link: LinkProps) {
   return (
     <Link href={link.href} target='_blank' rel='noopener noreferrer'>
       <Image
-        className={clsxm(link.classes + ' inline')}
+        className={clsxm(
+          link.classes +
+            ' inline dark:bg-slate-50 dark:rounded dark:py-0.5 dark:px-1',
+        )}
         src={link.image}
         alt={link.alt}
         width={link.width}
