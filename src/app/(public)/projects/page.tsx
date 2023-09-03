@@ -5,10 +5,6 @@ export const metadata = {
   description: 'Projects page',
 };
 
-// const getData = async () => {
-//
-// };
-
 const ProjectsPage = async () => {
   return (
     <main className='min-h-main'>

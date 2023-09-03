@@ -1,73 +1,79 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import reactStringReplace from 'react-string-replace';
 
-const Summary = () => {
+import clsxm from '@/lib/clsxm';
+
+import jobs from '@/data/jobs.json';
+
+import { HomePage } from '@/types/HomePage';
+
+interface LinkProps {
+  key: string;
+  href: string;
+  classes: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+function buildLink(link: LinkProps) {
   return (
-    <>
-      <div className='pb-4 text-base antialiased'>
-        I'm a software engineer based in Turin, Italy, and I am currently
-        working at
-        <a
-          href='https://resourcify.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067033/resourcify_69f3b5b70d.webp'
-            alt='Resourcify'
-            width='110'
-            height='25'
-          />
-        </a>
-        .
-      </div>
+    <Link href={link.href} target='_blank' rel='noopener noreferrer'>
+      <Image
+        className={clsxm(
+          link.classes +
+            ' inline dark:bg-slate-50 dark:rounded dark:py-0.5 dark:px-1',
+        )}
+        src={link.image}
+        alt={link.alt}
+        width={link.width}
+        height={link.height}
+      />
+    </Link>
+  );
+}
 
-      <p className='pb-4 text-base antialiased'>
-        I hold a MSc in Advanced Computer Science from the University of
-        Manchester, and have four years of experience at
-        <a href='https://bjss.com/' target='_blank' rel='noopener noreferrer'>
-          <Image
-            className='mx-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1692645367/bjss_180dc7fdd7.webp'
-            alt='BJSS'
-            width='45'
-            height='25'
-          />
-        </a>
-        and
-        <a
-          href='https://booking.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            className='ms-2 inline'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693067075/bookingcom_91b7aa2e36.svg'
-            alt='Booking.com'
-            width='115'
-            height='25'
-          />
-        </a>
-        .
-      </p>
+export interface SummaryProps {
+  homePage: HomePage;
+}
 
-      <p className='pb-4 text-base antialiased'>
-        My skill set embraces a range of programming languages, including Java,
-        Kotlin, Python, C# and TypeScript, as well as frontend frameworks such
-        as React and Angular.
-      </p>
+const Summary = ({ homePage }: SummaryProps) => {
+  const introduction_1 = reactStringReplace(
+    homePage.introduction_1,
+    jobs.resourcify.key,
+    () => buildLink(jobs.resourcify),
+  );
 
-      <p className='pb-4 text-base antialiased'>
-        While I have a solid foundation in backend development, my heart truly
-        lies in the exciting realm of full-stack engineering.
-      </p>
+  let introduction_2 = reactStringReplace(
+    homePage.introduction_2,
+    jobs.bjss.key,
+    () => buildLink(jobs.bjss),
+  );
+  introduction_2 = reactStringReplace(introduction_2, jobs.booking.key, () =>
+    buildLink(jobs.booking),
+  );
 
-      <p className='pb-4 text-base antialiased'>
-        In my free time, I’m a fiction writer, an avid bookworm, an oboist and
-        alto singer, and a travel photographer.
-      </p>
-    </>
+  const introductionParts = [
+    homePage.introduction_3,
+    homePage.introduction_4,
+    homePage.introduction_5,
+  ];
+
+  return (
+    <div className='text-base antialiased'>
+      <p className='mb-4 md:mb-1'>{introduction_1}</p>
+      <p className='mb-4'>{introduction_2}</p>
+
+      {introductionParts.map((introPart) => (
+        <ReactMarkdown key={introPart} className='mb-4'>
+          {introPart}
+        </ReactMarkdown>
+      ))}
+    </div>
   );
 };
 

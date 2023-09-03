@@ -4,20 +4,25 @@ import Intro from '@/components/organisms/home/Intro';
 import Summary from '@/components/organisms/home/Summary';
 import Seo from '@/components/Seo';
 
-import { queryCodeSnippets } from '@/queries/codeSnippets';
+import { queryCodeSnippets } from '@/queries/code-snippets';
+import { queryHomePage } from '@/queries/home-page';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
+import { HomePage } from '@/types/HomePage';
 
 const queryData = async () => {
   const codeSnippets: CodeSnippet[] = await queryCodeSnippets();
 
+  const homePage: HomePage = await queryHomePage();
+
   return {
     codeSnippets,
+    homePage,
   };
 };
 
 const HomePage = async () => {
-  const { codeSnippets } = await queryData();
+  const { codeSnippets, homePage } = await queryData();
 
   return (
     <main className='min-h-main'>
@@ -25,9 +30,9 @@ const HomePage = async () => {
 
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-16 md:py-24'>
-          <Intro codeSnippets={codeSnippets} />
+          <Intro greeting={homePage.greeting} codeSnippets={codeSnippets} />
 
-          <Summary />
+          <Summary homePage={homePage} />
         </div>
       </section>
     </main>
