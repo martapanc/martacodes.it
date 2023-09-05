@@ -68,7 +68,10 @@ function SocialLinks() {
           className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
           href={socialLink.href}
         >
-          <socialLink.icon className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300' />
+          <socialLink.icon
+            size={50}
+            className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300'
+          />
         </UnstyledLink>
       ))}
     </div>
@@ -87,7 +90,7 @@ type FooterLink = {
 };
 const footerLinks: FooterLink[] = [
   {
-    href: 'https://martas.links',
+    href: 'https://martas-links.vercel.app',
     label: 'footerMenu.links',
   },
   {

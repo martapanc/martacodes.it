@@ -13,17 +13,6 @@ export const lightTheme = createTheme({
       primary: '#000',
     },
   },
-  // components: {
-  //   MuiMenu: {
-  //     styleOverrides: {
-  //       list: {
-  //         '&[role="menu"], &[role="listbox"]': {
-  //           backgroundColor: '#E2E8F0'
-  //         },
-  //       },
-  //     },
-  //   },
-  // }
 });
 
 export const darkTheme = createTheme({
