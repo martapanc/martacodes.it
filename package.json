@@ -23,6 +23,7 @@
   "dependencies": {
     "@anatoliygatt/dark-mode-toggle": "^1.0.1",
     "@apollo/client": "^3.8.1",
+    "@apollo/experimental-nextjs-app-support": "^0.4.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
