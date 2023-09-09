@@ -1,12 +1,4 @@
 import { Meta } from '@storybook/react';
-import {
-  SiNextdotjs,
-  SiReact,
-  SiStrapi,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-} from 'react-icons/si';
 
 import ProjectCard, {
   ProjectCardProps,
@@ -34,14 +26,7 @@ const project: Project = {
   shortDescription: 'This very website :)',
   longDescription:
     "Built with ReactJS and later migrated to Typescript, it's also a chance to play around with my web development skills and experiment with front-end technologies.",
-  tools: [
-    { title: 'nextjs', icon: SiNextdotjs },
-    { title: 'react', icon: SiReact },
-    { title: 'typescript', icon: SiTypescript },
-    { title: 'tailwind', icon: SiTailwindcss },
-    { title: 'strapi', icon: SiStrapi },
-    { title: 'vercel', icon: SiVercel },
-  ],
+  tools: ['nextjs', 'react', 'typescript', 'tailwind', 'strapi', 'vercel'],
   date: '2023-08-01',
   tags: ['react', 'webdev', 'frontend', 'personal', 'typescript'],
   links: {

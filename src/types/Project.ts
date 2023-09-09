@@ -1,11 +1,4 @@
-import { IconType } from 'react-icons';
-
 import { Icon } from '@/types/Icon';
-
-export interface ToolIcon {
-  icon: IconType;
-  title: string;
-}
 
 export interface Project {
   id: string;
@@ -13,8 +6,20 @@ export interface Project {
   image: Icon;
   shortDescription: string;
   longDescription?: string;
-  tools: ToolIcon[];
+  tools: string[];
   date: string;
   tags: string[];
+  links: object;
+}
+
+export interface RawProject {
+  id: string;
+  title: string;
+  image: Icon;
+  shortDescription: string;
+  longDescription?: string;
+  tools: string;
+  date: string;
+  tags: string;
   links: object;
 }
