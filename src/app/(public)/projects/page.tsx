@@ -26,7 +26,7 @@ const ProjectsPage = async () => {
         <div className='layout relative flex flex-col py-12'>
           <h1 className='mb-5'>Projects</h1>
 
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-5 xl:grid-cols-3'>
+          <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-3'>
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
