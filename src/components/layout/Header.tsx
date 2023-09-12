@@ -26,7 +26,7 @@ export const links = [
   { href: '/projects', label: 'headerMenu.projects' },
   { href: '/cv', label: 'headerMenu.cv' },
   { href: '/uses', label: 'headerMenu.uses' },
-  { href: '/contact', label: 'headerMenu.contact' },
+  { href: '/contacts', label: 'headerMenu.contact' },
 ];
 
 export default function Header() {
