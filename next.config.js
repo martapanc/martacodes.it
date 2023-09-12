@@ -38,7 +38,7 @@ const nextConfig = {
     return config;
   },
 
-  staticPageGenerationTimeout: 2000,
+  staticPageGenerationTimeout: 5000,
 };
 
 module.exports = nextConfig;
