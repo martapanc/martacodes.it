@@ -44,7 +44,7 @@ export async function queryProjects() {
 
 const projectsQuery = gql`
   query {
-    projects(locale: "en", sort: "date:desc") {
+    projects(locale: "en", sort: "date:DESC") {
       data {
         id
         attributes {
