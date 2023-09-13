@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.0](https://github.com/martapanc/martacodes.it/compare/v1.1.0...v1.2.0) (2023-09-13)
+
+
+### Features
+
+* add Project type and base Card component ([758be7c](https://github.com/martapanc/martacodes.it/commit/758be7c485f29ae78e645ddc5add26052e64c78b))
+* compute card height dynamically; add aria-labels and link icons ([ead1bba](https://github.com/martapanc/martacodes.it/commit/ead1bba53078d7c66568124c81427708e3bb61eb))
+* create iconMapper and assemble Projects page ([60d6937](https://github.com/martapanc/martacodes.it/commit/60d69370cc89cabe03bd2ddce76f5d5d3abed8ff))
+* slide longer description up on "read more" click ([d18d336](https://github.com/martapanc/martacodes.it/commit/d18d3367d5bf50eca9552a58b9ec76eadd516c47))
+
+
+### Bug Fixes
+
+* add error handling for retrieving projects ([a303e32](https://github.com/martapanc/martacodes.it/commit/a303e32e5d47bbc99ea94edebbbd3fbe5b796025))
+
 ## [1.1.0](https://github.com/martapanc/martacodes.it/compare/v1.0.0...v1.1.0) (2023-09-06)
 
 
