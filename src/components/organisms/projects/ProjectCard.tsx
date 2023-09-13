@@ -79,7 +79,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     }
   }, []);
 
-  const iconColor = theme === 'dark' ? 'white' : 'black';
+  const iconColor = theme === 'dark' ? '#e1e7f2' : '#15295F';
 
   return (
     <div
