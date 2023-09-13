@@ -61,14 +61,25 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     setActiveDiv(activeDiv === 'first' ? 'second' : 'first');
   };
 
+  const [autoMarginHeight, setAutoMarginHeight] = useState('auto');
+  const autoMarginRef: RefObject<HTMLDivElement> = useRef(null);
+
   useEffect(() => {
     if (cardRef.current) {
       // Calculate and set the initial height of the card content
       setCardHeight(cardRef.current.clientHeight + 'px');
     }
+
+    if (autoMarginRef.current) {
+      const computedStyle = window.getComputedStyle(autoMarginRef.current);
+      const mbValue = computedStyle.marginBottom;
+      const mbNumeric = parseFloat(mbValue);
+
+      setAutoMarginHeight(`${mbNumeric}px`);
+    }
   }, []);
 
-  const iconColor = theme === 'dark' ? 'white' : 'black';
+  const iconColor = theme === 'dark' ? '#e1e7f2' : '#15295F';
 
   return (
     <div
@@ -87,8 +98,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </h3>
 
         <div
-          className='text-justify md:font-light md:text-sm mb-auto'
+          ref={autoMarginRef}
+          className='text-justify md:font-light md:text-sm'
           aria-label='Project short description'
+          style={{ marginBottom: autoMarginHeight }}
         >
           <ReactMarkdown>{project.shortDescription}</ReactMarkdown>
         </div>

@@ -65,7 +65,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 variants={navigationVariants}
                 initial='hidden'
                 animate='visible'
-                custom={0.5 + (links.length + 1) * 0.1}
+                custom={0.5 + (links.length + 3) * 0.1}
               >
                 <ModeToggleButton />
               </motion.li>
@@ -74,7 +74,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 variants={navigationVariants}
                 initial='hidden'
                 animate='visible'
-                custom={0.5 + (links.length + 2) * 0.1}
+                custom={0.5 + (links.length + 4) * 0.1}
               >
                 <LanguageSwitcherMobile languages={languages} />
               </motion.li>
