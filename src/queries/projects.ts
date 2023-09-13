@@ -8,34 +8,26 @@ import { Project, RawProject } from '@/types/Project';
 
 export async function queryProjects() {
   try {
-    const { data, errors } = await apolloClient.query({ query: projectsQuery });
-
-    // Check if there are errors
-    if (errors) {
-      // eslint-disable-next-line no-console
-      console.error('GraphQL errors:', errors);
-    }
+    const { data } = await apolloClient.query({ query: projectsQuery });
 
     const projects: Project[] = [];
 
-    if (data) {
-      const result: RawProject[] = flattenToArray<RawProject>(data.projects);
+    const result: RawProject[] = flattenToArray<RawProject>(data.projects);
 
-      result.map((entry) => {
-        const project: Project = {
-          id: entry.id,
-          title: entry.title,
-          image: entry.image,
-          shortDescription: entry.shortDescription,
-          longDescription: entry.longDescription,
-          tools: entry.tools.split(','),
-          date: entry.date,
-          tags: entry.tags.split(','),
-          links: entry.links,
-        };
-        projects.push(project);
-      });
-    }
+    result.map((entry) => {
+      const project: Project = {
+        id: entry.id,
+        title: entry.title,
+        image: entry.image,
+        shortDescription: entry.shortDescription,
+        longDescription: entry.longDescription,
+        tools: entry.tools.split(','),
+        date: entry.date,
+        tags: entry.tags.split(','),
+        links: entry.links,
+      };
+      projects.push(project);
+    });
 
     return projects;
   } catch (error) {
