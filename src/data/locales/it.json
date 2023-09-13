@@ -43,6 +43,9 @@
     },
     "projects": {
       "readMore": "Leggi di più"
+    },
+    "cv": {
+      "download": "Scarica PDF"
     }
   }
 }
