@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/martapanc/martacodes.it/compare/v1.2.0...v1.3.0) (2023-09-13)
+
+
+### Features
+
+* make auto margin fixed ([f8e8542](https://github.com/martapanc/martacodes.it/commit/f8e854235c3006ce651e1f63aa5dbeebc1f7ebfc))
+
+
+### Bug Fixes
+
+* icon light/dark colors on Projects; Publication height; MobileMenu animation ([468822a](https://github.com/martapanc/martacodes.it/commit/468822ad707717c19986bef0131a040d3755484d))
+
 ## [1.2.0](https://github.com/martapanc/martacodes.it/compare/v1.1.0...v1.2.0) (2023-09-13)
 
 
