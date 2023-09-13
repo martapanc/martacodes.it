@@ -8,31 +8,40 @@ import { Project, RawProject } from '@/types/Project';
 
 export async function queryProjects() {
   try {
-    const { data } = await apolloClient.query({ query: projectsQuery });
+    const { data, errors } = await apolloClient.query({ query: projectsQuery });
 
-    const result: RawProject[] = flattenToArray<RawProject>(data.projects);
+    // Check if there are errors
+    if (errors) {
+      // eslint-disable-next-line no-console
+      console.error('GraphQL errors:', errors);
+    }
+
     const projects: Project[] = [];
 
-    result.map((entry) => {
-      const project: Project = {
-        id: entry.id,
-        title: entry.title,
-        image: entry.image,
-        shortDescription: entry.shortDescription,
-        longDescription: entry.longDescription,
-        tools: entry.tools.split(','),
-        date: entry.date,
-        tags: entry.tags.split(','),
-        links: entry.links,
-      };
-      projects.push(project);
-    });
+    if (data) {
+      const result: RawProject[] = flattenToArray<RawProject>(data.projects);
+
+      result.map((entry) => {
+        const project: Project = {
+          id: entry.id,
+          title: entry.title,
+          image: entry.image,
+          shortDescription: entry.shortDescription,
+          longDescription: entry.longDescription,
+          tools: entry.tools.split(','),
+          date: entry.date,
+          tags: entry.tags.split(','),
+          links: entry.links,
+        };
+        projects.push(project);
+      });
+    }
 
     return projects;
   } catch (error) {
     if (error instanceof ApolloError) {
       // eslint-disable-next-line no-console
-      console.error('Apollo Client Error:', error.message);
+      console.error('Apollo Client Error:', error);
     } else {
       // eslint-disable-next-line no-console
       console.error('An unexpected error occurred:', error);
