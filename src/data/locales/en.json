@@ -45,5 +45,8 @@
   "aboutFreeTime": {},
   "projects": {
     "readMore": "Read More"
+  },
+  "cv": {
+    "download": "Download PDF"
   }
 }
