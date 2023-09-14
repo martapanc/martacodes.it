@@ -1,6 +1,6 @@
 {
   "headerMenu": {
-    "about": "About",
+    "about": "Su di me",
     "aboutWork": "Lavoro",
     "aboutWorkMobile": "About ~ Lavoro",
     "aboutFreeTime": "Tempo Libero",
@@ -20,7 +20,7 @@
     "feedback": "Feedback"
   },
   "aboutWork": {
-    "title": "Carriera Lavorativa",
+    "title": "CV",
     "softwareDevelopment": {
       "title": "Sviluppo Software",
       "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg"

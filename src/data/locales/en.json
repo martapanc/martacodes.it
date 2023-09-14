@@ -5,6 +5,7 @@
     "aboutWorkMobile": "About ~ Work & Career",
     "aboutFreeTime": "Free Time",
     "aboutFreeTimeMobile": "About ~ Free Time",
+    "experience": "Work",
     "projects": "Projects",
     "cv": "CV",
     "uses": "Uses",
@@ -20,7 +21,7 @@
     "feedback": "Feedback"
   },
   "aboutWork": {
-    "title": "Work & Career",
+    "title": "My CV",
     "softwareDevelopment": {
       "title": "Software Development",
       "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg"
