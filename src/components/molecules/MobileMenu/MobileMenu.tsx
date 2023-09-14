@@ -19,11 +19,6 @@ export interface MobileMenuProps {
 export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const { t } = useTranslation();
 
-  const mobileLinks = [
-    { href: '/about/work', label: 'headerMenu.aboutWorkMobile' },
-    { href: '/about/free-time', label: 'headerMenu.aboutFreeTimeMobile' },
-    ...links,
-  ];
   const navigationVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: (custom: number) => ({
@@ -49,7 +44,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
             }}
           >
             <ul className='align-center flex h-full flex-col justify-center gap-4 text-center'>
-              {mobileLinks.map(({ href, label }, i) => (
+              {links.map(({ href, label }, i) => (
                 <NavigationItem
                   key={href}
                   href={href}

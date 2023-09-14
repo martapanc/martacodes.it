@@ -14,7 +14,7 @@ const SectionHeading = ({ titlePrefix }: SectionHeadingProps) => {
   const titleIconDimension = 36;
 
   return (
-    <div className='m-2 flex flex-col items-center'>
+    <div className='m-2 mb-3 flex flex-col items-center'>
       <Image
         className='h-auto'
         src={t(`${titlePrefix}.icon`)}

@@ -39,6 +39,15 @@ const nextConfig = {
   },
 
   staticPageGenerationTimeout: 600,
+
+  async rewrites() {
+    return [
+      {
+        source: '/downloads/cv.pdf',
+        destination: '/api/cv.pdf',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
