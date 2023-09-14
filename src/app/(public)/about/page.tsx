@@ -109,7 +109,7 @@ const AboutFreeTimePage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>Free Time</h1>
+          <h1 className='mb-5'>About me</h1>
 
           <div className='mb-5'>
             <p>

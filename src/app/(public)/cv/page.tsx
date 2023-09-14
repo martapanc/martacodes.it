@@ -8,6 +8,7 @@ import Intro from '@/components/organisms/about-work/Intro';
 import Languages from '@/components/organisms/about-work/Languages';
 import Publications from '@/components/organisms/about-work/Publications';
 import WorkExperience from '@/components/organisms/about-work/WorkExperience';
+import CvCard from '@/components/organisms/cv/CvCard';
 
 import { queryJobs } from '@/queries/jobs';
 import { queryLanguages } from '@/queries/languages';
@@ -99,6 +100,10 @@ const AboutPage = async () => {
           <hr />
 
           <Publications publications={publications} />
+
+          <hr />
+
+          <CvCard />
         </div>
       </section>
     </main>
