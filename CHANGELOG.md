@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/martapanc/martacodes.it/compare/v1.3.0...v1.4.0) (2023-09-14)
+
+
+### Features
+
+* add CV page ([6f1a5bd](https://github.com/martapanc/martacodes.it/commit/6f1a5bd286e7aae27d48d9201677ed11d8317362))
+
 ## [1.3.0](https://github.com/martapanc/martacodes.it/compare/v1.2.0...v1.3.0) (2023-09-13)
 
 
