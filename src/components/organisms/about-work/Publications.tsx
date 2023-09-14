@@ -17,13 +17,15 @@ const Publications = ({ publications }: PublicationProps) => {
     <div className='mb-6 mt-4'>
       <SectionHeading titlePrefix='aboutWork.publications' />
 
-      <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-8'>
+      <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-8'>
         {publications.map((publication) => (
           <div
             key={publication.id}
-            className='flex h-[8.5rem] flex-col justify-between rounded-md p-4 shadow-md dark:bg-slate-900 md:h-40'
+            className='flex min-h-fit max-h-60 flex-col justify-between rounded-md p-4 shadow-md dark:bg-slate-900 lg:max-h-40 lg:h-40'
           >
-            <span className='font-semibold'>{publication.title}</span>
+            <span className='font-semibold mb-2 md:mb-auto'>
+              {publication.title}
+            </span>
 
             <div className='flex flex-row justify-between'>
               <div className='flex flex-col'>

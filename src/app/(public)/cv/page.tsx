@@ -58,7 +58,7 @@ const AboutPage = async () => {
 
           <Intro intro={intro} />
 
-          <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6'>
+          <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'>
             {skills.map((skill: Skill) => (
               <div
                 key={skill.title}
