@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.0](https://github.com/martapanc/martacodes.it/compare/v1.4.0...v1.5.0) (2023-09-14)
+
+
+### Features
+
+* add downloadable CV from Work page ([36cb064](https://github.com/martapanc/martacodes.it/commit/36cb064622a5ce1a07c0d00e455d098c9f136d47))
+* improve element position on CV page ([8aa2675](https://github.com/martapanc/martacodes.it/commit/8aa2675e2c8eff074e54c79c997c8649c14da994))
+* reorganise header routes ([e5ba1ab](https://github.com/martapanc/martacodes.it/commit/e5ba1ab65d565eb403160855b7339e028169fd60))
+
 ## [1.4.0](https://github.com/martapanc/martacodes.it/compare/v1.3.0...v1.4.0) (2023-09-14)
 
 
