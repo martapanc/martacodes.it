@@ -18,7 +18,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
 
   return (
     <div className='my-4'>
-      <SectionHeading titlePrefix='aboutWork.workExperience' />
+      <SectionHeading titlePrefix='cv.workExperience' />
 
       <div>
         {jobs.map((job) => (

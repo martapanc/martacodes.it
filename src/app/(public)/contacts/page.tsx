@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+import Heading from '@/components/atoms/headings/Heading';
+import ContactForm from '@/components/molecules/ContactForm/ContactForm';
+
 export const metadata = {
   title: 'Contacts | MartaCodes.it',
   description: 'Contacts page',
@@ -10,7 +13,11 @@ const ContactsPage = async () => {
     <main className='min-h-main'>
       <section>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>Contacts</h1>
+          <Heading title='contacts.title' />
+
+          <div className='bg-slate-200 dark:bg-slate-800 rounded-md p-4 md:px-8 lg:px-10 w-full lg:w-4/5'>
+            <ContactForm />
+          </div>
         </div>
       </section>
     </main>

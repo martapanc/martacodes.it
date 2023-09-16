@@ -15,7 +15,7 @@ export interface EducationProps {
 const Education = ({ schools }: EducationProps) => {
   return (
     <div className='my-4'>
-      <SectionHeading titlePrefix='aboutWork.education' />
+      <SectionHeading titlePrefix='cv.education' />
 
       <div>
         {schools.map((school) => (

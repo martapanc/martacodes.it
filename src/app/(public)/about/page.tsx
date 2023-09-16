@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { shuffleArray } from '@/lib/helper';
 
+import Heading from '@/components/atoms/headings/Heading';
 import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
 import Books from '@/components/organisms/about-free-time/Books';
 import Music from '@/components/organisms/about-free-time/Music';
@@ -109,7 +110,7 @@ const AboutFreeTimePage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <h1 className='mb-5'>About me</h1>
+          <Heading title='about.title' />
 
           <div className='mb-5'>
             <p>

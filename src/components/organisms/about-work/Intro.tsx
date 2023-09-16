@@ -16,7 +16,7 @@ const Intro = ({ intro }: IntroProps) => {
 
   return (
     <div>
-      <SectionHeading titlePrefix='aboutWork.softwareDevelopment' />
+      <SectionHeading titlePrefix='cv.softwareDevelopment' />
 
       <div className='mb-5'>
         <ReactMarkdown className='text-justify'>
