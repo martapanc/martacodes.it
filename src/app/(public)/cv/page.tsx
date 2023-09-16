@@ -54,7 +54,7 @@ const AboutPage = async () => {
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
         <div className='layout relative flex flex-col py-12'>
-          <Heading title='aboutWork.title' />
+          <Heading title='cv.title' />
 
           <Intro intro={intro} />
 

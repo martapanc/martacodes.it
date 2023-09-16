@@ -19,8 +19,16 @@
     "guestbook": "Libro degli Ospiti",
     "feedback": "Feedback"
   },
-  "aboutWork": {
-    "title": "CV",
+  "about": {
+    "title": "Su di me"
+  },
+  "projects": {
+    "title": "Progetti",
+    "readMore": "Leggi di più"
+  },
+  "cv": {
+    "title": "Il mio CV",
+    "download": "Scarica PDF",
     "softwareDevelopment": {
       "title": "Sviluppo Software",
       "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg"
@@ -42,13 +50,10 @@
       "icon": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/newspaper_e15ec94d21.svg"
     }
   },
-  "about": {
-    "title": "About me"
+  "contacts": {
+    "title": "Contattami"
   },
-  "projects": {
-    "readMore": "Leggi di più"
-  },
-  "cv": {
-    "download": "Scarica PDF"
+  "uses": {
+    "title": "Cose che uso"
   }
 }

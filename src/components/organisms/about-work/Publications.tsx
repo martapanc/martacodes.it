@@ -15,7 +15,7 @@ export interface PublicationProps {
 const Publications = ({ publications }: PublicationProps) => {
   return (
     <div className='mb-6 mt-4'>
-      <SectionHeading titlePrefix='aboutWork.publications' />
+      <SectionHeading titlePrefix='cv.publications' />
 
       <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-8'>
         {publications.map((publication) => (

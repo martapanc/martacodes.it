@@ -14,7 +14,7 @@ export interface LanguageProps {
 const Languages = ({ languages }: LanguageProps) => {
   return (
     <div className='mb-6 mt-4'>
-      <SectionHeading titlePrefix='aboutWork.languages' />
+      <SectionHeading titlePrefix='cv.languages' />
 
       <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 justify-items-center'>
         {languages.map((language) => (
