@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/martapanc/martacodes.it/compare/v1.5.0...v1.6.0) (2023-09-16)
+
+
+### Features
+
+* add ContactForm to page ([41faac1](https://github.com/martapanc/martacodes.it/commit/41faac19c88f256a68a4ce5bd03f365352ee4a45))
+* create ContactForm with Formik and custom fields ([f3ac559](https://github.com/martapanc/martacodes.it/commit/f3ac559d3a030a133492d9723ec943a85d040c2d))
+
 ## [1.5.0](https://github.com/martapanc/martacodes.it/compare/v1.4.0...v1.5.0) (2023-09-14)
 
 
