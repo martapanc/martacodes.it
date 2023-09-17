@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.7.0](https://github.com/martapanc/martacodes.it/compare/v1.6.0...v1.7.0) (2023-09-17)
+
+
+### Features
+
+* add reCaptcha to ContactForm ([9a66a86](https://github.com/martapanc/martacodes.it/commit/9a66a864b6a2af9d60484a0f549e1df6cc49dd2c))
+* add Send API endpoint ([b3b4685](https://github.com/martapanc/martacodes.it/commit/b3b46858ae2e3459a2d519f88670e3dd5f52f21a))
+* extract translated strings from ContactForm ([e947904](https://github.com/martapanc/martacodes.it/commit/e9479046f3ac97bb839a8a249c6f250415bc4222))
+* fix reCaptcha server logic ([9a66a86](https://github.com/martapanc/martacodes.it/commit/9a66a864b6a2af9d60484a0f549e1df6cc49dd2c))
+* reset reCaptcha after submitting ([9a66a86](https://github.com/martapanc/martacodes.it/commit/9a66a864b6a2af9d60484a0f549e1df6cc49dd2c))
+
 ## [1.6.0](https://github.com/martapanc/martacodes.it/compare/v1.5.0...v1.6.0) (2023-09-16)
 
 
