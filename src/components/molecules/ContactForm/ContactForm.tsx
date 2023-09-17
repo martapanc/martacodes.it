@@ -1,9 +1,12 @@
 'use client';
 
 import { Form, Formik } from 'formik';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useEffect, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { Trans, useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
+
+import { verifyCaptcha } from '@/lib/verifyCaptcha';
 
 import { Input } from '@/components/atoms/Input/Input';
 import { Select } from '@/components/atoms/select/Select';
@@ -22,6 +25,25 @@ export interface Subject {
 const ContactForm = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isVerified, setIsVerified] = useState<boolean>(false);
+
+  const reCaptchaSiteKey = '6LcSyzAoAAAAAC7JTJ6gtOWW3cjTK_vKRm2WjEtC';
+
+  async function handleCaptchaSubmission(token: string | null) {
+    // Server function to verify captcha
+    await verifyCaptcha(token)
+      .then(() => {
+        setIsVerified(true);
+      })
+      .catch(() => {
+        setIsVerified(false);
+        setError(true);
+      });
+  }
+
+  useEffect(() => {}, [isVerified]);
 
   const { t } = useTranslation();
 
@@ -78,6 +100,7 @@ const ContactForm = () => {
     setSubmitting(false);
     setSuccess(true);
     resetForm();
+    recaptchaRef.current?.reset();
   };
 
   return (
@@ -104,7 +127,10 @@ const ContactForm = () => {
             )}
             {error && (
               <div className='rounded-md bg-red-100 px-4 py-2 text-red-600 ring-1 ring-red-600 font-semibold'>
-                {t('contacts.error')}
+                <Trans t={t} i18nKey='contacts.error' />
+                <a className='ms-1 underline' href='mailto:info@martacodes.it'>
+                  info@martacodes.it
+                </a>
               </div>
             )}
 
@@ -139,7 +165,19 @@ const ContactForm = () => {
             />
 
             <div className='mt-6 flex justify-end'>
-              <Button type='submit' disabled={isSubmitting} className='group'>
+              <ReCAPTCHA
+                sitekey={reCaptchaSiteKey}
+                ref={recaptchaRef}
+                onChange={handleCaptchaSubmission}
+              />
+            </div>
+
+            <div className='mt-2 flex justify-end'>
+              <Button
+                type='submit'
+                disabled={!isVerified || isSubmitting}
+                className='group'
+              >
                 {isSubmitting
                   ? t('contacts.button.loading')
                   : t('contacts.button.send')}

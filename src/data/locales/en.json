@@ -87,7 +87,7 @@
       }
     },
     "success": "Thanks for your message! 🤗 I will get back to you as soon as possible.",
-    "error": "Whoops, something went wrong on our side! 😟 <br /> Please try again - if the issue persists, reach out directly at <a className='ms-1 underline' href='mailto:info@martacodes.it'>info@martacodes.it</a>",
+    "error": "Whoops, something went wrong on our side! 😟 <br /> Please try again - if the issue persists, reach out directly at",
     "button": {
       "send": "Send message",
       "loading": "Working on it..."
