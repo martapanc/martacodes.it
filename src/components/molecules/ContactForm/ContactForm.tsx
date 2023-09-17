@@ -68,14 +68,13 @@ const ContactForm = () => {
     setSubmitting: (arg: boolean) => void,
     resetForm: () => void,
   ) => {
-    // eslint-disable-next-line no-console
-    console.log(JSON.stringify(formValues, null, 2));
+    const json = JSON.stringify(formValues, null, 2);
 
     setError(false);
     setSuccess(false);
 
-    const res = await fetch('/api/contact/send', {
-      body: JSON.stringify(formValues),
+    const res = await fetch('/api/contacts/send', {
+      body: json,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -99,6 +98,7 @@ const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
+        company: '',
         email: '',
         subject: '',
         message: '',
@@ -112,16 +112,18 @@ const ContactForm = () => {
         return (
           <Form role='form' className='mt-4'>
             {success && (
-              <div className='rounded-md bg-green-100 px-4 py-2 font-bold text-green-600 ring-1 ring-green-600'>
-                Thanks for your message. I will get back to you as soon as
+              <div className='rounded-md bg-green-100 px-4 py-2 text-green-600 ring-1 ring-green-600 font-semibold'>
+                Thanks for your message! 🤗 I will get back to you as soon as
                 possible.
               </div>
             )}
             {error && (
-              <div className='rounded-md bg-red-100 px-4 py-2 font-bold text-red-600 ring-1 ring-red-600'>
-                Whoops, something went wrong on our side! 😟 Please try again -
-                if the issue persists, try reaching out directly at
-                marta_panc@me.com
+              <div className='rounded-md bg-red-100 px-4 py-2 text-red-600 ring-1 ring-red-600 font-semibold'>
+                Whoops, something went wrong on our side! 😟 <br /> Please try
+                again - if the issue persists, reach out directly at
+                <a className='ms-1 underline' href='mailto:info@martacodes.it'>
+                  info@martacodes.it
+                </a>
               </div>
             )}
 
