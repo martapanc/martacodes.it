@@ -51,7 +51,46 @@
     }
   },
   "contacts": {
-    "title": "Contattami"
+    "title": "Contattami",
+    "subjects": {
+      "dev": "👩🏻‍💻 Sviluppo di siti web / applicazioni",
+      "work": "🤝 Collaboriamo su un progetto",
+      "recruiter": "👔 Sono un recruiter e vorrei assumerti",
+      "feedback": "💡 Feedback su questo sito",
+      "problem": "🤕 Segnalazione problemi",
+      "general": "🙋 Richiesta generica",
+      "other": "❓ Altro"
+    },
+    "fields": {
+      "name": {
+        "label": "Nome",
+        "required": "Non essere timido/a :)"
+      },
+      "company": {
+        "label": "Azienda"
+      },
+      "email": {
+        "label": "Email",
+        "invalid": "Qualcosa non quadra nell'indirizzo inserito 🤔 Controllalo e riprova",
+        "required": "Obbligatoria - altrimenti è un po' difficile risponderti 🤷‍♀️"
+      },
+      "subject": {
+        "label": "Oggetto",
+        "select": "Scegli un'opzione",
+        "required": "Non lasciarmi in sospeso! 🧐"
+      },
+      "message": {
+        "label": "Messaggio",
+        "required": "\"Non si invia con facilità un’email senza contenuto.\" (cit.)",
+        "placeholder": "Cos'hai in mente? L'e-mail è il limite! 🪄✨"
+      }
+    },
+    "success": "Grazie per il messaggio! 🤗 Ti risponderò al più presto.",
+    "error": "Ops, qualcosa è andato storto! 😟 <br /> Prova di nuovo, e se il problema persiste scrivi direttamente a <a className='ms-1 underline' href='mailto:info@martacodes.it'>info@martacodes.it</a>",
+    "button": {
+      "send": "Invia messaggio",
+      "loading": "Invio in corso..."
+    }
   },
   "uses": {
     "title": "Cose che uso"
