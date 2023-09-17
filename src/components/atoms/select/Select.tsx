@@ -1,4 +1,5 @@
 import { Field, useField } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import clsxm from '@/lib/clsxm';
 
@@ -16,6 +17,8 @@ export interface Option {
 export const Select = ({ id, label, options }: SelectProps) => {
   const fieldProps = { label, id, name: id, options };
   const [_, meta] = useField(fieldProps);
+
+  const { t } = useTranslation();
 
   return (
     <label htmlFor={id} className='mb-2 mt-6 flex flex-col font-bold'>
@@ -35,8 +38,8 @@ export const Select = ({ id, label, options }: SelectProps) => {
       >
         <option value='none'>Please select</option>
         {options.map((option) => (
-          <option value={option.value} key={option.key}>
-            {option.value}
+          <option value={t(option.value)} key={option.key}>
+            {t(option.value)}
           </option>
         ))}
       </Field>
