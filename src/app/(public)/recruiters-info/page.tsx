@@ -59,6 +59,20 @@ const RecruitersPage = async () => {
           </div>
 
           <hr />
+
+          <div className='job-preferences mb-8'>
+            <h2 className='my-4'>{recruitersPage.jobPreferences.title}</h2>
+            <ReactMarkdown>
+              {recruitersPage.jobPreferences.content}
+            </ReactMarkdown>
+          </div>
+
+          <hr />
+
+          <div className='tldr mb-8'>
+            <h2 className='my-4'>{recruitersPage.tldr.title}</h2>
+            <ReactMarkdown>{recruitersPage.tldr.content}</ReactMarkdown>
+          </div>
         </div>
       </section>
     </main>
