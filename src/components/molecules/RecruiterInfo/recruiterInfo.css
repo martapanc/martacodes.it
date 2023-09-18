@@ -1,0 +1,21 @@
+.salary-expectations p {
+  margin-bottom: 12px;
+}
+
+.tools-techs h4 {
+  margin-bottom: 8px;
+}
+
+.tools-techs p {
+  margin-top: 20px;
+}
+
+ul {
+  margin-bottom: 16px;
+  list-style: inside;
+}
+
+li {
+  margin-left: 22px;
+  margin-bottom: 5px;
+}

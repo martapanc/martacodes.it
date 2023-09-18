@@ -95,5 +95,8 @@
   },
   "uses": {
     "title": "Uses"
+  },
+  "recruiters": {
+    "title": "Info for Recruiters"
   }
 }
