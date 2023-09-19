@@ -17,7 +17,7 @@ describe('SalaryHappinessTool', () => {
 
   test('renders with title when displayTitle is true', () => {
     render(<SalaryHappinessTool salaryData={salaryData} config={config} />);
-    const titleElement = screen.getByText('Salary Happiness Tool');
+    const titleElement = screen.getByText('Salary ⇒ Happiness Tool');
     expect(titleElement).toBeInTheDocument();
   });
 
@@ -29,7 +29,7 @@ describe('SalaryHappinessTool', () => {
         config={configWithoutTitle}
       />,
     );
-    const titleElement = screen.queryByText('Salary Happiness Tool');
+    const titleElement = screen.queryByText('Salary ⇒ Happiness Tool');
     expect(titleElement).toBeNull();
   });
 

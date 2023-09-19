@@ -13,6 +13,7 @@
   "footerMenu": {
     "links": "Link",
     "sourceCode": "Codice Sorgente",
+    "recruiters": "Recruiter",
     "blog": "Blog",
     "updates": "Aggiornamenti",
     "analytics": "Analytics",
@@ -94,5 +95,8 @@
   },
   "uses": {
     "title": "Cose che uso"
+  },
+  "recruiters": {
+    "title": "Info per i Recruiters"
   }
 }

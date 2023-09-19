@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Slider } from '@mui/material';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
@@ -26,10 +28,10 @@ const SalaryHappinessTool = ({ salaryData, config }: SalaryHappinessProps) => {
   const minVisible = roundNum(medianInCurrency * 0.5);
   const minSad = roundNum(medianInCurrency * 0.6);
   const stillSad = roundNum(medianInCurrency * 0.7);
-  const minAcceptable = roundNum(medianInCurrency * 0.8);
+  const minAcceptable = roundNum(medianInCurrency * 0.9);
   const veryHappy = roundNum(medianInCurrency * 1.2);
   const overTheMoon = roundNum(medianInCurrency * 1.3);
-  const maxVisible = roundNum(medianInCurrency * 1.5);
+  const maxVisible = roundNum(medianInCurrency * 1.4);
 
   const [selectedSalary, setSelectedSalary] = useState(minAcceptable);
   const [happinessScore, setHappinessScore] = useState({
@@ -72,8 +74,8 @@ const SalaryHappinessTool = ({ salaryData, config }: SalaryHappinessProps) => {
   }, [selectedSalary]);
 
   return (
-    <Box width={300} className='m-2 '>
-      {config.displayTitle && <h3>Salary Happiness Tool</h3>}
+    <Box width={340} className='p-4'>
+      {config.displayTitle && <h3>Salary &rArr; Happiness Tool</h3>}
 
       <Slider
         className='mt-2'
