@@ -25,6 +25,11 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@anatoliygatt/dark-mode-toggle@^1.0.1":
+  version "1.0.1"
+  resolved "https://verdaccio.mein-recycling.de/@anatoliygatt%2fdark-mode-toggle/-/dark-mode-toggle-1.0.1.tgz#548903c1f16d90243fd7cb3c4d21036c13045d9a"
+  integrity sha512-zOjGHCeTGXxuWuh02NMTHAJ7VrptoVKmGHr/Pb4r+rsUBUz7OEI0x6HXTFZ15RFOAG2pfKjMmQQaOgfhfbyv1w==
+
 "@apollo/client@^3.8.1":
   version "3.8.3"
   resolved "https://verdaccio.mein-recycling.de/@apollo%2fclient/-/client-3.8.3.tgz#7cd23307bbc788a0a9eda51e6a76f32db8282933"

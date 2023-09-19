@@ -1,0 +1,15 @@
+[type='checkbox'] {
+  color: #334155;
+}
+
+[type='checkbox']:checked {
+  background-image: none;
+}
+
+input::before {
+  height: 19px !important;
+}
+
+input:checked::before {
+  left: 23px !important;
+}

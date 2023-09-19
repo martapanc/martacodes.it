@@ -11,8 +11,8 @@ import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 import languages from '@/data/languages.json';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
-import ModeToggleButton from '@/components/atoms/buttons/ModeToggleButton';
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+import ThemeToggle from '@/components/atoms/ThemeToggle/ThemeToggle';
 import LanguageSwitcher, {
   LanguageDef,
 } from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
@@ -81,7 +81,7 @@ export default function Header() {
             <div className='hidden md:flex md:flex-row'>
               {i18nEnabled && <LanguageSwitcher languages={languageDefs} />}
 
-              <ModeToggleButton />
+              <ThemeToggle />
             </div>
           </nav>
 
