@@ -18,6 +18,11 @@ export const recruitersPageQuery = gql`
       data {
         id
         attributes {
+          intro
+          generalInfo {
+            title
+            content
+          }
           salary {
             title
             content
@@ -34,6 +39,7 @@ export const recruitersPageQuery = gql`
             title
             content
           }
+          outro
         }
       }
     }

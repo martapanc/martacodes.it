@@ -38,17 +38,28 @@ const RecruitersPage = async () => {
   return (
     <main className='min-h-main'>
       <section>
-        <div className='layout relative flex flex-col py-12'>
+        <div className='layout relative flex flex-col py-12 recruiters-info'>
           <Heading title='recruiters.title' />
+
+          <div className='intro mb-2' aria-label='Introduction'>
+            <ReactMarkdown>{recruitersPage.intro}</ReactMarkdown>
+          </div>
 
           <div
             className='salary-expectations mb-2'
             aria-label='Salary Expectations'
           >
-            <h2 className='mb-2'>{recruitersPage.salary.title}</h2>
+            <h2 className='my-4'>{recruitersPage.salary.title}</h2>
             <ReactMarkdown>{recruitersPage.salary.content}</ReactMarkdown>
 
             <SalaryHappinessTool salaryData={salaryData} config={config} />
+          </div>
+
+          <hr />
+
+          <div className='general-info mb-2' aria-label='General Info'>
+            <h2 className='my-4'>{recruitersPage.generalInfo.title}</h2>
+            <ReactMarkdown>{recruitersPage.generalInfo.content}</ReactMarkdown>
           </div>
 
           <hr />
@@ -72,6 +83,12 @@ const RecruitersPage = async () => {
           <div className='tldr mb-8'>
             <h2 className='my-4'>{recruitersPage.tldr.title}</h2>
             <ReactMarkdown>{recruitersPage.tldr.content}</ReactMarkdown>
+          </div>
+
+          <hr />
+
+          <div className='outro mt-8'>
+            <ReactMarkdown>{recruitersPage.outro}</ReactMarkdown>
           </div>
         </div>
       </section>
