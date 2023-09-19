@@ -94,6 +94,10 @@ const footerLinks: FooterLink[] = [
     label: 'footerMenu.links',
   },
   {
+    href: '/recruiters-info',
+    label: 'footerMenu.recruiters',
+  },
+  {
     href: 'https://github.com/martapanc/martacodes.it',
     label: 'footerMenu.sourceCode',
   },
