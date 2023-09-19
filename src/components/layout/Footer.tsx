@@ -109,16 +109,16 @@ const footerLinks: FooterLink[] = [
     href: 'https://www.polywork.com/marta_pancaldi',
     label: 'footerMenu.updates',
   },
+  // {
+  //   href: '/',
+  //   label: 'footerMenu.analytics',
+  // },
+  // {
+  //   href: '/',
+  //   label: 'footerMenu.guestbook',
+  // },
   {
-    href: '/',
-    label: 'footerMenu.analytics',
-  },
-  {
-    href: '/',
-    label: 'footerMenu.guestbook',
-  },
-  {
-    href: '/',
+    href: '/contacts',
     label: 'footerMenu.feedback',
   },
 ];
@@ -155,7 +155,7 @@ const socialLinks: SocialLink[] = [
     id: 'Goodreads',
   },
   {
-    href: 'https://www.youtube.com/channel/UCvQWDSKE8fY7srB8hO1vWNw',
+    href: 'https://youtube.com/@pancakemarta',
     icon: SiYoutube,
     id: 'Youtube',
   },

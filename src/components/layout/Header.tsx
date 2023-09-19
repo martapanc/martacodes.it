@@ -29,6 +29,8 @@ export const links = [
 export default function Header() {
   const { t } = useTranslation();
 
+  const i18nEnabled = false;
+
   const languageDefs = languages as LanguageDef[];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -77,7 +79,7 @@ export default function Header() {
             </ul>
 
             <div className='hidden md:flex md:flex-row'>
-              <LanguageSwitcher languages={languageDefs} />
+              {i18nEnabled && <LanguageSwitcher languages={languageDefs} />}
 
               <ModeToggleButton />
             </div>
