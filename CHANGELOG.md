@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.8.0](https://github.com/martapanc/martacodes.it/compare/v1.7.0...v1.8.0) (2023-09-19)
+
+
+### Features
+
+* add general info and outro ([9418165](https://github.com/martapanc/martacodes.it/commit/9418165c95129963d2e1d5ff90c0ebf6faef11da))
+* add Job Preferences and TlDr sections ([da32545](https://github.com/martapanc/martacodes.it/commit/da325454fe7c865aa2d80be8defb00ce4d7fae37))
+* add recruiters link to footer ([547aa58](https://github.com/martapanc/martacodes.it/commit/547aa582a236a2d3730ef654f68ecf836f3d7826))
+* add Salary and Tools sections to RecruiterInfo page ([f9e1400](https://github.com/martapanc/martacodes.it/commit/f9e14000a59035d55648b3e7f1f2e5f65ff8f098))
+
 ## [1.7.0](https://github.com/martapanc/martacodes.it/compare/v1.6.0...v1.7.0) (2023-09-17)
 
 
