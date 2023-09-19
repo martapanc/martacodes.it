@@ -3,12 +3,12 @@ import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import Heading from '@/components/atoms/headings/Heading';
-import Education from '@/components/organisms/about-work/Education';
-import Intro from '@/components/organisms/about-work/Intro';
-import Languages from '@/components/organisms/about-work/Languages';
-import Publications from '@/components/organisms/about-work/Publications';
-import WorkExperience from '@/components/organisms/about-work/WorkExperience';
 import CvCard from '@/components/organisms/cv/CvCard';
+import Education from '@/components/organisms/cv/Education';
+import Intro from '@/components/organisms/cv/Intro';
+import Languages from '@/components/organisms/cv/Languages';
+import Publications from '@/components/organisms/cv/Publications';
+import WorkExperience from '@/components/organisms/cv/WorkExperience';
 
 import { queryJobs } from '@/queries/jobs';
 import { queryLanguages } from '@/queries/languages';

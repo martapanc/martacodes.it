@@ -4,12 +4,12 @@ import { shuffleArray } from '@/lib/helper';
 
 import Heading from '@/components/atoms/headings/Heading';
 import { QuizData, QuizOption } from '@/components/molecules/RandomFacts/Quiz';
-import Books from '@/components/organisms/about-free-time/Books';
-import Music from '@/components/organisms/about-free-time/Music';
-import Podcasts from '@/components/organisms/about-free-time/Podcasts';
-import RandomFacts from '@/components/organisms/about-free-time/RandomFacts';
-import TvSeries from '@/components/organisms/about-free-time/TvSeries';
-import VideoGames from '@/components/organisms/about-free-time/VideoGames';
+import Books from '@/components/organisms/about/Books';
+import Music from '@/components/organisms/about/Music';
+import Podcasts from '@/components/organisms/about/Podcasts';
+import RandomFacts from '@/components/organisms/about/RandomFacts';
+import TvSeries from '@/components/organisms/about/TvSeries';
+import VideoGames from '@/components/organisms/about/VideoGames';
 
 import { queryBooks } from '@/queries/books';
 import { queryPodcasts } from '@/queries/podcasts';

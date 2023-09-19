@@ -40,7 +40,7 @@ import './projectCard.css';
 
 import clsxm from '@/lib/clsxm';
 
-import UnstyledLink from '@/components/links/UnstyledLink';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 
 import { Project } from '@/types/Project';
 

@@ -11,11 +11,11 @@ import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 import languages from '@/data/languages.json';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
+import ModeToggleButton from '@/components/atoms/buttons/ModeToggleButton';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 import LanguageSwitcher, {
   LanguageDef,
-} from '@/components/atoms/LanguageSwitcher/LanguageSwitcher';
-import ModeToggleButton from '@/components/buttons/ModeToggleButton';
-import UnstyledLink from '@/components/links/UnstyledLink';
+} from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
 
 export const links = [

@@ -7,10 +7,10 @@ import { useTranslation } from 'react-i18next';
 
 import languages from '@/data/languages.json';
 
-import LanguageSwitcherMobile from '@/components/atoms/LanguageSwitcher/LanguageSwitcherMobile';
+import ModeToggleButton from '@/components/atoms/buttons/ModeToggleButton';
 import { NavigationItem } from '@/components/atoms/NavigationItem';
-import ModeToggleButton from '@/components/buttons/ModeToggleButton';
 import { links } from '@/components/layout/Header';
+import LanguageSwitcherMobile from '@/components/molecules/LanguageSwitcher/LanguageSwitcherMobile';
 
 export interface MobileMenuProps {
   isOpen: boolean;
