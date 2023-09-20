@@ -81,7 +81,7 @@ export default function Header() {
             <div className='hidden md:flex md:flex-row'>
               {i18nEnabled && <LanguageSwitcher languages={languageDefs} />}
 
-              <ThemeToggle />
+              <ThemeToggle includeLabels={true} />
             </div>
           </nav>
 

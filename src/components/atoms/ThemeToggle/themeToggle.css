@@ -1,15 +1,16 @@
 [type='checkbox'] {
   color: #334155;
+  border-width: 0 !important;
 }
 
 [type='checkbox']:checked {
   background-image: none;
 }
 
-input::before {
+/* input::before {
   height: 19px !important;
 }
 
 input:checked::before {
   left: 23px !important;
-}
+} */

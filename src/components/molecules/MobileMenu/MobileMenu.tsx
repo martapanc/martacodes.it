@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 
 import languages from '@/data/languages.json';
 
-import ModeToggleButton from '@/components/atoms/buttons/ModeToggleButton';
 import { NavigationItem } from '@/components/atoms/NavigationItem';
+import { ThemeToggle } from '@/components/atoms/ThemeToggle/ThemeToggle';
 import { links } from '@/components/layout/Header';
 import LanguageSwitcherMobile from '@/components/molecules/LanguageSwitcher/LanguageSwitcherMobile';
 
@@ -18,6 +18,8 @@ export interface MobileMenuProps {
 
 export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const { t } = useTranslation();
+
+  const i18nEnabled = false;
 
   const navigationVariants = {
     hidden: { opacity: 0, x: -50 },
@@ -62,17 +64,20 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
                 animate='visible'
                 custom={0.5 + (links.length + 3) * 0.1}
               >
-                <ModeToggleButton />
+                <ThemeToggle includeLabels={false} />
               </motion.li>
-              <motion.li
-                className='flex justify-center'
-                variants={navigationVariants}
-                initial='hidden'
-                animate='visible'
-                custom={0.5 + (links.length + 4) * 0.1}
-              >
-                <LanguageSwitcherMobile languages={languages} />
-              </motion.li>
+
+              {i18nEnabled && (
+                <motion.li
+                  className='flex justify-center'
+                  variants={navigationVariants}
+                  initial='hidden'
+                  animate='visible'
+                  custom={0.5 + (links.length + 4) * 0.1}
+                >
+                  <LanguageSwitcherMobile languages={languages} />
+                </motion.li>
+              )}
             </ul>
           </FocusTrap>
         </motion.div>

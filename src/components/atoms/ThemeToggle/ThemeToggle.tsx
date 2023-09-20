@@ -8,7 +8,11 @@ import './themeToggle.css';
 
 type Mode = 'dark' | 'light';
 
-export default function ThemeToggle() {
+export interface ThemeToggleProps {
+  includeLabels?: boolean;
+}
+
+export const ThemeToggle = ({ includeLabels }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
   const [mode, setMode] = useState<Mode>(theme as Mode);
 
@@ -27,8 +31,8 @@ export default function ThemeToggle() {
     <div className=''>
       <DarkModeToggle
         mode={mode}
-        dark='Dark'
-        light='Light'
+        dark={includeLabels ? 'Dark' : ''}
+        light={includeLabels ? 'Light' : ''}
         size='sm'
         inactiveTrackColor='#e2e8f0'
         inactiveTrackColorOnHover='#f8fafc'
@@ -44,9 +48,11 @@ export default function ThemeToggle() {
         activeLabelColor='#0f172a'
         activeLabelColorOnHover='#0f172a'
         activeLabelColorOnActive='#0f172a'
-        ariaLabel='Toggle color scheme'
+        ariaLabel='Toggle Dark / Light Mode'
         onChange={toggleTheme}
       />
     </div>
   );
-}
+};
+
+export default ThemeToggle;
