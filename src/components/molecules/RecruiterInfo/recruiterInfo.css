@@ -33,3 +33,17 @@
   margin-top: 24px;
   margin-bottom: 12px;
 }
+
+.job-preferences details {
+  padding-left: 22px;
+  margin-bottom: 30px;
+}
+
+.job-preferences details li {
+  list-style: square;
+  margin-left: 30px;
+}
+
+.job-preferences a {
+  text-decoration: underline;
+}
