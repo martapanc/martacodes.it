@@ -1,5 +1,6 @@
 'use client';
 
+import Script from 'next/script';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 
@@ -22,6 +23,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             sizes='32x32'
             href='/favicon/favicon.ico'
           />
+
+          {/* Cookie banner */}
+          <Script
+            id='cookieyes'
+            type='text/javascript'
+            src='https://cdn-cookieyes.com/client_data/343cca4a060bf9189f75d72e/script.js'
+          ></Script>
         </head>
         <body>
           <LayoutClient>{children}</LayoutClient>
