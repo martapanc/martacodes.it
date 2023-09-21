@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/martapanc/martacodes.it/compare/v1.8.0...v1.8.1) (2023-09-21)
+
+
+### Bug Fixes
+
+* theme toggle button ([7b19189](https://github.com/martapanc/martacodes.it/commit/7b19189cc277a3434ed27c67c56b1ecd3b1440d5))
+
 ## [1.8.0](https://github.com/martapanc/martacodes.it/compare/v1.7.0...v1.8.0) (2023-09-19)
 
 
