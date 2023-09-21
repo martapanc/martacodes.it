@@ -2,19 +2,30 @@
 
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './home.css';
+
+import clsxm from '@/lib/clsxm';
+
+const blackSignature =
+  'https://res.cloudinary.com/dwrurydlt/image/upload/v1693066829/signature_b64d54de16.webp';
+const whiteSignature =
+  'https://res.cloudinary.com/dwrurydlt/image/upload/v1693556940/signature_white_60dbdcd21f.webp';
 
 const Photo = () => {
   const { theme } = useTheme();
 
-  const avatar = `avatar-${theme}`;
+  const [avatar, setAvatar] = useState('avatar-light');
+  const [signatureUrl, setSignatureUrl] = useState(blackSignature);
 
-  const signatureUrl =
-    theme === 'dark'
-      ? 'https://res.cloudinary.com/dwrurydlt/image/upload/v1693556940/signature_white_60dbdcd21f.webp'
-      : 'https://res.cloudinary.com/dwrurydlt/image/upload/v1693066829/signature_b64d54de16.webp';
+  useEffect(() => {
+    const url = theme === 'dark' ? whiteSignature : blackSignature;
+
+    setSignatureUrl(url);
+
+    setAvatar(`avatar-${theme}`);
+  }, [theme]);
 
   return (
     <div className='flex h-[480px] w-full justify-center mt-6 md:h-[280px] md:w-1/2 md:justify-end md:mt-0'>
@@ -26,7 +37,7 @@ const Photo = () => {
         </div>
         <div className='flex flex-col items-center'>
           <Image
-            className={`mb-4 rounded-full ${avatar}`}
+            className={clsxm('mb-4 rounded-full', avatar)}
             src='https://res.cloudinary.com/dwrurydlt/image/upload/v1694699676/avatar_md_nobg_ef5553f75b.png'
             alt='Avatar'
             width={190}
