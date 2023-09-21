@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/martapanc/martacodes.it/compare/v1.8.1...v1.9.0) (2023-09-21)
+
+
+### Features
+
+* add cookie banner ([bf307c9](https://github.com/martapanc/martacodes.it/commit/bf307c9091dd49316207138f5829ad7b02ffcc1f))
+
 ## [1.8.1](https://github.com/martapanc/martacodes.it/compare/v1.8.0...v1.8.1) (2023-09-21)
 
 
