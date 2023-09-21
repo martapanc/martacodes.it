@@ -4,7 +4,7 @@ import * as React from 'react';
 import { AiOutlineFilePdf } from 'react-icons/ai';
 
 import SectionHeading from '@/components/atoms/headings/SectionHeading';
-import UnstyledLink from '@/components/links/UnstyledLink';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 
 import { Publication } from '@/types/Publication';
 

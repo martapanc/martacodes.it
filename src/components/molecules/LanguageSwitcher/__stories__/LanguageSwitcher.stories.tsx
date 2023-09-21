@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import LanguageSwitcher, {
   LanguageDef,
   LanguageSwitcherProps,
-} from '@/components/atoms/LanguageSwitcher/LanguageSwitcher';
+} from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
 
 const meta: Meta<typeof LanguageSwitcher> = {
   title: 'LanguageSwitcher',

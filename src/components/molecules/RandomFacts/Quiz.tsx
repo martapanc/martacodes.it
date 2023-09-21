@@ -9,8 +9,8 @@ import { useState } from 'react';
 
 import { saveToLocalStorage } from '@/lib/helper';
 
-import Button from '@/components/buttons/Button';
-import { localStorageKey } from '@/components/organisms/about-free-time/RandomFacts';
+import Button from '@/components/atoms/buttons/Button';
+import { localStorageKey } from '@/components/organisms/about/RandomFacts';
 
 import { RandomFact } from '@/types/RandomFact';
 

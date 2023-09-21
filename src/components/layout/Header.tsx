@@ -11,11 +11,11 @@ import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 import languages from '@/data/languages.json';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+import ThemeToggle from '@/components/atoms/ThemeToggle/ThemeToggle';
 import LanguageSwitcher, {
   LanguageDef,
-} from '@/components/atoms/LanguageSwitcher/LanguageSwitcher';
-import ModeToggleButton from '@/components/buttons/ModeToggleButton';
-import UnstyledLink from '@/components/links/UnstyledLink';
+} from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
 
 export const links = [
@@ -28,6 +28,8 @@ export const links = [
 
 export default function Header() {
   const { t } = useTranslation();
+
+  const i18nEnabled = false;
 
   const languageDefs = languages as LanguageDef[];
 
@@ -77,9 +79,9 @@ export default function Header() {
             </ul>
 
             <div className='hidden md:flex md:flex-row'>
-              <LanguageSwitcher languages={languageDefs} />
+              {i18nEnabled && <LanguageSwitcher languages={languageDefs} />}
 
-              <ModeToggleButton />
+              <ThemeToggle includeLabels={true} />
             </div>
           </nav>
 

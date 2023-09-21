@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import Button from '@/components/buttons/Button';
+import Button from '@/components/atoms/buttons/Button';
 
 import { RandomFact } from '@/types/RandomFact';
 

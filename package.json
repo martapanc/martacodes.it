@@ -21,6 +21,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@anatoliygatt/dark-mode-toggle": "^1.0.1",
     "@apollo/client": "^3.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -53,6 +54,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-tippy": "^1.4.0",
     "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0",
     "strapi-flatten-graphql": "^0.1.0",
     "styled-components": "^6.0.7",
     "tailwind-merge": "^1.12.0",

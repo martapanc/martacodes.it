@@ -4,8 +4,12 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import React from 'react';
 
+import './home.css';
+
 const Photo = () => {
   const { theme } = useTheme();
+
+  const avatar = `avatar-${theme}`;
 
   const signatureUrl =
     theme === 'dark'
@@ -22,8 +26,8 @@ const Photo = () => {
         </div>
         <div className='flex flex-col items-center'>
           <Image
-            className='mb-4 rounded-full'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1693038096/avatar_md_292b112d97.png'
+            className={`mb-4 rounded-full ${avatar}`}
+            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1694699676/avatar_md_nobg_ef5553f75b.png'
             alt='Avatar'
             width={190}
             height={0}

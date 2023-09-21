@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import '@/styles/globals.css';
 
-import UnstyledLink from '@/components/links/UnstyledLink';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 
 export default function NotFoundPage() {
   return (

@@ -1,4 +1,6 @@
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import { Pluggable } from 'unified';
 
 import '@/components/molecules/RecruiterInfo/recruiterInfo.css';
 
@@ -22,6 +24,8 @@ const queryData = async () => {
 
 const RecruitersPage = async () => {
   const { recruitersPage } = await queryData();
+
+  // const rehypeRaw = rehype as Pluggable;
 
   const salaryData = {
     min: 70000,
@@ -73,7 +77,8 @@ const RecruitersPage = async () => {
 
           <div className='job-preferences mb-8'>
             <h2 className='my-4'>{recruitersPage.jobPreferences.title}</h2>
-            <ReactMarkdown>
+
+            <ReactMarkdown rehypePlugins={[rehypeRaw as Pluggable]}>
               {recruitersPage.jobPreferences.content}
             </ReactMarkdown>
           </div>
