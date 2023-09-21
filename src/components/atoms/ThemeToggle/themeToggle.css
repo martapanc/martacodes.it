@@ -1,6 +1,6 @@
 [type='checkbox'] {
   color: #334155;
-  border-width: 0 !important;
+  border-width: 0;
 }
 
 [type='checkbox']:checked {

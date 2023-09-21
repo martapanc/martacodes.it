@@ -1,15 +1,22 @@
+:root {
+  --primary-color-light: rgb(42, 42, 116);
+  --secondary-color-light: rgb(135, 208, 248);
+  --primary-color-dark: rgb(74, 76, 204);
+  --secondary-color-dark: rgb(95, 209, 249);
+}
+
 .avatar-light {
   background: linear-gradient(
     175deg,
-    rgb(42, 42, 116) 11.2%,
-    rgb(135, 208, 248) 100.2%
+    var(--primary-color-light) 11.2%,
+    var(--secondary-color-light) 100.2%
   );
 }
 
 .avatar-dark {
   background: radial-gradient(
     circle at 12.3% 19.3%,
-    rgb(74, 76, 204) 0%,
-    rgb(95, 209, 249) 100.2%
+    var(--primary-color-dark) 0%,
+    var(--secondary-color-dark) 100.2%
   );
 }
