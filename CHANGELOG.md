@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/martapanc/martacodes.it/compare/v1.9.0...v1.9.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* fix avatar background on first load ([2b55f10](https://github.com/martapanc/martacodes.it/commit/2b55f103bdc0e2e6471ef5f4688596947f781190))
+
 ## [1.9.0](https://github.com/martapanc/martacodes.it/compare/v1.8.1...v1.9.0) (2023-09-21)
 
 
