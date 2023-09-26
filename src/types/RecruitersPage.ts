@@ -1,3 +1,5 @@
+import { TitledParagraph } from '@/types/Shared';
+
 export interface RecruitersPage {
   intro: string;
   salary: TitledParagraph;
@@ -6,9 +8,4 @@ export interface RecruitersPage {
   jobPreferences: TitledParagraph;
   tldr: TitledParagraph;
   outro: string;
-}
-
-interface TitledParagraph {
-  title: string;
-  content: string;
 }
