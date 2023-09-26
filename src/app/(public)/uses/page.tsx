@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import './uses.css';
+
 import Heading from '@/components/atoms/headings/Heading';
 
 import { queryUsesPage } from '@/queries/uses-page';
@@ -37,7 +39,7 @@ const UsesPage = async () => {
 
           {sections.map((section) => (
             <div
-              className='mb-2'
+              className='uses-section mb-2'
               aria-label={section.title}
               key={section.title}
             >
