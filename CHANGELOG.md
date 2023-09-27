@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/martapanc/martacodes.it/compare/v1.9.1...v1.10.0) (2023-09-27)
+
+
+### Features
+
+* add styles to Uses page ([bbb0f33](https://github.com/martapanc/martacodes.it/commit/bbb0f337eeb240a45738a4e30423fa77e0aedece))
+* add UsesPage query and type; add data to page ([df8de7e](https://github.com/martapanc/martacodes.it/commit/df8de7e7fbff6074308d0d3d3e6599537240ad01))
+
 ## [1.9.1](https://github.com/martapanc/martacodes.it/compare/v1.9.0...v1.9.1) (2023-09-22)
 
 
