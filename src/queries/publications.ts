@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import { getClient } from '../../apollo/apollo-client';
 
 import { Publication } from '@/types/Publication';
 
 export async function queryPublications() {
-  const { data } = await apolloClient.query({ query: publicationQuery });
+  const { data } = await getClient().query({ query: publicationQuery });
 
   return flattenToArray<Publication>(data.publications);
 }

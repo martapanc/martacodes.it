@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import { getClient } from '../../apollo/apollo-client';
 
 import { Job } from '@/types/Job';
 
 export async function queryJobs() {
-  const { data } = await apolloClient.query({ query: jobsQuery });
+  const { data } = await getClient().query({ query: jobsQuery });
 
   return flattenToArray<Job>(data.jobs);
 }

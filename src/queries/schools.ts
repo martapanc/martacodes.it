@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import { getClient } from '../../apollo/apollo-client';
 
 import { School } from '@/types/School';
 
 export async function querySchools() {
-  const { data } = await apolloClient.query({ query: schoolsQuery });
+  const { data } = await getClient().query({ query: schoolsQuery });
 
   return flattenToArray<School>(data.schools);
 }
