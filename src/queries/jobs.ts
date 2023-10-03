@@ -7,7 +7,14 @@ import { getClient } from '../../apollo/apollo-client';
 import { Job } from '@/types/Job';
 
 export async function queryJobs() {
-  const { data } = await getClient().query({ query: jobsQuery });
+  const { data } = await getClient().query({
+    query: jobsQuery,
+    context: {
+      fetchOptions: {
+        next: { revalidate: 60 },
+      },
+    },
+  });
 
   return flattenToArray<Job>(data.jobs);
 }
