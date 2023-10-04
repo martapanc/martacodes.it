@@ -34,8 +34,14 @@ export const { getClient } = registerApolloClient(() => {
   });
 });
 
-export const context_1hour = {
+export const context_short = {
   fetchOptions: {
     next: { revalidate: 3600 },
+  },
+};
+
+export const context_long = {
+  fetchOptions: {
+    next: { revalidate: 86400 },
   },
 };

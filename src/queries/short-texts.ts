@@ -2,14 +2,14 @@ import { gql } from '@apollo/client';
 
 import { flattenToObject } from '@/lib/graphqlUtils';
 
-import { context_1hour, getClient } from '../../apollo/apollo-client';
+import { context_short, getClient } from '../../apollo/apollo-client';
 
 import { SoftwareDevIntro } from '@/types/ShortText';
 
 export async function queryIntro() {
   const { data } = await getClient().query({
     query: softwareDevIntroQuery,
-    context: context_1hour,
+    context: context_short,
   });
 
   return flattenToObject<SoftwareDevIntro>(data.softwareDevelopmentIntro);

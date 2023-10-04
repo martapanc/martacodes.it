@@ -2,7 +2,7 @@ import { ApolloError, gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_1hour, getClient } from '../../apollo/apollo-client';
+import { context_short, getClient } from '../../apollo/apollo-client';
 
 import { Project, RawProject } from '@/types/Project';
 
@@ -10,7 +10,7 @@ export async function queryProjects() {
   try {
     const { data } = await getClient().query({
       query: projectsQuery,
-      context: context_1hour,
+      context: context_short,
     });
 
     const projects: Project[] = [];

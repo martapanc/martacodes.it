@@ -2,14 +2,14 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_1hour, getClient } from '../../apollo/apollo-client';
+import { context_long, getClient } from '../../apollo/apollo-client';
 
 import { VideoGame } from '@/types/VideoGame';
 
 export async function queryVideoGames() {
   const { data } = await getClient().query({
     query: videoGamesQuery,
-    context: context_1hour,
+    context: context_long,
   });
 
   return flattenToArray<VideoGame>(data.videoGames);

@@ -2,6 +2,8 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import '@/components/organisms/cv/cv.css';
+
 import Heading from '@/components/atoms/headings/Heading';
 import CvCard from '@/components/organisms/cv/CvCard';
 import Education from '@/components/organisms/cv/Education';

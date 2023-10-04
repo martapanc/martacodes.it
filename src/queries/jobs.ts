@@ -2,14 +2,14 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_1hour, getClient } from '../../apollo/apollo-client';
+import { context_short, getClient } from '../../apollo/apollo-client';
 
 import { Job } from '@/types/Job';
 
 export async function queryJobs() {
   const { data } = await getClient().query({
     query: jobsQuery,
-    context: context_1hour,
+    context: context_short,
   });
 
   return flattenToArray<Job>(data.jobs);

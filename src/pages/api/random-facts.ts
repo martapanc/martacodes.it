@@ -9,7 +9,7 @@ import {
   selectedTrueRandomFactsQuery,
 } from '@/queries/random-facts';
 
-import { context_1hour, getClient } from '../../../apollo/apollo-client';
+import { context_short, getClient } from '../../../apollo/apollo-client';
 
 import { RandomFact } from '@/types/RandomFact';
 
@@ -32,7 +32,7 @@ const randomFactsApi = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 async function queryRandomFacts(query: DocumentNode) {
-  const { data } = await getClient().query({ query, context: context_1hour });
+  const { data } = await getClient().query({ query, context: context_short });
 
   return flattenToArray<RandomFact>(data.randomFacts);
 }
