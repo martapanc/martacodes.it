@@ -11,7 +11,7 @@ import GeneralView, {
 
 import { trueRandomFactsQuery } from '@/queries/random-facts';
 
-import apolloClient from '../../../../../apollo/apollo-client';
+import { getClient } from '../../../../../apollo/apollo-client';
 
 import { RandomFact } from '@/types/RandomFact';
 
@@ -51,7 +51,7 @@ export const SampleStory = (args: GeneralViewProps) => {
 };
 
 async function queryRandomFacts(query: DocumentNode) {
-  const { data } = await apolloClient.query({ query });
+  const { data } = await getClient().query({ query });
 
   return flattenToArray<RandomFact>(data.randomFacts);
 }

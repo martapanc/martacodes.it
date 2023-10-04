@@ -2,12 +2,15 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import { context_1hour, getClient } from '../../apollo/apollo-client';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
 
 export async function queryCodeSnippets() {
-  const { data } = await apolloClient.query({ query: codeSnippetsQuery });
+  const { data } = await getClient().query({
+    query: codeSnippetsQuery,
+    context: context_1hour,
+  });
 
   return flattenToArray<CodeSnippet>(data.codeSnippets);
 }

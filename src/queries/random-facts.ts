@@ -3,12 +3,12 @@ import { DocumentNode } from 'graphql/language';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import { context_1hour, getClient } from '../../apollo/apollo-client';
 
 import { RandomFact } from '@/types/RandomFact';
 
 export async function queryRandomFacts(query: DocumentNode) {
-  const { data } = await apolloClient.query({ query });
+  const { data } = await getClient().query({ query, context: context_1hour });
 
   return flattenToArray<RandomFact>(data.randomFacts);
 }
