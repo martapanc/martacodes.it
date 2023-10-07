@@ -29,7 +29,7 @@ export const links = [
 export default function Header() {
   const { t } = useTranslation();
 
-  const i18nEnabled = false;
+  const i18nEnabled = true;
 
   const languageDefs = languages as LanguageDef[];
 

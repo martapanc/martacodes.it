@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 type OpenGraphType = {
   siteName: string;
   description: string;
@@ -45,6 +47,14 @@ export function getFromSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }
   return null;
+}
+
+export function saveToCookie(key: string, value: string, options = {}): void {
+  Cookies.set(key, value, options);
+}
+
+export function getFromCookie(key: string): string | undefined {
+  return Cookies.get(key);
 }
 
 export function shuffleArray<T>(array: T[]): T[] {

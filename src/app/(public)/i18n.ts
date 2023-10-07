@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
       translation: require('@/data/locales/it.json'),
     },
   },
-  lng: 'en', // Default language
+  // lng: 'en', // Default language
   fallbackLng: 'en', // Fallback language
   interpolation: {
     escapeValue: false, // Allow interpolation in translations
