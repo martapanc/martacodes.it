@@ -3928,6 +3928,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/cookie@^0.5.2":
+  version "0.5.2"
+  resolved "https://verdaccio.mein-recycling.de/@types%2fcookie/-/cookie-0.5.2.tgz#9bf9d62c838c85a07c92fdf2334c2c14fd9c59a9"
+  integrity sha512-DBpRoJGKJZn7RY92dPrgoMew8xCWc2P71beqsjyhEI/Ds9mOyVmBwtekyfhpwFIVt1WrxTonFifiOZ62V8CnNA==
+
 "@types/cross-spawn@^6.0.2":
   version "6.0.3"
   resolved "https://verdaccio.mein-recycling.de/@types%2fcross-spawn/-/cross-spawn-6.0.3.tgz#c743cb2608f55860ee9776d8c99135d6032c763c"
@@ -6153,7 +6158,7 @@ cookie-signature@1.0.6:
   resolved "https://verdaccio.mein-recycling.de/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
   integrity sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
 
-cookie@0.5.0:
+cookie@0.5.0, cookie@^0.5.0:
   version "0.5.0"
   resolved "https://verdaccio.mein-recycling.de/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
