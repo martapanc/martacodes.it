@@ -1,4 +1,6 @@
+import { parse } from 'cookie';
 import Cookies from 'js-cookie';
+import { NextApiRequest } from 'next';
 
 type OpenGraphType = {
   siteName: string;
@@ -55,6 +57,15 @@ export function saveToCookie(key: string, value: string, options = {}): void {
 
 export function getFromCookie(key: string): string | undefined {
   return Cookies.get(key);
+}
+
+export function getLocaleFromCookies(req: NextApiRequest) {
+  const cookies = parse(req.headers.cookie || '');
+
+  console.log(cookies);
+
+  const locale = cookies.locale || 'en';
+  return locale;
 }
 
 export function shuffleArray<T>(array: T[]): T[] {

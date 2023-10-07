@@ -12,7 +12,6 @@ import Languages from '@/components/organisms/cv/Languages';
 import Publications from '@/components/organisms/cv/Publications';
 import WorkExperience from '@/components/organisms/cv/WorkExperience';
 
-import { queryJobs } from '@/queries/jobs';
 import { queryLanguages } from '@/queries/languages';
 import { queryPublications } from '@/queries/publications';
 import { querySchools } from '@/queries/schools';
@@ -30,11 +29,13 @@ export const metadata = {
 const queryData = async () => {
   const intro = await queryIntro();
 
-  const jobs = await queryJobs();
+  const res = await fetch(process.env.BASEURL + '/api/jobs');
+  const jobs = await res.json();
+
   const languages = await queryLanguages();
-  const publications = await queryPublications();
-  const schools = await querySchools();
-  const skills = await querySkills();
+  const publications = await queryPublications('en');
+  const schools = await querySchools('it');
+  const skills = await querySkills('en');
 
   return {
     intro,

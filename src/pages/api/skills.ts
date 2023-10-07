@@ -1,16 +1,17 @@
-// import { parse } from 'cookie';
 import { NextApiRequest, NextApiResponse } from 'next';
+
+import { getLocaleFromCookies } from '@/lib/helper';
 
 import { querySkills } from '@/queries/skills';
 
 import { Skill } from '@/types/Skill';
 
 const skillsApi = async (req: NextApiRequest, res: NextApiResponse) => {
-  // const cookies = parse(req.headers.cookie || '');
-  // const selectedLanguage = cookies.selectedLanguage || 'en';
-  const selectedLanguage = 'en';
+  const locale = getLocaleFromCookies(req);
 
-  const skills: Skill[] = await querySkills(selectedLanguage);
+  console.log(locale);
+
+  const skills: Skill[] = await querySkills(locale);
 
   res.status(200).json(skills);
 };
