@@ -17,15 +17,6 @@ const apolloClient = new ApolloClient({
 
 export default apolloClient;
 
-// export const { getClient } = registerApolloClient(() => {
-//   return new NextSSRApolloClient({
-//     cache: new NextSSRInMemoryCache(),
-//     link: new HttpLink({
-//       uri: process.env.GRAPHQL_URL,
-//     }),
-//   });
-// });
-
 export const context_short = {
   fetchOptions: {
     next: { revalidate: 3600 },

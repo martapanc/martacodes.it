@@ -7,8 +7,7 @@ import '@/components/molecules/RecruiterInfo/recruiterInfo.css';
 import Heading from '@/components/atoms/headings/Heading';
 import { SalaryHappinessTool } from '@/components/molecules/RecruiterInfo/SalaryHappinessTool';
 
-import { RecruitersPage } from '@/types/RecruitersPage';
-import { useEffect, useState } from 'react';
+import { queryRecruitersPage } from '@/queries/recruiters-page';
 
 export const metadata = {
   title: 'Recruiters Info | MartaCodes.it',
@@ -16,36 +15,15 @@ export const metadata = {
 };
 
 const queryData = async () => {
-  const res = await fetch(process.env.BASEURL + '/api/recruiters');
-  const recruitersPage = await res.json();
-
-  const content = recruitersPage as RecruitersPage;
+  const recruitersPage = await queryRecruitersPage('en');
 
   return {
-    recruitersPage: content,
+    recruitersPage,
   };
 };
 
 const RecruitersPage = async () => {
-  const [recruitersPage, setRecruitersPage] = useState<RecruitersPage | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(process.env.BASEURL + '/api/recruiters');
-        if (!res.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const recruitersPageData = await res.json();
-        setRecruitersPage(recruitersPageData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        // Handle error as needed
-      }
-    };
-
-    fetchData(); 
-  }, []);
+  const { recruitersPage } = await queryData();
 
   const salaryData = {
     min: 70000,

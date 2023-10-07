@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { queryBooks } from '@/queries/books';
 import { queryPodcasts } from '@/queries/podcasts';
 import { queryTvShows } from '@/queries/tv-shows';
-import { queryVideoGames } from '@/queries/queryVideoGames';
+import { queryVideoGames } from '@/queries/video-games';
 
 import { Book } from '@/types/Book';
 import { Podcast } from '@/types/Podcast';

@@ -62,8 +62,6 @@ export function getFromCookie(key: string): string | undefined {
 export function getLocaleFromCookies(req: NextApiRequest) {
   const cookies = parse(req.headers.cookie || '');
 
-  console.log(cookies);
-
   const locale = cookies.locale || 'en';
   return locale;
 }
