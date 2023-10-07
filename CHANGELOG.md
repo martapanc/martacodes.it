@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/martapanc/martacodes.it/compare/v1.10.0...v1.11.0) (2023-10-07)
+
+
+### Features
+
+* enable cookie for quiz data ([ba97be8](https://github.com/martapanc/martacodes.it/commit/ba97be8b667a33603cc812323332221a86e0b1cf))
+
 ## [1.10.0](https://github.com/martapanc/martacodes.it/compare/v1.9.1...v1.10.0) (2023-09-27)
 
 
