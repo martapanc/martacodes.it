@@ -2,12 +2,15 @@ import { gql } from '@apollo/client';
 
 import { flattenToObject } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import apolloClient, { context_short } from '../../apollo/apollo-client';
 
 import { UsesPage } from '@/types/UsesPage';
 
 export async function queryUsesPage() {
-  const { data } = await apolloClient.query({ query: UsesPageQuery });
+  const { data } = await apolloClient.query({
+    query: UsesPageQuery,
+    context: context_short,
+  });
 
   return flattenToObject<UsesPage>(data.usesPage);
 }

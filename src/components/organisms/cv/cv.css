@@ -1,0 +1,11 @@
+.job-content p {
+  margin-bottom: 6px;
+}
+
+.job-content ul {
+  margin-top: 12px;
+}
+
+.job-content li {
+  margin-bottom: 6px !important;
+}

@@ -32,6 +32,7 @@ const GeneralView = ({ randomFacts }: GeneralViewProps) => {
             That was the last cool fact I could think of... come back in some
             time for more :)
           </div>
+          // (or refresh the page to read them again)
         )}
       </div>
 

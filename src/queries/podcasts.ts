@@ -2,12 +2,15 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import apolloClient, { context_long } from '../../apollo/apollo-client';
 
 import { Podcast } from '@/types/Podcast';
 
 export async function queryPodcasts() {
-  const { data } = await apolloClient.query({ query: podcastsQuery });
+  const { data } = await apolloClient.query({
+    query: podcastsQuery,
+    context: context_long,
+  });
 
   return flattenToArray<Podcast>(data.podcasts);
 }

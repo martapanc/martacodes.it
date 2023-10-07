@@ -1,3 +1,7 @@
+import { parse } from 'cookie';
+import Cookies from 'js-cookie';
+import { NextApiRequest } from 'next';
+
 type OpenGraphType = {
   siteName: string;
   description: string;
@@ -45,6 +49,21 @@ export function getFromSessionStorage(key: string): string | null {
     return sessionStorage.getItem(key);
   }
   return null;
+}
+
+export function saveToCookie(key: string, value: string, options = {}): void {
+  Cookies.set(key, value, options);
+}
+
+export function getFromCookie(key: string): string | undefined {
+  return Cookies.get(key);
+}
+
+export function getLocaleFromCookies(req: NextApiRequest) {
+  const cookies = parse(req.headers.cookie || '');
+
+  const locale = cookies.locale || 'en';
+  return locale;
 }
 
 export function shuffleArray<T>(array: T[]): T[] {

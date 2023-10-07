@@ -3,13 +3,13 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import { getFromLocalStorage, saveToLocalStorage } from '@/lib/helper';
+import { getFromCookie, saveToCookie } from '@/lib/helper';
 
 import GeneralView from '@/components/molecules/RandomFacts/GeneralView';
 import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
 import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
 
-export const localStorageKey = 'alreadyPlayed';
+export const alreadyPlayedKey = 'QuizAlreadyPlayed';
 
 const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +20,8 @@ const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
 
   useEffect(() => {
     const fetchDataFromLocalStorage = () => {
-      const alreadyPlayedValue = getFromLocalStorage(localStorageKey);
+      const alreadyPlayedValue = getFromCookie(alreadyPlayedKey);
+
       setAlreadyPlayed(
         alreadyPlayedValue ? JSON.parse(alreadyPlayedValue) : false,
       );
@@ -36,7 +37,7 @@ const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
     setAnswerCorrect(isCorrect);
 
     if (!alreadyPlayed) {
-      saveToLocalStorage(localStorageKey, JSON.stringify(true));
+      saveToCookie(alreadyPlayedKey, JSON.stringify(true));
 
       setAlreadyPlayed(true);
     }

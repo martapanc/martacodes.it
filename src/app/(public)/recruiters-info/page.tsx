@@ -15,7 +15,7 @@ export const metadata = {
 };
 
 const queryData = async () => {
-  const recruitersPage = await queryRecruitersPage();
+  const recruitersPage = await queryRecruitersPage('en');
 
   return {
     recruitersPage,
@@ -24,8 +24,6 @@ const queryData = async () => {
 
 const RecruitersPage = async () => {
   const { recruitersPage } = await queryData();
-
-  // const rehypeRaw = rehype as Pluggable;
 
   const salaryData = {
     min: 70000,

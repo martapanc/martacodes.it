@@ -7,10 +7,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import { useState } from 'react';
 
-import { saveToLocalStorage } from '@/lib/helper';
-
 import Button from '@/components/atoms/buttons/Button';
-import { localStorageKey } from '@/components/organisms/about/RandomFacts';
 
 import { RandomFact } from '@/types/RandomFact';
 
@@ -42,8 +39,6 @@ const Quiz = ({ options, falseOption, onAnswerSubmission }: QuizProps) => {
   };
 
   const submitAnswer = () => {
-    saveToLocalStorage(localStorageKey, 'true');
-
     onAnswerSubmission(falseOption === selectedAnswer);
   };
 

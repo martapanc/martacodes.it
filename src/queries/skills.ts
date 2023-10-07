@@ -2,36 +2,41 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import apolloClient from '../../apollo/apollo-client';
+import apolloClient, { context_short } from '../../apollo/apollo-client';
 
 import { Skill } from '@/types/Skill';
 
-export async function querySkills() {
-  const { data } = await apolloClient.query({ query: skillQuery });
+export async function querySkills(locale: string) {
+  const { data } = await apolloClient.query({
+    query: skillsQuery(locale),
+    context: context_short,
+  });
 
   return flattenToArray<Skill>(data.skills);
 }
 
-const skillQuery = gql`
-  query {
-    skills(locale: "en", sort: "rank") {
-      data {
-        id
-        attributes {
-          title
-          description
-          icons {
-            data {
-              id
-              attributes {
-                name
-                url
-                alternativeText
+function skillsQuery(locale: string) {
+  return gql`
+    query {
+      skills(locale: "${locale}", sort: "rank") {
+        data {
+          id
+          attributes {
+            title
+            description
+            icons {
+              data {
+                id
+                attributes {
+                  name
+                  url
+                  alternativeText
+                }
               }
             }
           }
         }
       }
     }
-  }
-`;
+  `;
+}
