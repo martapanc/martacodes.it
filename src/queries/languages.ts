@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_long, getClient } from '../../apollo/apollo-client';
+import apolloClient, { context_long } from '../../apollo/apollo-client';
 
 import { Language } from '@/types/Language';
 
 export async function queryLanguages() {
-  const { data } = await getClient().query({
+  const { data } = await apolloClient.query({
     query: languagesQuery,
     context: context_long,
   });

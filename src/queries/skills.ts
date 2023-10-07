@@ -4,14 +4,14 @@ import { gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_short, getClient } from '../../apollo/apollo-client';
+import apolloClient, { context_short } from '../../apollo/apollo-client';
 
 import { Skill } from '@/types/Skill';
 
 export async function querySkills(locale?: string) {
   const lang = locale || 'en';
 
-  const { data } = await getClient().query({
+  const { data } = await apolloClient.query({
     query: skillQuery,
     context: context_short,
   });

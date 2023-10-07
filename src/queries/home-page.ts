@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 import { flattenToObject } from '@/lib/graphqlUtils';
 
-import { context_short, getClient } from '../../apollo/apollo-client';
+import apolloClient, { context_short } from '../../apollo/apollo-client';
 
 import { HomePage } from '@/types/HomePage';
 
 export async function queryHomePage() {
-  const { data } = await getClient().query({
+  const { data } = await apolloClient.query({
     query: homePageQuery,
     context: context_short,
   });

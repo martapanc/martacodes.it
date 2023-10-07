@@ -2,13 +2,13 @@ import { ApolloError, gql } from '@apollo/client';
 
 import { flattenToArray } from '@/lib/graphqlUtils';
 
-import { context_short, getClient } from '../../apollo/apollo-client';
+import apolloClient, { context_short } from '../../apollo/apollo-client';
 
 import { Project, RawProject } from '@/types/Project';
 
 export async function queryProjects() {
   try {
-    const { data } = await getClient().query({
+    const { data } = await apolloClient.query({
       query: projectsQuery,
       context: context_short,
     });

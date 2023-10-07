@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { queryPublications } from '@/queries/publications';
+import { queryPublications } from '@/queries/queryPublications';
 
 import { Publication } from '@/types/Publication';
 
