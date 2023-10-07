@@ -30,6 +30,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             type='text/javascript'
             src='https://cdn-cookieyes.com/client_data/343cca4a060bf9189f75d72e/script.js'
           ></Script>
+
+          {/* Umami Analytics */}
+          <Script
+            async
+            src='https://analytics.eu.umami.is/script.js'
+            data-website-id='ab53ae74-58ea-44ff-b5fa-451b4f52c364'
+          ></Script>
         </head>
         <body>
           <LayoutClient>{children}</LayoutClient>

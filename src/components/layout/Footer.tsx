@@ -110,7 +110,7 @@ const footerLinks: FooterLink[] = [
     label: 'footerMenu.updates',
   },
   // {
-  //   href: '/',
+  //   href: 'https://analytics.eu.umami.is/share/Dw94G9vRDiMT9YXN/MartaCodes.it',
   //   label: 'footerMenu.analytics',
   // },
   // {
