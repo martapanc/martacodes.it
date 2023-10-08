@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/martapanc/martacodes.it/compare/v1.11.0...v1.12.0) (2023-10-08)
+
+
+### Features
+
+* extract SkillCard and display first 3 skills ([24de3e0](https://github.com/martapanc/martacodes.it/commit/24de3e04b11f74692cf96460c98300986d352c1a))
+
 ## [1.11.0](https://github.com/martapanc/martacodes.it/compare/v1.10.0...v1.11.0) (2023-10-07)
 
 
