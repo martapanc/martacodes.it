@@ -37,6 +37,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             src='https://analytics.eu.umami.is/script.js'
             data-website-id='ab53ae74-58ea-44ff-b5fa-451b4f52c364'
           ></Script>
+
+          <style>
+            @import
+            url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+          </style>
         </head>
         <body>
           <LayoutClient>{children}</LayoutClient>

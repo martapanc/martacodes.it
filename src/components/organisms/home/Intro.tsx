@@ -15,12 +15,12 @@ export interface IntroProps {
 
 const Intro = ({ greeting, codeSnippets }: IntroProps) => {
   return (
-    <div className='mb-6 flex h-fit flex-col pb-6 md:h-96'>
+    <div className='mb-6 flex h-fit flex-col pb-6'>
       <h1 className='pb-4 text-5xl antialiased'>
         <ReactMarkdown>{greeting}</ReactMarkdown>
       </h1>
 
-      <div className='mt-8 flex flex-col md:flex-row'>
+      <div className='mt-8 flex flex-col lg:flex-row'>
         <Code codeSnippets={shuffleArray(codeSnippets)} />
 
         <Photo />

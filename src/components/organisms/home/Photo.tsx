@@ -28,12 +28,18 @@ const Photo = () => {
   }, [theme]);
 
   return (
-    <div className='flex h-[480px] w-full justify-center mt-6 md:h-[280px] md:w-1/2 md:justify-end md:mt-0'>
+    <div className='flex h-[480px] md:h-[300px] w-full justify-center mt-6 lg:h-[280px] lg:w-1/2 lg:justify-end lg:mt-0 bg-sky-100 dark:bg-blue-950 rounded-md'>
       <div className='flex items-center flex-col-reverse p-3 md:ms-3 md:flex-row'>
-        <div className='flex flex-col items-center md:me-6 md:items-end text-lg'>
-          <div className='mt-10 md:my-5'>Software Engineer</div>
-          <div className='mt-10 md:my-5'>Lifelong learner</div>
-          <div className='mt-10 md:my-5'>Remote work enthusiast</div>
+        <div className='flex flex-col items-center md:me-12 lg:me-6 md:items-end text-lg photo-description'>
+          <div className='mt-10 md:my-5 text-blue-600 dark:text-blue-300 text-xl md:text-end'>
+            Software Engineer
+          </div>
+          <div className='mt-10 md:my-5 text-blue-700 dark:text-blue-200 text-xl md:text-end'>
+            Lifelong learner
+          </div>
+          <div className='mt-10 md:my-5 text-blue-800 dark:text-blue-100 text-xl xs:text-md lg:text-lg md:text-end'>
+            Remote work enthusiast
+          </div>
         </div>
         <div className='flex flex-col items-center'>
           <Image
