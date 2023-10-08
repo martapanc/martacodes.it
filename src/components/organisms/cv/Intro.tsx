@@ -18,7 +18,7 @@ const Intro = ({ intro }: IntroProps) => {
     <div>
       <SectionHeading titlePrefix='cv.softwareDevelopment' />
 
-      <div className='mb-5'>
+      <div className='mb-6 cv-intro-section'>
         <ReactMarkdown className='text-justify'>
           {intro.content.replace('8', noOfYears)}
         </ReactMarkdown>

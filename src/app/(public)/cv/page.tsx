@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import * as React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import '@/components/organisms/cv/cv.css';
 
@@ -10,6 +8,7 @@ import Education from '@/components/organisms/cv/Education';
 import Intro from '@/components/organisms/cv/Intro';
 import Languages from '@/components/organisms/cv/Languages';
 import Publications from '@/components/organisms/cv/Publications';
+import Skills from '@/components/organisms/cv/Skills';
 import WorkExperience from '@/components/organisms/cv/WorkExperience';
 
 import { queryJobs } from '@/queries/jobs';
@@ -18,9 +17,6 @@ import { queryPublications } from '@/queries/publications';
 import { querySchools } from '@/queries/schools';
 import { queryIntro } from '@/queries/short-texts';
 import { querySkills } from '@/queries/skills';
-
-import { Icon } from '@/types/Icon';
-import { Skill } from '@/types/Skill';
 
 export const metadata = {
   title: 'About my Work | MartaCodes.it',
@@ -49,8 +45,6 @@ const AboutPage = async () => {
   const { intro, jobs, languages, publications, schools, skills } =
     await queryData();
 
-  const iconDimension = 36;
-
   return (
     <main className='min-h-main'>
       <section className='dark:bg-dark bg-white'>
@@ -59,32 +53,7 @@ const AboutPage = async () => {
 
           <Intro intro={intro} />
 
-          <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'>
-            {skills.map((skill: Skill) => (
-              <div
-                key={skill.title}
-                className='skill-container rounded p-4 shadow-md dark:bg-slate-900 dark:drop-shadow-md'
-              >
-                <div className='flex'>
-                  {skill.icons.map((icon: Icon) => (
-                    <Image
-                      key={icon.id}
-                      height={iconDimension}
-                      width={iconDimension}
-                      alt={icon.name}
-                      src={icon.url}
-                    />
-                  ))}
-                </div>
-
-                <h3>{skill.title}</h3>
-
-                <span className='skill-description text-justify font-light'>
-                  <ReactMarkdown>{skill.description}</ReactMarkdown>
-                </span>
-              </div>
-            ))}
-          </div>
+          <Skills skills={skills} />
 
           <hr />
 
