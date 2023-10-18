@@ -37,7 +37,7 @@ const Photo = () => {
           <div className='mt-10 md:my-5 text-blue-700 dark:text-blue-200 text-xl md:text-end'>
             Lifelong learner
           </div>
-          <div className='mt-10 md:my-5 text-blue-800 dark:text-blue-100 text-xl xs:text-md lg:text-lg md:text-end'>
+          <div className='mt-10 md:my-5 text-blue-800 dark:text-blue-100 text-xl xs:text-md md:text-end'>
             Remote work enthusiast
           </div>
         </div>
