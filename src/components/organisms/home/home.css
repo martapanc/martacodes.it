@@ -22,11 +22,11 @@
 }
 
 .photo-description {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 .greeting {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   font-size: 3.5rem;
   font-weight: 700;
   background-image: linear-gradient(
