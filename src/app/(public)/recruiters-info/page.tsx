@@ -55,6 +55,13 @@ const RecruitersPage = async () => {
             <ReactMarkdown>{recruitersPage.salary.content}</ReactMarkdown>
 
             <SalaryHappinessTool salaryData={salaryData} config={config} />
+
+            <ReactMarkdown
+              className='my-4'
+              rehypePlugins={[rehypeRaw as Pluggable]}
+            >
+              {recruitersPage.salary.outro}
+            </ReactMarkdown>
           </div>
 
           <hr />

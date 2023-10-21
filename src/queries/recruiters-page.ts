@@ -30,6 +30,7 @@ export function recruitersPageQuery(locale: string) {
             salary {
               title
               content
+              outro
             }
             toolsTechs {
               title
