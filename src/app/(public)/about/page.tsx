@@ -25,7 +25,7 @@ import { queryVideoGames } from '@/queries/video-games';
 import { RandomFact } from '@/types/RandomFact';
 
 export const metadata = {
-  title: 'About my Free Time | MartaCodes.it',
+  title: 'About | MartaCodes.it',
   description: 'About page',
 };
 
