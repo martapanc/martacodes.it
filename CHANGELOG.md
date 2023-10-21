@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.13.0](https://github.com/martapanc/martacodes.it/compare/v1.12.0...v1.13.0) (2023-10-21)
+
+
+### Features
+
+* add Analytics link ([e189d8a](https://github.com/martapanc/martacodes.it/commit/e189d8afe45338d39d84e95ad7602973e7d52c0a))
+* add outro for salary section ([574fc2c](https://github.com/martapanc/martacodes.it/commit/574fc2c0b7431371f9fadc4b990b9401a6a73ce6))
+* change font and color of Heading component ([025c250](https://github.com/martapanc/martacodes.it/commit/025c250522c8fd0003ec432a278f4850838dd652))
+* change font and color of main greeting ([26304b9](https://github.com/martapanc/martacodes.it/commit/26304b9300beb076ec11a67199a0efc9445779c0))
+* improve style of photo element ([9f093f0](https://github.com/martapanc/martacodes.it/commit/9f093f0db9be7ae3d81e39ee9d37f1ee2f11662c))
+* small changes to homepage ([8295eaf](https://github.com/martapanc/martacodes.it/commit/8295eaf9de7d79bd899d3d702610650b2f29a60f))
+
+
+### Bug Fixes
+
+* change heading height to min-height ([e6e6ace](https://github.com/martapanc/martacodes.it/commit/e6e6ace2fc4137afbbf2d73d024bf3864bfff35e))
+
 ## [1.12.0](https://github.com/martapanc/martacodes.it/compare/v1.11.0...v1.12.0) (2023-10-08)
 
 
