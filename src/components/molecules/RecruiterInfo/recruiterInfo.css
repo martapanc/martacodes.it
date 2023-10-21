@@ -47,3 +47,11 @@
 .job-preferences a {
   text-decoration: underline;
 }
+
+.salary-expectations summary {
+  margin-bottom: 8px;
+}
+
+.salary-expectations details p {
+  margin-left: 30px;
+}

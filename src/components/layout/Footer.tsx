@@ -109,10 +109,10 @@ const footerLinks: FooterLink[] = [
     href: 'https://www.polywork.com/marta_pancaldi',
     label: 'footerMenu.updates',
   },
-  // {
-  //   href: 'https://analytics.eu.umami.is/share/Dw94G9vRDiMT9YXN/MartaCodes.it',
-  //   label: 'footerMenu.analytics',
-  // },
+  {
+    href: 'https://analytics.eu.umami.is/share/Dw94G9vRDiMT9YXN/MartaCodes.it',
+    label: 'footerMenu.analytics',
+  },
   // {
   //   href: '/',
   //   label: 'footerMenu.guestbook',

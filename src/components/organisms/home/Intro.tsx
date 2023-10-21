@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import { shuffleArray } from '@/lib/helper';
 
@@ -15,12 +14,12 @@ export interface IntroProps {
 
 const Intro = ({ greeting, codeSnippets }: IntroProps) => {
   return (
-    <div className='mb-6 flex h-fit flex-col pb-6 md:h-96'>
+    <div className='mb-6 flex h-fit flex-col pb-6'>
       <h1 className='pb-4 text-5xl antialiased'>
-        <ReactMarkdown>{greeting}</ReactMarkdown>
+        <span className='greeting drop-shadow-lg'>{greeting}</span> 👋🏻
       </h1>
 
-      <div className='mt-8 flex flex-col md:flex-row'>
+      <div className='mt-8 flex flex-col lg:flex-row'>
         <Code codeSnippets={shuffleArray(codeSnippets)} />
 
         <Photo />

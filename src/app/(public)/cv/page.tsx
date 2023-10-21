@@ -19,7 +19,7 @@ import { queryIntro } from '@/queries/short-texts';
 import { querySkills } from '@/queries/skills';
 
 export const metadata = {
-  title: 'About my Work | MartaCodes.it',
+  title: 'My CV | MartaCodes.it',
   description: 'About page',
 };
 

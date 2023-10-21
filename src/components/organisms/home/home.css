@@ -20,3 +20,21 @@
     var(--secondary-color-dark) 100.2%
   );
 }
+
+.photo-description {
+  /* font-family: 'Roboto', sans-serif; */
+}
+
+.greeting {
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 3.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    89deg,
+    rgb(21, 74, 189) 0.1%,
+    rgb(26, 138, 211) 51.5%,
+    rgb(72, 177, 234) 100.2%
+  );
+  background-clip: text;
+  color: transparent;
+}
