@@ -7,8 +7,14 @@ import * as React from 'react';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
-import { AiFillGithub, AiOutlineCloud } from 'react-icons/ai';
+import {
+  AiFillApple,
+  AiFillGithub,
+  AiFillYoutube,
+  AiOutlineCloud,
+} from 'react-icons/ai';
 import { BiNews } from 'react-icons/bi';
+import { BsSlack, BsTwitch } from 'react-icons/bs';
 import { DiAndroid } from 'react-icons/di';
 import {
   FaAngular,
@@ -16,7 +22,9 @@ import {
   FaBootstrap,
   FaCss3Alt,
   FaHtml5,
+  FaImages,
   FaJava,
+  FaNodeJs,
   FaPhp,
   FaRaspberryPi,
 } from 'react-icons/fa';
@@ -25,11 +33,15 @@ import {
   SiCsharp,
   SiDotnet,
   SiFirebase,
+  SiGnubash,
+  SiGraphql,
   SiIeee,
   SiJavascript,
   SiNextdotjs,
   SiPython,
   SiReact,
+  SiSpring,
+  SiStrapi,
   SiTypescript,
   SiVercel,
 } from 'react-icons/si';
@@ -196,23 +208,31 @@ export default ProjectCard;
 const toolIconMapping: Record<string, React.ComponentType> = {
   android: DiAndroid,
   angular: FaAngular,
+  apple: AiFillApple,
   aws: FaAws,
+  bash: SiGnubash,
   bootstrap: FaBootstrap,
   cloud: AiOutlineCloud,
   css: FaCss3Alt,
   csharp: SiCsharp,
   dotnet: SiDotnet,
   firebase: SiFirebase,
+  graphql: SiGraphql,
   html: FaHtml5,
   ieee: SiIeee,
   java: FaJava,
   javascript: SiJavascript,
   kotlin: TbBrandKotlin,
   nextjs: SiNextdotjs,
+  nodejs: FaNodeJs,
   php: FaPhp,
   python: SiPython,
   raspberrypi: FaRaspberryPi,
   react: SiReact,
+  slack: BsSlack,
+  spring: SiSpring,
+  strapi: SiStrapi,
+  twitch: BsTwitch,
   typescript: SiTypescript,
   vercel: SiVercel,
 };
@@ -220,5 +240,8 @@ const toolIconMapping: Record<string, React.ComponentType> = {
 const linkIconMapping: Record<string, React.ComponentType> = {
   article: BiNews,
   github: AiFillGithub,
+  github2: AiFillGithub,
   publicUrl: TbWorldShare,
+  video: AiFillYoutube,
+  screenshots: FaImages,
 };

@@ -26,16 +26,7 @@ function publicationsQuery(locale: string) {
             description
             publisher
             year
-            file {
-              data {
-                id
-                attributes {
-                  name
-                  url
-                  alternativeText
-                }
-              }
-            }
+            fileUrl
           }
         }
       }

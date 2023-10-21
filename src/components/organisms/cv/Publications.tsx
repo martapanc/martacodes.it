@@ -39,7 +39,7 @@ const Publications = ({ publications }: PublicationProps) => {
                 <UnstyledLink
                   key={publication.id}
                   className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
-                  href={publication.file.url}
+                  href={publication.fileUrl}
                 >
                   <AiOutlineFilePdf className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300' />
                 </UnstyledLink>
