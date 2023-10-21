@@ -1,5 +1,5 @@
 .heading {
-  height: 52px;
+  min-height: 52px;
   background-image: radial-gradient(
     circle at 10% 20%,
     rgb(59, 149, 237) 0%,

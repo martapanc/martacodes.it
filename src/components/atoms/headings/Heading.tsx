@@ -13,7 +13,7 @@ const Heading = ({ title }: HeadingProps) => {
   const { t } = useTranslation();
 
   return (
-    <h1 className='heading drop-shadow-lg mb-3 text-5xl font-bold'>
+    <h1 className='heading drop-shadow-lg mb-4 text-5xl font-bold'>
       {t(title)}
     </h1>
   );
