@@ -8,4 +8,5 @@ export interface RecruitersPage {
   jobPreferences: TitledParagraph;
   tldr: TitledParagraph;
   outro: string;
+  updatedAt: Date;
 }

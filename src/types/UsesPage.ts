@@ -6,4 +6,5 @@ export interface UsesPage {
   productivity: TitledParagraph;
   programmingTools: TitledParagraph;
   security: TitledParagraph;
+  updatedAt: Date;
 }

@@ -6,6 +6,7 @@ import '@/components/molecules/RecruiterInfo/recruiterInfo.css';
 
 import Heading from '@/components/atoms/headings/Heading';
 import { SalaryHappinessTool } from '@/components/molecules/RecruiterInfo/SalaryHappinessTool';
+import UpdateTimestamp from '@/components/molecules/UpdateTimestamp/UpdateTimestamp';
 
 import { queryRecruitersPage } from '@/queries/recruiters-page';
 
@@ -97,9 +98,13 @@ const RecruitersPage = async () => {
 
           <hr />
 
-          <div className='outro mt-8'>
+          <div className='outro mt-8 mb-10'>
             <ReactMarkdown>{recruitersPage.outro}</ReactMarkdown>
           </div>
+
+          <hr />
+
+          <UpdateTimestamp updatedAt={recruitersPage.updatedAt} />
         </div>
       </section>
     </main>
