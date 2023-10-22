@@ -7,33 +7,7 @@ import * as React from 'react';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
-import { AiFillGithub, AiOutlineCloud } from 'react-icons/ai';
-import { BiNews } from 'react-icons/bi';
-import { DiAndroid } from 'react-icons/di';
-import {
-  FaAngular,
-  FaAws,
-  FaBootstrap,
-  FaCss3Alt,
-  FaHtml5,
-  FaJava,
-  FaPhp,
-  FaRaspberryPi,
-} from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
-import {
-  SiCsharp,
-  SiDotnet,
-  SiFirebase,
-  SiIeee,
-  SiJavascript,
-  SiNextdotjs,
-  SiPython,
-  SiReact,
-  SiTypescript,
-  SiVercel,
-} from 'react-icons/si';
-import { TbBrandKotlin, TbWorldShare } from 'react-icons/tb';
 import ReactMarkdown from 'react-markdown';
 
 import './projectCard.css';
@@ -41,6 +15,10 @@ import './projectCard.css';
 import clsxm from '@/lib/clsxm';
 
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+import {
+  linkIconMapping,
+  toolIconMapping,
+} from '@/components/organisms/projects/Icons';
 
 import { Project } from '@/types/Project';
 
@@ -192,33 +170,3 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 };
 
 export default ProjectCard;
-
-const toolIconMapping: Record<string, React.ComponentType> = {
-  android: DiAndroid,
-  angular: FaAngular,
-  aws: FaAws,
-  bootstrap: FaBootstrap,
-  cloud: AiOutlineCloud,
-  css: FaCss3Alt,
-  csharp: SiCsharp,
-  dotnet: SiDotnet,
-  firebase: SiFirebase,
-  html: FaHtml5,
-  ieee: SiIeee,
-  java: FaJava,
-  javascript: SiJavascript,
-  kotlin: TbBrandKotlin,
-  nextjs: SiNextdotjs,
-  php: FaPhp,
-  python: SiPython,
-  raspberrypi: FaRaspberryPi,
-  react: SiReact,
-  typescript: SiTypescript,
-  vercel: SiVercel,
-};
-
-const linkIconMapping: Record<string, React.ComponentType> = {
-  article: BiNews,
-  github: AiFillGithub,
-  publicUrl: TbWorldShare,
-};

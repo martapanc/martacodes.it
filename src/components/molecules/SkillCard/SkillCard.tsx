@@ -24,7 +24,7 @@ const SkillCard = ({ skill }: SkillCardProps) => {
             className='me-1 pb-1 rounded-md'
             key={icon.id}
             height={iconDimension}
-            width={iconDimension}
+            width={iconDimension + 1}
             alt={icon.name}
             src={icon.url}
           />

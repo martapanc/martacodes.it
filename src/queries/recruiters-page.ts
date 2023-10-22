@@ -45,6 +45,7 @@ export function recruitersPageQuery(locale: string) {
               content
             }
             outro
+            updatedAt
           }
         }
       }

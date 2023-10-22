@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import './uses.css';
 
 import Heading from '@/components/atoms/headings/Heading';
+import UpdateTimestamp from '@/components/molecules/UpdateTimestamp/UpdateTimestamp';
 
 import { queryUsesPage } from '@/queries/uses-page';
 
@@ -47,6 +48,10 @@ const UsesPage = async () => {
               <ReactMarkdown>{section.content}</ReactMarkdown>
             </div>
           ))}
+
+          <hr className='my-8' />
+
+          <UpdateTimestamp updatedAt={usesPage.updatedAt} />
         </div>
       </section>
     </main>

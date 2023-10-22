@@ -1,5 +1,3 @@
-import { File } from '@/types/Icon';
-
 export interface Publication {
   id: string;
   name: string;
@@ -7,5 +5,5 @@ export interface Publication {
   description: string;
   publisher: string;
   year: string;
-  file: File;
+  fileUrl: string;
 }

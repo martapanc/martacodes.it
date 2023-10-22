@@ -41,6 +41,7 @@ export const UsesPageQuery = gql`
             title
             content
           }
+          updatedAt
         }
       }
     }
