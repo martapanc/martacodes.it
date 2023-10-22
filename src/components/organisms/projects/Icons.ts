@@ -12,6 +12,7 @@ import {
   FaAws,
   FaBootstrap,
   FaCss3Alt,
+  FaFacebook,
   FaHtml5,
   FaImages,
   FaJava,
@@ -44,6 +45,7 @@ export const linkIconMapping: Record<string, React.ComponentType> = {
   github2: AiFillGithub,
   publicUrl: TbWorldShare,
   video: AiFillYoutube,
+  video2: FaFacebook,
   screenshots: FaImages,
 };
 
