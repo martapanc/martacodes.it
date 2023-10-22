@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.0](https://github.com/martapanc/martacodes.it/compare/v1.13.0...v1.14.0) (2023-10-22)
+
+
+### Features
+
+* add icons to be used in Projects page ([a160b40](https://github.com/martapanc/martacodes.it/commit/a160b40730f726ec851e15a5b8c8cb84b3412f7b))
+* add update timestamp to Recruiters and Uses pages ([2053392](https://github.com/martapanc/martacodes.it/commit/2053392ea16d1713e97233a18ef79b7a13d277ce))
+
 ## [1.13.0](https://github.com/martapanc/martacodes.it/compare/v1.12.0...v1.13.0) (2023-10-21)
 
 
