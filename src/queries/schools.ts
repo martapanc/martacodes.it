@@ -18,7 +18,7 @@ export async function querySchools(locale: string) {
 function schoolsQuery(locale: string) {
   return gql`
     query {
-      schools(locale: "${locale}", sort: "start:DESC") {
+      schools(locale: "${locale}", sort: "end:DESC") {
         data {
           id
           attributes {
