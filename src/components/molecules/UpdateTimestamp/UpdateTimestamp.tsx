@@ -8,7 +8,7 @@ export interface UpdateTimestampProps {
 
 const UpdateTimestamp = ({ updatedAt }: UpdateTimestampProps) => {
   return (
-    <div className='mt-4 flex justify-end'>
+    <div className='mt-4 flex justify-end flex-wrap'>
       <strong>Last update:</strong>
       &nbsp;
       <Moment format='ddd Do MMMM YYYY, HH:mm'>{updatedAt}</Moment>

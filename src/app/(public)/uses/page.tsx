@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -37,6 +38,17 @@ const UsesPage = async () => {
       <section>
         <div className='layout relative flex flex-col py-12'>
           <Heading title='uses.title' />
+
+          <div className='flex items-center flex-col my-3'>
+            <Image
+              className='mb-2'
+              src='https://res.cloudinary.com/dwrurydlt/image/upload/v1698432934/current_setup.jpg'
+              alt='Current setup'
+              width={540}
+              height={400}
+            />
+            <span className='italic'>My current workstation setup</span>
+          </div>
 
           {sections.map((section) => (
             <div
