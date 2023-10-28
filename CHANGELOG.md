@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.15.0](https://github.com/martapanc/martacodes.it/compare/v1.14.0...v1.15.0) (2023-10-28)
+
+
+### Features
+
+* add setup photo to uses section ([89fa1f9](https://github.com/martapanc/martacodes.it/commit/89fa1f949d4f1ffff3c491f595bbf572c71fd02c))
+* sort schools by end date ([3eaea6b](https://github.com/martapanc/martacodes.it/commit/3eaea6bd4227f080b273cee2db38f0e735c9ee2c))
+
+
+### Bug Fixes
+
+* flex-wrap UpdateTimestamp ([b681159](https://github.com/martapanc/martacodes.it/commit/b6811598572893c28f1d23890152fcd41b539cc1))
+
 ## [1.14.0](https://github.com/martapanc/martacodes.it/compare/v1.13.0...v1.14.0) (2023-10-22)
 
 
