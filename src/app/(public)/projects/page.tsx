@@ -7,7 +7,7 @@ import { queryProjects } from '@/queries/projects';
 
 export const metadata = {
   title: 'Projects | MartaCodes.it',
-  description: 'Projects page',
+  description: 'A list of programming (and other) projects I worked on.',
 };
 
 const queryData = async () => {

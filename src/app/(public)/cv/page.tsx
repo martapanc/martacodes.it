@@ -20,7 +20,7 @@ import { querySkills } from '@/queries/skills';
 
 export const metadata = {
   title: 'My CV | MartaCodes.it',
-  description: 'About page',
+  description: 'All about my software development skills and work experience.',
 };
 
 const queryData = async () => {
