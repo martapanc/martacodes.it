@@ -10,6 +10,14 @@ import { queryHomePage } from '@/queries/home-page';
 import { CodeSnippet } from '@/types/CodeSnippet';
 import { HomePage } from '@/types/HomePage';
 
+export const metadata = {
+  title: 'Marta Pancaldi | Martacodes.it',
+  description:
+    "I'm a software engineer who writes code for work and for fun. I love learning, experimenting with new tech stacks and solving complex problems.",
+  keywords:
+    'Marta Pancaldi,Software Engineer,Full-Stack Engineer,Backend,Full-Stack,Frontend,Java,React,Angular,Typescript,Python,Kotlin,C#',
+};
+
 const queryData = async () => {
   const codeSnippets: CodeSnippet[] = await queryCodeSnippets();
 

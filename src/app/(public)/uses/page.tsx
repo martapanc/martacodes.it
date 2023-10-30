@@ -11,7 +11,7 @@ import { queryUsesPage } from '@/queries/uses-page';
 
 export const metadata = {
   title: 'Uses | MartaCodes.it',
-  description: 'Uses page',
+  description: 'A list of tech equipment and software I use.',
 };
 
 const queryData = async () => {

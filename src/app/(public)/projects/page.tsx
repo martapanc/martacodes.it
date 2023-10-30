@@ -7,7 +7,9 @@ import { queryProjects } from '@/queries/projects';
 
 export const metadata = {
   title: 'Projects | MartaCodes.it',
-  description: 'Projects page',
+  description: 'A list of programming (and other) projects I worked on.',
+  keywords:
+    'Marta Pancaldi,Software Engineer,Full-Stack Engineer,CV,Portfolio,Java,Kotlin,Python,React,Angular,C#,Typescript,Booking.com,Resourcify,BJSS,UniBZ,University of Manchester',
 };
 
 const queryData = async () => {

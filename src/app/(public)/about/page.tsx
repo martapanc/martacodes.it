@@ -26,7 +26,7 @@ import { RandomFact } from '@/types/RandomFact';
 
 export const metadata = {
   title: 'About | MartaCodes.it',
-  description: 'About page',
+  description: 'All non-software-related things I enjoy doing in my free time.',
 };
 
 const getData = async () => {
