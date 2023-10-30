@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.0](https://github.com/martapanc/martacodes.it/compare/v1.15.0...v1.16.0) (2023-10-30)
+
+
+### Features
+
+* add keywords metadata ([05a684f](https://github.com/martapanc/martacodes.it/commit/05a684ff7ca8881431c93c963b8372cfd8410879))
+* add/improve metadata descriptions on landing pages ([2195413](https://github.com/martapanc/martacodes.it/commit/2195413530dc897ee27310e40ca0c5351a5dbbd9))
+
 ## [1.15.0](https://github.com/martapanc/martacodes.it/compare/v1.14.0...v1.15.0) (2023-10-28)
 
 
