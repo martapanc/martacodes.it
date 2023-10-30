@@ -21,6 +21,8 @@ import { querySkills } from '@/queries/skills';
 export const metadata = {
   title: 'My CV | MartaCodes.it',
   description: 'All about my software development skills and work experience.',
+  keywords:
+    'Marta Pancaldi,Software Engineer,CV,Resumé,Java,Kotlin,Booking.com,Resourcify,BJSS,UniBZ,University of Manchester',
 };
 
 const queryData = async () => {

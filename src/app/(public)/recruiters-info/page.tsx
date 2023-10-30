@@ -13,6 +13,8 @@ import { queryRecruitersPage } from '@/queries/recruiters-page';
 export const metadata = {
   title: 'Recruiters Info | MartaCodes.it',
   description: 'Information for Recruiters',
+  keywords:
+    'Marta Pancaldi,Software Engineer,Full-Stack Engineer,Backend Engineer,CV,Resumé,Remote working,WFH',
 };
 
 const queryData = async () => {
