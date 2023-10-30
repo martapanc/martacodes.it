@@ -16,7 +16,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <I18nextProvider i18n={i18n}>
       <html lang='en'>
         <head>
-          <title>MartaCodes.it</title>
           <link
             rel='icon'
             type='image/png'
