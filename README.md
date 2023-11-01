@@ -1,9 +1,11 @@
 # MartaCodes.it
 Source code of my personal website
 
-![GitHub deployments](https://img.shields.io/github/deployments/martapanc/martacodes.it/Production)
-![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/martapanc/martacodes.it/master)
+![GitHub deployments](https://img.shields.io/github/deployments/martapanc/martacodes.it/Production?label=Vercel%20Deployment)
+![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/martapanc/martacodes.it)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/martapanc/martacodes.it)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3e42a59f8d5d4a3da9430f55cb486c06)](https://app.codacy.com/gh/martapanc/martacodes.it/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 
 ### Features
 
