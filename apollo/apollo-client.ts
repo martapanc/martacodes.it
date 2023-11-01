@@ -19,12 +19,12 @@ export default apolloClient;
 
 export const context_short = {
   fetchOptions: {
-    next: { revalidate: 86400 },
+    next: { revalidate: 600 },
   },
 };
 
 export const context_long = {
   fetchOptions: {
-    next: { revalidate: 604800 },
+    next: { revalidate: 6000 },
   },
 };
