@@ -8,15 +8,12 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ['res.cloudinary.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'cdn.sanity.io',
-    //     port: '',
-    //     pathname: '/about/**',
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
   },
 
   // SVGR
@@ -47,10 +44,6 @@ const nextConfig = {
         destination: '/api/cv.pdf',
       },
     ];
-  },
-
-  experimental: {
-    serverActions: true,
   },
 };
 
