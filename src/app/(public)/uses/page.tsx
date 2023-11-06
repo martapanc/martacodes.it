@@ -31,6 +31,7 @@ const UsesPage = async () => {
     usesPage.productivity,
     usesPage.security,
     usesPage.media,
+    usesPage.gaming,
   ];
 
   return (

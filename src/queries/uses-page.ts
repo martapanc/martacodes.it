@@ -41,6 +41,10 @@ export const UsesPageQuery = gql`
             title
             content
           }
+          gaming {
+            title
+            content
+          }
           updatedAt
         }
       }
