@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/martapanc/martacodes.it/compare/v1.16.0...v1.17.0) (2023-11-06)
+
+
+### Features
+
+* add gaming section to Uses page component ([15d1216](https://github.com/martapanc/martacodes.it/commit/15d12163bab588bb4e70ae2a3b8b521ed4db97c6))
+
 ## [1.16.0](https://github.com/martapanc/martacodes.it/compare/v1.15.0...v1.16.0) (2023-10-30)
 
 
