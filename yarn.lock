@@ -30,10 +30,10 @@
   resolved "https://verdaccio.mein-recycling.de/@anatoliygatt%2fdark-mode-toggle/-/dark-mode-toggle-1.0.1.tgz#548903c1f16d90243fd7cb3c4d21036c13045d9a"
   integrity sha512-zOjGHCeTGXxuWuh02NMTHAJ7VrptoVKmGHr/Pb4r+rsUBUz7OEI0x6HXTFZ15RFOAG2pfKjMmQQaOgfhfbyv1w==
 
-"@apollo/client@^3.8.6":
-  version "3.8.6"
-  resolved "https://verdaccio.mein-recycling.de/@apollo%2fclient/-/client-3.8.6.tgz#d90f2a9b0147d8fc96c7a867588b5b2165cc4085"
-  integrity sha512-FnHg3vhQP8tQzgBs6oTJCFFIbovelDGYujj6MK7CJneiHf62TJstCIO0Ot4A1h7XrgFEtgl8a/OgajQWqrTuYw==
+"@apollo/client@^3.8.7":
+  version "3.8.7"
+  resolved "https://verdaccio.mein-recycling.de/@apollo%2fclient/-/client-3.8.7.tgz#090b1518f513503b9a6a690ee3eaec49529822e1"
+  integrity sha512-DnQtFkQrCyxHTSa9gR84YRLmU/al6HeXcLZazVe+VxKBmx/Hj4rV8xWtzfWYX5ijartsqDR7SJgV037MATEecA==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/context" "^0.7.3"
@@ -49,10 +49,10 @@
     tslib "^2.3.0"
     zen-observable-ts "^1.2.5"
 
-"@apollo/experimental-nextjs-app-support@^0.5.0":
-  version "0.5.0"
-  resolved "https://verdaccio.mein-recycling.de/@apollo%2fexperimental-nextjs-app-support/-/experimental-nextjs-app-support-0.5.0.tgz#d23b6205d0093631a3b8cdb9338dd49fa828dc12"
-  integrity sha512-VU/rRoIRcZxX2oxZp+rheF8bXwfiknJJq6nYr553H7qE68TKDTxWDV/HatUWBHHVnk5tJiHvk+N4ihuMh3YviQ==
+"@apollo/experimental-nextjs-app-support@^0.5.1":
+  version "0.5.1"
+  resolved "https://verdaccio.mein-recycling.de/@apollo%2fexperimental-nextjs-app-support/-/experimental-nextjs-app-support-0.5.1.tgz#e40f6741f3e4eb7997b5a08cca6c3b92ee87e049"
+  integrity sha512-gQiFY/zntVAhPTTFfFFOogp4TKVMpbPsydv3gyMR5E0IK6WgtITTcl/uuWlnfL92+enk5mfrtoQ+0p+t2a9u2A==
   dependencies:
     server-only "^0.0.1"
     superjson "^1.12.2"
