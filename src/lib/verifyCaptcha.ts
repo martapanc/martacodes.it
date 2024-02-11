@@ -1,5 +1,3 @@
-'use server';
-
 export interface ReCaptchaResp {
   success: boolean;
   challenge_ts?: string;
@@ -28,7 +26,7 @@ export async function verifyCaptcha(token: string | null) {
   });
 
   if (!response.ok) {
-    throw new Error('Failed to verify reCAPTCHA: ' + response.json());
+    throw new Error('Failed to verify reCAPTCHA: ' + (await response.json()));
   }
 
   const data = await response.json();

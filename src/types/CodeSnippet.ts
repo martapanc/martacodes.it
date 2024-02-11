@@ -1,5 +1,5 @@
 export interface CodeSnippet {
-  id: string;
-  code: string;
+  id: number;
   language: string;
+  code: string;
 }

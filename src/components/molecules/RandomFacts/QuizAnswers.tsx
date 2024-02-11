@@ -4,7 +4,7 @@ import * as React from 'react';
 import { BsFillCheckCircleFill, BsFillXSquareFill } from 'react-icons/bs';
 import ReactMarkdown from 'react-markdown';
 
-import { QuizOption } from '@/components/molecules/RandomFacts/Quiz';
+import { QuizOption } from './Quiz';
 
 export interface QuizAnswersProps {
   answers: QuizOption[];

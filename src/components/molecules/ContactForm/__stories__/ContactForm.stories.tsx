@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 
-import ContactForm from '@/components/molecules/ContactForm/ContactForm';
+import ContactForm from '../ContactForm';
 
 const meta: Meta<typeof ContactForm> = {
   title: 'ContactForm',

@@ -1,8 +1,0 @@
-.uses-section p {
-  margin-bottom: 12px;
-}
-
-.uses-section p:before {
-  content: '◆ ';
-  margin-right: 4px;
-}

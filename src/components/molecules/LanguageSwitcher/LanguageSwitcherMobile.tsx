@@ -2,7 +2,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import i18n from '@/app/(public)/i18n';
+import i18n from '../../../lib/i18n';
 
 export interface LanguageSwitcherProps {
   languages: LanguageDef[];

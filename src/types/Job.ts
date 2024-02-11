@@ -1,13 +1,12 @@
 import { Icon } from '@/types/Icon';
 
 export interface Job {
-  id: string;
   title: string;
   companyName: string;
   icon: Icon;
-  location: string;
+  location: string | null;
   startDate: string;
-  endDate: string;
+  endDate: string | null;
   isCurrentJob: boolean;
   description: string;
   mainColor: string;

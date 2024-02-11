@@ -8,10 +8,11 @@ import {
   SiLinkedin,
   SiMedium,
   SiSteam,
+  SiThreads,
   SiYoutube,
 } from 'react-icons/si';
 
-import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+import UnstyledLink from '../atoms/links/UnstyledLink';
 
 export default function Footer() {
   return (
@@ -143,6 +144,11 @@ const socialLinks: SocialLink[] = [
     href: 'https://www.instagram.com/pancakemarta',
     icon: SiInstagram,
     id: 'Instagram',
+  },
+  {
+    href: 'https://www.threads.net/@pancakemarta',
+    icon: SiThreads,
+    id: 'Threads',
   },
   {
     href: 'https://medium.com/@marta.panc',

@@ -4,12 +4,12 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Icon } from '@/types/Icon';
-import { Skill } from '@/types/Skill';
+import { Skill } from '../../../../../martacodes.it-restruct/src/types/Skill';
 
 export interface SkillCardProps {
   skill: Skill;
 }
+
 const SkillCard = ({ skill }: SkillCardProps) => {
   const iconDimension = 36;
 
@@ -19,14 +19,15 @@ const SkillCard = ({ skill }: SkillCardProps) => {
       className='skill-container rounded p-4 shadow-md dark:bg-slate-900 dark:drop-shadow-md'
     >
       <div className='flex w-full'>
-        {skill.icons.map((icon: Icon) => (
+        {skill.icons.map((icon, id) => (
           <Image
             className='me-1 pb-1 rounded-md'
-            key={icon.id}
+            key={id}
             height={iconDimension}
             width={iconDimension + 1}
             alt={icon.name}
             src={icon.url}
+            aria-label={icon.name}
           />
         ))}
       </div>

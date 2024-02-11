@@ -1,11 +1,8 @@
 import * as React from 'react';
 import { IconType } from 'react-icons';
 
-import clsxm from '@/lib/clsxm';
-
-import UnstyledLink, {
-  UnstyledLinkProps,
-} from '@/components/atoms/links/UnstyledLink';
+import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink';
+import clsxm from '../../../lib/clsxm';
 
 const IconLinkVariant = [
   'primary',
@@ -90,5 +87,7 @@ const IconLink = React.forwardRef<HTMLAnchorElement, IconLinkProps>(
     );
   },
 );
+
+IconLink.displayName = 'IconLink';
 
 export default IconLink;

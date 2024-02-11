@@ -3,7 +3,7 @@
 import Moment from 'react-moment';
 
 export interface UpdateTimestampProps {
-  updatedAt: Date;
+  updatedAt: string;
 }
 
 const UpdateTimestamp = ({ updatedAt }: UpdateTimestampProps) => {

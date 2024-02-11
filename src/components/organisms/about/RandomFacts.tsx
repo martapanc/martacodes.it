@@ -3,11 +3,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import { getFromCookie, saveToCookie } from '@/lib/helper';
-
-import GeneralView from '@/components/molecules/RandomFacts/GeneralView';
-import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
-import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
+import GeneralView from '../../molecules/RandomFacts/GeneralView';
+import Quiz, { QuizData } from '../../molecules/RandomFacts/Quiz';
+import QuizAnswers from '../../molecules/RandomFacts/QuizAnswers';
+import { getFromCookie, saveToCookie } from '../../../lib/helper';
 
 export const alreadyPlayedKey = 'QuizAlreadyPlayed';
 
@@ -59,8 +58,8 @@ const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
 
       {!alreadyPlayed && (
         <div className='mb-3 font-serif font-semibold'>
-          Here's a little game for you! Which of the following statements about
-          me is{' '}
+          Here&apos;s a little game for you! Which of the following statements
+          about me is{' '}
           <strong className='text-red-600 dark:text-red-400'>false</strong>?
         </div>
       )}

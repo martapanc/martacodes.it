@@ -1,9 +1,7 @@
 import { Meta } from '@storybook/react';
 
-import { QuizOption } from '@/components/molecules/RandomFacts/Quiz';
-import QuizAnswers, {
-  QuizAnswersProps,
-} from '@/components/molecules/RandomFacts/QuizAnswers';
+import { QuizOption } from '../Quiz';
+import QuizAnswers, { QuizAnswersProps } from '../QuizAnswers';
 
 const meta: Meta<typeof QuizAnswers> = {
   title: 'Components/Random Facts/Quiz Answers',

@@ -5,12 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import languages from '@/data/languages.json';
-
-import { NavigationItem } from '@/components/atoms/NavigationItem';
-import { ThemeToggle } from '@/components/atoms/ThemeToggle/ThemeToggle';
-import { links } from '@/components/layout/Header';
-import LanguageSwitcherMobile from '@/components/molecules/LanguageSwitcher/LanguageSwitcherMobile';
+import LanguageSwitcherMobile from '../LanguageSwitcher/LanguageSwitcherMobile';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { NavigationItem } from '../../atoms/NavigationItem';
+import { links } from '../../layout/Header';
+import languages from '../../../data/languages.json';
 
 export interface MobileMenuProps {
   isOpen: boolean;

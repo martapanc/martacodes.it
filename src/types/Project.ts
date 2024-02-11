@@ -1,7 +1,6 @@
 import { Icon } from '@/types/Icon';
 
 export interface Project {
-  id: string;
   title: string;
   image: Icon;
   shortDescription: string;

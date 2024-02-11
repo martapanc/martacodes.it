@@ -4,9 +4,8 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import SectionHeading from '@/components/atoms/headings/SectionHeading';
-
-import { School } from '@/types/School';
+import SectionHeading from '../../atoms/headings/SectionHeading';
+import { School } from '../../../../../martacodes.it-restruct/src/types/School';
 
 export interface EducationProps {
   schools: School[];
@@ -18,9 +17,9 @@ const Education = ({ schools }: EducationProps) => {
       <SectionHeading titlePrefix='cv.education' />
 
       <div>
-        {schools.map((school) => (
+        {schools.map((school, id) => (
           <div
-            key={school.id}
+            key={id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
             {/* Start School Header - Desktop */}

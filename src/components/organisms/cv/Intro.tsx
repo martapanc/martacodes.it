@@ -2,13 +2,13 @@
 
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import { Pluggable } from 'unified';
 
-import SectionHeading from '@/components/atoms/headings/SectionHeading';
-
-import { SoftwareDevIntro } from '@/types/ShortText';
+import SectionHeading from '../../atoms/headings/SectionHeading';
 
 interface IntroProps {
-  intro: SoftwareDevIntro;
+  intro: string;
 }
 
 const Intro = ({ intro }: IntroProps) => {
@@ -19,8 +19,11 @@ const Intro = ({ intro }: IntroProps) => {
       <SectionHeading titlePrefix='cv.softwareDevelopment' />
 
       <div className='mb-6 cv-intro-section'>
-        <ReactMarkdown className='text-justify'>
-          {intro.content.replace('8', noOfYears)}
+        <ReactMarkdown
+          className='text-justify'
+          rehypePlugins={[rehypeRaw as Pluggable]}
+        >
+          {intro.replace('8', noOfYears)}
         </ReactMarkdown>
       </div>
     </div>

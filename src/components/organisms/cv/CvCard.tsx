@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaDownload } from 'react-icons/fa';
 
-import Button from '@/components/atoms/buttons/Button';
+import Button from '../../atoms/buttons/Button';
 
 const CvCard = () => {
   const { t } = useTranslation();

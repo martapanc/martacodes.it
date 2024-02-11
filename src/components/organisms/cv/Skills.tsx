@@ -3,10 +3,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import Button from '@/components/atoms/buttons/Button';
-import SkillCard from '@/components/molecules/SkillCard/SkillCard';
-
-import { Skill } from '@/types/Skill';
+import Button from '../../atoms/buttons/Button';
+import SkillCard from '../../molecules/SkillCard/SkillCard';
+import { Skill } from '../../../../../martacodes.it-restruct/src/types/Skill';
 
 export interface SkillsProps {
   skills: Skill[];

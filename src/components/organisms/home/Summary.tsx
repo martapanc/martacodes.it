@@ -4,11 +4,9 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
 
-import clsxm from '@/lib/clsxm';
-
-import jobs from '@/data/jobs.json';
-
-import { HomePage } from '@/types/HomePage';
+import { HomePage } from '../../../../../martacodes.it-restruct/src/types/Homepage';
+import jobs from '../../../data/jobs.json';
+import clsxm from '../../../lib/clsxm';
 
 interface LinkProps {
   key: string;
@@ -22,7 +20,12 @@ interface LinkProps {
 
 function buildLink(link: LinkProps) {
   return (
-    <Link href={link.href} target='_blank' rel='noopener noreferrer'>
+    <Link
+      key={link.key}
+      href={link.href}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       <Image
         className={clsxm(
           link.classes +
@@ -43,24 +46,27 @@ export interface SummaryProps {
 
 const Summary = ({ homePage }: SummaryProps) => {
   const introduction_1 = reactStringReplace(
-    homePage.introduction_1,
-    jobs.resourcify.key,
-    () => buildLink(jobs.resourcify),
+    homePage.introduction.now,
+    jobs.appetize.key,
+    () => buildLink(jobs.appetize),
   );
 
   let introduction_2 = reactStringReplace(
-    homePage.introduction_2,
+    homePage.introduction.cv,
     jobs.bjss.key,
     () => buildLink(jobs.bjss),
   );
   introduction_2 = reactStringReplace(introduction_2, jobs.booking.key, () =>
     buildLink(jobs.booking),
   );
+  introduction_2 = reactStringReplace(introduction_2, jobs.resourcify.key, () =>
+    buildLink(jobs.resourcify),
+  );
 
   const introductionParts = [
-    homePage.introduction_3,
-    homePage.introduction_4,
-    homePage.introduction_5,
+    homePage.introduction.skills,
+    homePage.introduction.fullStack,
+    homePage.introduction.freeTime,
   ];
 
   return (
@@ -68,8 +74,8 @@ const Summary = ({ homePage }: SummaryProps) => {
       <p className='mb-4 md:mb-1'>{introduction_1}</p>
       <p className='mb-4'>{introduction_2}</p>
 
-      {introductionParts.map((introPart) => (
-        <ReactMarkdown key={introPart} className='mb-4'>
+      {introductionParts.map((introPart, id) => (
+        <ReactMarkdown key={id} className='mb-4'>
           {introPart}
         </ReactMarkdown>
       ))}
