@@ -3,7 +3,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import { Pluggable } from 'unified';
 
 import SectionHeading from '@/components/atoms/headings/SectionHeading';
 
@@ -19,10 +18,7 @@ const Intro = ({ intro }: IntroProps) => {
       <SectionHeading titlePrefix='cv.softwareDevelopment' />
 
       <div className='mb-6 cv-intro-section'>
-        <ReactMarkdown
-          className='text-justify'
-          rehypePlugins={[rehypeRaw as Pluggable]}
-        >
+        <ReactMarkdown className='text-justify' rehypePlugins={[rehypeRaw]}>
           {intro.replace('8', noOfYears)}
         </ReactMarkdown>
       </div>

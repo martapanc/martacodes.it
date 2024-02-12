@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import { Pluggable } from 'unified';
 
 import styles from '@/styles/modules/recruiters.module.css';
 
@@ -39,7 +38,7 @@ export default function RecruitersPage({
 
         <ReactMarkdown
           className={clsxm(styles['recruiters-info'], 'mb-2')}
-          rehypePlugins={[rehypeRaw as Pluggable]}
+          rehypePlugins={[rehypeRaw]}
         >
           {recruitersData.markdownSections[0].content}
         </ReactMarkdown>
@@ -48,7 +47,7 @@ export default function RecruitersPage({
 
         <ReactMarkdown
           className={clsxm(styles['recruiters-info'], 'mb-4')}
-          rehypePlugins={[rehypeRaw as Pluggable]}
+          rehypePlugins={[rehypeRaw]}
         >
           {recruitersData.markdownSections[1].content}
         </ReactMarkdown>
