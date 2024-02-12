@@ -2,11 +2,13 @@ import React from 'react';
 
 import styles from './home.module.css';
 
+import clsxm from '@/lib/clsxm';
+import { shuffleArray } from '@/lib/helper';
+
 import Code from './Code';
 import Photo from './Photo';
-import { CodeSnippet } from '../../../../../martacodes.it-restruct/src/types/CodeSnippet';
-import clsxm from '../../../lib/clsxm';
-import { shuffleArray } from '../../../lib/helper';
+
+import { CodeSnippet } from '@/types/CodeSnippet';
 
 export interface IntroProps {
   codeSnippets: CodeSnippet[];

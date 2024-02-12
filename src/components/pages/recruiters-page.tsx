@@ -3,13 +3,15 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { Pluggable } from 'unified';
 
-import styles from '../../../../martacodes.it-restruct/src/styles/modules/recruiters.module.css';
+import styles from '@/styles/modules/recruiters.module.css';
 
-import Heading from '../atoms/headings/Heading';
-import { SalaryHappinessTool } from '../molecules/RecruiterInfo/SalaryHappinessTool';
-import UpdateTimestamp from '../molecules/UpdateTimestamp/UpdateTimestamp';
-import clsxm from '../../lib/clsxm';
-import { MarkdownData } from '../../../../martacodes.it-restruct/src/types/Markdown';
+import clsxm from '@/lib/clsxm';
+
+import Heading from '@/components/atoms/headings/Heading';
+import { SalaryHappinessTool } from '@/components/molecules/RecruiterInfo/SalaryHappinessTool';
+import UpdateTimestamp from '@/components/molecules/UpdateTimestamp/UpdateTimestamp';
+
+import { MarkdownData } from '@/types/Markdown';
 
 type RecruitersPageProps = {
   recruitersData: MarkdownData;

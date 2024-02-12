@@ -12,10 +12,13 @@ import ReactMarkdown from 'react-markdown';
 
 import styles from './projectCard.module.css';
 
+import clsxm from '@/lib/clsxm';
+
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+
 import { linkIconMapping, toolIconMapping } from './Icons';
-import UnstyledLink from '../../atoms/links/UnstyledLink';
-import { Project } from '../../../../../martacodes.it-restruct/src/types/Project';
-import clsxm from '../../../lib/clsxm';
+
+import { Project } from '@/types/Project';
 
 export interface ProjectCardProps {
   project: Project;

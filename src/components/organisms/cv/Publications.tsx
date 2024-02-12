@@ -3,9 +3,10 @@
 import * as React from 'react';
 import { AiOutlineFilePdf } from 'react-icons/ai';
 
-import SectionHeading from '../../atoms/headings/SectionHeading';
-import UnstyledLink from '../../atoms/links/UnstyledLink';
-import { Publication } from '../../../../../martacodes.it-restruct/src/types/Publication';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+
+import { Publication } from '@/types/Publication';
 
 export interface PublicationProps {
   publications: Publication[];

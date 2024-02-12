@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { VideoGame } from '../../../../../martacodes.it-restruct/src/types/VideoGame';
-import { sortByDesc } from '../../../lib/objecUtils';
+import { sortByDesc } from '@/lib/objecUtils';
+
+import { VideoGame } from '@/types/VideoGame';
 
 export interface VideoGameProps {
   videoGames: VideoGame[];

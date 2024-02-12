@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-import Heading from '../atoms/headings/Heading';
-import ProjectCard from '../organisms/projects/ProjectCard';
-import { Project } from '../../../../martacodes.it-restruct/src/types/Project';
+import Heading from '@/components/atoms/headings/Heading';
+import ProjectCard from '@/components/organisms/projects/ProjectCard';
+
+import { Project } from '@/types/Project';
 
 type ProjectsPageProps = {
   projects: Project[];

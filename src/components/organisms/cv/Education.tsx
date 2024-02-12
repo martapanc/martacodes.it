@@ -4,8 +4,9 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import SectionHeading from '../../atoms/headings/SectionHeading';
-import { School } from '../../../../../martacodes.it-restruct/src/types/School';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
+
+import { School } from '@/types/School';
 
 export interface EducationProps {
   schools: School[];

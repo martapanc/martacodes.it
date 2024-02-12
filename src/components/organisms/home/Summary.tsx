@@ -4,9 +4,11 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
 
-import { HomePage } from '../../../../../martacodes.it-restruct/src/types/Homepage';
-import jobs from '../../../data/jobs.json';
-import clsxm from '../../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
+
+import jobs from '@/data/jobs.json';
+
+import { HomePage } from '@/types/Homepage';
 
 interface LinkProps {
   key: string;

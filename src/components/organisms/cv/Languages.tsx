@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import SectionHeading from '../../atoms/headings/SectionHeading';
-import { Language } from '../../../../../martacodes.it-restruct/src/types/Language';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
+
+import { Language } from '@/types/Language';
 
 export interface LanguageProps {
   languages: Language[];

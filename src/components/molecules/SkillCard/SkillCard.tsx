@@ -4,7 +4,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Skill } from '../../../../../martacodes.it-restruct/src/types/Skill';
+import { Skill } from '@/types/Skill';
 
 export interface SkillCardProps {
   skill: Skill;

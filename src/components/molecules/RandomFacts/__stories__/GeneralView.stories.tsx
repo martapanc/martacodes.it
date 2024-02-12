@@ -1,10 +1,13 @@
 import { Meta } from '@storybook/react';
 import { useEffect, useState } from 'react';
 
+import { shuffleArray } from '@/lib/helper';
+
+import randomFactsData from '@/data/about/randomFacts.json';
+
 import GeneralView, { GeneralViewProps } from '../GeneralView';
-import { RandomFact } from '../../../../../../martacodes.it-restruct/src/types/RandomFact';
-import randomFactsData from '../../../../data/about/randomFacts.json';
-import { shuffleArray } from '../../../../lib/helper';
+
+import { RandomFact } from '@/types/RandomFact';
 
 const meta: Meta<typeof GeneralView> = {
   title: 'Components/Random Facts/General View',

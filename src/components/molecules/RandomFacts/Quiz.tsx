@@ -7,8 +7,9 @@ import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 import { useState } from 'react';
 
-import Button from '../../atoms/buttons/Button';
-import { RandomFact } from '../../../../../martacodes.it-restruct/src/types/RandomFact';
+import Button from '@/components/atoms/buttons/Button';
+
+import { RandomFact } from '@/types/RandomFact';
 
 export interface QuizOption {
   headline: string;

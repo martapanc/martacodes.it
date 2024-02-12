@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { Podcast } from '../../../../../martacodes.it-restruct/src/types/Podcast';
-import { sortBy } from '../../../lib/objecUtils';
+import { sortBy } from '@/lib/objecUtils';
+
+import { Podcast } from '@/types/Podcast';
 
 export interface PodcastProps {
   podcasts: Podcast[];

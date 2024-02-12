@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { TvShow } from '../../../../../martacodes.it-restruct/src/types/TvShow';
-import { sortByDesc } from '../../../lib/objecUtils';
+import { sortByDesc } from '@/lib/objecUtils';
+
+import { TvShow } from '@/types/TvShow';
 
 export interface TvSeriesProps {
   tvShows: TvShow[];

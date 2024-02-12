@@ -5,8 +5,9 @@ import { useTheme } from 'next-themes';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import SectionHeading from '../../atoms/headings/SectionHeading';
-import { Job } from '../../../../../martacodes.it-restruct/src/types/Job';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
+
+import { Job } from '@/types/Job';
 
 export interface WorkExperienceProps {
   jobs: Job[];

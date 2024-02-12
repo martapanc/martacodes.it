@@ -2,19 +2,20 @@
 
 import * as React from 'react';
 
-import Heading from '../atoms/headings/Heading';
-import CvCard from '../organisms/cv/CvCard';
-import Education from '../organisms/cv/Education';
-import Intro from '../organisms/cv/Intro';
-import Languages from '../organisms/cv/Languages';
-import Publications from '../organisms/cv/Publications';
-import Skills from '../organisms/cv/Skills';
-import WorkExperience from '../organisms/cv/WorkExperience';
-import { Job } from '../../../../martacodes.it-restruct/src/types/Job';
-import { Language } from '../../../../martacodes.it-restruct/src/types/Language';
-import { Publication } from '../../../../martacodes.it-restruct/src/types/Publication';
-import { School } from '../../../../martacodes.it-restruct/src/types/School';
-import { Skill } from '../../../../martacodes.it-restruct/src/types/Skill';
+import Heading from '@/components/atoms/headings/Heading';
+import CvCard from '@/components/organisms/cv/CvCard';
+import Education from '@/components/organisms/cv/Education';
+import Intro from '@/components/organisms/cv/Intro';
+import Languages from '@/components/organisms/cv/Languages';
+import Publications from '@/components/organisms/cv/Publications';
+import Skills from '@/components/organisms/cv/Skills';
+import WorkExperience from '@/components/organisms/cv/WorkExperience';
+
+import { Job } from '@/types/Job';
+import { Language } from '@/types/Language';
+import { Publication } from '@/types/Publication';
+import { School } from '@/types/School';
+import { Skill } from '@/types/Skill';
 
 type CvPageProps = {
   intro: string;

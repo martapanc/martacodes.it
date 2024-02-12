@@ -2,12 +2,14 @@ import Image from 'next/image';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import styles from '../../../../martacodes.it-restruct/src/styles/modules/uses.module.css';
+import styles from '@/styles/modules/uses.module.css';
 
-import Heading from '../atoms/headings/Heading';
-import UpdateTimestamp from '../molecules/UpdateTimestamp/UpdateTimestamp';
-import clsxm from '../../lib/clsxm';
-import { MarkdownData } from '../../../../martacodes.it-restruct/src/types/Markdown';
+import clsxm from '@/lib/clsxm';
+
+import Heading from '@/components/atoms/headings/Heading';
+import UpdateTimestamp from '@/components/molecules/UpdateTimestamp/UpdateTimestamp';
+
+import { MarkdownData } from '@/types/Markdown';
 
 type UsesPageProps = {
   usesData: MarkdownData;

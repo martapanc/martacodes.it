@@ -2,20 +2,22 @@
 
 import * as React from 'react';
 
-import Heading from '../atoms/headings/Heading';
-import { QuizOption } from '../molecules/RandomFacts/Quiz';
-import Books from '../organisms/about/Books';
-import Music from '../organisms/about/Music';
-import Podcasts from '../organisms/about/Podcasts';
-import RandomFacts from '../organisms/about/RandomFacts';
-import TvSeries from '../organisms/about/TvSeries';
-import VideoGames from '../organisms/about/VideoGames';
-import { shuffleArray } from '../../lib/helper';
-import { Book } from '../../../../martacodes.it-restruct/src/types/Book';
-import { Podcast } from '../../../../martacodes.it-restruct/src/types/Podcast';
-import { RandomFact } from '../../../../martacodes.it-restruct/src/types/RandomFact';
-import { TvShow } from '../../../../martacodes.it-restruct/src/types/TvShow';
-import { VideoGame } from '../../../../martacodes.it-restruct/src/types/VideoGame';
+import { shuffleArray } from '@/lib/helper';
+
+import Heading from '@/components/atoms/headings/Heading';
+import { QuizOption } from '@/components/molecules/RandomFacts/Quiz';
+import Books from '@/components/organisms/about/Books';
+import Music from '@/components/organisms/about/Music';
+import Podcasts from '@/components/organisms/about/Podcasts';
+import RandomFacts from '@/components/organisms/about/RandomFacts';
+import TvSeries from '@/components/organisms/about/TvSeries';
+import VideoGames from '@/components/organisms/about/VideoGames';
+
+import { Book } from '@/types/Book';
+import { Podcast } from '@/types/Podcast';
+import { RandomFact } from '@/types/RandomFact';
+import { TvShow } from '@/types/TvShow';
+import { VideoGame } from '@/types/VideoGame';
 
 type AboutPageProps = {
   books: Book[];

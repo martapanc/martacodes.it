@@ -2,11 +2,8 @@ import fs from 'fs';
 import moment from 'moment';
 import path from 'path';
 
-import { CodeSnippet } from '../../../martacodes.it-restruct/src/types/CodeSnippet';
-import {
-  MarkdownData,
-  MarkdownSection,
-} from '../../../martacodes.it-restruct/src/types/Markdown';
+import { CodeSnippet } from '@/types/CodeSnippet';
+import { MarkdownData, MarkdownSection } from '@/types/Markdown';
 
 const readCodeSnippets = (): CodeSnippet[] => {
   const directory = 'src/data/code-snippets';

@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Intro from '../organisms/home/Intro';
-import Summary from '../organisms/home/Summary';
-import { CodeSnippet } from '../../../../martacodes.it-restruct/src/types/CodeSnippet';
-import { HomePage } from '../../../../martacodes.it-restruct/src/types/Homepage';
+import Intro from '@/components/organisms/home/Intro';
+import Summary from '@/components/organisms/home/Summary';
+
+import { CodeSnippet } from '@/types/CodeSnippet';
+import { HomePage } from '@/types/Homepage';
 
 type HomePageProps = {
   homePage: HomePage;

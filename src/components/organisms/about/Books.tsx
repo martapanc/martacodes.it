@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { Book } from '../../../../../martacodes.it-restruct/src/types/Book';
-import { sortBy } from '../../../lib/objecUtils';
+import { sortBy } from '@/lib/objecUtils';
+
+import { Book } from '@/types/Book';
 
 export interface BookProps {
   books: Book[];
