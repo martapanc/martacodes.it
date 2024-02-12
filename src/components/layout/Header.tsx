@@ -12,11 +12,11 @@ import languages from '@/data/languages.json';
 
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
-import ThemeToggle from '@/components/atoms/ThemeToggle/ThemeToggle';
 import LanguageSwitcher, {
   LanguageDef,
 } from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
 import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
+import ThemeToggle from '@/components/molecules/ThemeToggle/ThemeToggle';
 
 export const links = [
   { href: '/about', label: 'headerMenu.about' },

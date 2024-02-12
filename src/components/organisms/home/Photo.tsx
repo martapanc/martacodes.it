@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 
-import './home.css';
+import styles from './home.module.css';
 
 import clsxm from '@/lib/clsxm';
 
@@ -24,7 +24,7 @@ const Photo = () => {
 
     setSignatureUrl(url);
 
-    setAvatar(`avatar-${theme}`);
+    setAvatar(styles[`avatar-${theme}`]);
   }, [theme]);
 
   return (

@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next';
 import languages from '@/data/languages.json';
 
 import { NavigationItem } from '@/components/atoms/NavigationItem';
-import { ThemeToggle } from '@/components/atoms/ThemeToggle/ThemeToggle';
 import { links } from '@/components/layout/Header';
 import LanguageSwitcherMobile from '@/components/molecules/LanguageSwitcher/LanguageSwitcherMobile';
+import ThemeToggle from '@/components/molecules/ThemeToggle/ThemeToggle';
 
 export interface MobileMenuProps {
   isOpen: boolean;

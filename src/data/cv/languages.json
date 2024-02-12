@@ -1,0 +1,26 @@
+[
+  {
+    "name": "English",
+    "level": "Fluent (C2)",
+    "rank": 2,
+    "flag": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692716604/uk_657deb6132.svg"
+  },
+  {
+    "name": "French",
+    "level": "Basic (A2)",
+    "rank": 4,
+    "flag": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692716604/fr_eb256cde21.svg"
+  },
+  {
+    "name": "German",
+    "level": "Intermediate (B1/B2)",
+    "rank": 3,
+    "flag": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692716604/de_9c5221adfa.svg"
+  },
+  {
+    "name": "Italian",
+    "level": "Native",
+    "rank": 1,
+    "flag": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692716604/it_00c57db1fb.svg"
+  }
+]

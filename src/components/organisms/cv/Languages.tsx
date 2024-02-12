@@ -17,14 +17,15 @@ const Languages = ({ languages }: LanguageProps) => {
       <SectionHeading titlePrefix='cv.languages' />
 
       <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 justify-items-center'>
-        {languages.map((language) => (
+        {languages.map((language, id) => (
           <div
-            key={language.id}
+            key={id}
             className='flex flex-row items-center rounded-md p-4 shadow-md dark:bg-slate-900 w-full sm:w-64'
           >
             <Image
-              src={language.flag.url}
+              src={language.flag}
               alt={language.name}
+              aria-label={language.name}
               width={40}
               height={40}
             />

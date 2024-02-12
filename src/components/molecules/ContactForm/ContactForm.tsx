@@ -9,9 +9,10 @@ import * as Yup from 'yup';
 import { verifyCaptcha } from '@/lib/verifyCaptcha';
 
 import Button from '@/components/atoms/buttons/Button';
-import { Input } from '@/components/atoms/Input/Input';
-import { Select } from '@/components/atoms/select/Select';
-import { TextArea } from '@/components/atoms/TextArea/TextArea';
+
+import { Input } from './Input';
+import { Select } from './Select';
+import { TextArea } from './TextArea';
 
 export interface ContactFormProps {
   subjects: Subject[];

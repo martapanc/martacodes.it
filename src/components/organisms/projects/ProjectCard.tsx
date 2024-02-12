@@ -10,15 +10,13 @@ import { IconContext } from 'react-icons';
 import { RxCross1 } from 'react-icons/rx';
 import ReactMarkdown from 'react-markdown';
 
-import './projectCard.css';
+import styles from './projectCard.module.css';
 
 import clsxm from '@/lib/clsxm';
 
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
-import {
-  linkIconMapping,
-  toolIconMapping,
-} from '@/components/organisms/projects/Icons';
+
+import { linkIconMapping, toolIconMapping } from './Icons';
 
 import { Project } from '@/types/Project';
 
@@ -68,7 +66,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <div
         className={clsxm(
           'flex flex-col my-1',
-          activeDiv === 'first' ? 'show' : 'hide',
+          activeDiv === 'first' ? styles.show : styles.hide,
         )}
       >
         <h3 className='mb-2' aria-label='Project title'>
@@ -88,7 +86,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           className='flex flex-row mb-3 justify-start'
           aria-label='Project tools'
         >
-          <IconContext.Provider value={{ color: iconColor, size: '24px' }}>
+          <IconContext.Provider value={{ color: iconColor, size: '1.5em' }}>
             {project.tools.map((tool: string) => {
               const IconComponent = toolIconMapping[tool];
               return (
@@ -106,7 +104,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <Image
             className='w-full h-auto'
             src={project.image.url}
-            alt={project.image.alternativeText || 'Project Image'}
+            alt={project.image.name || 'Project Image'}
             width={320}
             height={180}
           />
@@ -114,7 +112,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <div className='flex flex-row justify-between' aria-label='Read More'>
           <div className='flex flex-row p-2'>
-            <IconContext.Provider value={{ color: iconColor, size: '24px' }}>
+            <IconContext.Provider value={{ color: iconColor, size: '1.5em' }}>
               {Object.entries(project.links).map(([key, url]) => {
                 const Icon = linkIconMapping[key];
                 return (
@@ -144,7 +142,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <div
         className={clsxm(
           'flex flex-col justify-between py-1 overflow-y-scroll',
-          activeDiv === 'second' ? 'show' : 'hide',
+          activeDiv === 'second' ? styles.show : styles.hide,
         )}
       >
         {project.longDescription && (

@@ -59,8 +59,8 @@ const RandomFacts = ({ options, falseOption, trueFacts }: QuizData) => {
 
       {!alreadyPlayed && (
         <div className='mb-3 font-serif font-semibold'>
-          Here's a little game for you! Which of the following statements about
-          me is{' '}
+          Here&apos;s a little game for you! Which of the following statements
+          about me is{' '}
           <strong className='text-red-600 dark:text-red-400'>false</strong>?
         </div>
       )}

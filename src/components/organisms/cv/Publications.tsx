@@ -18,9 +18,9 @@ const Publications = ({ publications }: PublicationProps) => {
       <SectionHeading titlePrefix='cv.publications' />
 
       <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-8'>
-        {publications.map((publication) => (
+        {publications.map((publication, id) => (
           <div
-            key={publication.id}
+            key={id}
             className='flex min-h-fit max-h-60 flex-col justify-between rounded-md p-4 shadow-md dark:bg-slate-900 lg:max-h-40 lg:h-40'
           >
             <span className='font-semibold mb-2 md:mb-auto'>
@@ -37,7 +37,7 @@ const Publications = ({ publications }: PublicationProps) => {
 
               <div className='flex flex-col self-end'>
                 <UnstyledLink
-                  key={publication.id}
+                  key={id}
                   className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
                   href={publication.fileUrl}
                 >

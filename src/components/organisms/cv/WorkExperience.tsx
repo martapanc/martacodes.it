@@ -21,9 +21,9 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
       <SectionHeading titlePrefix='cv.workExperience' />
 
       <div>
-        {jobs.map((job) => (
+        {jobs.map((job, id) => (
           <div
-            key={job.id}
+            key={id}
             className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
           >
             {/* Start Job Header - Desktop */}
@@ -118,12 +118,15 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
   );
 };
 
-function format(inputDate: string): string {
-  const date = new Date(inputDate);
-  return Intl.DateTimeFormat('en', {
-    year: 'numeric',
-    month: 'short',
-  }).format(date);
+function format(inputDate: string | null): string {
+  if (inputDate) {
+    const date = new Date(inputDate);
+    return Intl.DateTimeFormat('en', {
+      year: 'numeric',
+      month: 'short',
+    }).format(date);
+  }
+  return '';
 }
 
 export default WorkExperience;

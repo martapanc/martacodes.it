@@ -24,7 +24,7 @@ export default async function handler(
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', 'inline; filename=cv.pdf');
 
-    cloudinaryResponse.body.pipe(res);
+    cloudinaryResponse.body?.pipe(res);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).end('Internal Server Error');
