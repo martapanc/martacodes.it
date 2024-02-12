@@ -4,8 +4,8 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { HiLanguage } from 'react-icons/hi2';
 
-import { saveToCookie } from '../../../lib/helper';
-import i18n from '../../../lib/i18n';
+import { saveToCookie } from '@/lib/helper';
+import i18n from '@/lib/i18n';
 
 export interface LanguageSwitcherProps {
   languages: LanguageDef[];

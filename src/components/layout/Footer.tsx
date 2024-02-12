@@ -12,7 +12,7 @@ import {
   SiYoutube,
 } from 'react-icons/si';
 
-import UnstyledLink from '../atoms/links/UnstyledLink';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 
 export default function Footer() {
   return (

@@ -1,7 +1,8 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink';
-import clsxm from '../../../lib/clsxm';
 
 const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
   ({ children, className, ...rest }, ref) => {

@@ -6,15 +6,17 @@ import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
 import { useTranslation } from 'react-i18next';
 
-import { BurgerIcon } from '../atoms/BurgerIcon';
-import UnstyledLink from '../atoms/links/UnstyledLink';
+import { useOnKeyDown } from '@/hooks/useOnKeyDown';
+
+import languages from '@/data/languages.json';
+
+import { BurgerIcon } from '@/components/atoms/BurgerIcon';
+import UnstyledLink from '@/components/atoms/links/UnstyledLink';
 import LanguageSwitcher, {
   LanguageDef,
-} from '../molecules/LanguageSwitcher/LanguageSwitcher';
-import { MobileMenu } from '../molecules/MobileMenu/MobileMenu';
-import ThemeToggle from '../molecules/ThemeToggle/ThemeToggle';
-import languages from '../../data/languages.json';
-import { useOnKeyDown } from '../../hooks/useOnKeyDown';
+} from '@/components/molecules/LanguageSwitcher/LanguageSwitcher';
+import { MobileMenu } from '@/components/molecules/MobileMenu/MobileMenu';
+import ThemeToggle from '@/components/molecules/ThemeToggle/ThemeToggle';
 
 export const links = [
   { href: '/about', label: 'headerMenu.about' },

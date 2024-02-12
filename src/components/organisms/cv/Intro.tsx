@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { Pluggable } from 'unified';
 
-import SectionHeading from '../../atoms/headings/SectionHeading';
+import SectionHeading from '@/components/atoms/headings/SectionHeading';
 
 interface IntroProps {
   intro: string;

@@ -1,7 +1,7 @@
 import { Field, useField } from 'formik';
 import { useTranslation } from 'react-i18next';
 
-import clsxm from '../../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
 
 export interface SelectProps {
   id: string;

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './home.module.css';
 
-import clsxm from '../../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
 
 const blackSignature =
   'https://res.cloudinary.com/dwrurydlt/image/upload/v1693066829/signature_b64d54de16.webp';

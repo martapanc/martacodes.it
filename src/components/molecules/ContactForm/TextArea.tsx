@@ -1,6 +1,6 @@
 import { Field, useField } from 'formik';
 
-import clsxm from '../../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
 
 export interface TextAreaProps {
   id: string;

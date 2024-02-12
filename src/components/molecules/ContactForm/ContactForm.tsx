@@ -6,11 +6,13 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { Trans, useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 
+import { verifyCaptcha } from '@/lib/verifyCaptcha';
+
+import Button from '@/components/atoms/buttons/Button';
+
 import { Input } from './Input';
 import { Select } from './Select';
 import { TextArea } from './TextArea';
-import Button from '../../atoms/buttons/Button';
-import { verifyCaptcha } from '../../../lib/verifyCaptcha';
 
 export interface ContactFormProps {
   subjects: Subject[];

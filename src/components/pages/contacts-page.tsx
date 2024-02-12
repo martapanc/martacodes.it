@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Heading from '../atoms/headings/Heading';
-import ContactForm from '../molecules/ContactForm/ContactForm';
+import Heading from '@/components/atoms/headings/Heading';
+import ContactForm from '@/components/molecules/ContactForm/ContactForm';
 
 export default function ContactsPage() {
   return (

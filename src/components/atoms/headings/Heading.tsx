@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './styles.module.css';
 
-import clsxm from '../../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
 
 interface HeadingProps {
   title: string;

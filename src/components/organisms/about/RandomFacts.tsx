@@ -3,10 +3,11 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import GeneralView from '../../molecules/RandomFacts/GeneralView';
-import Quiz, { QuizData } from '../../molecules/RandomFacts/Quiz';
-import QuizAnswers from '../../molecules/RandomFacts/QuizAnswers';
-import { getFromCookie, saveToCookie } from '../../../lib/helper';
+import { getFromCookie, saveToCookie } from '@/lib/helper';
+
+import GeneralView from '@/components/molecules/RandomFacts/GeneralView';
+import Quiz, { QuizData } from '@/components/molecules/RandomFacts/Quiz';
+import QuizAnswers from '@/components/molecules/RandomFacts/QuizAnswers';
 
 export const alreadyPlayedKey = 'QuizAlreadyPlayed';
 
