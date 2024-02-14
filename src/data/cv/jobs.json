@@ -13,7 +13,14 @@
     "isCurrentJob": true,
     "mainColor": "#090909",
     "darkColor": "#F7F7F7",
-    "technologies": ["TypeScript", "React", "NextJS", "MongoDB", "Docker"]
+    "technologies": [
+      "TypeScript",
+      "React",
+      "NextJS",
+      "MongoDB",
+      "Docker",
+      "Github Actions"
+    ]
   },
   {
     "companyName": "Resourcify",

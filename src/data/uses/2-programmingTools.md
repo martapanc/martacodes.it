@@ -8,4 +8,6 @@ Sublime Text
 
 iTerm terminal
 
+Figma
+
 Postman
