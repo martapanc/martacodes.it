@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
+import rehypeRaw from 'rehype-raw';
 
 import clsxm from '@/lib/clsxm';
 
@@ -77,7 +78,7 @@ const Summary = ({ homePage }: SummaryProps) => {
       <p className='mb-4'>{introduction_2}</p>
 
       {introductionParts.map((introPart, id) => (
-        <ReactMarkdown key={id} className='mb-4'>
+        <ReactMarkdown key={id} className='mb-4' rehypePlugins={[rehypeRaw]}>
           {introPart}
         </ReactMarkdown>
       ))}
