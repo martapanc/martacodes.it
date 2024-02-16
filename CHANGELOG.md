@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/martapanc/martacodes.it/compare/v1.17.0...v2.1.0) (2024-02-16)
+
+
+### Features
+
+* remove/replace flag emojis on Windows ([7ac77fb](https://github.com/martapanc/martacodes.it/commit/7ac77fb209f1c81b8dc6cb4a74302fd9fd87bbc5))
+* update Uses content ([fd78879](https://github.com/martapanc/martacodes.it/commit/fd78879965bec7df4056b3a29c6adb8de325b343))
+
 ## [1.17.0](https://github.com/martapanc/martacodes.it/compare/v1.16.0...v1.17.0) (2023-11-06)
 
 
