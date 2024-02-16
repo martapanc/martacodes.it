@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -5,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import styles from '@/styles/modules/recruiters.module.css';
 
 import clsxm from '@/lib/clsxm';
+import { isWindowsOS } from '@/lib/helper';
 
 import Heading from '@/components/atoms/headings/Heading';
 import { SalaryHappinessTool } from '@/components/molecules/RecruiterInfo/SalaryHappinessTool';
@@ -15,6 +18,16 @@ import { MarkdownData } from '@/types/Markdown';
 type RecruitersPageProps = {
   recruitersData: MarkdownData;
 };
+
+function removeFlagEmojisIfWindowsOS(inputText: string): string {
+  if (typeof window !== 'undefined' && isWindowsOS(window.navigator)) {
+    return inputText
+      .replaceAll('🇪🇺', ' ')
+      .replaceAll('🇮🇹', '🍕')
+      .replaceAll('🇬🇧', ' ');
+  }
+  return inputText;
+}
 
 export default function RecruitersPage({
   recruitersData,
@@ -49,7 +62,9 @@ export default function RecruitersPage({
           className={clsxm(styles['recruiters-info'], 'mb-4')}
           rehypePlugins={[rehypeRaw]}
         >
-          {recruitersData.markdownSections[1].content}
+          {removeFlagEmojisIfWindowsOS(
+            recruitersData.markdownSections[1].content,
+          )}
         </ReactMarkdown>
 
         <hr />
