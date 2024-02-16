@@ -74,3 +74,7 @@ export function shuffleArray<T>(array: T[]): T[] {
   }
   return shuffledArray;
 }
+
+export function isWindowsOS(navigator: Navigator): boolean {
+  return navigator.userAgent.indexOf('Win') !== -1;
+}

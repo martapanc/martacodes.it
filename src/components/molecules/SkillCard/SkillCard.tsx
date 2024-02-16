@@ -32,7 +32,7 @@ const SkillCard = ({ skill }: SkillCardProps) => {
         ))}
       </div>
 
-      <h3>{skill.title}</h3>
+      <h3 className='text-2xl font-semibold my-1'>{skill.title}</h3>
 
       <span className='skill-description text-justify font-light'>
         <ReactMarkdown>{skill.description}</ReactMarkdown>

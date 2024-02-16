@@ -299,4 +299,8 @@
       opacity: 0;
     }
   }
+
+  .strong {
+    font-weight: 550;
+  }
 }

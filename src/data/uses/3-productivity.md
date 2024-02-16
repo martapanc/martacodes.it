@@ -6,6 +6,8 @@
 
 **[Spark](https://sparkmailapp.com/)** & **[Calendars](https://readdle.com/calendars)** by Readdle: e-mail, event and task managers
 
+**Miro**, for all kinds of boards and visualizations
+
 Slack
 
 Discord

@@ -8,9 +8,11 @@ Apple Magic Mouse
 
 Logitech MX Keys
 
-ASUS VA24DQLB 24” screen
+Huawei AD80HW 23.8” and Dell S2421H 24” screens
 
 ErGear Dual monitor stand
+
+RØDE NT-USB microphone
 
 Bose SoundLink Around-Ear Wireless Headphones II
 
@@ -27,3 +29,5 @@ iPhone 13 Pro
 Synology NAS DS720+
 
 **[AutoFull Ergonomic Gaming Chair](https://autofull.com/)** (Red)
+
+MALM Desk with pull-out panel, by Ikea
