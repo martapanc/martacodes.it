@@ -6,17 +6,11 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { Trans, useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 
-import { verifyCaptcha } from '@/lib/verifyCaptcha';
-
 import Button from '@/components/atoms/buttons/Button';
 
 import { Input } from './Input';
 import { Select } from './Select';
 import { TextArea } from './TextArea';
-
-export interface ContactFormProps {
-  subjects: Subject[];
-}
 
 export interface Subject {
   key: string;
@@ -33,17 +27,24 @@ const ContactForm = () => {
   const reCaptchaSiteKey = '6LcSyzAoAAAAAC7JTJ6gtOWW3cjTK_vKRm2WjEtC';
 
   async function handleCaptchaSubmission(token: string | null) {
-    // Server function to verify captcha
-    await verifyCaptcha(token)
-      .then(() => {
-        setIsVerified(true);
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(err);
-        setIsVerified(false);
-        setError(true);
-      });
+    const res = await fetch('/api/recaptcha', {
+      body: JSON.stringify({ token }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+
+    const { success, error } = await res.json();
+
+    if (success) {
+      setIsVerified(true);
+    } else {
+      setIsVerified(false);
+      setError(true);
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   }
 
   useEffect(() => {}, [isVerified]);
