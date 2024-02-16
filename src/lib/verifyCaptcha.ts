@@ -5,7 +5,7 @@ export interface ReCaptchaResp {
 }
 
 export async function verifyCaptcha(token: string | null) {
-  const key = process.env.RECAPTCHA_SECRET_KEY;
+  const key = process.env.NEXT_PUBLIC_RECAPTCHA_KEY as string;
 
   if (!key) {
     throw new Error('Error retrieving reCaptcha secret key.');

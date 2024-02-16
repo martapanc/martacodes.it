@@ -38,7 +38,9 @@ const ContactForm = () => {
       .then(() => {
         setIsVerified(true);
       })
-      .catch(() => {
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
         setIsVerified(false);
         setError(true);
       });
