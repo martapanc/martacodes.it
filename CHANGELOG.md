@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.18.0](https://github.com/martapanc/martacodes.it/compare/v1.17.0...v1.18.0) (2024-02-16)
+## [2.1.0](https://github.com/martapanc/martacodes.it/compare/v1.17.0...v2.1.0) (2024-02-16)
 
 
 ### Features
