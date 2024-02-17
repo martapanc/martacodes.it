@@ -1,10 +1,14 @@
 'use client';
 
 import { Form, Formik } from 'formik';
-import { useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Trans, useTranslation } from 'react-i18next';
+import { toast, ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import Button from '@/components/atoms/buttons/Button';
 
@@ -12,19 +16,13 @@ import { Input } from './Input';
 import { Select } from './Select';
 import { TextArea } from './TextArea';
 
-export interface Subject {
-  key: string;
-  value: string;
-}
-
 const ContactForm = () => {
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isVerified, setIsVerified] = useState<boolean>(false);
 
   const reCaptchaSiteKey = '6LcSyzAoAAAAAC7JTJ6gtOWW3cjTK_vKRm2WjEtC';
+
+  const { theme } = useTheme();
 
   async function handleCaptchaSubmission(token: string | null) {
     const res = await fetch('/api/recaptcha', {
@@ -41,10 +39,35 @@ const ContactForm = () => {
       setIsVerified(true);
     } else {
       setIsVerified(false);
-      setError(true);
+      showError();
       // eslint-disable-next-line no-console
       console.error(error);
     }
+  }
+
+  function showSuccess() {
+    toast(t('contacts.success'), {
+      type: 'success',
+    });
+  }
+
+  function showError() {
+    toast(
+      () => {
+        return (
+          <>
+            <Trans t={t} i18nKey='contacts.error' />
+            <a className='ms-1 underline' href='mailto:info@martacodes.it'>
+              info@martacodes.it
+            </a>
+          </>
+        );
+      },
+      {
+        autoClose: 10000,
+        type: 'error',
+      },
+    );
   }
 
   useEffect(() => {}, [isVerified]);
@@ -82,9 +105,6 @@ const ContactForm = () => {
   ) => {
     const json = JSON.stringify(formValues, null, 2);
 
-    setError(false);
-    setSuccess(false);
-
     const res = await fetch('/api/contacts/send', {
       body: json,
       headers: {
@@ -96,13 +116,13 @@ const ContactForm = () => {
     const { error } = await res.json();
 
     if (error) {
-      setError(true);
+      showError();
       setSubmitting(false);
       return;
     }
 
     setSubmitting(false);
-    setSuccess(true);
+    showSuccess();
     resetForm();
     recaptchaRef.current?.reset();
   };
@@ -124,20 +144,6 @@ const ContactForm = () => {
       {({ isSubmitting }) => {
         return (
           <Form role='form' className='mt-4'>
-            {success && (
-              <div className='rounded-md bg-green-100 px-4 py-2 text-green-600 ring-1 ring-green-600 font-semibold'>
-                {t('contacts.success')}
-              </div>
-            )}
-            {error && (
-              <div className='rounded-md bg-red-100 px-4 py-2 text-red-600 ring-1 ring-red-600 font-semibold'>
-                <Trans t={t} i18nKey='contacts.error' />
-                <a className='ms-1 underline' href='mailto:info@martacodes.it'>
-                  info@martacodes.it
-                </a>
-              </div>
-            )}
-
             <Input
               id='name'
               label={t('contacts.fields.name.label')}
@@ -187,6 +193,19 @@ const ContactForm = () => {
                   : t('contacts.button.send')}
               </Button>
             </div>
+
+            <ToastContainer
+              position='bottom-left'
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme={theme}
+            />
           </Form>
         );
       }}

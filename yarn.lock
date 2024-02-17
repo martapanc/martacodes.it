@@ -13688,6 +13688,7 @@ __metadata:
     react-string-replace: "npm:^1.1.1"
     react-syntax-highlighter: "npm:^15.5.0"
     react-tippy: "npm:^1.4.0"
+    react-toastify: "npm:^10.0.4"
     rehype-raw: "npm:^7.0.0"
     remark-gfm: "npm:^4.0.0"
     storybook: "npm:^7.6.16"
@@ -17239,6 +17240,18 @@ __metadata:
   dependencies:
     popper.js: "npm:^1.11.1"
   checksum: ec604d14056b8d96c9f9f9beca287f4c50f55095c9b572059e7dba0ef703f0247bb9199b9cb174435bab49bac74daf34bb9b2956164bedb217e67ff95072c404
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:^10.0.4":
+  version: 10.0.4
+  resolution: "react-toastify@npm:10.0.4"
+  dependencies:
+    clsx: "npm:^2.1.0"
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 3d31edf81e8b394fd0085615fd7ba9fb9546c7cdae56e5334df67b58d65450c73af14a8fc163f19ceed03cfee7a344d1af1489422536f52c9516ca45e9b61a37
   languageName: node
   linkType: hard
 

@@ -36,6 +36,9 @@
   --secondary-color-light: rgb(135, 208, 248);
   --primary-color-dark: rgb(74, 76, 204);
   --secondary-color-dark: rgb(95, 209, 249);
+
+  /* Toastify */
+  --toastify-toast-width: 450px !important;
 }
 
 /* Dark theme */
