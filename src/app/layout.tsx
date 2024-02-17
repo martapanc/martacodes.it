@@ -1,4 +1,4 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import React from 'react';
 
@@ -42,7 +42,7 @@ export default function RootLayout({
         ></Script>
 
         {/* Vercel Speed Insights */}
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
   );
