@@ -6,14 +6,15 @@ export interface TextAreaProps {
   id: string;
   label: string;
   placeholder?: string;
+  rows?: number;
 }
 
-export const TextArea = ({ id, label, placeholder }: TextAreaProps) => {
+export const TextArea = ({ id, label, placeholder, rows }: TextAreaProps) => {
   const fieldProps = { id, name: id, label, placeholder };
   const [_, meta] = useField(fieldProps);
 
   return (
-    <label htmlFor='firstName' className='mb-2 mt-6 flex flex-col font-bold'>
+    <label htmlFor={id} className='mb-2 mt-4 flex flex-col font-bold'>
       {label}
       <Field
         as='textarea'
@@ -27,7 +28,7 @@ export const TextArea = ({ id, label, placeholder }: TextAreaProps) => {
             'ring-grey-400 dark:ring-slate-500': !meta.touched || !meta.error,
           },
         )}
-        rows={7}
+        rows={rows}
       />
       <div className='font-sm font-normal text-red-600'>
         {meta.touched && meta.error}

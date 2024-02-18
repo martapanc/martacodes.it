@@ -172,9 +172,10 @@ const ContactForm = () => {
               id='message'
               label={t('contacts.fields.message.label')}
               placeholder={t('contacts.fields.message.placeholder')}
+              rows={6}
             />
 
-            <div className='mt-6 flex justify-end'>
+            <div className='mt-2 flex justify-end'>
               <ReCAPTCHA
                 sitekey={reCaptchaSiteKey}
                 ref={recaptchaRef}
