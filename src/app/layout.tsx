@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import React from 'react';
 
@@ -39,6 +40,9 @@ export default function RootLayout({
           src='https://analytics.eu.umami.is/script.js'
           data-website-id='ab53ae74-58ea-44ff-b5fa-451b4f52c364'
         ></Script>
+
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   );

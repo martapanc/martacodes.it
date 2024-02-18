@@ -1,12 +1,14 @@
 'use client';
 
 import { Form, Formik } from 'formik';
-import { useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Trans, useTranslation } from 'react-i18next';
+import { toast, ToastContainer } from 'react-toastify';
 import * as Yup from 'yup';
 
-import { verifyCaptcha } from '@/lib/verifyCaptcha';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Button from '@/components/atoms/buttons/Button';
 
@@ -14,39 +16,15 @@ import { Input } from './Input';
 import { Select } from './Select';
 import { TextArea } from './TextArea';
 
-export interface ContactFormProps {
-  subjects: Subject[];
-}
-
-export interface Subject {
-  key: string;
-  value: string;
-}
-
 const ContactForm = () => {
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-
   const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const reCaptchaSiteKey = '6LcSyzAoAAAAAC7JTJ6gtOWW3cjTK_vKRm2WjEtC';
   const [isVerified, setIsVerified] = useState<boolean>(false);
 
-  const reCaptchaSiteKey = '6LcSyzAoAAAAAC7JTJ6gtOWW3cjTK_vKRm2WjEtC';
-
-  async function handleCaptchaSubmission(token: string | null) {
-    // Server function to verify captcha
-    await verifyCaptcha(token)
-      .then(() => {
-        setIsVerified(true);
-      })
-      .catch(() => {
-        setIsVerified(false);
-        setError(true);
-      });
-  }
+  const { theme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {}, [isVerified]);
-
-  const { t } = useTranslation();
 
   const subjects = [
     { key: 'dev', value: 'contacts.subjects.dev' },
@@ -72,34 +50,79 @@ const ContactForm = () => {
     message: Yup.string().required(t('contacts.fields.message.required')),
   });
 
-  const handleSubmit = async (
-    formValues: Record<string, string>,
-    setSubmitting: (arg: boolean) => void,
-    resetForm: () => void,
-  ) => {
-    const json = JSON.stringify(formValues, null, 2);
-
-    setError(false);
-    setSuccess(false);
-
-    const res = await fetch('/api/contacts/send', {
-      body: json,
+  async function handleCaptchaSubmission(token: string | null) {
+    const res = await fetch('/api/recaptcha', {
+      body: JSON.stringify({ token }),
       headers: {
         'Content-Type': 'application/json',
       },
       method: 'POST',
     });
 
-    const { error } = await res.json();
+    const { success, error } = await res.json();
 
-    if (error) {
-      setError(true);
-      setSubmitting(false);
-      return;
+    if (success) {
+      setIsVerified(true);
+    } else {
+      setIsVerified(false);
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  }
+
+  function showSuccess() {
+    toast(t('contacts.success'), {
+      type: 'success',
+    });
+  }
+
+  function showError() {
+    toast(
+      () => {
+        return (
+          <>
+            <Trans t={t} i18nKey='contacts.error' />
+            <a className='ms-1 underline' href='mailto:info@martacodes.it'>
+              info@martacodes.it
+            </a>
+          </>
+        );
+      },
+      {
+        autoClose: 15000,
+        type: 'error',
+      },
+    );
+  }
+
+  const handleSubmit = async (
+    formValues: Record<string, string>,
+    setSubmitting: (arg: boolean) => void,
+    resetForm: () => void,
+  ) => {
+    if (isVerified) {
+      const json = JSON.stringify(formValues, null, 2);
+
+      const res = await fetch('/api/contacts/send', {
+        body: json,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+
+      const { error } = await res.json();
+
+      if (error) {
+        showError();
+      } else {
+        showSuccess();
+      }
+    } else {
+      showError();
     }
 
     setSubmitting(false);
-    setSuccess(true);
     resetForm();
     recaptchaRef.current?.reset();
   };
@@ -118,23 +141,9 @@ const ContactForm = () => {
         handleSubmit(values, setSubmitting, resetForm);
       }}
     >
-      {({ isSubmitting }) => {
+      {({ isSubmitting, isValid }) => {
         return (
           <Form role='form' className='mt-4'>
-            {success && (
-              <div className='rounded-md bg-green-100 px-4 py-2 text-green-600 ring-1 ring-green-600 font-semibold'>
-                {t('contacts.success')}
-              </div>
-            )}
-            {error && (
-              <div className='rounded-md bg-red-100 px-4 py-2 text-red-600 ring-1 ring-red-600 font-semibold'>
-                <Trans t={t} i18nKey='contacts.error' />
-                <a className='ms-1 underline' href='mailto:info@martacodes.it'>
-                  info@martacodes.it
-                </a>
-              </div>
-            )}
-
             <Input
               id='name'
               label={t('contacts.fields.name.label')}
@@ -163,9 +172,10 @@ const ContactForm = () => {
               id='message'
               label={t('contacts.fields.message.label')}
               placeholder={t('contacts.fields.message.placeholder')}
+              rows={6}
             />
 
-            <div className='mt-6 flex justify-end'>
+            <div className='mt-2 flex justify-end'>
               <ReCAPTCHA
                 sitekey={reCaptchaSiteKey}
                 ref={recaptchaRef}
@@ -176,7 +186,7 @@ const ContactForm = () => {
             <div className='mt-2 flex justify-end'>
               <Button
                 type='submit'
-                disabled={!isVerified || isSubmitting}
+                disabled={!isValid || isSubmitting}
                 className='group'
               >
                 {isSubmitting
@@ -184,6 +194,19 @@ const ContactForm = () => {
                   : t('contacts.button.send')}
               </Button>
             </div>
+
+            <ToastContainer
+              position='bottom-left'
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme={theme}
+            />
           </Form>
         );
       }}

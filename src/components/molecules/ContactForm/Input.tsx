@@ -19,7 +19,7 @@ export const Input = ({
   const [_, meta] = useField(fieldProps);
 
   return (
-    <label htmlFor='firstName' className='mb-2 mt-6 flex flex-col font-bold'>
+    <label htmlFor={id} className='mb-2 mt-4 flex flex-col font-bold'>
       {label}
       <Field
         placeholder={placeholder}
