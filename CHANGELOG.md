@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/martapanc/martacodes.it/compare/v2.1.0...v2.2.0) (2024-02-18)
+
+
+### Features
+
+* add Toastify ([911344c](https://github.com/martapanc/martacodes.it/commit/911344c8818488696aaf0559ad3c40c85a8f7af7))
+* add Vercel Speed Insight package ([3fbdac6](https://github.com/martapanc/martacodes.it/commit/3fbdac6b74219ad2bbd51353a098adc43c8f9a17))
+* adjust form spacing ([04db826](https://github.com/martapanc/martacodes.it/commit/04db8261e53e5d5198b2984d8a27d5e6db450bac))
+* re-add contacts/send api endpoint ([e75d827](https://github.com/martapanc/martacodes.it/commit/e75d82785a03730972fba1d6ccfad893d7246e41))
+* refactor Contact Form ([7060584](https://github.com/martapanc/martacodes.it/commit/7060584174173505ee061e275d1a85e278793446))
+* setup ReCaptcha ([1d1f673](https://github.com/martapanc/martacodes.it/commit/1d1f673b099be31d136d6058ce88b6cd9400567f))
+* setup ReCaptcha API endpoint ([a69c3ef](https://github.com/martapanc/martacodes.it/commit/a69c3ef669c92395a092716dc310e7d30e01b7fd))
+* upgrade dependencies ([af3a179](https://github.com/martapanc/martacodes.it/commit/af3a17976f14834538c34023ca4532ba9e9d5983))
+* upgrade dependencies ([2315931](https://github.com/martapanc/martacodes.it/commit/2315931b362bf54289d479deec8b6a538ee0788c))
+* upgrade dependencies ([817030a](https://github.com/martapanc/martacodes.it/commit/817030ab6b8bcdf4ef319c14e7846b4559772d10))
+
 ## [2.1.0](https://github.com/martapanc/martacodes.it/compare/v1.17.0...v2.1.0) (2024-02-16)
 
 
