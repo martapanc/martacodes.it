@@ -48,5 +48,3 @@ dist
 .sanity/*
 
 graphql.config.yml
-
-.yarn/
