@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.0](https://github.com/martapanc/martacodes.it/compare/v2.2.0...v2.3.0) (2024-02-22)
+
+
+### Features
+
+* add white logos for Homepage in dark mode ([580ec0f](https://github.com/martapanc/martacodes.it/commit/580ec0f89740e3e20e06f551bf7388ee2fad324b))
+* update 404 page ([500737f](https://github.com/martapanc/martacodes.it/commit/500737fe81fed7172f6879728b272412f4017c6b))
+
 ## [2.2.0](https://github.com/martapanc/martacodes.it/compare/v2.1.0...v2.2.0) (2024-02-18)
 
 
