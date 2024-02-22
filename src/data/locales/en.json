@@ -99,5 +99,8 @@
   },
   "recruiters": {
     "title": "Info for Recruiters"
+  },
+  "404": {
+    "title": "<404 />"
   }
 }
