@@ -3,7 +3,7 @@
 
 I completely understand. Being an Italian myself, I know all too well the challenges and relatively lower salaries that
 many professionals, including software engineers, contend with in our Bel Paese. But, here's the deal: the numbers I'm
-putting out there are on par with the European salary averages - as well as what current employers are paying me.
+putting out there are on par with international salary averages - as well as what current employers are paying me.
 
 I firmly believe in fair compensation for the value I bring to the table. My goal is to secure a salary that truly
 reflects my skills and experience without any compromises. This is my little way of pushing for a change. 🚀💪🇮🇹
