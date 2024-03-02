@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   try {
     const cloudinaryUrl =
-      'https://res.cloudinary.com/dwrurydlt/image/upload/v1694634540/Pancaldi_CV_aug23_258811b6b1.pdf';
+      'https://res.cloudinary.com/dwrurydlt/image/upload/v1709393747/CV_2024-03.pdf';
 
     const cloudinaryResponse = await fetch(cloudinaryUrl);
 
