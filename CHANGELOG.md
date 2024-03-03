@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.0](https://github.com/martapanc/martacodes.it/compare/v2.3.0...v2.4.0) (2024-03-03)
+
+
+### Features
+
+* **content:** update homepage text ([46b6cc8](https://github.com/martapanc/martacodes.it/commit/46b6cc8e5a5a2413aa8b6bd5651f2cab49d0b762))
+* update CV to March 2024; upgrade dependencies ([4c93283](https://github.com/martapanc/martacodes.it/commit/4c9328383b51f365bf9e05d53b591631a980a674))
+
 ## [2.3.0](https://github.com/martapanc/martacodes.it/compare/v2.2.0...v2.3.0) (2024-02-22)
 
 
