@@ -15,7 +15,7 @@ const readCodeSnippets = (): CodeSnippet[] => {
     const content = fs
       .readFileSync(filePath, 'utf-8')
       .replaceAll('```', '')
-      .replace(/^\n/, '');
+      .replace(/^\n|\n$/g, ''); // Remove leading and trailing \n
     markdownData.push({
       id,
       language: filename.replace('.md', ''),
