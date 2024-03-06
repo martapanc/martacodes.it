@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/martapanc/martacodes.it/compare/v2.4.0...v2.5.0) (2024-03-06)
+
+
+### Features
+* remove trailing \n from code snippets; upgrade dependencies ([e7011df](https://github.com/martapanc/martacodes.it/commit/e7011df6f97016f3c5ef1313eb37e28f625ec9e4))
+
+
 ## [2.4.0](https://github.com/martapanc/martacodes.it/compare/v2.3.0...v2.4.0) (2024-03-03)
 
 
