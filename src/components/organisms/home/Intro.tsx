@@ -5,8 +5,8 @@ import styles from './home.module.css';
 import clsxm from '@/lib/clsxm';
 import { shuffleArray } from '@/lib/helper';
 
-import Code from './Code';
 import Photo from './Photo';
+import Terminal from './Terminal';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
 
@@ -22,11 +22,11 @@ const Intro = ({ greeting, codeSnippets }: IntroProps) => {
         <span className={clsxm(styles.greeting, 'drop-shadow-lg')}>
           {greeting}
         </span>{' '}
-        👋🏻
+        <span className='inline-block animate-waving-hand'>👋🏻</span>
       </h1>
 
       <div className='mt-8 flex flex-col lg:flex-row'>
-        <Code codeSnippets={shuffleArray(codeSnippets)} />
+        <Terminal codeSnippets={shuffleArray(codeSnippets)} />
 
         <Photo />
       </div>
