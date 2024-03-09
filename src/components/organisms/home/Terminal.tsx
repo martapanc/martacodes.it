@@ -9,8 +9,6 @@ import {
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Typed, { TypedOptions } from 'typed.js';
 
-import clsxm from '@/lib/clsxm';
-
 import { CodeSnippet } from '@/types/CodeSnippet';
 
 export interface CodeSnippetsProps {
@@ -23,30 +21,6 @@ const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
   const { theme } = useTheme();
 
   const ideStyle = theme === 'dark' ? darcula : atomOneLight;
-
-  const macIcons = [
-    {
-      id: 'red',
-      lightBg: '#FE5F57',
-      lightBorder: '#E80000',
-      darkBg: '#FE5F57',
-      darkBorder: '#e80000',
-    },
-    {
-      id: 'amber',
-      lightBg: '#FEBC2E',
-      lightBorder: '#E49E00',
-      darkBg: '#FEBC2E',
-      darkBorder: '#E49E00',
-    },
-    {
-      id: 'green',
-      lightBg: '#28C840',
-      lightBorder: '#20AC27',
-      darkBg: '#28C840',
-      darkBorder: '#20AC27',
-    },
-  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -84,18 +58,12 @@ const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
 
   return (
     <div className='w-full lg:w-1/2 h-60 lg:h-[288px] me-4'>
-      <div className='bg-[#dedede] dark:bg-[#4E4E4E] h-5 rounded-t-lg px-4 py-1 flex'>
-        {macIcons.map((icon) => (
-          <div
-            key={icon.id}
-            className={clsxm(
-              'w-[12px] h-[12px] rounded-full me-1.5',
-              `bg-[${icon.lightBg}] dark:bg-[${icon.darkBg}]`,
-            )}
-          ></div>
-        ))}
+      <div className='bg-terminal-bar-light dark:bg-terminal-bar-dark h-5 rounded-t-lg px-4 py-1 flex'>
+        <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-red'></div>
+        <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-amber'></div>
+        <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-green'></div>
       </div>
-      <div className='h-56 rounded-b-lg border-double bg-[#f1f1f1] dark:bg-[#1E1F21] px-4 pt-2.5 pb-6 lg:h-[264px]'>
+      <div className='h-56 rounded-b-lg border-double bg-terminal-bg-light dark:bg-terminal-bg-dark px-4 pt-2.5 pb-6 lg:h-[264px]'>
         <div id='typed-strings'>
           {loading ? <span className='cursor-blink'>_</span> : null}
           {!loading &&

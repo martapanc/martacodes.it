@@ -25,9 +25,18 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#0c1018',
-        fontWeight: {
-          strong: '550',
+        terminal: {
+          red: '#fe5f57',
+          amber: '#febc2e',
+          green: '#28c840',
+          'bg-light': '#f1f1f1',
+          'bg-dark': '#1E1F21',
+          'bar-light': '#dedede',
+          'bar-dark': '#4E4E4E',
         },
+      },
+      fontWeight: {
+        strong: '550',
       },
       keyframes: {
         flicker: {
