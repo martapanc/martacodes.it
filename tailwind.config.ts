@@ -29,10 +29,10 @@ export default {
           red: '#fe5f57',
           amber: '#febc2e',
           green: '#28c840',
-          'bg-light': '#f1f1f1',
-          'bg-dark': '#1E1F21',
+          light: '#f1f1f1',
+          dark: '#1e1e21',
           'bar-light': '#dedede',
-          'bar-dark': '#4E4E4E',
+          'bar-dark': '#4e4e4e',
         },
       },
       fontWeight: {
