@@ -26,7 +26,7 @@ const Intro = ({ greeting, codeSnippets }: IntroProps) => {
         <span className='inline-block animate-waving-hand'>👋</span>
       </h1>
 
-      <div className='mt-8 flex flex-col lg:flex-row'>
+      <div className='mt-8 flex flex-col-reverse lg:flex-row'>
         <TagCloud />
 
         <Terminal codeSnippets={shuffleArray(codeSnippets)} />

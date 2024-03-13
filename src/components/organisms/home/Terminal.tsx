@@ -63,7 +63,7 @@ const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
         <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-amber'></div>
         <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-green'></div>
       </div>
-      <div className='h-56 rounded-b-lg border-double bg-terminal-light dark:bg-terminal-dark px-4 pt-2.5 pb-6 lg:h-[264px]'>
+      <div className='h-56 rounded-b-lg border-double bg-terminal-light dark:bg-terminal-dark px-4 pt-2.5 pb-6 lg:h-[268px]'>
         <div id='typed-strings'>
           {loading ? <span className='cursor-blink'>_</span> : null}
           {!loading &&

@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@anatoliygatt/dark-mode-toggle": "^1.0.1",
+    "@cyberblast/react-wordcloud": "^1.2.9",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.1.1",
