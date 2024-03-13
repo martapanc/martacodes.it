@@ -34,7 +34,7 @@ const TagCloud = () => {
   };
 
   return (
-    <div className='flex flex-col h-[500px] md:h-[300px] w-full justify-center mt-6 lg:h-[288px] lg:w-1/2 lg:justify-between items-end lg:mt-0 me-10 rounded-lg bg-gray-50 dark:bg-gray-900 p-1 drop-shadow-lg'>
+    <div className='flex flex-col w-full justify-center mt-6 h-80 md:h-[260px] lg:h-[288px] lg:w-1/2 lg:justify-between items-end lg:mt-0 me-10 rounded-lg bg-gray-50 dark:bg-gray-900 p-1 drop-shadow-lg'>
       <ReactWordcloud callbacks={callbacks} options={options} words={tags} />
     </div>
   );

@@ -18,7 +18,7 @@ export interface IntroProps {
 
 const Intro = ({ greeting, codeSnippets }: IntroProps) => {
   return (
-    <div className='mb-6 flex h-fit flex-col pb-6'>
+    <div className='mb-6 flex min-h-fit flex-col pb-6'>
       <h1 className='pb-4 text-5xl antialiased'>
         <span className={clsxm(styles.greeting, 'drop-shadow-lg')}>
           {greeting}

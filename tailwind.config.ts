@@ -35,6 +35,12 @@ export default {
           'bar-dark': '#4e4e4e',
         },
       },
+      backgroundImage: {
+        'gradient-linear-light':
+          'linear-gradient(210deg, #D4E5FC 7%, rgba(255, 255, 255, 0) 40%)',
+        'gradient-linear-dark':
+          'linear-gradient(200deg, #1E293D 7%, #0c1018 30%)',
+      },
       fontWeight: {
         strong: '550',
       },
