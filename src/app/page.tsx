@@ -1,10 +1,13 @@
 import React from 'react';
 
-import readCodeSnippets from '@/lib/markdownUtils';
+import readCodeSnippets, { readMarkdown } from '@/lib/markdownUtils';
 
 import homePageData from '@/data/en/home.json';
+import projects from '@/data/projects/projects.json';
 
 import HomePage from '@/components/pages/home-page';
+
+import { Project } from '@/types/Project';
 
 export const metadata = {
   title: 'Marta Pancaldi | Martacodes.it',
@@ -15,13 +18,28 @@ export const metadata = {
 };
 
 async function getData() {
+  const projectsWithContent: Project[] = projects;
+  projectsWithContent.map((project) => {
+    const mdFile = project.longDescription;
+    if (mdFile?.includes('.md')) {
+      project.longDescription = readMarkdown(`projects/${mdFile}`);
+    }
+  });
+
   return {
     homePageData,
     codeSnippets: readCodeSnippets(),
+    projects: projectsWithContent,
   };
 }
 
 export default async function Page() {
-  const { homePageData, codeSnippets } = await getData();
-  return <HomePage homePage={homePageData} codeSnippets={codeSnippets} />;
+  const { homePageData, codeSnippets, projects } = await getData();
+  return (
+    <HomePage
+      homePage={homePageData}
+      codeSnippets={codeSnippets}
+      projects={projects}
+    />
+  );
 }

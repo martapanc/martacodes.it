@@ -55,7 +55,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     }
   }, []);
 
-  const iconColor = theme === 'dark' ? '#e1e7f2' : '#15295F';
+  const [iconColor, setIconColor] = useState<string>('');
+
+  useEffect(() => {
+    setIconColor(theme === 'dark' ? '#e1e7f2' : '#15295F');
+  }, [theme]);
 
   return (
     <div

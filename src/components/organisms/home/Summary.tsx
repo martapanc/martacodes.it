@@ -132,6 +132,10 @@ const Summary = ({ homePage }: SummaryProps) => {
   return (
     <div className={clsx('flex md:flex-row flex-col-reverse', font.className)}>
       <div className='text-lg antialiased'>
+        <div className='tracking-widest text-sm font-semibold text-slate-500 mb-5'>
+          ABOUT ME
+        </div>
+
         <p className='mb-4'>{intro}</p>
 
         <p className='mb-4 md:mb-1'>{work}</p>

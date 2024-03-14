@@ -28,7 +28,7 @@ const Photo = () => {
   }, [theme]);
 
   return (
-    <div className='flex h-[300px] w-full justify-center lg:h-[280px] lg:w-1/2 lg:justify-end lg:mt-0 rounded-md'>
+    <div className='flex h-[300px] w-full justify-center items-center lg:h-[280px] lg:w-1/2 lg:justify-end mt-0 md:mt-8 rounded-md'>
       <div className='flex flex-col items-center mb-2'>
         <Image
           className={clsxm('mb-4 rounded-full', avatar)}

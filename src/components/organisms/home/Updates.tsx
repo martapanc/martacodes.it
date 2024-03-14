@@ -1,26 +1,25 @@
 'use client';
 
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
 import React from 'react';
+
+const font = Inter({ subsets: ['latin'] });
+
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 
-const font = Inter({ weight: '400', subsets: ['latin'] });
-
 import clsxm from '@/lib/clsxm';
 
-import { HomePage } from '@/types/Homepage';
+// interface ProjectsProps {
+//     projects: Project[];
+// }
 
-interface SkillsProps {
-  homePage: HomePage;
-}
-
-const SkillSummary = ({ homePage }: SkillsProps) => {
+const Updates = () => {
   return (
     <div className='flex flex-col'>
       <div className='tracking-widest text-sm font-semibold text-slate-500 mb-5 text-end'>
-        SOFTWARE DEVELOPMENT
+        UPDATES
       </div>
       <div
         className={clsxm(
@@ -54,4 +53,4 @@ const SkillSummary = ({ homePage }: SkillsProps) => {
   );
 };
 
-export default SkillSummary;
+export default Updates;

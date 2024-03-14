@@ -12,5 +12,14 @@
     "fullStack": "While I have a solid foundation in backend development, my heart truly lies in the realm of full-stack engineering.",
     "languages": "My skill set spans a range of programming languages like <span class=\"font-bold\">Java</span>, <span class=\"font-bold\">Kotlin</span>, <span class=\"font-bold\">Python</span>, <span class=\"font-bold\">C#</span> and <span class=\"font-bold\">TypeScript</span>, as well as frontend frameworks such as <span class=\"font-bold\">React</span> and <span class=\"font-bold\">Angular</span>.",
     "latest": "Lately I have been working a lot in the Node environment, using NextJS a lot with a backend based on OpenAPI and MongoDB. I have also been delving into UI/UX, learning how to design user interfaces with Figma and how to use Tailwind effectively."
+  },
+  "updates": {
+    "learning": ["Figma & UI/UX Design", "Jekyll & Liquid"],
+    "willLearn": ["Swift for iOS Development"],
+    "reading": [
+      "'Fascism: A Warning', by Madeleine Albright",
+      "'Building a Second Brain', by Tiago Forte"
+    ],
+    "gaming": ["Zelda: Tears of the Kingdom"]
   }
 }

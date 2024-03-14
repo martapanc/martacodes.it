@@ -36,6 +36,9 @@ export default {
         },
         home: {
           section2: '#c1d1e7',
+          section3: '#cfdff4',
+          'section3-dark': '#0e131d',
+          'section4-dark': '#060c15',
         },
       },
       backgroundImage: {

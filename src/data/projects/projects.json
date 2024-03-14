@@ -1,5 +1,26 @@
 [
   {
+    "title": "FlexInvoice",
+    "image": {
+      "name": "flexinvoice.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1710677596/flexinvoice.webp"
+    },
+    "shortDescription": "A simple and customisable web-based invoice generator",
+    "mediumDescription": "As a new freelancer managing my own company, I needed to create customized invoices for myself and my collaborators. Dissatisfied with basic Word templates and wanting to avoid complex software, I developed my own solution: a React template that is filled with JSON data and used to generate PDF invoices using Puppeteer. I'm also working on extending the functionality by automating the invoicing process as much as possible.",
+    "longDescription": "flexinvoice.md",
+    "tools": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "nodejs",
+      "puppeteer"
+    ],
+    "date": "2024-02-01",
+    "tags": ["personal", "web", "react"],
+    "links": {}
+  },
+  {
     "title": "Personal website 2.0",
     "image": {
       "name": "martacodes.webp",
@@ -30,6 +51,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1694340967/aoc_7a1ccad4f3.webp"
     },
     "shortDescription": "My submissions to all Advent of Code challenges (2015-2023)",
+    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 450 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
     "longDescription": "aoc.md",
     "tools": ["java", "python", "kotlin"],
     "date": "2023-12-31",
@@ -91,6 +113,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1697908493/xbar_974af5a8d0.webp"
     },
     "shortDescription": "Customisable XBar plugin for streamlined team process monitoring",
+    "mediumDescription": "I developed a plugin for <a href=\"https://xbarapp.com\" target=\"_blank\">XBar</a>, a MacOS toolbar app, to streamline the monitoring of team processes, metrics, and web resources. The plugin connects to the company's servers to display Bamboo build and deployment processes, pull requests, release statuses, and more. My team now uses the toolbar daily, and I'm expanding its functionality to allow other teams to easily configure their own settings.",
     "longDescription": "bitbar.md",
     "tools": ["python", "bash"],
     "date": "2020-03-01",
