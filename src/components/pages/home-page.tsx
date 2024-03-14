@@ -14,7 +14,7 @@ export default function HomePage({ homePage, codeSnippets }: HomePageProps) {
   return (
     <section className='dark:bg-dark bg-white'>
       <div className='dark:bg-gradient-linear-dark bg-gradient-linear-light'>
-        <div className='layout relative flex flex-col py-16 md:pt-24 pb-16'>
+        <div className='layout relative flex flex-col py-16 md:pt-24 pb-5 md:pb-16'>
           <Intro greeting={homePage.greeting} codeSnippets={codeSnippets} />
         </div>
       </div>
