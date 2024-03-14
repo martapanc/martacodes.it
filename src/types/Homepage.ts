@@ -1,6 +1,7 @@
 export interface HomePage {
   greeting: string;
   introduction: Introduction;
+  skills: Skills;
 }
 
 export interface Introduction {
@@ -12,4 +13,10 @@ export interface Introduction {
   skills: string;
   fullStack: string;
   freeTime: string;
+}
+
+export interface Skills {
+  fullStack: string;
+  languages: string;
+  latest: string;
 }

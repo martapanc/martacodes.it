@@ -70,12 +70,7 @@
   }
 }
 
-.angle-3 {
-  background-color: #7689d8;
-}
-
 .angle-3:after {
-  background-color: #eeb4aa;
   -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
@@ -100,12 +95,7 @@
   }
 }
 
-.angle-4 {
-  background-color: #a1eacd;
-}
-
 .angle-4:after {
-  background-color: #7689d8;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 77% 100%, 12% 42%, 0 60%);
 }
@@ -123,12 +113,7 @@
   }
 }
 
-.angle-5 {
-  background-color: #fef2d8;
-}
-
 .angle-5:after {
-  background-color: #a1eacd;
   -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
   clip-path: polygon(100% 100%, 100% 0, 0 0);
 }

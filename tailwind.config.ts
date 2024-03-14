@@ -34,6 +34,9 @@ export default {
           'bar-light': '#dedede',
           'bar-dark': '#4e4e4e',
         },
+        home: {
+          section2: '#c1d1e7',
+        },
       },
       backgroundImage: {
         'gradient-linear-light':
