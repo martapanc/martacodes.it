@@ -8863,15 +8863,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devicons-react@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "devicons-react@npm:1.3.0"
-  peerDependencies:
-    react: "*"
-  checksum: 10c0/b5c6234774d0cb33c1f6ca515f90e761f6d12838878c76f51fcb647411453eb7c37b96736172a074f0957de1e007012f7dad25b05bdfbf4cfebe36c2be836ae9
-  languageName: node
-  linkType: hard
-
 "devlop@npm:^1.0.0, devlop@npm:^1.1.0":
   version: 1.1.0
   resolution: "devlop@npm:1.1.0"
@@ -13813,7 +13804,6 @@ __metadata:
     classnames: "npm:^2.5.1"
     clsx: "npm:^2.1.0"
     cookie: "npm:^0.6.0"
-    devicons-react: "npm:^1.3.0"
     eslint: "npm:^8.57.0"
     eslint-config-next: "npm:^14.1.2"
     eslint-config-prettier: "npm:^9.1.0"
@@ -13852,7 +13842,6 @@ __metadata:
     react-moment: "npm:^1.1.3"
     react-string-replace: "npm:^1.1.1"
     react-syntax-highlighter: "npm:^15.5.0"
-    react-ticker: "npm:^1.3.2"
     react-tippy: "npm:^1.4.0"
     react-toastify: "npm:^10.0.4"
     react-wordcloud: "npm:^1.2.7"
@@ -17363,17 +17352,6 @@ __metadata:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: 10c0/2bf57a1ea151f688efc7eba355677577c9bb55f05f9df7ef86627aae42f63f505486cddf3f4a628aecc51ec75e89beb9533201570d03201c4bf7d69d61d2545d
-  languageName: node
-  linkType: hard
-
-"react-ticker@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "react-ticker@npm:1.3.2"
-  peerDependencies:
-    prop-types: ^15.8.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-  checksum: 10c0/50426070e0a5c13c752bc78085b0edff1938af10851b0c547fb3f9b84b5b0ca7ee30550fddcf0d2ed917a287ec79f32086fda7e0b0293f512ebf34b090e2f2d0
   languageName: node
   linkType: hard
 
