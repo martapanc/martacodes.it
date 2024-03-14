@@ -67,8 +67,7 @@ function buildLink(link: LinkProps, logoVersion: string) {
 }
 
 function buildEduLogo(logo: EduLogoProps, logoVersion: string) {
-  const logoColor =
-    'text-[' + (logoVersion === 'dark' ? logo.colorDark : logo.color) + ']';
+  const logoColor = logoVersion === 'dark' ? logo.colorDark : logo.color;
 
   const useSvgFlags =
     typeof window !== 'undefined' && isWindowsOS(window.navigator);
@@ -81,7 +80,7 @@ function buildEduLogo(logo: EduLogoProps, logoVersion: string) {
       rel='noopener noreferrer'
       className='hover:no-underline'
     >
-      <span className={clsxm(logoColor, 'font-semibold')}>
+      <span style={{ color: logoColor }} className='font-semibold'>
         {logo.label}{' '}
         <ReactCountryFlag countryCode={logo.flag} svg={useSvgFlags} />
       </span>
