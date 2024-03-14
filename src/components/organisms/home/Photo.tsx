@@ -28,36 +28,23 @@ const Photo = () => {
   }, [theme]);
 
   return (
-    <div className='flex h-[500px] md:h-[300px] w-full justify-center mt-6 lg:h-[280px] lg:w-1/2 lg:justify-end lg:mt-0 bg-sky-100 dark:bg-blue-950 rounded-md'>
-      <div className='flex items-center flex-col-reverse p-3 md:ms-3 md:flex-row'>
-        <div className='flex flex-col items-center md:me-8 md:items-end text-lg photo-description'>
-          <div className='my-5 text-blue-600 dark:text-blue-300 text-xl font-semibold md:text-end'>
-            Software Engineer
-          </div>
-          <div className='my-5 text-blue-700 dark:text-blue-200 text-xl font-semibold md:text-end'>
-            Lifelong learner
-          </div>
-          <div className='my-5 text-blue-800 dark:text-blue-100 text-xl xs:text-md font-semibold md:text-end'>
-            WFH enthusiast
-          </div>
-        </div>
-        <div className='flex flex-col items-center mb-2'>
-          <Image
-            className={clsxm('mb-4 rounded-full', avatar)}
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/v1694699676/avatar_md_nobg_ef5553f75b.png'
-            alt='Avatar'
-            width={190}
-            height={0}
-            style={{ height: '190px' }}
-          />
-          <Image
-            src={signatureUrl}
-            alt='Signature'
-            width={250}
-            height={0}
-            style={{ height: '46px' }}
-          />
-        </div>
+    <div className='flex h-[300px] w-full justify-center lg:h-[280px] lg:w-1/2 lg:justify-end lg:mt-0 rounded-md'>
+      <div className='flex flex-col items-center mb-2'>
+        <Image
+          className={clsxm('mb-4 rounded-full', avatar)}
+          src='https://res.cloudinary.com/dwrurydlt/image/upload/v1694699676/avatar_md_nobg_ef5553f75b.png'
+          alt='Avatar'
+          width={190}
+          height={0}
+          style={{ height: '190px' }}
+        />
+        <Image
+          src={signatureUrl}
+          alt='Signature'
+          width={250}
+          height={0}
+          style={{ height: '46px' }}
+        />
       </div>
     </div>
   );
