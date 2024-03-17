@@ -25,6 +25,7 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#0c1018',
+        'almost-white': '#fcfcff',
         terminal: {
           red: '#fe5f57',
           amber: '#febc2e',

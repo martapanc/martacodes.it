@@ -15,11 +15,15 @@
   },
   "updates": {
     "learning": ["Figma & UI/UX Design", "Jekyll & Liquid"],
-    "willLearn": ["Swift for iOS Development"],
+    "willLearn": [
+      "Swift for iOS Development",
+      "AI and its ethical implications"
+    ],
     "reading": [
       "'Fascism: A Warning', by Madeleine Albright",
       "'Building a Second Brain', by Tiago Forte"
     ],
-    "gaming": ["Zelda: Tears of the Kingdom"]
+    "gaming": ["Zelda: Tears of the Kingdom"],
+    "watching": ["the Marvel Netflix TV Series"]
   }
 }

@@ -23,14 +23,14 @@ export default function HomePage({
   projects,
 }: HomePageProps) {
   return (
-    <section className='dark:bg-dark bg-white'>
+    <section className='dark:bg-dark bg-almost-white'>
       <div className='dark:bg-gradient-linear-dark bg-gradient-linear-light'>
         <div className='layout relative flex flex-col py-16 md:pt-24 pb-5 md:pb-16'>
           <Intro greeting={homePage.greeting} codeSnippets={codeSnippets} />
         </div>
       </div>
 
-      <div className='angle angle-1 bg-blue-100 after:bg-white dark:bg-slate-900 after:dark:bg-dark'></div>
+      <div className='angle angle-1 bg-blue-100 after:bg-almost-white dark:bg-slate-900 after:dark:bg-dark'></div>
 
       <div className='bg-blue-100 dark:bg-slate-900'>
         <div className='layout relative flex py-8'>
@@ -54,11 +54,11 @@ export default function HomePage({
         </div>
       </div>
 
-      <div className='angle angle-3 bg-white after:bg-home-section3 dark:bg-home-section4-dark after:dark:bg-dark'></div>
+      <div className='angle angle-3 bg-almost-white after:bg-home-section3 dark:bg-home-section4-dark after:dark:bg-dark'></div>
 
-      <div className='bg-white dark:bg-home-section4-dark'>
-        <div className='layout relative flex py-8'>
-          <Updates />
+      <div className='bg-almost-white dark:bg-home-section4-dark'>
+        <div className='layout relative flex pt-8 pb-24'>
+          <Updates updates={homePage.updates} />
         </div>
       </div>
     </section>

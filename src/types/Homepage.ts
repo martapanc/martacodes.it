@@ -2,6 +2,7 @@ export interface HomePage {
   greeting: string;
   introduction: Introduction;
   skills: Skills;
+  updates: Updates;
 }
 
 export interface Introduction {

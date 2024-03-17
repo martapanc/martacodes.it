@@ -28,7 +28,7 @@ const SkillSummary = ({ homePage }: SkillsProps) => {
           font.className,
         )}
       >
-        <div className='md:w-1/4 flex items-center justify-center lg:bg-amber-100/75 dark:bg-transparent rounded-3xl'>
+        <div className='md:w-1/4 flex items-center justify-center dark:bg-transparent rounded-3xl'>
           <Image
             src='https://res.cloudinary.com/dwrurydlt/image/upload/v1710444087/full-stack-developer.png'
             height={0}
