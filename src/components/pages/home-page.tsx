@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Intro from '@/components/organisms/home/Intro';
+import Projects from '@/components/organisms/home/Projects';
 import SkillSummary from '@/components/organisms/home/SkillSummary';
 import Summary from '@/components/organisms/home/Summary';
 import Updates from '@/components/organisms/home/Updates';
-
-import Projects from '../organisms/home/Projects';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
 import { HomePage } from '@/types/Homepage';
@@ -38,23 +37,23 @@ export default function HomePage({
         </div>
       </div>
 
-      <div className='angle angle-2 bg-home-section2 after:bg-blue-100 dark:bg-home-section3-dark after:dark:bg-slate-900'></div>
+      <div className='angle angle-2 bg-home-section2 after:bg-blue-100 dark:bg-dark after:dark:bg-slate-900'></div>
 
-      <div className='bg-home-section2 dark:bg-home-section3-dark'>
+      <div className='bg-home-section2 dark:bg-dark'>
         <div className='layout relative flex py-8'>
           <SkillSummary homePage={homePage} />
         </div>
       </div>
 
-      <div className='angle angle-4 bg-home-section3 after:bg-home-section2 dark:bg-dark after:dark:bg-home-section3-dark'></div>
+      <div className='angle angle-4 bg-home-section3 after:bg-home-section2 dark:bg-home-section2-dark after:dark:bg-dark'></div>
 
-      <div className='bg-home-section3 dark:bg-dark'>
+      <div className='bg-home-section3 dark:bg-home-section2-dark'>
         <div className='layout relative flex py-8'>
           <Projects projects={projects} />
         </div>
       </div>
 
-      <div className='angle angle-3 bg-almost-white after:bg-home-section3 dark:bg-home-section4-dark after:dark:bg-dark'></div>
+      <div className='angle angle-3 bg-almost-white after:bg-home-section3 dark:bg-home-section4-dark after:dark:bg-home-section2-dark'></div>
 
       <div className='bg-almost-white dark:bg-home-section4-dark'>
         <div className='layout relative flex pt-8 pb-24'>
