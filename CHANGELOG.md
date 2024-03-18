@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.6.0](https://github.com/martapanc/martacodes.it/compare/v2.5.0...v2.6.0) (2024-03-18)
+
+
+### Features
+
+* add mac bar to terminal component ([55fe82e](https://github.com/martapanc/martacodes.it/commit/55fe82e03972070e131661b89a7c522af2a81cbf))
+* add more tags ([cce227b](https://github.com/martapanc/martacodes.it/commit/cce227baa40782e5cfa9574039bdda0e9fe3ac45))
+* add Recent Projects section ([1ea7abd](https://github.com/martapanc/martacodes.it/commit/1ea7abd869fcfba72013f52bccc3d06b3e3e5930))
+* add Updates section ([41847ae](https://github.com/martapanc/martacodes.it/commit/41847aeb0e4df58b9b06cf44dadf720aa703c841))
+* experiment with WordCloud ([d990a3c](https://github.com/martapanc/martacodes.it/commit/d990a3c5e8703ebaea2480fe058d73421f812e9d))
+* fix menu bar colors ([fe24923](https://github.com/martapanc/martacodes.it/commit/fe24923146b1b25bdd9bc561e6f6b1400ad47e06))
+* implement angles ([05aafd2](https://github.com/martapanc/martacodes.it/commit/05aafd205179156a5766bcd74622c78ab3232506))
+* improve Skills section ([4e53b07](https://github.com/martapanc/martacodes.it/commit/4e53b07bb169145d3c8787425a2dbb2855f0f32c))
+* improve Summary section ([dde2187](https://github.com/martapanc/martacodes.it/commit/dde218735dedf69f547be5a8882e4a63be509348))
+* improve Summary section ([d2f98c9](https://github.com/martapanc/martacodes.it/commit/d2f98c9613fa2cc9992210e47cd6f989ffe22366))
+* improve Summary section ([44d5ca1](https://github.com/martapanc/martacodes.it/commit/44d5ca10a9eb836f970ab4e1897cc28a2c85dac1))
+* redesign homepage hero section ([33c1da3](https://github.com/martapanc/martacodes.it/commit/33c1da3546790688697386a8dd9d99f05e13d4a8))
+* update TagCloud ([4920e45](https://github.com/martapanc/martacodes.it/commit/4920e45507688775ca1561f4e9308b120558c744))
+
 ## [2.5.0](https://github.com/martapanc/martacodes.it/compare/v2.4.0...v2.5.0) (2024-03-06)
 
 
