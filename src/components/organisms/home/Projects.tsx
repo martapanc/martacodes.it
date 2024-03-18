@@ -37,6 +37,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         <Link
           href='/projects'
           className='animated-underline-2 dark:animated-underline font-semibold'
+          aria-label='Projects'
         >
           here
         </Link>
