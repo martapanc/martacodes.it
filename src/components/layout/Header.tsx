@@ -62,7 +62,7 @@ export default function Header() {
               href='/'
               className='font-bold text-slate-900 hover:text-slate-700 dark:text-blue-50 dark:hover:text-blue-200'
             >
-              Home
+              &lt;MartaCodes /&gt;
             </UnstyledLink>
 
             <ul className='hidden items-center justify-between space-x-6 text-lg md:flex'>

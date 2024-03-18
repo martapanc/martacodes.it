@@ -5,8 +5,9 @@ import styles from './home.module.css';
 import clsxm from '@/lib/clsxm';
 import { shuffleArray } from '@/lib/helper';
 
-import Code from './Code';
-import Photo from './Photo';
+import TagCloud from '@/components/organisms/home/TagCloud';
+
+import Terminal from './Terminal';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
 
@@ -17,18 +18,18 @@ export interface IntroProps {
 
 const Intro = ({ greeting, codeSnippets }: IntroProps) => {
   return (
-    <div className='mb-6 flex h-fit flex-col pb-6'>
+    <div className='mb-6 flex min-h-fit flex-col pb-6'>
       <h1 className='pb-4 text-5xl antialiased'>
         <span className={clsxm(styles.greeting, 'drop-shadow-lg')}>
           {greeting}
         </span>{' '}
-        👋🏻
+        <span className='inline-block animate-waving-hand'>👋</span>
       </h1>
 
-      <div className='mt-8 flex flex-col lg:flex-row'>
-        <Code codeSnippets={shuffleArray(codeSnippets)} />
+      <div className='mt-8 flex flex-col-reverse lg:flex-row'>
+        <TagCloud />
 
-        <Photo />
+        <Terminal codeSnippets={shuffleArray(codeSnippets)} />
       </div>
     </div>
   );

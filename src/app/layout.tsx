@@ -3,6 +3,7 @@ import Script from 'next/script';
 import React from 'react';
 
 import '@/styles/globals.css';
+import '@/styles/angles.css';
 
 import meta from '@/data/meta.json';
 

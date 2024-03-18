@@ -2,9 +2,28 @@
   "greeting": "Hey there, I'm Marta ",
   "introduction": {
     "now": "I'm a software engineer based in Italy, and I'm currently working at {Appetize}.",
-    "cv": "I hold a MSc in Advanced Computer Science from the University of Manchester, and have spent the last 6 years working for several companies, including {Booking}, {BJSS} and {Resourcify}.",
-    "skills": "My skill set spans a range of programming languages like <span class=\"strong\">Java</span>, <span class=\"strong\">Kotlin</span>, <span class=\"strong\">Python</span>, <span class=\"strong\">C#</span> and <span class=\"strong\">TypeScript</span>, as well as frontend frameworks such as <span class=\"strong\">React</span> and <span class=\"strong\">Angular</span>.",
-    "fullStack": "While I have a solid foundation in backend development, my heart truly lies in the realm of full-stack engineering.",
+    "passion": "I love writing code for work and for fun. I'm happiest when I'm learning, experimenting with new tech stacks and solving complex problems.",
+    "education": "I hold a MSc in Advanced Computer Science from the {uom}; I also completed a trilingual BSc degree at {unibz}, with an exchange semester at the {cofc}.",
+    "work": "I've spent the last 7 years working for several companies, including {Booking}, {BJSS} and {Resourcify}.",
+    "cv": "I hold a <span class=\"font-semibold\">MSc in Advanced Computer Science</span> from the University of Manchester, and have spent the last 6 years working for several companies, including {Booking}, {BJSS} and {Resourcify}.",
     "freeTime": "In my free time, I’m a fiction writer ✍🏻, an avid bookworm 📚, an oboist and alto singer 🎶, and a travel photographer 📷."
+  },
+  "skills": {
+    "fullStack": "While I have a solid foundation in backend development, my heart truly lies in the realm of full-stack engineering.",
+    "languages": "My skill set spans a range of programming languages like <span class=\"font-bold\">Java</span>, <span class=\"font-bold\">Kotlin</span>, <span class=\"font-bold\">Python</span>, <span class=\"font-bold\">C#</span> and <span class=\"font-bold\">TypeScript</span>, as well as frontend frameworks such as <span class=\"font-bold\">React</span> and <span class=\"font-bold\">Angular</span>.",
+    "latest": "Lately I have been working a lot in the Node environment, using NextJS a lot with a backend based on OpenAPI and MongoDB. I have also been delving into UI/UX, learning how to design user interfaces with Figma and how to use Tailwind effectively."
+  },
+  "updates": {
+    "learning": ["Figma & UI/UX Design", "Jekyll & Liquid"],
+    "willLearn": [
+      "Swift for iOS Development",
+      "AI and its ethical implications"
+    ],
+    "reading": [
+      "'Fascism: A Warning', by Madeleine Albright",
+      "'Building a Second Brain', by Tiago Forte"
+    ],
+    "gaming": ["Zelda: Tears of the Kingdom"],
+    "watching": ["the Marvel Netflix TV Series"]
   }
 }
