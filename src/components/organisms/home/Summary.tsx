@@ -1,16 +1,23 @@
 'use client';
 
+import clsx from 'clsx';
+import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
+import ReactCountryFlag from 'react-country-flag';
 import ReactMarkdown from 'react-markdown';
 import reactStringReplace from 'react-string-replace';
 import rehypeRaw from 'rehype-raw';
 
 import clsxm from '@/lib/clsxm';
+import { isWindowsOS } from '@/lib/helper';
 
+import edu from '@/data/edu.json';
 import jobs from '@/data/jobs.json';
+
+import Photo from '@/components/organisms/home/Photo';
 
 import { HomePage } from '@/types/Homepage';
 
@@ -24,6 +31,19 @@ interface LinkProps {
   width: number;
   height: number;
 }
+
+interface EduLogoProps {
+  key: string;
+  label: string;
+  href: string;
+  classes: string;
+  color: string;
+  colorDark: string;
+  alt: string;
+  flag: string;
+}
+
+const font = Inter({ weight: '400', subsets: ['latin'] });
 
 function buildLink(link: LinkProps, logoVersion: string) {
   const logoUrl = logoVersion === 'dark' ? link.imageDark : link.image;
@@ -46,6 +66,28 @@ function buildLink(link: LinkProps, logoVersion: string) {
   );
 }
 
+function buildEduLogo(logo: EduLogoProps, logoVersion: string) {
+  const logoColor = logoVersion === 'dark' ? logo.colorDark : logo.color;
+
+  const useSvgFlags =
+    typeof window !== 'undefined' && isWindowsOS(window.navigator);
+
+  return (
+    <Link
+      key={logo.key}
+      href={logo.href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='hover:no-underline'
+    >
+      <span style={{ color: logoColor }} className='font-semibold'>
+        {logo.label}{' '}
+        <ReactCountryFlag countryCode={logo.flag} svg={useSvgFlags} />
+      </span>
+    </Link>
+  );
+}
+
 export interface SummaryProps {
   homePage: HomePage;
 }
@@ -59,40 +101,56 @@ const Summary = ({ homePage }: SummaryProps) => {
     setLogoVersion(theme === 'dark' ? 'dark' : 'light');
   }, [theme]);
 
-  const introduction_1 = reactStringReplace(
+  const intro = reactStringReplace(
     homePage.introduction.now,
     jobs.appetize.key,
     () => buildLink(jobs.appetize, logoVersion),
   );
 
-  let introduction_2 = reactStringReplace(
-    homePage.introduction.cv,
-    jobs.bjss.key,
-    () => buildLink(jobs.bjss, logoVersion),
+  let education = reactStringReplace(
+    homePage.introduction.education,
+    edu.uom.key,
+    () => buildEduLogo(edu.uom, logoVersion),
   );
-  introduction_2 = reactStringReplace(introduction_2, jobs.booking.key, () =>
+  education = reactStringReplace(education, edu.unibz.key, () =>
+    buildEduLogo(edu.unibz, logoVersion),
+  );
+  education = reactStringReplace(education, edu.cofc.key, () =>
+    buildEduLogo(edu.cofc, logoVersion),
+  );
+
+  let work = reactStringReplace(homePage.introduction.work, jobs.bjss.key, () =>
+    buildLink(jobs.bjss, logoVersion),
+  );
+  work = reactStringReplace(work, jobs.booking.key, () =>
     buildLink(jobs.booking, logoVersion),
   );
-  introduction_2 = reactStringReplace(introduction_2, jobs.resourcify.key, () =>
+  work = reactStringReplace(work, jobs.resourcify.key, () =>
     buildLink(jobs.resourcify, logoVersion),
   );
 
-  const introductionParts = [
-    homePage.introduction.skills,
-    homePage.introduction.fullStack,
-    homePage.introduction.freeTime,
-  ];
-
   return (
-    <div className='text-base antialiased'>
-      <p className='mb-4 md:mb-1'>{introduction_1}</p>
-      <p className='mb-4'>{introduction_2}</p>
+    <div className={clsx('flex md:flex-row flex-col-reverse', font.className)}>
+      <div className='text-lg antialiased'>
+        <div className='tracking-widest text-sm font-semibold text-slate-500 mb-5'>
+          ABOUT ME
+        </div>
 
-      {introductionParts.map((introPart, id) => (
-        <ReactMarkdown key={id} className='mb-4' rehypePlugins={[rehypeRaw]}>
-          {introPart}
+        <p className='mb-4'>{intro}</p>
+
+        <p className='mb-4 md:mb-1'>{work}</p>
+
+        <p className='mb-4'>{education}</p>
+
+        <ReactMarkdown className='mb-4 md:mb-1' rehypePlugins={[rehypeRaw]}>
+          {homePage.introduction.passion}
         </ReactMarkdown>
-      ))}
+
+        <ReactMarkdown className='mb-4' rehypePlugins={[rehypeRaw]}>
+          {homePage.introduction.freeTime}
+        </ReactMarkdown>
+      </div>
+      <Photo />
     </div>
   );
 };
