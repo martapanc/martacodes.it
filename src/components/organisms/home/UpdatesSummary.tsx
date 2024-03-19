@@ -10,13 +10,13 @@ const font3 = Square_Peg({ weight: '400', subsets: ['latin'] });
 
 import clsxm from '@/lib/clsxm';
 
-import { Updates } from '@/types/Homepage';
+import { Updates } from '@/types/HomepageContent';
 
 interface UpdatesProps {
   updates: Updates;
 }
 
-const Updates = ({ updates }: UpdatesProps) => {
+const UpdatesSummary = ({ updates }: UpdatesProps) => {
   return (
     <div className='flex flex-col w-full'>
       <div className='tracking-widest text-sm font-semibold text-slate-500 mb-5 text-end'>
@@ -92,4 +92,4 @@ const Updates = ({ updates }: UpdatesProps) => {
   );
 };
 
-export default Updates;
+export default UpdatesSummary;

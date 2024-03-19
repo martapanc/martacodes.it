@@ -4,14 +4,14 @@ import Intro from '@/components/organisms/home/Intro';
 import Projects from '@/components/organisms/home/Projects';
 import SkillSummary from '@/components/organisms/home/SkillSummary';
 import Summary from '@/components/organisms/home/Summary';
-import Updates from '@/components/organisms/home/Updates';
+import UpdatesSummary from '@/components/organisms/home/UpdatesSummary';
 
 import { CodeSnippet } from '@/types/CodeSnippet';
-import { HomePage } from '@/types/Homepage';
+import { HomepageContent } from '@/types/HomepageContent';
 import { Project } from '@/types/Project';
 
 type HomePageProps = {
-  homePage: HomePage;
+  homePage: HomepageContent;
   codeSnippets: CodeSnippet[];
   projects: Project[];
 };
@@ -57,7 +57,7 @@ export default function HomePage({
 
       <div className='bg-almost-white dark:bg-home-section4-dark'>
         <div className='layout relative flex pt-8 pb-24'>
-          <Updates updates={homePage.updates} />
+          <UpdatesSummary updates={homePage.updates} />
         </div>
       </div>
     </section>

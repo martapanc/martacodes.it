@@ -87,6 +87,7 @@
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/js-cookie": "^3.0.6",
+    "@types/node-fetch": "^2.6.11",
     "@types/react": "^18.2.67",
     "@types/react-headroom": "^3.2.3",
     "@types/react-syntax-highlighter": "^15.5.11",

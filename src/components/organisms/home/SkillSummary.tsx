@@ -10,10 +10,10 @@ const font = Inter({ weight: '400', subsets: ['latin'] });
 
 import clsxm from '@/lib/clsxm';
 
-import { HomePage } from '@/types/Homepage';
+import { HomepageContent } from '@/types/HomepageContent';
 
 interface SkillsProps {
-  homePage: HomePage;
+  homePage: HomepageContent;
 }
 
 const SkillSummary = ({ homePage }: SkillsProps) => {
