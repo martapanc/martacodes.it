@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.7.0](https://github.com/martapanc/martacodes.it/compare/v2.6.0...v2.7.0) (2024-03-21)
+
+
+### Features
+
+* update jobs data; add metadataBase url ([78a756a](https://github.com/martapanc/martacodes.it/commit/78a756a4552ffadc74f01669e88f9521ff090fdf))
+
+
+### Bug Fixes
+
+* name conflicts and add node-fetch type ([2913388](https://github.com/martapanc/martacodes.it/commit/2913388d05b4aa248b71282e0e26bbd4611e6e3e))
+
 ## [2.6.0](https://github.com/martapanc/martacodes.it/compare/v2.5.0...v2.6.0) (2024-03-18)
 
 
