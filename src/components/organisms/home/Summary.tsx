@@ -19,7 +19,7 @@ import jobs from '@/data/jobs.json';
 
 import Photo from '@/components/organisms/home/Photo';
 
-import { HomePage } from '@/types/Homepage';
+import { HomepageContent } from '@/types/HomepageContent';
 
 interface LinkProps {
   key: string;
@@ -89,7 +89,7 @@ function buildEduLogo(logo: EduLogoProps, logoVersion: string) {
 }
 
 export interface SummaryProps {
-  homePage: HomePage;
+  homePage: HomepageContent;
 }
 
 const Summary = ({ homePage }: SummaryProps) => {

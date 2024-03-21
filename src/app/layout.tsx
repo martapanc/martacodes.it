@@ -10,6 +10,7 @@ import meta from '@/data/meta.json';
 import LayoutClient from '@/app/layout-client';
 
 export const metadata = {
+  metadataBase: new URL('https://martacodes.it'),
   authors: [
     {
       url: meta.href,

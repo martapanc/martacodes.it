@@ -6,20 +6,22 @@
       "name": "Appetize.io"
     },
     "title": "Full-Stack Engineer",
-    "location": "Turin (remote)",
-    "description": "The team at Appetize.io has developed a SaaS to stream iOS and Android apps in the browser, also providing tools for automated testing, shareable live app previews and customer support.",
+    "location": "USA (remote from Italy)",
+    "description": "The team at Appetize has developed a SaaS to stream iOS/Android apps in the browser, providing tools for automated testing, live previews and customer support.\n- Involved in the development of the V2 iteration of our web application, enhancing UI elements and integrating new features with existing API endpoints.\n- Managing the redesign of our marketing website from the technical side, leading a team of web developers and overseeing their contributions to the site's design and functionality. Additionally, I played a hands-on role in implementing, reviewing and releasing key features.",
     "startDate": "2024-01-02",
     "endDate": null,
     "isCurrentJob": true,
     "mainColor": "#090909",
     "darkColor": "#F7F7F7",
     "technologies": [
-      "TypeScript",
       "React",
+      "TypeScript",
       "NextJS",
+      "NodeJS",
       "MongoDB",
+      "Jekyll",
       "Docker",
-      "Github Actions"
+      "Project Management"
     ]
   },
   {
@@ -29,7 +31,7 @@
       "name": "Resourcify"
     },
     "title": "Full-Stack Engineer",
-    "location": "Turin (remote)",
+    "location": "Hamburg (remote from Italy)",
     "description": "Full-stack work involving development of greenfield tools and maintenance of legacy components, covering a diverse range of projects and technologies, adapting to new challenges and delivering quality results.\n- Started in the Recycler API/Platform Core team, where I honed my skills in building robust and scalable applications.\n- Joined the Accounting Squad, taking a leading role in developing an accounting platform for internal and client use. I approached this project with a focus on user experience, performance, and maintainability, resulting in a successful product launch. In close collaboration with the Accounting Ops, I sought feedback to continuously improve the functionality of the platform, ensuring it met their specific needs.\n- Scaled the application to serve a growing number of clients and their orders and invoices, and I ensured that the app could handle larger volumes of data with minimal latency, resulting in faster processing and improved overall system performance.",
     "startDate": "2022-03-01",
     "endDate": "2024-01-05",

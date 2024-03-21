@@ -38,8 +38,9 @@ export default {
         home: {
           section2: '#c1d1e7',
           section3: '#cfdff4',
+          'section2-dark': '#0D1323',
           'section3-dark': '#0e131d',
-          'section4-dark': '#060c15',
+          'section4-dark': '#08101c',
         },
       },
       backgroundImage: {

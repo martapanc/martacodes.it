@@ -17,15 +17,17 @@ export interface CodeSnippetsProps {
 
 const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
   const [loading, setLoading] = useState(true);
-
+  const [ideStyle, setIdeStyle] = useState(atomOneLight);
   const { theme } = useTheme();
 
-  const ideStyle = theme === 'dark' ? darcula : atomOneLight;
+  useEffect(() => {
+    setIdeStyle(theme === 'dark' ? darcula : atomOneLight);
+  }, [theme]);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -57,7 +59,7 @@ const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
   }, [loading]);
 
   return (
-    <div className='w-full lg:w-1/2 h-60 lg:h-[288px] me-4 drop-shadow-lg'>
+    <div className='w-full lg:w-1/2 h-60 lg:h-[288px] drop-shadow-lg'>
       <div className='bg-terminal-bar-light dark:bg-terminal-bar-dark h-5 rounded-t-lg px-4 py-1 flex'>
         <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-red'></div>
         <div className='w-[12px] h-[12px] rounded-full me-1.5 bg-terminal-amber'></div>

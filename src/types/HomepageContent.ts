@@ -1,4 +1,4 @@
-export interface HomePage {
+export interface HomepageContent {
   greeting: string;
   introduction: Introduction;
   skills: Skills;

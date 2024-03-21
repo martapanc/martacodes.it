@@ -1,6 +1,11 @@
 'use client';
 
-import ReactWordcloud from '@cyberblast/react-wordcloud';
+import dynamic from 'next/dynamic';
+
+const ReactWordcloudWithCustomLoading = dynamic(
+  () => import('@cyberblast/react-wordcloud'),
+);
+import { AttributeValue } from '@cyberblast/react-wordcloud';
 import React from 'react';
 
 import 'tippy.js/dist/tippy.css';
@@ -18,6 +23,7 @@ interface Options {
   padding?: number;
   randomSeed?: string;
   enableTooltip?: boolean;
+  svgAttributes?: Record<string, AttributeValue>;
 }
 
 const TagCloud = () => {
@@ -34,8 +40,12 @@ const TagCloud = () => {
   };
 
   return (
-    <div className='flex flex-col w-full justify-center mt-6 h-80 md:h-[260px] lg:h-[288px] lg:w-1/2 lg:justify-between items-end lg:mt-0 me-10 rounded-lg bg-gray-50 dark:bg-gray-900 p-1 drop-shadow-lg'>
-      <ReactWordcloud callbacks={callbacks} options={options} words={tags} />
+    <div className='flex flex-col w-full mt-6 h-80 md:h-[260px] lg:h-[288px] lg:w-1/2 items-end lg:mt-0 rounded-lg bg-gray-50 dark:bg-gray-900 p-1 drop-shadow-lg'>
+      <ReactWordcloudWithCustomLoading
+        callbacks={callbacks}
+        options={options}
+        words={tags}
+      />
     </div>
   );
 };

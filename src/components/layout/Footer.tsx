@@ -37,11 +37,12 @@ function FooterLinks() {
 
   return (
     <div className='flex flex-wrap justify-center gap-x-8 gap-y-4'>
-      {footerLinks.map(({ href, label }) => (
+      {footerLinks.map(({ href, label, name }) => (
         <UnstyledLink
-          key={label}
+          key={name}
           className='animated-underline focus-visible:ring-primary-300 rounded-sm text-sm font-medium text-blue-950 focus:outline-none focus-visible:ring dark:text-gray-200'
           href={href}
+          aria-label={name}
         >
           {t(label)}
         </UnstyledLink>
@@ -60,7 +61,10 @@ function SocialLinks() {
           href={'mailto:' + emailAddress}
           className='focus-visible:ring-primary-300 rounded-sm align-middle focus:outline-none focus-visible:ring'
         >
-          <FiMail className='hover:text-primary-500 dark:hover:text-primary-300 h-7 w-7 align-middle text-blue-900 dark:text-gray-300' />
+          <FiMail
+            className='hover:text-primary-500 dark:hover:text-primary-300 h-7 w-7 align-middle text-blue-900 dark:text-gray-300'
+            aria-label='Send an Email'
+          />
         </a>
       </div>
       {socialLinks.map((socialLink) => (
@@ -68,9 +72,11 @@ function SocialLinks() {
           key={socialLink.id}
           className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
           href={socialLink.href}
+          aria-label={socialLink.id}
         >
           <socialLink.icon
             size={50}
+            aria-label={socialLink.id}
             className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300'
           />
         </UnstyledLink>
@@ -88,31 +94,38 @@ function Copyright() {
 type FooterLink = {
   href: string;
   label: string;
+  name: string;
 };
 const footerLinks: FooterLink[] = [
   {
     href: 'https://martas-links.vercel.app',
     label: 'footerMenu.links',
+    name: "Marta's Links",
   },
   {
     href: '/recruiters-info',
     label: 'footerMenu.recruiters',
+    name: 'Info for Recruiters',
   },
   {
     href: 'https://github.com/martapanc/martacodes.it',
     label: 'footerMenu.sourceCode',
+    name: 'Sourcecode',
   },
   {
     href: 'https://martapancaldi.hashnode.dev/',
     label: 'footerMenu.blog',
+    name: 'Hashnode - Blog',
   },
   {
     href: 'https://www.polywork.com/marta_pancaldi',
     label: 'footerMenu.updates',
+    name: 'Polywork - Updates',
   },
   {
     href: 'https://analytics.eu.umami.is/share/Dw94G9vRDiMT9YXN/MartaCodes.it',
     label: 'footerMenu.analytics',
+    name: 'Umami - Analytics',
   },
   // {
   //   href: '/',
@@ -121,6 +134,7 @@ const footerLinks: FooterLink[] = [
   {
     href: '/contacts',
     label: 'footerMenu.feedback',
+    name: 'Contacts',
   },
 ];
 
