@@ -21,6 +21,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.8.7",
+    "@amcharts/amcharts5-geodata": "^5.1.2",
     "@anatoliygatt/dark-mode-toggle": "^1.0.1",
     "@cyberblast/react-wordcloud": "^1.2.9",
     "@emotion/react": "^11.11.4",
