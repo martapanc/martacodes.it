@@ -10,6 +10,7 @@ import am5geodata_worldLow from '@amcharts/amcharts5-geodata/worldLow';
 import { useLayoutEffect } from 'react';
 
 import {
+  citiesVisited,
   countriesVisited,
   italyVisitedRegions,
   ukVisitedRegions,
@@ -98,6 +99,25 @@ const Travel = () => {
         opacity: 0.9,
       }),
     );
+
+    const citySeries = chart.series.push(
+      am5map.MapPointSeries.new(root, {
+        latitudeField: 'lat',
+        longitudeField: 'lon',
+      }),
+    );
+
+    citySeries.data.setAll(citiesVisited);
+
+    citySeries.bullets.push(function () {
+      return am5.Bullet.new(root, {
+        sprite: am5.Circle.new(root, {
+          radius: 4,
+          fill: am5.color('#ffba00'),
+          tooltipText: '{name}',
+        }),
+      });
+    });
 
     worldSeries.events.on('datavalidated', function () {
       chart.goHome();
