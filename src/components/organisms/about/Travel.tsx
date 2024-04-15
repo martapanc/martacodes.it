@@ -7,7 +7,9 @@ import am5geodata_italyLow from '@amcharts/amcharts5-geodata/italyLow';
 import am5geodata_ukLow from '@amcharts/amcharts5-geodata/ukLow';
 import am5geodata_usaLow from '@amcharts/amcharts5-geodata/usaLow';
 import am5geodata_worldLow from '@amcharts/amcharts5-geodata/worldLow';
-import { useLayoutEffect } from 'react';
+import { Checkbox, FormGroup } from '@mui/material';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import { useLayoutEffect, useState } from 'react';
 
 import {
   citiesVisited,
@@ -18,6 +20,8 @@ import {
 } from '@/data/about/travel/data';
 
 const Travel = () => {
+  const [showCities, setShowCities] = useState(false);
+
   useLayoutEffect(() => {
     const root = am5.Root.new('chartdiv');
 
@@ -26,12 +30,8 @@ const Travel = () => {
     const chart = root.container.children.push(
       am5map.MapChart.new(root, {
         projection: am5map.geoNaturalEarth1(),
-        // minZoomLevel: 1,
-        // maxZoomLevel: 16
-        // zoomStep: 1,
         homeZoomLevel: 2,
         homeGeoPoint: { longitude: 11, latitude: 45 },
-        // wheelSensitivity: 0.5
       }),
     );
 
@@ -56,15 +56,6 @@ const Travel = () => {
       }),
     );
 
-    // const usaSeries = chart.series.push(
-    //     am5map.MapPolygonSeries.new(root, {
-    //         geoJSON: am5geodata_usaLow,
-    //         exclude:  states.map((state) => state.id),
-    //         fill: am5.color("#8FC8E3"),
-    //         opacity: 0.9
-    //     })
-    // );
-
     const usaVisitedSeries = chart.series.push(
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_usaLow,
@@ -73,14 +64,6 @@ const Travel = () => {
         opacity: 0.9,
       }),
     );
-
-    // const italySeries = chart.series.push(
-    //     am5map.MapPolygonSeries.new(root, {
-    //         geoJSON: am5geodata_italyLow,
-    //         fill: am5.color("#8FC8E3"),
-    //         opacity: 0.9
-    //     })
-    // );
 
     const italyVisitedSeries = chart.series.push(
       am5map.MapPolygonSeries.new(root, {
@@ -109,15 +92,17 @@ const Travel = () => {
 
     citySeries.data.setAll(citiesVisited);
 
-    citySeries.bullets.push(function () {
-      return am5.Bullet.new(root, {
-        sprite: am5.Circle.new(root, {
-          radius: 4,
-          fill: am5.color('#ffba00'),
-          tooltipText: '{name}',
-        }),
+    if (showCities) {
+      citySeries.bullets.push(function () {
+        return am5.Bullet.new(root, {
+          sprite: am5.Circle.new(root, {
+            radius: 4,
+            fill: am5.color('#ffba00'),
+            tooltipText: '{name}',
+          }),
+        });
       });
-    });
+    }
 
     worldSeries.events.on('datavalidated', function () {
       chart.goHome();
@@ -142,11 +127,25 @@ const Travel = () => {
     return () => {
       root.dispose();
     };
-  }, []);
+  }, [showCities]);
 
   return (
     <>
       <div id='chartdiv' className='w-full h-[400px]'></div>
+
+      <div>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={showCities}
+                onChange={() => setShowCities(!showCities)}
+              />
+            }
+            label='Show Cities'
+          />
+        </FormGroup>
+      </div>
     </>
   );
 };
