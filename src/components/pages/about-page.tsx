@@ -10,6 +10,7 @@ import Books from '@/components/organisms/about/Books';
 import Music from '@/components/organisms/about/Music';
 import Podcasts from '@/components/organisms/about/Podcasts';
 import RandomFacts from '@/components/organisms/about/RandomFacts';
+import Travel from '@/components/organisms/about/Travel';
 import TvSeries from '@/components/organisms/about/TvSeries';
 import VideoGames from '@/components/organisms/about/VideoGames';
 
@@ -111,6 +112,8 @@ export default function AboutPage({
           falseOption={randomFactsData.falseOption}
           trueFacts={randomFactsData.trueFacts}
         />
+
+        <Travel />
       </div>
     </section>
   );
