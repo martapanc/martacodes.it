@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/martapanc/martacodes.it/compare/v2.7.0...v2.8.0) (2024-05-01)
+
+
+### Features
+
+* add map with visited countries, regions, states ([72aed38](https://github.com/martapanc/martacodes.it/commit/72aed38a4bf152edb34d5d67388e8fe7b8a56eae))
+* add visited cities to map ([ba63b72](https://github.com/martapanc/martacodes.it/commit/ba63b724964ee1bbfa934e763fb3dfdb1121e71b))
+* add visited cities toggle ([49c19ae](https://github.com/martapanc/martacodes.it/commit/49c19ae08f4c353eed20bea95090767db959a132))
+* improve city toggle ([7422bea](https://github.com/martapanc/martacodes.it/commit/7422bea06f2c2b25b6e601b21def27366d98d348))
+* setup Amcharts map ([20d9f48](https://github.com/martapanc/martacodes.it/commit/20d9f48e5dc0348e1d009affe98d0fcd2e403ce8))
+* toggle cities ([cbb6052](https://github.com/martapanc/martacodes.it/commit/cbb6052629ce27b758349832090120b334df73f6))
+
 ## [2.7.0](https://github.com/martapanc/martacodes.it/compare/v2.6.0...v2.7.0) (2024-03-21)
 
 
