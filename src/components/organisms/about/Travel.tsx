@@ -3,12 +3,14 @@
 import * as am5 from '@amcharts/amcharts5';
 import * as am5map from '@amcharts/amcharts5/map';
 import Am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+import Am5themes_Dark from '@amcharts/amcharts5/themes/Dark';
 import am5geodata_italyLow from '@amcharts/amcharts5-geodata/italyLow';
 import am5geodata_ukLow from '@amcharts/amcharts5-geodata/ukLow';
 import am5geodata_usaLow from '@amcharts/amcharts5-geodata/usaLow';
 import am5geodata_worldLow from '@amcharts/amcharts5-geodata/worldLow';
 import { Checkbox, FormGroup } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { useTheme } from 'next-themes';
 import { useLayoutEffect, useState } from 'react';
 
 import {
@@ -20,12 +22,29 @@ import {
 } from '@/data/about/travel/data';
 
 const Travel = () => {
+  const { theme } = useTheme();
+
+  let worldColor = '#E1E1E1';
+  let visitedColor = '#8FC8E3';
+  let visitedRegionColor = '#309ECC';
+  let cityColor = '#ffba00';
+  if (theme === 'dark') {
+    worldColor = '#16233f';
+    visitedColor = '#223662';
+    visitedRegionColor = '#335298';
+    cityColor = '#d29901';
+  }
+
   const [showCities, setShowCities] = useState(false);
 
   useLayoutEffect(() => {
     const root = am5.Root.new('chartdiv');
 
-    root.setThemes([Am5themes_Animated.new(root)]);
+    if (theme === 'dark') {
+      root.setThemes([Am5themes_Animated.new(root), Am5themes_Dark.new(root)]);
+    } else {
+      root.setThemes([Am5themes_Animated.new(root)]);
+    }
 
     const chart = root.container.children.push(
       am5map.MapChart.new(root, {
@@ -41,7 +60,7 @@ const Travel = () => {
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_worldLow,
         exclude: ['AQ'],
-        fill: am5.color('#E1E1E1'),
+        fill: am5.color(worldColor),
         opacity: 0.75,
       }),
     );
@@ -51,7 +70,7 @@ const Travel = () => {
         geoJSON: am5geodata_worldLow,
         include: countriesVisited.map((country) => country.id),
         exclude: ['US', 'IT', 'GB'],
-        fill: am5.color('#8FC8E3'),
+        fill: am5.color(visitedColor),
         opacity: 0.9,
       }),
     );
@@ -60,7 +79,7 @@ const Travel = () => {
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_usaLow,
         include: usStatesVisited.map((state) => state.id),
-        fill: am5.color('#309ECC'),
+        fill: am5.color(visitedRegionColor),
         opacity: 0.9,
       }),
     );
@@ -69,7 +88,7 @@ const Travel = () => {
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_italyLow,
         include: italyVisitedRegions.map((region) => region.id),
-        fill: am5.color('#309ECC'),
+        fill: am5.color(visitedRegionColor),
         opacity: 0.9,
       }),
     );
@@ -78,7 +97,7 @@ const Travel = () => {
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_ukLow,
         include: ukVisitedRegions,
-        fill: am5.color('#309ECC'),
+        fill: am5.color(visitedRegionColor),
         opacity: 0.9,
       }),
     );
@@ -93,15 +112,15 @@ const Travel = () => {
     citySeries.data.setAll(citiesVisited);
 
     if (showCities) {
-      citySeries.bullets.push(function () {
-        return am5.Bullet.new(root, {
+      citySeries.bullets.push(() =>
+        am5.Bullet.new(root, {
           sprite: am5.Circle.new(root, {
             radius: 4,
-            fill: am5.color('#ffba00'),
+            fill: am5.color(cityColor),
             tooltipText: '{name}',
           }),
-        });
-      });
+        }),
+      );
     }
 
     worldSeries.events.on('datavalidated', function () {
@@ -127,7 +146,14 @@ const Travel = () => {
     return () => {
       root.dispose();
     };
-  }, [showCities]);
+  }, [
+    cityColor,
+    showCities,
+    theme,
+    visitedColor,
+    visitedRegionColor,
+    worldColor,
+  ]);
 
   return (
     <>
