@@ -1,4 +1,4 @@
-import Travel from '@/components/organisms/about/Travel';
+import TravelMap from '@/components/organisms/about/TravelMap';
 
 export const metadata = {
   title: 'About - Travel | MartaCodes.it',
@@ -6,5 +6,11 @@ export const metadata = {
 };
 
 export default async function Page() {
-  return <Travel />;
+  return (
+    <section>
+      <div className='layout relative flex flex-col py-12'>
+        <TravelMap />
+      </div>
+    </section>
+  );
 }
