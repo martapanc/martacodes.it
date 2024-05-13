@@ -108,14 +108,14 @@ const footerLinks: FooterLink[] = [
     name: 'Info for Recruiters',
   },
   {
+    href: '/blog',
+    label: 'footerMenu.blog',
+    name: 'Hashnode - Blog',
+  },
+  {
     href: 'https://github.com/martapanc/martacodes.it',
     label: 'footerMenu.sourceCode',
     name: 'Sourcecode',
-  },
-  {
-    href: 'https://martapancaldi.hashnode.dev/',
-    label: 'footerMenu.blog',
-    name: 'Hashnode - Blog',
   },
   {
     href: 'https://www.polywork.com/marta_pancaldi',

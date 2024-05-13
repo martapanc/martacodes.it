@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 
 import getPosts, { getPost } from '@/lib/get-posts';
 
-import { PostBody } from '@/components/organisms/blog/post-body';
+import { PostBody } from '@/components/organisms/blog/PostBody';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
