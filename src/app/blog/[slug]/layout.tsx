@@ -54,7 +54,7 @@ export default async function PostLayout({
     slug: string;
   };
 }) {
-  const { title, date, lastModified } = await getData(params);
+  const { title, description, date, lastModified } = await getData(params);
 
   const lastModifiedDate = lastModified
     ? new Date(lastModified).toLocaleDateString('en-US', {
@@ -68,15 +68,26 @@ export default async function PostLayout({
     <>
       <section className='dark:bg-dark bg-almost-white'>
         <div className='layout relative flex flex-col py-12'>
-          <div className='flex flex-col'>
-            <span className=''>{date}</span>
+          <div className='flex flex-col items-end'>
+            <span className='italic'>{date}</span>
             {lastModified ? (
               <span className=''>Last modified {lastModifiedDate}</span>
             ) : null}
             {/* {updatedViews && <FadeIn>{updatedViews} views</FadeIn>} */}
           </div>
           <article>
-            <h1 className='mt-4'>{title}</h1>
+            <h1 className='my-4'>{title}</h1>
+            <div className='my-4 font-semibold text-xl'>{description}</div>
+
+            <div className='flex justify-center'>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt='Post preview image'
+                src='https://picsum.photos/600/400'
+                className='rounded-xl'
+              />
+            </div>
+
             {children}
           </article>
         </div>

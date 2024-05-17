@@ -7,7 +7,7 @@ export async function PostList() {
 
   return (
     <section className='dark:bg-dark bg-almost-white'>
-      <div className='layout relative flex flex-col py-12'>
+      <div className='layout relative flex flex-col py-12 gap-4'>
         {posts
           .filter((post) => post !== null)
           .map((post, index) => (
