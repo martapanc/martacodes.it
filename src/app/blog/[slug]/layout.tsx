@@ -56,7 +56,8 @@ export default async function PostLayout({
     slug: string;
   };
 }) {
-  const { title, description, date, lastModified } = await getData(params);
+  const { title, description, date, image, lastModified } =
+    await getData(params);
 
   const lastModifiedDate = lastModified
     ? new Date(lastModified).toLocaleDateString('en-US', {
@@ -81,12 +82,13 @@ export default async function PostLayout({
             <h1 className='my-4'>{title}</h1>
             <div className='my-4 font-semibold text-xl'>{description}</div>
 
-            <div className='flex justify-center'>
+            <div className='flex justify-center mb-4'>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 alt='Post preview image'
-                src='https://picsum.photos/600/400'
+                src={image}
                 className='rounded-xl'
+                width='40%'
               />
             </div>
 

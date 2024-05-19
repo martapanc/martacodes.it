@@ -13,4 +13,5 @@ export type Post = Base & {
   views?: number;
   isThirdParty?: boolean;
   type: 'post';
+  image: string;
 };
