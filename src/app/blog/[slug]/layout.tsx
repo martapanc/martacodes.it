@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import '@/styles/blog.css';
+
 import getPosts from '@/lib/get-posts';
 
 export async function generateStaticParams() {

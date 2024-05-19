@@ -30,5 +30,9 @@ export function MDXImage({
     width: widthFromSrc || 550,
   };
 
-  return <NextImage {...imageProps} />;
+  return (
+    <div className='flex justify-center w-full md:w-3/4'>
+      <NextImage {...imageProps} />
+    </div>
+  );
 }

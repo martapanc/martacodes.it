@@ -2,6 +2,8 @@ import { Code } from 'bright';
 import { MDXComponents } from 'mdx/types';
 import NextImage from 'next/image';
 
+import { MDXImage } from '@/components/organisms/blog/mdx-image';
+
 Code.theme = {
   dark: 'solarized-dark',
   light: 'material-palenight',
@@ -18,6 +20,7 @@ export const mdxComponents: MDXComponents = {
   >) => {
     return <Code {...props}>{children}</Code>;
   },
+  img: MDXImage as never,
   Image: NextImage,
   Details: ({
     children,
