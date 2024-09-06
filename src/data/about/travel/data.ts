@@ -224,7 +224,7 @@ export const citiesVisited = [
   { name: 'Bratislava', lat: 48.1486, lon: 17.1077 },
   { name: 'Brussels', lat: 50.8503, lon: 4.3517 },
   { name: 'Charleston', lat: 32.7765, lon: -79.9311 },
-  { name: 'Dijon', lat: 47.3301, lon: 5.0480 },
+  { name: 'Dijon', lat: 47.3301, lon: 5.048 },
   { name: 'Dublin', lat: 53.3498, lon: -6.2603 },
   { name: 'Edinburgh', lat: 55.9533, lon: -3.1883 },
   { name: 'Florence', lat: 43.7696, lon: 11.2558 },
