@@ -70,7 +70,6 @@ const SalaryHappinessTool = ({ salaryData, config }: SalaryHappinessProps) => {
     }
 
     setHappinessScore({ emoji, title });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSalary]);
 
   return (

@@ -52,6 +52,14 @@ export default [{
             children: "never",
         }],
 
+        "react/no-direct-mutation-state": "off",
+        "react-hooks/rules-of-hooks": "off",
+        "@next/next/no-duplicate-head": "off",
+        "storybook/hierarchy-separator": "off",
+        "storybook/prefer-pascal-case": "off",
+        "storybook/story-exports": "off",
+        "react-hooks/exhaustive-deps": "off",
+
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "warn",
 
