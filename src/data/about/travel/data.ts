@@ -8,8 +8,16 @@ export const countriesVisited = [
     id: 'BE',
   },
   {
+    title: 'Canada',
+    id: 'CA',
+  },
+  {
     title: 'China',
     id: 'CN',
+  },
+  {
+    title: 'Denmark',
+    id: 'DK',
   },
   {
     title: 'France',
@@ -68,6 +76,10 @@ export const countriesVisited = [
     id: 'ES',
   },
   {
+    title: 'Sweden',
+    id: 'SE',
+  },
+  {
     title: 'Switzerland',
     id: 'CH',
   },
@@ -111,6 +123,10 @@ export const usStatesVisited = [
     id: 'US-MD',
   },
   {
+    name: 'Massachusetts',
+    id: 'US-MA',
+  },
+  {
     name: 'New Jersey',
     id: 'US-NJ',
   },
@@ -141,6 +157,13 @@ export const usStatesVisited = [
   {
     name: 'West Virginia',
     id: 'US-WV',
+  },
+];
+
+export const canadaStatesVisited = [
+  {
+    name: 'Ontario',
+    id: 'CA-ON',
   },
 ];
 
@@ -221,9 +244,11 @@ export const citiesVisited = [
   { name: 'Birmingham', lat: 52.4862, lon: -1.8904 },
   { name: 'Bologna', lat: 44.4949, lon: 11.3426 },
   { name: 'Bolzano', lat: 46.4907, lon: 11.3399 },
+  { name: 'Boston', lat: 42.3601, lon: -71.0589 },
   { name: 'Bratislava', lat: 48.1486, lon: 17.1077 },
   { name: 'Brussels', lat: 50.8503, lon: 4.3517 },
   { name: 'Charleston', lat: 32.7765, lon: -79.9311 },
+  { name: 'Copenhagen', lat: 55.6761, lon: 12.2683 },
   { name: 'Dijon', lat: 47.3301, lon: 5.048 },
   { name: 'Dublin', lat: 53.3498, lon: -6.2603 },
   { name: 'Edinburgh', lat: 55.9533, lon: -3.1883 },
@@ -245,6 +270,7 @@ export const citiesVisited = [
   { name: 'Lyon', lat: 45.764, lon: 4.8357 },
   { name: 'Madrid', lat: 40.4168, lon: -3.7038 },
   { name: 'Malaga', lat: 36.7212, lon: -4.4213 },
+  { name: 'Malmö', lat: 55.605, lon: 13.1638 },
   { name: 'Manchester', lat: 53.4808, lon: -2.2426 },
   { name: 'Milan', lat: 45.4642, lon: 9.19 },
   { name: 'Monaco', lat: 43.7384, lon: 7.4246 },
@@ -252,6 +278,7 @@ export const citiesVisited = [
   { name: 'Munich', lat: 48.1351, lon: 11.582 },
   { name: 'Naples', lat: 40.8518, lon: 14.2681 },
   { name: 'New York', lat: 40.7591, lon: -74.0516 },
+  { name: 'Niagara Falls', lat: 43.0896, lon: -79.0849 },
   { name: 'Nice', lat: 43.7102, lon: 7.262 },
   { name: 'Orlando', lat: 28.5383, lon: -81.3792 },
   { name: 'Panama City', lat: 30.2038, lon: -85.6858 },
@@ -270,6 +297,7 @@ export const citiesVisited = [
   { name: 'Shanghai', lat: 31.2304, lon: 121.4737 },
   { name: 'Strasbourg', lat: 48.5734, lon: 7.7521 },
   { name: 'Toulouse', lat: 43.06124, lon: 1.5661 },
+  { name: 'Toronto', lat: 43.6532, lon: -79.3832 },
   { name: 'Turin', lat: 45.0703, lon: 7.6869 },
   { name: 'Valencia', lat: 39.4699, lon: -0.3763 },
   { name: 'Valletta', lat: 35.8989, lon: 14.5146 },
