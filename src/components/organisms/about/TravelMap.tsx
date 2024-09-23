@@ -4,6 +4,7 @@ import * as am5 from '@amcharts/amcharts5';
 import * as am5map from '@amcharts/amcharts5/map';
 import Am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 import Am5themes_Dark from '@amcharts/amcharts5/themes/Dark';
+import am5geodata_canadaLow from '@amcharts/amcharts5-geodata/canadaLow';
 import am5geodata_italyLow from '@amcharts/amcharts5-geodata/italyLow';
 import am5geodata_ukLow from '@amcharts/amcharts5-geodata/ukLow';
 import am5geodata_usaLow from '@amcharts/amcharts5-geodata/usaLow';
@@ -12,6 +13,7 @@ import { useTheme } from 'next-themes';
 import { useLayoutEffect } from 'react';
 
 import {
+  canadaStatesVisited,
   citiesVisited,
   countriesVisited,
   italyVisitedRegions,
@@ -75,6 +77,15 @@ const TravelMap = () => {
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_usaLow,
         include: usStatesVisited.map((state) => state.id),
+        fill: am5.color(visitedRegionColor),
+        opacity: 0.9,
+      }),
+    );
+
+    const canadaVisitedSeries = chart.series.push(
+      am5map.MapPolygonSeries.new(root, {
+        geoJSON: am5geodata_canadaLow,
+        include: canadaStatesVisited.map((state) => state.id),
         fill: am5.color(visitedRegionColor),
         opacity: 0.9,
       }),
@@ -163,6 +174,10 @@ const TravelMap = () => {
     });
 
     ukSeries.mapPolygons.template.setAll({
+      tooltipText: '{name}',
+    });
+
+    canadaVisitedSeries.mapPolygons.template.setAll({
       tooltipText: '{name}',
     });
 

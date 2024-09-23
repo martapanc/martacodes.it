@@ -5,7 +5,7 @@ import clsxm from '@/lib/clsxm';
 
 import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink';
 
-const IconLinkVariant = [
+const _IconLinkVariant = [
   'primary',
   'outline',
   'ghost',
@@ -15,7 +15,7 @@ const IconLinkVariant = [
 
 type IconLinkProps = {
   isDarkBg?: boolean;
-  variant?: (typeof IconLinkVariant)[number];
+  variant?: (typeof _IconLinkVariant)[number];
   icon?: IconType;
   iconClassName?: string;
 } & Omit<UnstyledLinkProps, 'children'>;

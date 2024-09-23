@@ -4,7 +4,7 @@ import { ImSpinner2 } from 'react-icons/im';
 
 import clsxm from '@/lib/clsxm';
 
-const IconButtonVariant = [
+const _IconButtonVariant = [
   'primary',
   'outline',
   'ghost',
@@ -15,7 +15,7 @@ const IconButtonVariant = [
 type IconButtonProps = {
   isLoading?: boolean;
   isDarkBg?: boolean;
-  variant?: (typeof IconButtonVariant)[number];
+  variant?: (typeof _IconButtonVariant)[number];
   icon?: IconType;
   iconClassName?: string;
 } & React.ComponentPropsWithRef<'button'>;

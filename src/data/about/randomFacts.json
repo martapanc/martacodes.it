@@ -71,9 +71,16 @@
   },
   {
     "name": "Countries visited",
-    "headline": "I have visited a total of 21 countries so far 🗺️",
-    "description": "I have visited a total of 21 countries so far 🗺️ \n\nThe full list is: Austria, Belgium, China, France, Germany, Iceland, Ireland, Italy, Malta, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Switzerland, United Kingdom, United States, Vatican City.",
+    "headline": "I have visited a total of 24 countries so far 🗺️",
+    "description": "I have visited a total of 24 countries so far 🗺️ \n\nThe full list is: Austria, Belgium, Canada, China, Denmark, France, Germany, Iceland, Ireland, Italy, Malta, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City.",
     "isFactTrue": true,
-    "explanation": "Correct! The full list is: Austria, Belgium, China, France, Germany, Iceland, Ireland, Italy, Malta, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Switzerland, United Kingdom, United States, Vatican City."
+    "explanation": "Correct! The full list is: Austria, Belgium, Canada, China, Denmark, France, Germany, Iceland, Ireland, Italy, Malta, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City."
+  },
+  {
+    "name": "Rent",
+    "headline": "One of the rented flats I lived in was owned by a famous former footballer ⚽",
+    "description": "One of the several rented flats I lived in was owned - as I learned soon after signing the contract, googling the landlord's name - by the family of a famous former footballer. Obviously won't be sharing any names for privacy, but let's just say that over the years this has led to some amusing situations, such as bumping into the said footballer on the stairs or him ringing our doorbell mistaking it for his other family flat \uD83E\uDD29 ⚽",
+    "isFactTrue": true,
+    "explanation": "That was correct! One of the several rented flats I lived in was owned - as I learned soon after signing the contract, googling the landlord's name - by the family of a famous former footballer. Obviously won't be sharing any names for privacy, but let's just say that over the years this has led to some amusing situations, such as bumping into the said footballer on the stairs or him ringing our doorbell mistaking it for his other family flat \uD83E\uDD29 ⚽"
   }
 ]

@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-const TextButtonVariant = ['primary', 'basic'] as const;
+const _TextButtonVariant = ['primary', 'basic'] as const;
 
 type TextButtonProps = {
-  variant?: (typeof TextButtonVariant)[number];
+  variant?: (typeof _TextButtonVariant)[number];
 } & React.ComponentPropsWithRef<'button'>;
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
