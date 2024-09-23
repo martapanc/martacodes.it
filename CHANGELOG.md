@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.0](https://github.com/martapanc/martacodes.it/compare/v2.8.0...v2.9.0) (2024-09-23)
+
+
+### Features
+
+* add random fact ([c31c793](https://github.com/martapanc/martacodes.it/commit/c31c79339710c1ae40b844ec3846543c33da2902))
+* update country data ([7fe1dd3](https://github.com/martapanc/martacodes.it/commit/7fe1dd3182a278c51f15ae6c245dbc00db0824d6))
+
 ## [2.8.0](https://github.com/martapanc/martacodes.it/compare/v2.7.0...v2.8.0) (2024-05-01)
 
 
