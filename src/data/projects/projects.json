@@ -1,5 +1,26 @@
 [
   {
+    "title": "Purrfect Price",
+    "image": {
+      "name": "purrfect-price.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1728827219/purrfect-price.webp"
+    },
+    "shortDescription": "Compare cat food prices from top sellers with Purrfect Price",
+    "mediumDescription": "Purrfect Price is a tool built with NextJS, using Playwright to scrape popular cat food seller websites and AgGrid to organize, filter, and compare the best deals on various cat food brands. Whether searching for budget-friendly options or premium products, Purrfect Price helps you find the best deals effortlessly.",
+    "longDescription": "purrfect-price.md",
+    "tools": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "nodejs",
+      "playwright"
+    ],
+    "date": "2024-09-01",
+    "tags": ["personal", "web", "react"],
+    "links": {}
+  },
+  {
     "title": "FlexInvoice",
     "image": {
       "name": "flexinvoice.webp",

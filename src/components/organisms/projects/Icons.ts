@@ -29,6 +29,7 @@ import {
   SiIeee,
   SiJavascript,
   SiNextdotjs,
+  SiPlaywright,
   SiPuppeteer,
   SiPython,
   SiReact,
@@ -52,6 +53,7 @@ export const linkIconMapping: Record<string, React.ComponentType> = {
 };
 
 export const toolIconMapping: Record<string, React.ComponentType> = {
+  agGrid: DiAndroid,
   android: DiAndroid,
   angular: FaAngular,
   apple: AiFillApple,
@@ -72,6 +74,7 @@ export const toolIconMapping: Record<string, React.ComponentType> = {
   nextjs: SiNextdotjs,
   nodejs: FaNodeJs,
   php: FaPhp,
+  playwright: SiPlaywright,
   puppeteer: SiPuppeteer,
   python: SiPython,
   raspberrypi: FaRaspberryPi,
