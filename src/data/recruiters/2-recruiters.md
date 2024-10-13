@@ -22,7 +22,7 @@ reflects my skills and experience without any compromises. This is my little way
 
 #### Seniority:
 
-- 5+ years of work experience
+- 6+ years of work experience
 - Mid to Senior level
 
 <hr/>
@@ -31,11 +31,11 @@ reflects my skills and experience without any compromises. This is my little way
 
 #### 🟢 Preferred technologies: \*
 
-- Java, Spring Boot
-- Kotlin
 - Javascript / Typescript
 - React / Angular / Vue
 - NodeJS
+- Java, Spring Boot
+- Kotlin
 - REST APIs / GraphQL
 - MySQL / Postgres / MongoDB
 
