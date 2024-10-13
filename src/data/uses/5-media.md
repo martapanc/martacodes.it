@@ -6,4 +6,4 @@
 
 **Spotify** mainly for podcasts
 
-**Storytel** for audiobooks
+**Storytel** and **Audible** for audiobooks

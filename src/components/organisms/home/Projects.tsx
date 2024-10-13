@@ -28,8 +28,8 @@ const Projects = ({ projects }: ProjectsProps) => {
         style={font.style}
       >
         <RecentProjectCard project={projects[0]} reverse />
-        <RecentProjectCard project={projects[2]} />
-        <RecentProjectCard project={projects[6]} reverse />
+        <RecentProjectCard project={projects[1]} />
+        <RecentProjectCard project={projects[3]} reverse />
       </div>
 
       <div className='text-lg text-blue-950 dark:text-blue-200'>

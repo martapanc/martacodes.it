@@ -14,14 +14,11 @@
     "latest": "Lately I have been working a lot in the Node environment, using NextJS a lot with a backend based on OpenAPI and MongoDB. I have also been delving into UI/UX, learning how to design user interfaces with Figma and how to use Tailwind effectively."
   },
   "updates": {
-    "learning": ["Figma & UI/UX Design", "Jekyll & Liquid"],
-    "willLearn": [
-      "Swift for iOS Development",
-      "AI and its ethical implications"
-    ],
+    "learning": ["Swift for iOS Development", "SEO & website accessibility"],
+    "willLearn": ["AstroJS", "AI and its ethical implications"],
     "reading": [
-      "'The Anxious Generation', by Jonathan Haidt",
-      "'The Pragmatic Programmer', by D. Thomas & A. Hunt"
+      "'The Three Body Problem', by Liu Cixin",
+      "'The Martian', by Andy Weir"
     ],
     "gaming": ["Zelda: Tears of the Kingdom"],
     "watching": ["the Marvel Netflix TV Series"]
