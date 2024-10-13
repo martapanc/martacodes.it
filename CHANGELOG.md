@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.10.0](https://github.com/martapanc/martacodes.it/compare/v2.9.0...v2.10.0) (2024-10-13)
+
+
+### Features
+
+* add project ([06f8ae5](https://github.com/martapanc/martacodes.it/commit/06f8ae5e6e84162bf9fff6efb7d7029901b7ca7f))
+* add updates ([2cdffd6](https://github.com/martapanc/martacodes.it/commit/2cdffd625b7ca4987274e1f1b0a8d7cfc76b0de7))
+* update data ([0ef68db](https://github.com/martapanc/martacodes.it/commit/0ef68dbd6376da6b2987915936b260773ca8885c))
+* update Recruiters page ([7a3e43c](https://github.com/martapanc/martacodes.it/commit/7a3e43ccd2be12a096e592d6e13f78677d08c232))
+
 ## [2.9.0](https://github.com/martapanc/martacodes.it/compare/v2.8.0...v2.9.0) (2024-09-23)
 
 
