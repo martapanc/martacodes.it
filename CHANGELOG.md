@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.0](https://github.com/martapanc/martacodes.it/compare/v2.10.0...v2.11.0) (2024-10-26)
+
+
+### Features
+
+* update links link ([fdeaeb4](https://github.com/martapanc/martacodes.it/commit/fdeaeb41ed91a2d319808ce0e7673ba9f4c5926b))
+
 ## [2.10.0](https://github.com/martapanc/martacodes.it/compare/v2.9.0...v2.10.0) (2024-10-13)
 
 
