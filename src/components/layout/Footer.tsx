@@ -98,7 +98,7 @@ type FooterLink = {
 };
 const footerLinks: FooterLink[] = [
   {
-    href: 'https://martas-links.vercel.app',
+    href: 'https://links.martacodes.it/',
     label: 'footerMenu.links',
     name: "Marta's Links",
   },
