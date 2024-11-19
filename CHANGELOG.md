@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.13.0](https://github.com/martapanc/martacodes.it/compare/v2.12.0...v2.13.0) (2024-11-19)
+
+
+### Features
+
+* update aoc.md and reading updates data ([2f8d31a](https://github.com/martapanc/martacodes.it/commit/2f8d31a2e729aef3add8ee9be0cc1e118d88d8ee))
+
 ## [2.12.0](https://github.com/martapanc/martacodes.it/compare/v2.11.0...v2.12.0) (2024-11-11)
 
 
