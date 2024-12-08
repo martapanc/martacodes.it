@@ -21,7 +21,6 @@ import {
   FaRaspberryPi,
 } from 'react-icons/fa';
 import {
-  SiCsharp,
   SiDotnet,
   SiFirebase,
   SiGnubash,
@@ -29,7 +28,6 @@ import {
   SiIeee,
   SiJavascript,
   SiNextdotjs,
-  SiPlaywright,
   SiPuppeteer,
   SiPython,
   SiReact,
@@ -62,7 +60,6 @@ export const toolIconMapping: Record<string, React.ComponentType> = {
   bootstrap: FaBootstrap,
   cloud: AiOutlineCloud,
   css: FaCss3Alt,
-  csharp: SiCsharp,
   dotnet: SiDotnet,
   firebase: SiFirebase,
   graphql: SiGraphql,
@@ -74,7 +71,6 @@ export const toolIconMapping: Record<string, React.ComponentType> = {
   nextjs: SiNextdotjs,
   nodejs: FaNodeJs,
   php: FaPhp,
-  playwright: SiPlaywright,
   puppeteer: SiPuppeteer,
   python: SiPython,
   raspberrypi: FaRaspberryPi,
