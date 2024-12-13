@@ -113,9 +113,9 @@ const footerLinks: FooterLink[] = [
     name: 'Sourcecode',
   },
   {
-    href: 'https://martapancaldi.hashnode.dev/',
+    href: 'https://things.martacodes.it/blog',
     label: 'footerMenu.blog',
-    name: 'Hashnode - Blog',
+    name: 'Blog',
   },
   {
     href: 'https://www.polywork.com/marta_pancaldi',
