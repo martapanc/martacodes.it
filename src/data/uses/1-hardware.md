@@ -14,13 +14,15 @@ ErGear Dual monitor stand
 
 RØDE NT-USB microphone
 
-Bose SoundLink Around-Ear Wireless Headphones II
+Sony WH-1000XM5 wireless headphones
 
 AirPods Pro 2nd gen
 
 iPad Air 4th gen
 
 **[Supernote A6X](https://supernote.eu/produit/bundle-a6x/)**: e-Ink ebook reader for note taking
+
+**[BOOX Palma](https://shop.boox.com/products/palma)**: phone-sized eReader running Android
 
 New Kindle Paperwhite (2018)
 
