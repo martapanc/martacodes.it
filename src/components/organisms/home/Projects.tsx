@@ -27,8 +27,8 @@ const Projects = ({ projects }: ProjectsProps) => {
         className={clsxm('flex flex-col gap-6 w-full', font.className)}
         style={font.style}
       >
-        <RecentProjectCard project={projects[0]} reverse />
-        <RecentProjectCard project={projects[1]} />
+        <RecentProjectCard project={projects[1]} reverse />
+        <RecentProjectCard project={projects[2]} />
         <RecentProjectCard project={projects[3]} reverse />
       </div>
 

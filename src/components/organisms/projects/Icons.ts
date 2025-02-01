@@ -21,6 +21,7 @@ import {
   FaRaspberryPi,
 } from 'react-icons/fa';
 import {
+  SiAstro,
   SiDotnet,
   SiFirebase,
   SiGnubash,
@@ -55,6 +56,7 @@ export const toolIconMapping: Record<string, React.ComponentType> = {
   android: DiAndroid,
   angular: FaAngular,
   apple: AiFillApple,
+  astro: SiAstro,
   aws: FaAws,
   bash: SiGnubash,
   bootstrap: FaBootstrap,

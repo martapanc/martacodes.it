@@ -106,7 +106,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <div className='w-full mb-3' aria-label='Project image'>
           <Image
-            className='w-full h-auto'
+            className='w-full h-auto object-cover'
             src={project.image.url}
             alt={project.image.name || 'Project Image'}
             width={320}

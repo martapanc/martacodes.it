@@ -22,7 +22,7 @@ async function getData() {
     }
   });
   return {
-    projects,
+    projects: projects.filter((project) => !project.wip),
   };
 }
 
