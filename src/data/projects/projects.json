@@ -1,5 +1,37 @@
 [
   {
+    "title": "Appetize.io 2.0",
+    "image": {
+      "name": "appetizeio.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1738436154/appetizeio_v80k3k.webp"
+    },
+    "shortDescription": "My submissions to all Advent of Code challenges (2015-2024)",
+    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 500 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
+    "longDescription": "appetizeio.md",
+    "tools": ["astro", "typescript", "react", "tailwind"],
+    "date": "2025-01-31",
+    "tags": ["work", "java", "kotlin", "python"],
+    "links": {},
+    "wip": true
+  },
+  {
+    "title": "All-Star Advent of Code",
+    "image": {
+      "name": "aoc.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1694340967/aoc_7a1ccad4f3.webp"
+    },
+    "shortDescription": "My submissions to all Advent of Code challenges (2015-2024)",
+    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 500 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
+    "longDescription": "aoc.md",
+    "tools": ["typescript", "kotlin", "java", "python"],
+    "date": "2024-12-31",
+    "tags": ["personal", "java", "kotlin", "python"],
+    "links": {
+      "github": "https://github.com/martapanc/Advent-Of-Code",
+      "github2": "https://github.com/martapanc/aoc-data-api"
+    }
+  },
+  {
     "title": "Purrfect Price",
     "image": {
       "name": "purrfect-price.webp",
@@ -63,23 +95,6 @@
     "links": {
       "github": "https://github.com/martapanc/martacodes.it",
       "publicUrl": "https://martacodes.it"
-    }
-  },
-  {
-    "title": "All-Star Advent of Code",
-    "image": {
-      "name": "aoc.webp",
-      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1694340967/aoc_7a1ccad4f3.webp"
-    },
-    "shortDescription": "My submissions to all Advent of Code challenges (2015-2023)",
-    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 450 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
-    "longDescription": "aoc.md",
-    "tools": ["java", "python", "kotlin"],
-    "date": "2023-12-31",
-    "tags": ["personal", "java", "kotlin", "python"],
-    "links": {
-      "github": "https://github.com/martapanc/Advent-Of-Code",
-      "github2": "https://github.com/martapanc/aoc-data-api"
     }
   },
   {
