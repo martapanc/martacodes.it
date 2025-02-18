@@ -42,6 +42,9 @@ export const countriesVisited = [
   {
     title: 'Malta',
     id: 'MT',
+  },{
+    title: 'Mexico',
+    id: 'MX',
   },
   {
     title: 'Monaco',
@@ -247,6 +250,7 @@ export const citiesVisited = [
   { name: 'Boston', lat: 42.3601, lon: -71.0589 },
   { name: 'Bratislava', lat: 48.1486, lon: 17.1077 },
   { name: 'Brussels', lat: 50.8503, lon: 4.3517 },
+  { name: 'Cancún', lat: 21.17429, lon: -86.84656 },
   { name: 'Charleston', lat: 32.7765, lon: -79.9311 },
   { name: 'Copenhagen', lat: 55.6761, lon: 12.2683 },
   { name: 'Dijon', lat: 47.3301, lon: 5.048 },
