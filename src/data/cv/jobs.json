@@ -7,7 +7,7 @@
     },
     "title": "Full-Stack Engineer",
     "location": "USA (remote from Italy)",
-    "description": "The team at Appetize has developed a SaaS to stream iOS/Android apps in the browser, providing tools for automated testing, live previews and customer support.\n- Involved in the development of the V2 iteration of our web application, enhancing UI elements and integrating new features with existing API endpoints.\n- Managing the redesign of our marketing website from the technical side, leading a team of web developers and overseeing their contributions to the site's design and functionality. Additionally, I played a hands-on role in implementing, reviewing and releasing key features.",
+    "description": "The team at Appetize has developed a SaaS to stream iOS/Android apps in the browser, providing tools for automated testing, live previews and customer support.\n- Implemented a new version of the appetize.io website to align with the company's rebranding. Leveraged the latest web development framework to enhance performance and accessibility, collaborating closely with the UI designer to deliver thoughtful, user-centric solutions.\n- Involved in the development of the V2 iteration of our web application, enhancing UI elements and integrating new features with existing API endpoints.\n- Took over the management the redesign of our marketing website from the technical side, leading a team of web developers and overseeing their contributions to the site's design and functionality. Additionally, I played a hands-on role in implementing, reviewing and releasing key features.",
     "startDate": "2024-01-02",
     "endDate": null,
     "isCurrentJob": true,
@@ -118,7 +118,12 @@
     "isCurrentJob": false,
     "mainColor": "#147AE3",
     "darkColor": "#b8d8f9",
-    "technologies": ["Cloud Computing", "GDPR", "SaaS", "Technical Writing"]
+    "technologies": [
+      "Cloud Computing",
+      "GDPR",
+      "SaaS",
+      "Technical Writing"
+    ]
   },
   {
     "companyName": "ICT Group",
