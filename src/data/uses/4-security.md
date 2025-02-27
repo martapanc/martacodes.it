@@ -2,7 +2,7 @@
 
 **Bitwarden**: password manager
 
-Nord VPN
+**Private Internet Access**: VPN
 
 **Authy**: 2FA code generator
 

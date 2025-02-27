@@ -104,13 +104,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </IconContext.Provider>
         </div>
 
-        <div className='w-full mb-3' aria-label='Project image'>
+        <div className='mb-3' aria-label='Project image'>
           <Image
             className='w-full h-auto object-cover'
             src={project.image.url}
             alt={project.image.name || 'Project Image'}
-            width={320}
-            height={180}
+            width={648}
+            height={352}
           />
         </div>
 
