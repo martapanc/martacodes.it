@@ -3,16 +3,18 @@
     "title": "Appetize.io 2.0",
     "image": {
       "name": "appetizeio.webp",
-      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1738436154/appetizeio_v80k3k.webp"
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/t_Project img/v1738435622/appetizeio.webp"
     },
-    "shortDescription": "My submissions to all Advent of Code challenges (2015-2024)",
-    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 500 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
+    "shortDescription": "Rebranding of our company's website, built from scratch using AstroJS",
+    "mediumDescription": "In early 2025, the company I work for decided to redesign its marketing website. The previous version was visually appealing but too playful for our business-focused audience. The [new appetize.io](https://appetize.io) was rebuilt almost from scratch, embracing a more dynamic and modern\ndesign. We leveraged the latest web technologies to enhance speed, accessibility, and SEO, ensuring a polished and\nprofessional experience tailored to our users.",
     "longDescription": "appetizeio.md",
     "tools": ["astro", "typescript", "react", "tailwind"],
     "date": "2025-01-31",
     "tags": ["work", "java", "kotlin", "python"],
-    "links": {},
-    "wip": true
+    "links": {
+      "publicUrl": "https://appetize.io"
+    },
+    "wip": false
   },
   {
     "title": "All-Star Advent of Code",
@@ -21,7 +23,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1694340967/aoc_7a1ccad4f3.webp"
     },
     "shortDescription": "My submissions to all Advent of Code challenges (2015-2024)",
-    "mediumDescription": "<a href=\"https://adventofcode.com/\" targer=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 500 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
+    "mediumDescription": "<a href=\"https://adventofcode.com/\" target=\"_blank\">Advent of Code</a> is a yearly event offering Christmas-themed coding challenges. After completing the 2020 event, I decided to tackle puzzles from previous years. Thanks to these I've gained proficiency in Kotlin and refined my problem-solving skills, and I'm quite proud of my shiny 500 stars ⭐. As a side project, I developed an API automating class setup for daily challenges, fetching input data, and updating my progress on the Readme.",
     "longDescription": "aoc.md",
     "tools": ["typescript", "kotlin", "java", "python"],
     "date": "2024-12-31",

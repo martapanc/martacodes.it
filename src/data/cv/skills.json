@@ -32,7 +32,7 @@
   },
   {
     "title": "React, Angular, Vue",
-    "description": "I've had the opportunity to work with the three major front-end frameworks in my career, and picking a favorite isn't easy. \n\nTo stay versatile, I've made sure to master the fundamentals of all three. This way, I'm always well-prepared for the task at hand and I can confidently work with any of them as needed.",
+    "description": "I've had the opportunity to work with the three major front-end frameworks in my career, and picking a favorite isn't easy. \n\nTo stay versatile, I've made sure to master the fundamentals of all three, so that I'm always well-prepared to work with any of them as needed.\n\nI also have experience with other web frameworks such as Next, Jekyll and Astro.",
     "icons": [
       {
         "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1696713208/react_3b5b377da6.svg",
@@ -49,6 +49,10 @@
       {
         "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1697886621/next_f836ee03ad.png",
         "name": "NextJS"
+      },
+      {
+        "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1740684025/astrojs_ufvpkm.webp",
+        "name": "AstroJS"
       },
       {
         "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1696713457/redux_4c767ea687.svg",
