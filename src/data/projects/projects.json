@@ -10,7 +10,7 @@
     "longDescription": "appetizeio.md",
     "tools": ["astro", "typescript", "react", "tailwind"],
     "date": "2025-01-31",
-    "tags": ["work", "java", "kotlin", "python"],
+    "tags": ["work", "web", "react"],
     "links": {
       "publicUrl": "https://appetize.io"
     },
