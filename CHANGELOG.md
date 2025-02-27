@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.0](https://github.com/martapanc/martacodes.it/compare/v2.15.0...v2.16.0) (2025-02-27)
+
+
+### Features
+
+* update Projects, Uses, CV and homepage content ([3e98457](https://github.com/martapanc/martacodes.it/commit/3e984576d2a2bfb853a47c3917e5539c334c3976))
+
 ## [2.15.0](https://github.com/martapanc/martacodes.it/compare/v2.14.0...v2.15.0) (2025-01-23)
 
 
