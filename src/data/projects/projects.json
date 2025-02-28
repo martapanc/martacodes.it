@@ -6,7 +6,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/t_Project img/v1738435622/appetizeio.webp"
     },
     "shortDescription": "Rebranding of our company's website, built from scratch using AstroJS",
-    "mediumDescription": "In early 2025, the company I work for decided to redesign its marketing website. The previous version was visually appealing but too playful for our business-focused audience. The [new appetize.io](https://appetize.io) was rebuilt almost from scratch, embracing a more dynamic and modern\ndesign. We leveraged the latest web technologies to enhance speed, accessibility, and SEO, ensuring a polished and\nprofessional experience tailored to our users.",
+    "mediumDescription": "In early 2025, the company I work for decided to redesign its marketing website. The previous version was visually appealing but too playful for our business-focused audience. The <a href=\"https://appetize.io\" target=\"_blank\">new appetize.io</a> was rebuilt almost from scratch, embracing a more dynamic and modern\ndesign. We leveraged the latest web technologies to enhance speed, accessibility, and SEO, ensuring a polished and\nprofessional experience tailored to our users.",
     "longDescription": "appetizeio.md",
     "tools": ["astro", "typescript", "react", "tailwind"],
     "date": "2025-01-31",
