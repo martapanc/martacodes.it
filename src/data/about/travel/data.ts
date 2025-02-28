@@ -42,7 +42,8 @@ export const countriesVisited = [
   {
     title: 'Malta',
     id: 'MT',
-  },{
+  },
+  {
     title: 'Mexico',
     id: 'MX',
   },

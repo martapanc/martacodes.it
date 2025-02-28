@@ -14,7 +14,7 @@ Discord
 
 **Telegram**: do people really still use Whatsapp?
 
-**TickTick** Todo list, basically for organizing my life
+**TickTick**: Todo list, basically for organizing my life
 
 **GoodReads** for keeping track of the books I read
 

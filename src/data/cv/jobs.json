@@ -118,12 +118,7 @@
     "isCurrentJob": false,
     "mainColor": "#147AE3",
     "darkColor": "#b8d8f9",
-    "technologies": [
-      "Cloud Computing",
-      "GDPR",
-      "SaaS",
-      "Technical Writing"
-    ]
+    "technologies": ["Cloud Computing", "GDPR", "SaaS", "Technical Writing"]
   },
   {
     "companyName": "ICT Group",
