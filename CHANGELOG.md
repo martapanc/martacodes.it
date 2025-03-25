@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.0](https://github.com/martapanc/martacodes.it/compare/v2.17.0...v2.18.0) (2025-03-25)
+
+
+### Features
+
+* add random fact ([ca20ce8](https://github.com/martapanc/martacodes.it/commit/ca20ce876a9b6ad11636fe61fcf850919d14b915))
+
 ## [2.17.0](https://github.com/martapanc/martacodes.it/compare/v2.16.0...v2.17.0) (2025-03-10)
 
 
