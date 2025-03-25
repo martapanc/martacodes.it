@@ -1,5 +1,9 @@
 export const countriesVisited = [
   {
+    title: 'Andorra',
+    id: 'AD',
+  },
+  {
     title: 'Austria',
     id: 'AT',
   },
@@ -237,6 +241,7 @@ export const ukVisitedRegions = [
 
 export const citiesVisited = [
   { name: 'Alicante', lat: 38.3452, lon: -0.481 },
+  { name: 'Andorra la Vella', lat: 42.5078, lon: 1.5211 },
   { name: 'Amsterdam', lat: 52.3676, lon: 4.9041 },
   { name: 'Asheville', lat: 35.539, lon: -82.6478 },
   { name: 'Atlanta', lat: 33.749, lon: -84.388 },
@@ -279,6 +284,7 @@ export const citiesVisited = [
   { name: 'Manchester', lat: 53.4808, lon: -2.2426 },
   { name: 'Milan', lat: 45.4642, lon: 9.19 },
   { name: 'Monaco', lat: 43.7384, lon: 7.4246 },
+  { name: 'Montpellier', lat: 43.6119, lon: 3.8777 },
   { name: 'Moscow', lat: 55.7558, lon: 37.6176 },
   { name: 'Munich', lat: 48.1351, lon: 11.582 },
   { name: 'Naples', lat: 40.8518, lon: 14.2681 },
