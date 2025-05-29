@@ -52,7 +52,7 @@ function FooterLinks() {
 }
 
 function SocialLinks() {
-  const emailAddress = 'info@martacodes.it';
+  const emailAddress = 'marta_panc@me.com';
 
   return (
     <div className='mt-8 flex space-x-4 md:mt-2'>

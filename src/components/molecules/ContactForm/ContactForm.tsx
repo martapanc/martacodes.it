@@ -82,8 +82,8 @@ const ContactForm = () => {
         return (
           <>
             <Trans t={t} i18nKey='contacts.error' />
-            <a className='ms-1 underline' href='mailto:info@martacodes.it'>
-              info@martacodes.it
+            <a className='ms-1 underline' href='mailto:marta_panc@me.com'>
+              marta_panc@me.com
             </a>
           </>
         );
