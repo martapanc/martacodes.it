@@ -1,5 +1,9 @@
 export const countriesVisited = [
   {
+    title: 'Albania',
+    id: 'AL',
+  },
+  {
     title: 'Andorra',
     id: 'AD',
   },
@@ -12,12 +16,24 @@ export const countriesVisited = [
     id: 'BE',
   },
   {
+    title: 'Bosnia and Herzegovina',
+    id: 'BA',
+  },
+  {
+    title: 'Bulgaria',
+    id: 'BG',
+  },
+  {
     title: 'Canada',
     id: 'CA',
   },
   {
     title: 'China',
     id: 'CN',
+  },
+  {
+    title: 'Croatia',
+    id: 'HR'
   },
   {
     title: 'Denmark',
@@ -30,6 +46,10 @@ export const countriesVisited = [
   {
     title: 'Germany',
     id: 'DE',
+  },
+  {
+    title: 'Greece',
+    id: 'GR',
   },
   {
     title: 'Iceland',
@@ -56,8 +76,16 @@ export const countriesVisited = [
     id: 'MC',
   },
   {
+    title: 'Montenegro',
+    id: 'ME'
+  },
+  {
     title: 'The Netherlands',
     id: 'NL',
+  },
+  {
+    title: 'North Macedonia',
+    id: 'MK',
   },
   {
     title: 'Poland',
@@ -74,6 +102,10 @@ export const countriesVisited = [
   {
     title: 'San Marino',
     id: 'SM',
+  },
+  {
+    title: 'Serbia',
+    id: 'RS'
   },
   {
     title: 'Slovakia',
