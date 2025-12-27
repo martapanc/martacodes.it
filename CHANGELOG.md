@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.18.0](https://github.com/martapanc/martacodes.it/compare/v2.17.0...v2.18.0) (2025-12-27)
+
+
+### Features
+
+* add random fact ([ca20ce8](https://github.com/martapanc/martacodes.it/commit/ca20ce876a9b6ad11636fe61fcf850919d14b915))
+* replace expiring email address ([8806580](https://github.com/martapanc/martacodes.it/commit/88065802ca4e3ff557a85189adce9054d1a92765))
+* upgrade dependencies, including word cloud ([c094a7b](https://github.com/martapanc/martacodes.it/commit/c094a7b9cb3ef90e3e8b2e2a182cc1b04a4553b2))
+
 ## [2.17.0](https://github.com/martapanc/martacodes.it/compare/v2.16.0...v2.17.0) (2025-03-10)
 
 
