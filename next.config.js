@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    dirs: ['src'],
-  },
-
   reactStrictMode: true,
-  swcMinify: true,
 
   images: {
     remotePatterns: [
@@ -36,6 +31,10 @@ const nextConfig = {
   },
 
   staticPageGenerationTimeout: 600,
+
+  turbopack: {
+    root: __dirname,
+  },
 
   async rewrites() {
     return [
