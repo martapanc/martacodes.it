@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.18.0](https://github.com/martapanc/martacodes.it/compare/v2.17.0...v2.18.0) (2026-01-30)
+
+
+### Features
+
+* add random fact ([ca20ce8](https://github.com/martapanc/martacodes.it/commit/ca20ce876a9b6ad11636fe61fcf850919d14b915))
+* css files ([9d6979e](https://github.com/martapanc/martacodes.it/commit/9d6979ef46f8b65367b06e977b8412b6ffdc9071))
+* fix details block on /recruiters ([6fe7051](https://github.com/martapanc/martacodes.it/commit/6fe705103bd8a96cec0bc2c63b69ff8b5ec0a254))
+* replace expiring email address ([8806580](https://github.com/martapanc/martacodes.it/commit/88065802ca4e3ff557a85189adce9054d1a92765))
+* update data ([44e5183](https://github.com/martapanc/martacodes.it/commit/44e5183b94ca866ca87b56ea8d4f8c7fad2d9735))
+* update homepage, about and recruiters pages content ([9374849](https://github.com/martapanc/martacodes.it/commit/93748497c36c2db313b13d8e84219063b3cae043))
+* upgrade dependencies, including word cloud ([c094a7b](https://github.com/martapanc/martacodes.it/commit/c094a7b9cb3ef90e3e8b2e2a182cc1b04a4553b2))
+
 ## [2.17.0](https://github.com/martapanc/martacodes.it/compare/v2.16.0...v2.17.0) (2025-03-10)
 
 
