@@ -34,8 +34,8 @@ export default function RecruitersPage({
 }: RecruitersPageProps) {
   const salaryData = {
     min: 110000,
-    median: 130000,
-    max: 150000,
+    median: 135000,
+    max: 160000,
   };
 
   const config = {

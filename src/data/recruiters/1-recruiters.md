@@ -1,15 +1,13 @@
-Nice to meet you! I appreciate your interest in considering me for your software engineering positions.
+**Nice to meet you** 👋
 
-To streamline the process and provide clarity on my expectations, I've put together this page to share what I'm seeking
-in my next role. This way, we can make the most of our time together.
+Thanks for taking the time to learn more about me and for considering me for your software engineering roles.
+
+I’ve put together this page to be upfront about what I’m looking for in my next position, so we can quickly see whether there’s a good mutual fit. My goal is to make the process clear, respectful, and efficient for both of us.
 
 ## Setting the Stage: Salary Expectations
 
-Let's talk money, shall we? While it's not the job search holy grail, it does matter. As much as I'd love to pay my
-bills with passion and dedication, unfortunately that's not how the world works 😉💰
+Let’s talk about compensation. It may not be the most exciting part of a job search, but it’s an important one. While I’m deeply motivated by meaningful work and strong teams, compensation still needs to align — passion alone doesn’t pay the bills 😉💰
 
-To get to the point: if the salary doesn't align, I respectfully move on. It's all about clarity, respect, and
-efficiency 😊👍💼
+To be transparent: if the salary range isn’t a match, I’ll respectfully move on. I’ve found that clarity upfront saves time and helps everyone focus their energy where it makes sense 😊
 
-I came up with this fun little tool to help you get a sense of what I'm aiming for in my next role. The numbers aren't
-etched in stone, but it's a cool way to kick things off 🎉
+I’ve built a small interactive tool below to give you a sense of the range I’m targeting for my next role. The numbers aren’t set in stone, but they should provide a helpful starting point for the conversation.

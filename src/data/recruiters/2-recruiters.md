@@ -1,14 +1,15 @@
-<details class="money">
-  <summary>Are you Italian and/or these numbers look insane to you? 🙀</summary>
-
-I completely understand. Being an Italian myself, I know all too well the challenges and relatively lower salaries that
-many professionals, including software engineers, contend with in our Bel Paese. But, here's the deal: the numbers I'm
-putting out there are on par with international salary averages - as well as what current employers are paying me.
-
-I firmly believe in fair compensation for the value I bring to the table. My goal is to secure a salary that truly
-reflects my skills and experience without any compromises. This is my little way of pushing for a change. 🚀💪🇮🇹
-
-</details>
+[//]: # '<details class="money">'
+[//]: # '  <summary>Are you Italian and/or these numbers look insane to you? 🙀</summary>'
+[//]: #
+[//]: # 'I completely understand. Being an Italian myself, I know all too well the challenges and relatively lower salaries that'
+[//]: # "many professionals, including software engineers, contend with in our Bel Paese. But, here's the deal: the numbers I'm"
+[//]: # 'putting out there are on par with international salary averages - as well as what current employers are paying me.'
+[//]: #
+[//]: # 'I firmly believe in fair compensation for the value I bring to the table. My goal is to secure a salary that truly'
+[//]: # 'reflects my skills and experience without any compromises. This is my little way of pushing for a change. 🚀💪🇮🇹'
+[//]: #
+[//]: # '</details>'
+[//]: #
 
 <hr/>
 
@@ -18,11 +19,12 @@ reflects my skills and experience without any compromises. This is my little way
 
 - Software Engineer
 - Full-stack developer
+- Frontend developer
 - Backend developer
 
 #### Seniority:
 
-- 6+ years of work experience
+- 8+ years of work experience
 - Mid to Senior level
 
 <hr/>
@@ -34,6 +36,7 @@ reflects my skills and experience without any compromises. This is my little way
 - Javascript / Typescript
 - React / Angular / Vue
 - NodeJS
+- Next.js, AstroJS
 - Java, Spring Boot
 - Kotlin
 - REST APIs / GraphQL
@@ -69,16 +72,14 @@ and the projects I have been involved in.
 - Eligible to work in the EU 🇪🇺 (Italian citizenship) and the UK
   🇬🇧 (<a href="https://www.gov.uk/settled-status-eu-citizens-families/" target="_blank">Settled Status</a>).
 
-🇮🇹 I will be working from Italy, thus as an **Italian tax resident**
+🇦🇩 I will be working from Andorra, thus as an **Andorran tax resident**
 
 <details>
-  <summary>More on taxes</summary>
-  <p class="taxes">Options you may want to consider for the above:</p>
+  <summary>More on contracts & taxes</summary>
 
-- The company is based in Italy, or has a tax entity in the Italian territory;
-- Use of an EoR platform, such as <a href="https://remote.com/" target="_blank">Remote</a>
-  or <a href="https://deel.com/" target="_blank">Deel</a>.
-- Hiring me as a contractor / freelancer, who will bill through their own company.
+- I’ll be working as a resident of Andorra, and my preferred setup is a B2B contract between your company and an Andorran legal entity.
+
+- If this is something you’d like to explore or have questions about, feel free to get in touch — I’m happy to discuss the details and see whether it’s a good fit.
 
 </details>
 
@@ -102,20 +103,22 @@ Public Infrastructure / Defence, Retail, Technology, Travel.
 
 🏡 Remote-first position. (Infrequent visits to the office, say 1-2 per quarter, are fine.)
 
-🇮🇹 Italian resident employment. (Preferably in EMEA to align with timezones, but willing to consider any location.
+🇦🇩 Andorra resident employment. (Preferably in EMEA to align with timezones, but willing to consider any location.
 Additionally, I have the right to work in the UK thanks to my
 acquired "<a href="https://www.gov.uk/settled-status-eu-citizens-families/" target="_blank">Settled Status</a>".)
 
 🖋️ Permanent or Contract.
 
-⚙️ Ideally full-stack or backend-focused.
+⚙️ Ideally full-stack or frontend-focused.
 
 <hr/>
 
 Thank you for reading this far!
 
 If you're a recruiter looking to connect, please feel free to reach out through the [contact form](/contacts) or
-directly on <a href="https://www.linkedin.com/in/martapancaldi/" target="_blank">LinkedIn</a>, mentioning your role. I'd love to chat with you!
+directly on <a href="https://www.linkedin.com/in/martapancaldi/" target="_blank">LinkedIn</a>, mentioning your role.
 
-Note that I'm **not** actively seeking new opportunities at the moment. However, feel free to share your contact
-details, and I'll be sure to get in touch when I'm open to considering new positions.
+[//]: # "Note that I'm **not** actively seeking new opportunities at the moment. However, feel free to share your contact"
+[//]: # "details, and I'll be sure to get in touch when I'm open to considering new positions."
+
+I’m currently **open to new opportunities**. If my background aligns with what you’re building, I’d love to hear from you and discuss further.
