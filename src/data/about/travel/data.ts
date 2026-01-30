@@ -33,7 +33,7 @@ export const countriesVisited = [
   },
   {
     title: 'Croatia',
-    id: 'HR'
+    id: 'HR',
   },
   {
     title: 'Denmark',
@@ -77,7 +77,7 @@ export const countriesVisited = [
   },
   {
     title: 'Montenegro',
-    id: 'ME'
+    id: 'ME',
   },
   {
     title: 'The Netherlands',
@@ -105,7 +105,7 @@ export const countriesVisited = [
   },
   {
     title: 'Serbia',
-    id: 'RS'
+    id: 'RS',
   },
   {
     title: 'Slovakia',
@@ -282,7 +282,7 @@ export const citiesVisited = [
   { name: 'Barcelona', lat: 41.3851, lon: 2.1734 },
   { name: 'Basel', lat: 47.5596, lon: 7.5886 },
   { name: 'Berlin', lat: 52.52, lon: 13.405 },
-  { name: 'Belgrade', lat: 44.8154, lon: 20.3400 },
+  { name: 'Belgrade', lat: 44.8154, lon: 20.34 },
   { name: 'Belfast', lat: 54.5973, lon: -5.9301 },
   { name: 'Birmingham', lat: 52.4862, lon: -1.8904 },
   { name: 'Bologna', lat: 44.4949, lon: 11.3426 },
@@ -308,7 +308,7 @@ export const citiesVisited = [
   { name: 'Hamburg', lat: 53.5511, lon: 9.9937 },
   { name: 'Houston', lat: 29.7604, lon: -95.3698 },
   { name: 'Inverness', lat: 57.4778, lon: -4.2247 },
-  { name: 'Kotor', lat: 42.4243, lon: 18.7680 },
+  { name: 'Kotor', lat: 42.4243, lon: 18.768 },
   { name: 'Lausanne', lat: 46.5197, lon: 6.6323 },
   { name: 'Lisbon', lat: 38.7223, lon: -9.1393 },
   { name: 'Liverpool', lat: 53.4084, lon: -2.9916 },
