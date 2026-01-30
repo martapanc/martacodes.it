@@ -71,10 +71,17 @@
   },
   {
     "name": "Countries visited",
-    "headline": "I have visited a total of 25 countries so far 🗺️",
-    "description": "I have visited a total of 25 countries so far 🗺️ \n\nThe full list is: Austria, Belgium, Canada, China, Denmark, France, Germany, Iceland, Ireland, Italy, Malta, Mexico, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City.",
+    "headline": "I have visited a total of 34 countries so far 🗺️",
+    "description": "I have visited a total of 34 countries so far 🗺️ \n\nThe full list is: Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Canada, China, Croatia, Denmark, France, Germany, Greece, Iceland, Ireland, Italy, Malta, Mexico, Monaco, Montenegro, the Netherlands, North Macedonia, Poland, Portugal, Russia, San Marino, Serbia, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City.",
     "isFactTrue": true,
-    "explanation": "Correct! The full list is: Austria, Belgium, Canada, China, Denmark, France, Germany, Iceland, Ireland, Italy, Malta, Mexico, Monaco, the Netherlands, Poland, Portugal, Russia, San Marino, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City."
+    "explanation": "Correct! The full list is: Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Canada, China, Croatia, Denmark, France, Germany, Greece, Iceland, Ireland, Italy, Malta, Mexico, Monaco, Montenegro, the Netherlands, North Macedonia, Poland, Portugal, Russia, San Marino, Serbia, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States, Vatican City."
+  },
+  {
+    "name": "US States visited",
+    "headline": "I've set foot in 15 out of the 50 US States \uD83C\uDDFA\uD83C\uDDF8",
+    "description": "I've set foot in 15 US States so far \uD83C\uDDFA\uD83C\uDDF8 \n\nThe updated list is: Alabama, California, Delaware, Florida, Georgia, Maryland, Massachusetts, New Jersey, New York, North Carolina, Pennsylvania, South Carolina, Texas, Virginia, West Virginia.",
+    "isFactTrue": true,
+    "explanation": "Alright alright alright! \uD83D\uDE00 Here's the complete list: Alabama, California, Delaware, Florida, Georgia, Maryland, Massachusetts, New Jersey, New York, North Carolina, Pennsylvania, South Carolina, Texas, Virginia, West Virginia."
   },
   {
     "name": "Rent",

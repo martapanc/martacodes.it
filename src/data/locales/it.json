@@ -87,7 +87,7 @@
       }
     },
     "success": "Grazie per il messaggio! 🤗 Ti risponderò al più presto.",
-    "error": "Ops, qualcosa è andato storto! 😟 <br /> Prova di nuovo, e se il problema persiste scrivi direttamente a <a className='ms-1 underline' href='mailto:info@martacodes.it'>info@martacodes.it</a>",
+    "error": "Ops, qualcosa è andato storto! 😟 <br /> Prova di nuovo, e se il problema persiste scrivi direttamente a <a className='ms-1 underline' href='mailto:marta_panc@me.com'>marta_panc@me.com</a>",
     "button": {
       "send": "Invia messaggio",
       "loading": "Invio in corso..."

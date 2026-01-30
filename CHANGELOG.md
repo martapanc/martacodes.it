@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.17.0](https://github.com/martapanc/martacodes.it/compare/v2.16.0...v2.17.0) (2025-03-10)
+
+
+### Features
+
+* update home.json ([4f29b8e](https://github.com/martapanc/martacodes.it/commit/4f29b8e5ab8ab50bd9d679eabe1ae8f73b7863ae))
+
 ## [2.16.0](https://github.com/martapanc/martacodes.it/compare/v2.15.0...v2.16.0) (2025-02-27)
 
 

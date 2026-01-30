@@ -16,8 +16,7 @@ export default async function handler(
   sgMail.setApiKey(sgApiKey);
 
   const msg = {
-    to: 'info@martacodes.it',
-    cc: 'marta_panc@me.com',
+    to: 'marta_panc@me.com',
     from: `${name} ${company ? ' @ ' + company : ''} <marta_panc@me.com>`,
     replyTo: email,
     subject: subject,

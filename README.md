@@ -15,6 +15,7 @@ Source code of my personal website: [martacodes.it](https://martacodes.it/)
 - 💨 Tailwind CSS 3
 - 🥞 Strapi
 - ▲ Vercel
+- Node 22
 
 ### Acknowledgements
 
