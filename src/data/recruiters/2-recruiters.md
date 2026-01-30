@@ -74,11 +74,10 @@ and the projects I have been involved in.
 
 🇦🇩 I will be working from Andorra, thus as an **Andorran tax resident**
 
-<details>
+<details class="bg-blue-100 dark:bg-slate-900 rounded px-3 pt-3 pb-1">
   <summary>More on contracts & taxes</summary>
 
 - I’ll be working as a resident of Andorra, and my preferred setup is a B2B contract between your company and an Andorran legal entity.
-
 - If this is something you’d like to explore or have questions about, feel free to get in touch — I’m happy to discuss the details and see whether it’s a good fit.
 
 </details>
