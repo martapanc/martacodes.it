@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.19.0](https://github.com/martapanc/martacodes.it/compare/v2.18.0...v2.19.0) (2026-01-31)
+
+
+### Features
+
+* add Spanish language ([d0d61a5](https://github.com/martapanc/martacodes.it/commit/d0d61a5d2e4fc2b5c221e143ed24b9e496b5008c))
+* reset contact form only if success ([8e3d30a](https://github.com/martapanc/martacodes.it/commit/8e3d30a0590a3ff6f7199688ec5587ab769731c1))
+
 ## [2.18.0](https://github.com/martapanc/martacodes.it/compare/v2.17.0...v2.18.0) (2026-01-31)
 
 
