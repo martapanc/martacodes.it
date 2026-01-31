@@ -117,13 +117,13 @@ const ContactForm = () => {
         showError();
       } else {
         showSuccess();
+        resetForm();
       }
     } else {
       showError();
     }
 
     setSubmitting(false);
-    resetForm();
     recaptchaRef.current?.reset();
   };
 
