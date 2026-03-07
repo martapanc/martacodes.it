@@ -118,9 +118,9 @@ const footerLinks: FooterLink[] = [
     name: 'Blog',
   },
   {
-    href: 'https://www.polywork.com/marta_pancaldi',
+    href: 'https://things.martacodes.it/updates',
     label: 'footerMenu.updates',
-    name: 'Polywork - Updates',
+    name: 'Updates',
   },
   {
     href: 'https://analytics.eu.umami.is/share/Dw94G9vRDiMT9YXN/MartaCodes.it',
