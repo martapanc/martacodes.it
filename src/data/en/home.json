@@ -14,11 +14,11 @@
     "latest": "Alongside development, I’ve been deepening my interest in UI and UX, learning to design interfaces in <span class=\"font-bold\">Figma</span> and to use <span class=\"font-bold\">Tailwind CSS</span> effectively to build accessible, cohesive layouts."
   },
   "updates": {
-    "learning": ["Figma", "SEO & website accessibility"],
-    "willLearn": ["React Native", "Swift for iOS Development"],
+    "learning": ["Figma automation", "Swift for iOS Development"],
+    "willLearn": ["LLM, RAG & Co", "Svelte"],
     "reading": [
-      "'The War on Science', by Lawrence M. Krauss",
-      "'Death's End', by Liu Cixin"
+      "'We Should All Be Feminists', by C.N. Adichie",
+      "'The War on Science', by Lawrence M. Krauss"
     ],
     "gaming": ["Zelda: Tears of the Kingdom"],
     "watching": ["the Marvel Netflix TV Series"]
