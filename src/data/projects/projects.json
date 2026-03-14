@@ -58,7 +58,7 @@
     "title": "FlexInvoice",
     "image": {
       "name": "flexinvoice.webp",
-      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1710677596/flexinvoice.webp"
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1773508154/flexinvoice-banner.webp"
     },
     "shortDescription": "A simple and customisable web-based invoice generator",
     "mediumDescription": "As a new freelancer managing my own company, I needed to create customized invoices for myself and my collaborators. Dissatisfied with basic Word templates and wanting to avoid complex software, I developed my own solution: a React template that is filled with JSON data and used to generate PDF invoices using Puppeteer. I'm also working on extending the functionality by automating the invoicing process as much as possible.",

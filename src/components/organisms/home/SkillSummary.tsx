@@ -36,7 +36,7 @@ const SkillSummary = ({ homePage }: SkillsProps) => {
             alt='full-stack development'
           />
         </div>
-        <div className='text-lg antialiased md:w-3/4'>
+        <div className='text-[17px] antialiased md:w-3/4'>
           <ReactMarkdown className='mb-4' rehypePlugins={[rehypeRaw]}>
             {homePage.skills.fullStack}
           </ReactMarkdown>
