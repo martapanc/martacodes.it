@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { IconType } from 'react-icons';
-import { FiMail } from 'react-icons/fi';
+import { FiLinkedin, FiMail } from 'react-icons/fi';
 import {
   SiGithub,
   SiGoodreads,
   SiInstagram,
-  SiLinkedin,
   SiMedium,
   SiSteam,
   SiThreads,
@@ -151,7 +150,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     href: 'https://www.linkedin.com/in/martapancaldi',
-    icon: SiLinkedin,
+    icon: FiLinkedin,
     id: 'Linkedin',
   },
   {
