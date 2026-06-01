@@ -92,7 +92,26 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
             {/* Start Job Content */}
             <div className='job-content pt-4'>
               <div className='skill-description pb-2 text-justify font-light'>
-                <ReactMarkdown>{job.description}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    a: ({ href, children }) => (
+                      <a
+                        href={href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        style={{ color: theme === 'dark' ? job.darkColor : job.mainColor }}
+                        className='font-medium underline underline-offset-2 transition-opacity hover:opacity-75'
+                      >
+                        {children}
+                      </a>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className='font-semibold'>{children}</strong>
+                    ),
+                  }}
+                >
+                  {job.description}
+                </ReactMarkdown>
               </div>
 
               <div className='mb-2 flex flex-wrap justify-end md:w-full'>
