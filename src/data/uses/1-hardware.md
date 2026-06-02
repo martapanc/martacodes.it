@@ -26,7 +26,7 @@ iPad Air 4th gen
 
 New Kindle Paperwhite (2018)
 
-iPhone 13 Pro
+iPhone 17 Pro
 
 Synology NAS DS720+
 
