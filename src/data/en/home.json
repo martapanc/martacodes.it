@@ -20,10 +20,10 @@
   },
   "updates": {
     "learning": ["Figma automation", "Swift for iOS Development"],
-    "willLearn": ["LLM, RAG & Co", "Svelte"],
+    "willLearn": ["Svelte", "GoLang"],
     "reading": [
-      "'We Should All Be Feminists', by C.N. Adichie",
-      "'The War on Science', by Lawrence M. Krauss"
+      "'Ender's Game', by Orson Scott Card",
+      "'Submission', by Michel Houellebecq"
     ],
     "gaming": ["Zelda: Tears of the Kingdom"],
     "watching": ["the Marvel Netflix TV Series"]
