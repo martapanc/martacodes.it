@@ -1,5 +1,111 @@
 [
   {
+    "title": "Language Transfer Companion",
+    "image": {
+      "name": "language-transfer.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/sample.jpg"
+    },
+    "shortDescription": "Per-track summaries and downloadable flashcard decks for the Language Transfer audio courses",
+    "mediumDescription": "An unofficial companion to the free <a href=\"https://www.languagetransfer.org\" target=\"_blank\">Language Transfer</a> audio courses, which I've been using to learn Spanish. The courses are excellent but come with no written material, so I built what I was missing: a summary of what every single track teaches, grouped into thematic parts, plus vocabulary flashcard decks exported as CSV, ready to import into Anki or any spaced-repetition app. Built as a fully static Astro site - no client-side framework, every page prerendered - where adding a new language means dropping in two content files.",
+    "longDescription": "language-transfer.md",
+    "tools": ["astro", "typescript", "tailwind", "anki"],
+    "date": "2026-07-19",
+    "tags": ["personal", "web", "astro", "languages"],
+    "links": {
+      "github": "https://github.com/martapanc/language-transfer-companion",
+      "github2": "https://github.com/martapanc/anki-decks"
+    }
+  },
+  {
+    "title": "FlexInvoice",
+    "image": {
+      "name": "flexinvoice.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/v1773508154/flexinvoice-banner.webp"
+    },
+    "shortDescription": "A self-hosted invoicing platform: a PDF rendering service plus a web GUI and a Python CLI",
+    "mediumDescription": "As a new freelancer managing my own company, I needed to create customised invoices for myself and my collaborators. Dissatisfied with basic Word templates and wanting to avoid complex software, I built my own: a React template filled with JSON data and printed to PDF with Puppeteer. It has since grown into two services with a proper API between them - a Next.js rendering engine that validates payloads with Zod and generates its own OpenAPI spec, and a set of clients (a React GUI and a Python CLI) that consume that spec. Both ship as Docker images.",
+    "longDescription": "flexinvoice.md",
+    "tools": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "puppeteer",
+      "python",
+      "docker"
+    ],
+    "date": "2026-07-16",
+    "tags": ["personal", "web", "react", "backend"],
+    "links": {
+      "github": "https://github.com/martapanc/FlexInvoice-rendering-engine",
+      "github2": "https://github.com/martapanc/FlexInvoice-client"
+    }
+  },
+  {
+    "title": "McGraw Hill Flashcards",
+    "image": {
+      "name": "mcgraw-hill-flashcards.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/sample.jpg"
+    },
+    "shortDescription": "A Go scraper that turns McGraw Hill's language flashcards into Anki-ready CSV decks",
+    "mediumDescription": "McGraw Hill publish a free Language Lab of flashcards accompanying their language textbooks, but the site only lets you flip through them one at a time in the browser - there's no export. This small Go program walks the site and writes one CSV per chapter, cleanly quoted and stripped of HTML, ready to import into Anki or Brainscape. Point it at a single book, every book for a language, or the whole library via a one-file config.",
+    "longDescription": "mcgraw-hill-flashcards.md",
+    "tools": ["go", "anki"],
+    "date": "2026-06-28",
+    "tags": ["personal", "go", "languages"],
+    "links": {
+      "github": "https://github.com/martapanc/mcgraw-hill-flashcards"
+    }
+  },
+  {
+    "title": "LinkedIn Job Filter",
+    "image": {
+      "name": "linkedin-job-filter.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/sample.jpg"
+    },
+    "shortDescription": "A Chrome extension that flags LinkedIn jobs advertised as \"remote\" but requiring local residency",
+    "mediumDescription": "Job hunting taught me that \"Remote\" on LinkedIn often means \"remote, but you must already live here\" - buried three paragraphs into the description. This Chrome extension auto-analyses each listing you open and returns a colour-coded verdict, a location reality check, red flags and positives, and the facts worth knowing at a glance: seniority, tech stack, salary, contract type. It runs on Google Gemini's free tier or entirely locally through Ollama. Timezone compatibility is resolved deterministically rather than by the model - LLMs are bad at arithmetic and confident about it.",
+    "longDescription": "linkedin-job-filter.md",
+    "tools": ["typescript", "react", "chrome", "gemini", "ollama"],
+    "date": "2026-06-08",
+    "tags": ["personal", "ai", "react", "chrome-extension"],
+    "links": {
+      "github": "https://github.com/martapanc/Linkedin-job-filter"
+    }
+  },
+  {
+    "title": "Job Application Assistant",
+    "image": {
+      "name": "job-application-assistant.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/sample.jpg"
+    },
+    "shortDescription": "A Chrome side panel that drafts job application answers from your own CV, running locally",
+    "mediumDescription": "Every application form asks the same questions in a slightly different costume. This extension lives in Chrome's side panel next to the form - Greenhouse, Ashby, Workday, LinkedIn - and drafts answers grounded in three local files: my CV, my project history, and a set of writing-style rules. Multi-turn chat lets you iterate (\"shorter\", \"more technical\") and one click copies the result into the form. Powered by Ollama or the Gemini API; the context files are gitignored, and with a local model nothing ever leaves the laptop.",
+    "longDescription": "job-application-assistant.md",
+    "tools": ["typescript", "react", "tailwind", "chrome", "gemini", "ollama"],
+    "date": "2026-06-08",
+    "tags": ["personal", "ai", "react", "chrome-extension"],
+    "links": {
+      "github": "https://github.com/martapanc/Job-Application-Assistant"
+    }
+  },
+  {
+    "title": "Self-hosted Waline comments",
+    "image": {
+      "name": "waline.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/sample.jpg"
+    },
+    "shortDescription": "A customised fork of the Waline comment system, published to GitHub Packages and deployed on Netlify",
+    "mediumDescription": "<a href=\"https://github.com/walinejs/waline\" target=\"_blank\">Waline</a> is a self-hosted, open-source comment system - a Vue widget plus a serverless backend. Running it on a real site meant making it behave the way I wanted: audit-first moderation so nothing appears before I've seen it, a comment-regulations confirmation next to the Submit button, and Discord and Telegram notifications for new comments and reactions. The patched client is published as a versioned package to GitHub Packages so consuming sites pin a normal dependency instead of vendoring a fork, and the server runs as a Netlify Function.",
+    "longDescription": "waline.md",
+    "tools": ["vue", "typescript", "nodejs", "netlify", "vercel"],
+    "date": "2026-03-16",
+    "tags": ["personal", "web", "vue", "open-source"],
+    "links": {
+      "github": "https://github.com/martapanc/walinejs"
+    }
+  },
+  {
     "title": "Appetize.io 2.0",
     "image": {
       "name": "appetizeio.webp",
@@ -51,27 +157,6 @@
       "playwright"
     ],
     "date": "2024-09-01",
-    "tags": ["personal", "web", "react"],
-    "links": {}
-  },
-  {
-    "title": "FlexInvoice",
-    "image": {
-      "name": "flexinvoice.webp",
-      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/v1773508154/flexinvoice-banner.webp"
-    },
-    "shortDescription": "A simple and customisable web-based invoice generator",
-    "mediumDescription": "As a new freelancer managing my own company, I needed to create customized invoices for myself and my collaborators. Dissatisfied with basic Word templates and wanting to avoid complex software, I developed my own solution: a React template that is filled with JSON data and used to generate PDF invoices using Puppeteer. I'm also working on extending the functionality by automating the invoicing process as much as possible.",
-    "longDescription": "flexinvoice.md",
-    "tools": [
-      "nextjs",
-      "react",
-      "typescript",
-      "tailwind",
-      "nodejs",
-      "puppeteer"
-    ],
-    "date": "2024-02-01",
     "tags": ["personal", "web", "react"],
     "links": {}
   },

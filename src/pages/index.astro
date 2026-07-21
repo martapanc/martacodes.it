@@ -9,7 +9,7 @@ import HomePage from '@/components/pages/home-page';
 import type { Project } from '@/types/Project';
 
 const projects: Project[] = (projectsData as Project[]).map((project) => {
-  if (project.longDescription?.includes('.md')) {
+  if (project.longDescription?.endsWith('.md')) {
     return { ...project, longDescription: readMarkdown(`projects/${project.longDescription}`) };
   }
   return project;
