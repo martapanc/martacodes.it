@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { useOnKeyDown } from '@/hooks/useOnKeyDown';
 import { BurgerIcon } from '@/components/atoms/BurgerIcon';
@@ -8,6 +9,18 @@ import { MobileMenu } from './MobileMenu';
 
 export default function MobileMenuIsland() {
   const [isOpen, setIsOpen] = useState(false);
+  // MobileMenu is portaled to <body> so it's a sibling of <header>, not a
+  // descendant: a positioned element's own background always paints behind
+  // any positioned descendant regardless of z-index, so nesting the overlay
+  // inside <header> silently defeated header's z-50 vs the overlay's z-40.
+  // Deferred to an effect since this island uses client:media (unlike the
+  // rest of the site's client:only pages), so it does run an SSR pass where
+  // `document` doesn't exist.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -29,7 +42,7 @@ export default function MobileMenuIsland() {
       >
         <BurgerIcon isOpen={isOpen} />
       </button>
-      <MobileMenu isOpen={isOpen} />
+      {mounted && createPortal(<MobileMenu isOpen={isOpen} />, document.body)}
     </>
   );
 }
