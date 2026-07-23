@@ -14,6 +14,7 @@ import type { CodeSnippet } from '@/types/CodeSnippet';
 
 export interface IntroProps {
   codeSnippets: CodeSnippet[];
+  snippetsUpdatedAt: string;
   greeting: string;
   shortInfo: {
       title: string;
@@ -24,9 +25,9 @@ export interface IntroProps {
 
 const Sep = () => <span className='text-gray-400 dark:text-gray-500'>·</span>;
 
-const Intro = ({ greeting, shortInfo, codeSnippets }: IntroProps) => {
+const Intro = ({ greeting, shortInfo, codeSnippets, snippetsUpdatedAt }: IntroProps) => {
   return (
-    <div className='mb-6 flex min-h-fit flex-col pb-6'>
+    <div className='mb-6 flex min-h-fit flex-col pb-2'>
       <h1 className='pb-6 sm:pb-8 text-5xl antialiased'>
         <span className={clsxm(styles.greeting, 'drop-shadow-lg')}>
           {greeting}
@@ -68,10 +69,10 @@ const Intro = ({ greeting, shortInfo, codeSnippets }: IntroProps) => {
         </div>
       </div>
 
-      <div className='mt-2 flex flex-col-reverse lg:flex-row gap-3 md:gap-10'>
+      <div className='mt-2 flex flex-col-reverse lg:flex-row gap-3 lg:gap-10'>
         <TagCloud />
 
-        <Terminal codeSnippets={shuffleArray(codeSnippets)} />
+        <Terminal codeSnippets={shuffleArray(codeSnippets)} updatedAt={snippetsUpdatedAt} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ConsoleEasterEgg from '@/components/atoms/ConsoleEasterEgg';
 import Intro from '@/components/organisms/home/Intro';
 import Projects from '@/components/organisms/home/Projects';
 import SkillSummary from '@/components/organisms/home/SkillSummary';
@@ -13,19 +14,22 @@ import type {Project} from '@/types/Project';
 type HomePageProps = {
   homePage: HomepageContent;
   codeSnippets: CodeSnippet[];
+  snippetsUpdatedAt: string;
   projects: Project[];
 };
 
 export default function HomePage({
   homePage,
   codeSnippets,
+  snippetsUpdatedAt,
   projects,
 }: HomePageProps) {
   return (
     <section className='dark:bg-dark bg-almost-white'>
+      <ConsoleEasterEgg />
       <div className='dark:bg-gradient-linear-dark bg-gradient-linear-light'>
         <div className='layout relative flex flex-col py-16 md:pt-24 pb-5 md:pb-12'>
-          <Intro greeting={homePage.greeting} shortInfo={homePage.shortInfo} codeSnippets={codeSnippets} />
+          <Intro greeting={homePage.greeting} shortInfo={homePage.shortInfo} codeSnippets={codeSnippets} snippetsUpdatedAt={snippetsUpdatedAt} />
         </div>
       </div>
 

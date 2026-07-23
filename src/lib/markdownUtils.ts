@@ -2,13 +2,14 @@ import fs from 'fs';
 import moment from 'moment';
 import path from 'path';
 
-import type { CodeSnippet } from '@/types/CodeSnippet';
+import type { CodeSnippet, CodeSnippetData } from '@/types/CodeSnippet';
 import type { MarkdownData, MarkdownSection } from '@/types/Markdown';
 
-const readCodeSnippets = (): CodeSnippet[] => {
+const readCodeSnippets = (): CodeSnippetData => {
   const directory = 'src/data/code-snippets';
   const markdownFiles = fs.readdirSync(directory);
-  const markdownData: CodeSnippet[] = [];
+  const snippets: CodeSnippet[] = [];
+  let latestEditTimestamp = moment(0); // Initialize with a default value
 
   markdownFiles.forEach((filename, id) => {
     const filePath = path.join(directory, filename);
@@ -16,14 +17,19 @@ const readCodeSnippets = (): CodeSnippet[] => {
       .readFileSync(filePath, 'utf-8')
       .replaceAll('```', '')
       .replace(/^\n|\n$/g, ''); // Remove leading and trailing \n
-    markdownData.push({
+    snippets.push({
       id,
       language: filename.replace('.md', ''),
       code: content,
     });
+
+    const fileTimestamp = moment(fs.statSync(filePath).mtime);
+    if (fileTimestamp.isAfter(latestEditTimestamp)) {
+      latestEditTimestamp = fileTimestamp;
+    }
   });
 
-  return markdownData;
+  return { snippets, latestEditTimestamp: latestEditTimestamp.toISOString() };
 };
 
 export const readMarkdownData = (containingFolder: string): MarkdownData => {

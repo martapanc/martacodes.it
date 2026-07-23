@@ -15,7 +15,7 @@ const projects: Project[] = (projectsData as Project[]).map((project) => {
   return project;
 });
 
-const codeSnippets = readCodeSnippets();
+const { snippets: codeSnippets, latestEditTimestamp } = readCodeSnippets();
 ---
 
 <RootLayout
@@ -25,6 +25,7 @@ const codeSnippets = readCodeSnippets();
   <HomePage
     homePage={homePageData}
     codeSnippets={codeSnippets}
+    snippetsUpdatedAt={latestEditTimestamp}
     projects={projects}
     client:only="react"
   />

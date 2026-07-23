@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from '@/hooks/useTheme';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import TerminalFrame from '@/components/molecules/TerminalFrame/TerminalFrame';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
@@ -58,15 +58,98 @@ import type { CodeSnippet } from '@/types/CodeSnippet';
 import Typed from 'typed.js';
 import type { TypedOptions } from 'typed.js';
 
+// File extension shown in the terminal bar, per snippet language.
+// Languages missing here fall back to the language name itself.
+const fileExtensions: { [language: string]: string } = {
+  angular: 'component.ts',
+  bash: 'sh',
+  csharp: 'cs',
+  kotlin: 'kt',
+  makefile: 'mk',
+  python: 'py',
+  react: 'jsx',
+  rust: 'rs',
+  typescript: 'ts',
+  yaml: 'yml',
+};
+
+const fileNameFor = (snippet?: CodeSnippet) =>
+  snippet ? `marta.${fileExtensions[snippet.language] ?? snippet.language}` : 'marta.info';
+
+// Live caret position, read straight off the text typed.js has emitted so far.
+const CaretPosition = () => {
+  const [caret, setCaret] = useState({ line: 1, col: 1 });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const lines = (document.getElementById('typed')?.textContent ?? '').split('\n');
+      const line = lines.length;
+      const col = lines[lines.length - 1].length + 1;
+      // Same object when nothing moved, so idle ticks don't re-render
+      setCaret((prev) => (prev.line === line && prev.col === col ? prev : { line, col }));
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span>
+      Ln {caret.line}, Col {caret.col}
+    </span>
+  );
+};
+
 export interface CodeSnippetsProps {
   codeSnippets: CodeSnippet[];
+  updatedAt: string;
 }
 
-const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
+// Same source as the "Last update" stamps elsewhere on the site: the newest
+// file timestamp, which on a fresh deploy is the deploy itself
+const formatUpdatedAt = (isoTimestamp: string) =>
+  new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' })
+    .format(new Date(isoTimestamp));
+
+const Terminal = ({ codeSnippets, updatedAt }: CodeSnippetsProps) => {
   const [loading, setLoading] = useState(true);
+  const [activeLanguage, setActiveLanguage] = useState(codeSnippets[0]?.language);
   const { theme } = useTheme();
 
   const ideStyle = theme === 'dark' ? customDark : customLight;
+  const currentSnippet =
+    codeSnippets.find((snippet) => snippet.language === activeLanguage) ?? codeSnippets[0];
+
+  // The snippet on screen is read back off the DOM rather than from a typed.js
+  // callback: preStringTyped never fires for these strings, because they open
+  // with a tag and typed.js only fires it when typing resumes at position 0.
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const highlighted = document.querySelector('#typed code[class*="language-"]');
+      const language = highlighted?.className.match(/language-(\S+)/)?.[1];
+      // Mid-transition the tag is incomplete, so keep the last known language
+      if (language) setActiveLanguage(language);
+    }, 250);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Highlighted once per theme change, so updating the file name on each
+  // snippet doesn't re-run the highlighter over the whole list.
+  const highlightedSnippets = useMemo(
+    () =>
+      codeSnippets.map((snippet) => (
+        <SyntaxHighlighter
+          className='text-xs md:text-base'
+          key={snippet.id}
+          language={snippet.language}
+          style={ideStyle}
+          wrapLongLines={true}
+        >
+          {snippet.code}
+        </SyntaxHighlighter>
+      )),
+    [codeSnippets, ideStyle]
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -104,25 +187,31 @@ const Terminal = ({ codeSnippets }: CodeSnippetsProps) => {
 
   return (
     <TerminalFrame
-        className='w-full lg:w-1/2 h-60 lg:h-72 drop-shadow-lg'
-        fileName="marta.info"
-        fileMeta="last modified 2026-05-24"
+        className='w-full lg:w-1/2 h-65 lg:h-78 drop-shadow-lg'
+        fileName={fileNameFor(currentSnippet)}
+        fileMeta={`last modified ${formatUpdatedAt(updatedAt)}`}
+        statusBar={
+          <>
+            <CaretPosition />
+            <span className='ml-auto flex items-center gap-2'>
+              <span>UTF-8</span>
+              <span>·</span>
+              <span>LF</span>
+              <span className='hidden sm:inline'>·</span>
+              <span
+                className='hidden sm:inline'
+                title="psst — there's something waiting in the console"
+              >
+                F12 👀
+              </span>
+            </span>
+          </>
+        }
     >
-      <div className='h-full rounded-b-lg border-double bg-terminal-light dark:bg-terminal-dark px-4 pt-2.5 pb-6'>
+      <div className='h-full border-double bg-terminal-light dark:bg-terminal-dark px-4 pt-2.5 pb-2'>
         <div id='typed-strings' style={{ display: 'none' }}>
           {loading ? <span className='cursor-blink'>_</span> : null}
-          {!loading &&
-            codeSnippets.map((snippet) => (
-              <SyntaxHighlighter
-                className='text-xs md:text-base'
-                key={snippet.id}
-                language={snippet.language}
-                style={ideStyle}
-                wrapLongLines={true}
-              >
-                {snippet.code}
-              </SyntaxHighlighter>
-            ))}
+          {!loading && highlightedSnippets}
         </div>
         <span id='typed'></span>
       </div>

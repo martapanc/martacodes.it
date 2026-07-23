@@ -53,6 +53,14 @@
   --animate-flicker: flicker 3s linear infinite;
   --animate-shimmer: shimmer 1.3s linear infinite;
   --animate-waving-hand: waving 2.5s linear 2;
+  --animate-file-fade: file-fade 500ms ease-in-out;
+}
+
+/* Eases in from dim rather than from nothing, so a changing file name
+   settles in instead of blinking */
+@keyframes file-fade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
 }
 
 @keyframes flicker {

@@ -52,7 +52,7 @@ const TagCloud = () => {
   return (
     <TerminalFrame
         fileName="what-i'm-made-of.png"
-        className='w-full mt-6 h-80 md:h-65 lg:h-72 lg:w-1/2 lg:mt-0 drop-shadow-lg'
+        className='w-full mt-6 h-80 md:h-65 lg:h-78 lg:w-1/2 lg:mt-0 drop-shadow-lg'
     >
       <div
         ref={containerRef}
