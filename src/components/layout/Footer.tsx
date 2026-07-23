@@ -1,16 +1,12 @@
-import type { IconType } from 'react-icons';
-import { FiLinkedin, FiMail } from 'react-icons/fi';
-import {
-  SiGithub,
-  SiGoodreads,
-  SiInstagram,
-  SiMedium,
-  SiSteam,
-  SiThreads,
-  SiYoutube,
-} from 'react-icons/si';
+import { Icon, addCollection } from '@iconify/react';
+import feather from '@iconify-json/feather/icons.json';
+import simpleIcons from '@iconify-json/simple-icons/icons.json';
 
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
+
+// Register icon sets for client-side rendering
+addCollection(simpleIcons as Parameters<typeof addCollection>[0]);
+addCollection(feather as Parameters<typeof addCollection>[0]);
 
 export default function Footer() {
   return (
@@ -57,7 +53,8 @@ function SocialLinks() {
           href={'mailto:' + emailAddress}
           className='focus-visible:ring-primary-300 rounded-sm align-middle focus:outline-none focus-visible:ring'
         >
-          <FiMail
+          <Icon
+            icon='feather:mail'
             className='hover:text-primary-500 dark:hover:text-primary-300 h-7 w-7 align-middle text-blue-900 dark:text-gray-300'
             aria-label='Send an Email'
           />
@@ -70,8 +67,8 @@ function SocialLinks() {
           href={socialLink.href}
           aria-label={socialLink.id}
         >
-          <socialLink.icon
-            size={50}
+          <Icon
+            icon={socialLink.icon}
             aria-label={socialLink.id}
             className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300'
           />
@@ -122,48 +119,48 @@ const footerLinks: FooterLink[] = [
 
 type SocialLink = {
   href: string;
-  icon: IconType;
+  icon: string;
   id: string;
 };
 const socialLinks: SocialLink[] = [
   {
     href: 'https://github.com/martapanc',
-    icon: SiGithub,
+    icon: 'simple-icons:github',
     id: 'Github',
   },
   {
     href: 'https://www.linkedin.com/in/martapancaldi',
-    icon: FiLinkedin,
+    icon: 'simple-icons:linkedin',
     id: 'Linkedin',
   },
   {
     href: 'https://www.instagram.com/pancakemarta',
-    icon: SiInstagram,
+    icon: 'simple-icons:instagram',
     id: 'Instagram',
   },
   {
     href: 'https://www.threads.net/@pancakemarta',
-    icon: SiThreads,
+    icon: 'simple-icons:threads',
     id: 'Threads',
   },
   {
     href: 'https://medium.com/@marta.panc',
-    icon: SiMedium,
+    icon: 'simple-icons:medium',
     id: 'Medium',
   },
   {
     href: 'https://www.goodreads.com/topolinamarta',
-    icon: SiGoodreads,
+    icon: 'simple-icons:goodreads',
     id: 'Goodreads',
   },
   {
     href: 'https://youtube.com/@pancakemarta',
-    icon: SiYoutube,
+    icon: 'simple-icons:youtube',
     id: 'Youtube',
   },
   {
     href: 'https://steamcommunity.com/id/martap/',
-    icon: SiSteam,
+    icon: 'simple-icons:steam',
     id: 'Steam',
   },
 ];
