@@ -1,0 +1,107 @@
+---
+export interface Props {
+  href: string;
+  ariaLabel: string;
+}
+
+const { href, ariaLabel } = Astro.props;
+---
+
+{/*
+  A dog-eared page corner, in the style of an e-reader's curled page.
+
+  Drawn as SVG rather than a CSS clip-path because the curl's free edge is a
+  curve, which clip-path can't express. Both shapes live in one <svg> so the
+  underside and the flap share the exact same crease line and meet seamlessly:
+  the flap's closing `Z` and the underside's hypotenuse are the same diagonal.
+  Everything below/left of the curl stays transparent, so the page itself shows
+  through there — that gap is what makes the corner read as rolled rather than
+  cut off.
+*/}
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  aria-label={ariaLabel}
+  class='cursor-newtab group pointer-events-none absolute right-0 top-0 hidden h-14 w-14 transition-[width,height] duration-500 ease-out hover:h-44 hover:w-44 lg:block'
+>
+  <svg viewBox='0 0 100 100' class='absolute inset-0 h-full w-full overflow-visible'>
+    <defs>
+      <linearGradient
+        id='mc-corner-fold-paper'
+        gradientUnits='userSpaceOnUse'
+        x1='65'
+        y1='35'
+        x2='5'
+        y2='95'
+      >
+        <stop offset='0' class='[stop-color:#ffffff] dark:[stop-color:#4a5872]' />
+        <stop offset='0.35' class='[stop-color:#fdfcf7] dark:[stop-color:#3e4a60]' />
+        <stop offset='0.72' class='[stop-color:#f1ede1] dark:[stop-color:#2e3849]' />
+        <stop offset='1' class='[stop-color:#cfc9b4] dark:[stop-color:#1a212c]' />
+      </linearGradient>
+
+      {/*
+        Two shadows rather than one: lifted paper casts a tight, dark contact
+        shadow where it almost touches the page, plus a broad faint one from
+        the light it blocks overall. A single feDropShadow can only be one or
+        the other, which is what made the curl read as a flat sticker.
+
+        Both are built from SourceAlpha and combined with feMerge, rather than
+        chaining two feDropShadows — chaining would shadow the first shadow and
+        paint the result over the flap itself.
+      */}
+      <filter id='mc-corner-fold-shadow' x='-60%' y='-60%' width='240%' height='240%'>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='5' result='ambientBlur' />
+        <feOffset in='ambientBlur' dx='-4' dy='5' result='ambientOffset' />
+        <feFlood flood-color='#0b1220' flood-opacity='0.18' result='ambientColor' />
+        <feComposite in='ambientColor' in2='ambientOffset' operator='in' result='ambient' />
+
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1.2' result='contactBlur' />
+        <feOffset in='contactBlur' dx='-1' dy='1.5' result='contactOffset' />
+        <feFlood flood-color='#0b1220' flood-opacity='0.45' result='contactColor' />
+        <feComposite in='contactColor' in2='contactOffset' operator='in' result='contact' />
+
+        <feMerge>
+          <feMergeNode in='ambient' />
+          <feMergeNode in='contact' />
+          <feMergeNode in='SourceGraphic' />
+        </feMerge>
+      </filter>
+    </defs>
+
+    {/*
+      Pointer events live on the paths, not the <a>, which is why the anchor
+      above is pointer-events-none. The anchor is a square, but the fold only
+      fills the corner of it — leaving the square clickable meant the expanded
+      fold swallowed clicks aimed at the theme toggle beneath it. Hover and
+      activation still reach the anchor by bubbling up from these paths.
+    */}
+
+    {/* The next page, revealed where the corner used to be */}
+    <path
+      d='M0,0 L100,0 L100,100 Z'
+      class='pointer-events-auto fill-primary-800 dark:fill-primary-900'
+    />
+
+    {/* The corner itself, curled over to show the back of the page */}
+    <path
+      d='M0,0 C1,38 5,70 16,84 C30,96 62,100 100,100 Z'
+      class='pointer-events-auto'
+      fill='url(#mc-corner-fold-paper)'
+      filter='url(#mc-corner-fold-shadow)'
+    />
+  </svg>
+
+  {/*
+    Timing is asymmetric on purpose. The delay belongs to the fade-in only, so
+    the label waits for the corner to open; on the way out it has to clear
+    before the corner shrinks past it, or it stays legible while the fold
+    closes underneath it.
+  */}
+  <span
+    class='pointer-events-none absolute inset-0 flex items-start justify-end p-3 text-right text-[11px] font-semibold leading-tight text-white opacity-0 transition-opacity delay-0 duration-150 group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300'
+  >
+    <slot />
+  </span>
+</a>
