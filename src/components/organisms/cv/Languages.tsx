@@ -16,7 +16,10 @@ const Languages = ({ languages }: LanguageProps) => {
     <div className='mb-6 mt-4'>
       <SectionHeading icon='https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/internet_60bf166c34.svg' title='Languages' />
 
-      <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 justify-items-center'>
+      <div
+        className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 justify-items-center'
+        data-reveal-group
+      >
         {languages.map((language, id) => (
           <div
             key={id}

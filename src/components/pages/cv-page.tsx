@@ -39,29 +39,31 @@ export default function CvPage({
       <div className='layout relative flex flex-col py-12'>
         <Heading title='My CV' />
 
-        <Intro intro={intro} />
+        <div data-reveal-group>
+          <Intro intro={intro} />
 
-        <Skills skills={skills} />
+          <Skills skills={skills} />
 
-        <hr />
+          <hr />
 
-        <WorkExperience jobs={jobs} />
+          <WorkExperience jobs={jobs} />
 
-        <hr />
+          <hr />
 
-        <Education schools={schools} />
+          <Education schools={schools} />
 
-        <hr />
+          <hr />
 
-        <Languages languages={languages} />
+          <Languages languages={languages} />
 
-        <hr />
+          <hr />
 
-        <Publications publications={publications} />
+          <Publications publications={publications} />
 
-        <hr />
+          <hr />
 
-        <CvCard />
+          <CvCard />
+        </div>
       </div>
     </section>
   );

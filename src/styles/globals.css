@@ -343,3 +343,52 @@
     @apply border-gray-300 dark:border-gray-200/0;
   }
 }
+
+/* #region  !**=========== Progressive reveal =========== */
+
+/* Children of a `[data-reveal-group]` fade up as they enter the viewport,
+   staggered top to bottom. Scoped to `.js-reveal`, which the head script only
+   adds once it knows it can undo it — without JS nothing is ever hidden.
+
+   Uses `animation` rather than `transition` deliberately: these elements
+   already carry Tailwind `transition` utilities for their hover states, and a
+   competing `transition` shorthand here would wipe those out. The movement is
+   `transform`, which composes with the `translate` property Tailwind v4 uses
+   for `-translate-y-*`.
+
+   No animation-delay and no fill-mode, also deliberately. The stagger is
+   scheduled in JS, so `opacity: 1` below is the real resting state rather than
+   just the animation's last keyframe — a fill-mode of `both` would outrank it
+   and pin the item at opacity 0 for the whole delay, leaving content invisible
+   anywhere the animation clock doesn't advance (a background tab, an engine
+   that drops the animation). */
+.js-reveal [data-reveal-group] > * {
+  opacity: 0;
+}
+
+.js-reveal [data-reveal-group] > [data-revealed] {
+  opacity: 1;
+  animation: reveal-in 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal-group] > * {
+    opacity: 1;
+  }
+
+  .js-reveal [data-reveal-group] > [data-revealed] {
+    animation: none;
+  }
+}
+/* #endregion  !**======== Progressive reveal =========== */

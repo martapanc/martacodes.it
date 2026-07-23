@@ -49,30 +49,32 @@ export default function RecruitersPage({
       <div className='layout relative flex flex-col py-12 recruiters-info'>
         <Heading title='Info for Recruiters' />
 
-        <div className={clsxm(styles['recruiters-info'], 'mb-2')}>
-          <ReactMarkdown
-            rehypePlugins={[rehypeRaw]}
-          >
-            {recruitersData.markdownSections[0].content}
-          </ReactMarkdown>
+        <div data-reveal-group>
+          <div className={clsxm(styles['recruiters-info'], 'mb-2')}>
+            <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
+            >
+              {recruitersData.markdownSections[0].content}
+            </ReactMarkdown>
+          </div>
+
+          <SalaryHappinessTool salaryData={salaryData} config={config} />
+
+          <div className={clsxm(styles['recruiters-info'], 'mb-4')}>
+            <ReactMarkdown
+
+              rehypePlugins={[rehypeRaw]}
+            >
+              {removeFlagEmojisIfWindowsOS(
+                recruitersData.markdownSections[1].content,
+              )}
+            </ReactMarkdown>
+          </div>
+
+          <hr />
+
+          <UpdateTimestamp updatedAt={recruitersData.latestEditTimestamp} />
         </div>
-
-        <SalaryHappinessTool salaryData={salaryData} config={config} />
-
-        <div className={clsxm(styles['recruiters-info'], 'mb-4')}>
-          <ReactMarkdown
-
-            rehypePlugins={[rehypeRaw]}
-          >
-            {removeFlagEmojisIfWindowsOS(
-              recruitersData.markdownSections[1].content,
-            )}
-          </ReactMarkdown>
-        </div>
-
-        <hr />
-
-        <UpdateTimestamp updatedAt={recruitersData.latestEditTimestamp} />
       </div>
     </section>
   );

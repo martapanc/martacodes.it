@@ -14,7 +14,10 @@ const UpdatesSummary = ({ updates }: UpdatesProps) => {
       <div className='tracking-widest text-sm font-semibold text-slate-600 dark:text-slate-400 mb-5 text-end'>
         UPDATES
       </div>
-      <div className='flex md:flex-row flex-col gap-6 w-full justify-between'>
+      <div
+        className='flex md:flex-row flex-col gap-6 w-full justify-between'
+        data-reveal-group
+      >
         <div className='text-lg antialiased flex-row'>
           <div
             className='text-3xl text-[#003e16] dark:text-[#5fff98] mb-1'

@@ -88,32 +88,34 @@ export default function AboutPage({
       <div className='layout relative flex flex-col py-12'>
         <Heading title='About me' />
 
-        <div className='mb-5'>
-          <p>
-            Programming means great fun for me, but it&apos;s not the only
-            activity I enjoy. <br />
-            Here&apos;s an overview of non-computer related things I love doing
-            in my free time :)
-          </p>
+        <div data-reveal-group>
+          <div className='mb-5'>
+            <p>
+              Programming means great fun for me, but it&apos;s not the only
+              activity I enjoy. <br />
+              Here&apos;s an overview of non-computer related things I love doing
+              in my free time :)
+            </p>
+          </div>
+
+          <Books books={books} />
+
+          <Podcasts podcasts={podcasts} />
+
+          <VideoGames videoGames={videoGames} />
+
+          <TvSeries tvShows={tvShows} />
+
+          <Music />
+
+          <RandomFacts
+            options={randomFactsData.options}
+            falseOption={randomFactsData.falseOption}
+            trueFacts={randomFactsData.trueFacts}
+          />
+
+          <Travel />
         </div>
-
-        <Books books={books} />
-
-        <Podcasts podcasts={podcasts} />
-
-        <VideoGames videoGames={videoGames} />
-
-        <TvSeries tvShows={tvShows} />
-
-        <Music />
-
-        <RandomFacts
-          options={randomFactsData.options}
-          falseOption={randomFactsData.falseOption}
-          trueFacts={randomFactsData.trueFacts}
-        />
-
-        <Travel />
       </div>
     </section>
   );

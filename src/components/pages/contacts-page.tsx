@@ -9,8 +9,10 @@ export default function ContactsPage() {
       <div className='layout relative flex flex-col py-12'>
         <Heading title='Contact me' />
 
-        <div className='bg-slate-50 dark:bg-slate-900 rounded-lg p-4 md:px-8 lg:px-10 w-full lg:w-4/5'>
-          <ContactForm />
+        <div data-reveal-group>
+          <div className='bg-slate-50 dark:bg-slate-900 rounded-lg p-4 md:px-8 lg:px-10 w-full lg:w-4/5'>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>

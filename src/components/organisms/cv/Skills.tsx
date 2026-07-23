@@ -26,7 +26,10 @@ const Skills = ({ skills }: SkillsProps) => {
 
   return (
     <div className='mb-4'>
-      <div className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'>
+      <div
+        className='mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6'
+        data-reveal-group
+      >
         {displayedSkills.map((skill: Skill) => (
           <SkillCard skill={skill} key={skill.title} />
         ))}

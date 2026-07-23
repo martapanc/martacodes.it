@@ -15,7 +15,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
       <div className='layout relative flex flex-col py-12'>
         <Heading title='Projects' />
 
-        <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+        <div className='grid gap-4 sm:grid-cols-2 xl:grid-cols-3' data-reveal-group>
           {projects.map((project, id) => (
             <ProjectCard key={id} project={project} />
           ))}

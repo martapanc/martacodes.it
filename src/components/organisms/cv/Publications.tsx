@@ -17,7 +17,10 @@ const Publications = ({ publications }: PublicationProps) => {
     <div className='mb-6 mt-4'>
       <SectionHeading icon='https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/newspaper_e15ec94d21.svg' title='Publications' />
 
-      <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-8'>
+      <div
+        className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-8'
+        data-reveal-group
+      >
         {publications.map((publication, id) => (
           <div
             key={id}

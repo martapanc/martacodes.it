@@ -54,6 +54,114 @@ const {
         document.documentElement.classList.add(theme);
       })();
     </script>
+
+    <!--
+      Staggered reveal for `[data-reveal-group]` children.
+
+      Inline and in the head on purpose: the `js-reveal` class has to land
+      before first paint, or items flash in at full opacity and then get
+      hidden. Everything stays in one script so there is no separate file that
+      can fail to load and leave the page permanently blank — and if anything
+      here throws, the catch drops the class and the page renders as plain,
+      visible HTML.
+    -->
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var show = function () {
+          root.classList.remove('js-reveal');
+        };
+
+        if (!('IntersectionObserver' in window)) return;
+        root.classList.add('js-reveal');
+
+        try {
+          var revealedAny = false;
+          var known = new WeakSet();
+
+          var io = new IntersectionObserver(
+            function (entries) {
+              // Stagger within each batch rather than by index in the group:
+              // item 40 shouldn't wait 40 steps, and a row scrolled into view
+              // should still cascade.
+              entries
+                .filter(function (entry) {
+                  return entry.isIntersecting;
+                })
+                .sort(function (a, b) {
+                  return a.boundingClientRect.top - b.boundingClientRect.top;
+                })
+                .forEach(function (entry, index) {
+                  var el = entry.target;
+                  io.unobserve(el);
+                  // Stagger with timers rather than animation-delay — see the
+                  // note in globals.css.
+                  setTimeout(function () {
+                    revealedAny = true;
+                    el.setAttribute('data-revealed', '');
+                  }, index * 70);
+                });
+            },
+            { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+          );
+
+          // Only arm once there is actually something to reveal. Every page
+          // here is `client:only`, so React may take a while to render — a
+          // timer started up front would fire against an empty document and
+          // switch the effect off before it ever ran.
+          var armed = false;
+          var armFailsafe = function () {
+            if (armed) return;
+            armed = true;
+            var start = function () {
+              setTimeout(function () {
+                if (!revealedAny) show();
+              }, 3000);
+            };
+            if (document.hidden) {
+              document.addEventListener(
+                'visibilitychange',
+                function onVisible() {
+                  if (document.hidden) return;
+                  document.removeEventListener('visibilitychange', onVisible);
+                  start();
+                }
+              );
+            } else {
+              start();
+            }
+          };
+
+          var scan = function () {
+            var items = document.querySelectorAll('[data-reveal-group] > *');
+            for (var i = 0; i < items.length; i++) {
+              if (known.has(items[i])) continue;
+              known.add(items[i]);
+              io.observe(items[i]);
+            }
+            if (items.length) armFailsafe();
+          };
+
+          // The pages are `client:only="react"`, so none of this markup exists
+          // at DOMContentLoaded — it has to be picked up as React inserts it.
+          // Debounced to one scan per frame, since this watches the whole tree
+          // and React re-renders on interaction.
+          var queued = false;
+          var mo = new MutationObserver(function () {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(function () {
+              queued = false;
+              scan();
+            });
+          });
+          mo.observe(root, { childList: true, subtree: true });
+          scan();
+        } catch (e) {
+          show();
+        }
+      })();
+    </script>
   </head>
 
   <body>

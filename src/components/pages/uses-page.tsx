@@ -21,30 +21,32 @@ export default function UsesPage({ usesData }: UsesPageProps) {
       <div className='layout relative flex flex-col py-12'>
         <Heading title='Uses' />
 
-        <div className='flex items-center flex-col my-3'>
-          <img
-            className='mb-2'
-            src='https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_540/v1698432934/current_setup.jpg'
-            alt='Current setup'
-            width={540}
-            height={400}
-          />
-          <span className='italic'>My current workstation setup</span>
-        </div>
-
-        {usesData.markdownSections.map((section, id) => (
-          <div
-            className={clsxm(styles['uses-section'], 'mb-2')}
-            aria-label={section.title}
-            key={id}
-          >
-            <ReactMarkdown>{section.content}</ReactMarkdown>
+        <div data-reveal-group>
+          <div className='flex items-center flex-col my-3'>
+            <img
+              className='mb-2'
+              src='https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_540/v1698432934/current_setup.jpg'
+              alt='Current setup'
+              width={540}
+              height={400}
+            />
+            <span className='italic'>My current workstation setup</span>
           </div>
-        ))}
 
-        <hr className='my-8' />
+          {usesData.markdownSections.map((section, id) => (
+            <div
+              className={clsxm(styles['uses-section'], 'mb-2')}
+              aria-label={section.title}
+              key={id}
+            >
+              <ReactMarkdown>{section.content}</ReactMarkdown>
+            </div>
+          ))}
 
-        <UpdateTimestamp updatedAt={usesData.latestEditTimestamp} />
+          <hr className='my-8' />
+
+          <UpdateTimestamp updatedAt={usesData.latestEditTimestamp} />
+        </div>
       </div>
     </section>
   );
