@@ -23,9 +23,12 @@ const { href, ariaLabel } = Astro.props;
   target='_blank'
   rel='noopener noreferrer'
   aria-label={ariaLabel}
-  class='cursor-newtab group pointer-events-none absolute right-0 top-0 hidden h-14 w-14 transition-[width,height] duration-500 ease-out hover:h-44 hover:w-44 lg:block'
+  class='cursor-newtab group pointer-events-none absolute right-0 top-0 hidden h-16 w-16 transition-[width,height] duration-500 ease-out hover:h-48 hover:w-48 lg:block'
 >
-  <svg viewBox='0 0 100 100' class='absolute inset-0 h-full w-full overflow-visible'>
+  <svg
+    viewBox='0 0 100 100'
+    class='absolute inset-0 h-full w-full overflow-visible drop-shadow-[-3px_4px_5px_rgba(2,6,23,0.35)] dark:drop-shadow-[-3px_4px_6px_rgba(0,0,0,0.6)]'
+  >
     <defs>
       <linearGradient
         id='mc-corner-fold-paper'
@@ -81,7 +84,7 @@ const { href, ariaLabel } = Astro.props;
     {/* The next page, revealed where the corner used to be */}
     <path
       d='M0,0 L100,0 L100,100 Z'
-      class='pointer-events-auto fill-primary-800 dark:fill-primary-900'
+      class='pointer-events-auto fill-primary-600 dark:fill-primary-800'
     />
 
     {/* The corner itself, curled over to show the back of the page */}
@@ -94,14 +97,30 @@ const { href, ariaLabel } = Astro.props;
   </svg>
 
   {/*
-    Timing is asymmetric on purpose. The delay belongs to the fade-in only, so
-    the label waits for the corner to open; on the way out it has to clear
-    before the corner shrinks past it, or it stays legible while the fold
-    closes underneath it.
+    The label is printed on the revealed page underneath the fold: it stays
+    hidden until hover, then fades in as the corner opens — it never peeks at
+    rest. The wrapper is a fixed size (matching the expanded fold, not the
+    resting one) so the text holds one position through the whole animation
+    instead of drifting as the fold grows, and it's clipped to the revealed
+    triangle so nothing spills onto the transparent page. The line is rotated
+    to run parallel to the crease, sitting evenly across the wedge at a fixed
+    size that doesn't shrink with the fold.
+
+    Fade timing is asymmetric: the delay belongs to the fade-in only, so the
+    label waits for the corner to open; on the way out it clears immediately,
+    before the fold shrinks past it.
   */}
   <span
-    class='pointer-events-none absolute inset-0 flex items-start justify-end p-3 text-right text-[11px] font-semibold leading-tight text-white opacity-0 transition-opacity delay-0 duration-150 group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300'
+    class='pointer-events-none absolute right-0 top-0 h-48 w-48 [clip-path:polygon(0_0,100%_0,100%_100%)] opacity-0 transition-opacity delay-0 duration-150 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300'
   >
-    <slot />
+    <span
+      class='absolute right-0 top-0 flex h-full w-full translate-x-[12%] translate-y-[-9%] items-center justify-center'
+    >
+      <span
+        class='rotate-45 whitespace-nowrap text-center text-[13px] font-bold leading-tight text-white'
+      >
+        <slot />
+      </span>
+    </span>
   </span>
 </a>
