@@ -27,7 +27,7 @@ const Sep = () => <span className='text-gray-400 dark:text-gray-500'>·</span>;
 
 const Intro = ({ greeting, shortInfo, codeSnippets, snippetsUpdatedAt }: IntroProps) => {
   return (
-    <div className='mb-6 flex min-h-fit flex-col pb-2'>
+    <div className='mb-6 flex min-h-fit flex-col pb-2 animate-hero-fade motion-reduce:animate-none'>
       <h1 className='pb-6 sm:pb-8 text-5xl antialiased'>
         <span className={clsxm(styles.greeting, 'drop-shadow-lg')}>
           {greeting}

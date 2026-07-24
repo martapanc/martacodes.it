@@ -59,7 +59,9 @@ const RecentProjectCard = ({
                 return (
                   IconComponent && (
                     <span key={tool} className='me-1' role='img' aria-label={tool}>
-                      <IconComponent />
+                      {/* The span carries the accessible name; the icon's own
+                          svg would otherwise be a second, unlabelled role=img */}
+                      <IconComponent aria-hidden={true} />
                     </span>
                   )
                 );
