@@ -45,6 +45,27 @@ const { href, ariaLabel } = Astro.props;
       </linearGradient>
 
       {/*
+        The shadow the lifted flap casts onto the revealed page. The gradient
+        axis is perpendicular to the crease (the vector (32,-32) points from the
+        diagonal toward the corner), so a stop's offset tracks distance from the
+        fold line: darkest right at the crease, gone by roughly two-thirds of the
+        way out. Painted as translucent black over the flat blue so the one
+        gradient darkens both the light and dark fills without per-theme stops.
+      */}
+      <linearGradient
+        id='mc-corner-fold-crease'
+        gradientUnits='userSpaceOnUse'
+        x1='0'
+        y1='0'
+        x2='32'
+        y2='-32'
+      >
+        <stop offset='0' stop-color='#000000' stop-opacity='0.4' />
+        <stop offset='0.5' stop-color='#000000' stop-opacity='0.12' />
+        <stop offset='1' stop-color='#000000' stop-opacity='0' />
+      </linearGradient>
+
+      {/*
         Two shadows rather than one: lifted paper casts a tight, dark contact
         shadow where it almost touches the page, plus a broad faint one from
         the light it blocks overall. A single feDropShadow can only be one or
@@ -87,6 +108,17 @@ const { href, ariaLabel } = Astro.props;
       class='pointer-events-auto fill-primary-600 dark:fill-primary-800'
     />
 
+    {/*
+      Shadow of the flap on that revealed page, clipped to the same triangle so
+      it can't spill past the blue. pointer-events-none so hover still reaches
+      the fill beneath it.
+    */}
+    <path
+      d='M0,0 L100,0 L100,100 Z'
+      class='pointer-events-none'
+      fill='url(#mc-corner-fold-crease)'
+    />
+
     {/* The corner itself, curled over to show the back of the page */}
     <path
       d='M0,0 C1,38 5,70 16,84 C30,96 62,100 100,100 Z'
@@ -111,13 +143,14 @@ const { href, ariaLabel } = Astro.props;
     before the fold shrinks past it.
   */}
   <span
-    class='pointer-events-none absolute right-0 top-0 h-48 w-48 [clip-path:polygon(0_0,100%_0,100%_100%)] opacity-0 transition-opacity delay-0 duration-150 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300'
+    class='pointer-events-none absolute right-0 top-0 h-48 w-48 overflow-hidden [clip-path:polygon(0_0,100%_0,100%_100%)] opacity-0 transition-opacity delay-0 duration-150 ease-out group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300'
   >
     <span
-      class='absolute right-0 top-0 flex h-full w-full translate-x-[12%] translate-y-[-9%] items-center justify-center'
+      class='absolute right-0 top-0 flex h-full w-full translate-x-[9%] translate-y-[-6%] items-center justify-center'
     >
       <span
-        class='rotate-45 whitespace-nowrap text-center text-[13px] font-bold leading-tight text-white'
+        class='rotate-45 whitespace-nowrap text-center text-[25px] font-semibold leading-tight text-white'
+        style={{ fontFamily: "'Caveat', cursive" }}
       >
         <slot />
       </span>
