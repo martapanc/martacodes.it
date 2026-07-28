@@ -54,12 +54,21 @@
   --animate-shimmer: shimmer 1.3s linear infinite;
   --animate-waving-hand: waving 2.5s linear 2;
   --animate-file-fade: file-fade 500ms ease-in-out;
+  --animate-hero-fade: hero-fade 0.6s ease-out;
 }
 
 /* Eases in from dim rather than from nothing, so a changing file name
    settles in instead of blinking */
 @keyframes file-fade {
   from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* One-shot fade for the homepage hero on load. No fill-mode and no resting
+   opacity:0 — if the animation never runs (reduced motion, no CSS animation
+   support) the element just stays visible rather than stuck invisible. */
+@keyframes hero-fade {
+  from { opacity: 0; }
   to { opacity: 1; }
 }
 

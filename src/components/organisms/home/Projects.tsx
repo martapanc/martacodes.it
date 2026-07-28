@@ -18,7 +18,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       <h2 className='tracking-widest text-sm font-semibold text-slate-600 dark:text-slate-400 mb-5'>
         RECENT PROJECTS
       </h2>
-      <div className='flex flex-col gap-6 w-full' data-reveal-group>
+      <div className='flex flex-col gap-6 w-full'>
         <RecentProjectCard project={projects[3]} reverse />
         <RecentProjectCard project={projects[0]}  />
         <RecentProjectCard project={projects[1]} reverse />

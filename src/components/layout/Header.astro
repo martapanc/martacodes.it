@@ -2,6 +2,7 @@
 import { links } from '@/data/navigation';
 import ThemeToggle from '@/components/molecules/ThemeToggle/ThemeToggle';
 import MobileMenuIsland from '@/components/molecules/MobileMenu/MobileMenuIsland';
+import CornerFold from '@/components/atoms/CornerFold.astro';
 
 const { pathname } = Astro.url;
 ---
@@ -42,5 +43,9 @@ const { pathname } = Astro.url;
 
       <MobileMenuIsland client:media="(max-width: 768px)" />
     </div>
+
+    <CornerFold href='https://things.martacodes.it' ariaLabel="There's a fun side — visit things.martacodes.it">
+      There's a fun side &rarr;
+    </CornerFold>
   </header>
 </div>
