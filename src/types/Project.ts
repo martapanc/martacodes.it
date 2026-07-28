@@ -9,6 +9,10 @@ export interface Project {
   tools: string[];
   date: string;
   tags: string[];
+  /** Promotes the project to the image-led block at the top of /projects. */
+  featured?: boolean;
+  /** Hidden from the site entirely; filtered out in projects.astro. */
+  wip?: boolean;
   links: {
     github?: string;
     github2?: string;
