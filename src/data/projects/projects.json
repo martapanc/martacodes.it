@@ -1,5 +1,22 @@
 [
   {
+    "title": "Language Transfer Companion",
+    "image": {
+      "name": "language-transfer-companion.webp",
+      "url": "/images/language-transfer-companion.webp"
+    },
+    "shortDescription": "Unofficial companion to the Language Transfer audio courses: per-track topic lists and downloadable flashcards",
+    "mediumDescription": "<a href=\"https://www.languagetransfer.org\" target=\"_blank\">Language Transfer</a> offers free audio language courses that teach you to think in a new language, with nothing to read and nothing to memorise. This unofficial companion adds the two things the audio doesn't come with: a searchable topic list for every track, so you can find or review a lesson, and downloadable CSV flashcard decks for when you do want to drill the vocabulary. Spanish, German, Italian and French are covered so far. Built with Astro as a fully prerendered static site — no client-side framework.",
+    "longDescription": "language-transfer-companion.md",
+    "tools": ["astro", "typescript", "tailwind", "nodejs"],
+    "date": "2026-07-25",
+    "tags": ["personal", "web", "astro"],
+    "links": {
+      "publicUrl": "https://language-transfer-companion.netlify.app/",
+      "github": "https://github.com/martapanc/language-transfer-companion"
+    }
+  },
+  {
     "title": "FlexInvoice",
     "image": {
       "name": "flexinvoice.webp",
@@ -311,18 +328,27 @@
     }
   },
   {
-    "title": "Werner's Restaurant",
+    "title": "Werner's Panini & Burgers",
     "image": {
       "name": "werners.webp",
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/v1697910083/werners_6e204f5195.webp"
     },
-    "shortDescription": "Java webapp for restaurant reservation and take-away management",
+    "shortDescription": "Restaurant reservation and take-away webapp, rebuilt from a Java uni project",
     "longDescription": "werners.md",
-    "tools": ["java", "spring", "javascript", "html", "css", "bootstrap"],
+    "tools": [
+      "java",
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "vercel",
+      "bootstrap"
+    ],
     "date": "2017-04-01",
-    "tags": ["uni", "java"],
+    "tags": ["uni", "java", "web", "nextjs", "react"],
     "links": {
-      "github": "https://github.com/martapanc/restaurantManager"
+      "publicUrl": "https://werners-panini-burgers.vercel.app/",
+      "github": "https://github.com/martapanc/werners"
     }
   },
   {
