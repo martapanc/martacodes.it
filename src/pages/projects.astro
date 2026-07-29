@@ -1,19 +1,9 @@
 ---
-import { readMarkdown } from '@/lib/markdownUtils';
+import { loadProjects } from '@/lib/loadProjects';
 import RootLayout from '@/layouts/RootLayout.astro';
 import ProjectsPage from '@/components/pages/projects-page';
 
-import projectsData from '@/data/projects/projects.json';
-import type { Project } from '@/types/Project';
-
-const projects: Project[] = (projectsData as Project[])
-  .filter((p) => !p.wip)
-  .map((project) => {
-    if (project.longDescription?.includes('.md')) {
-      return { ...project, longDescription: readMarkdown(`projects/${project.longDescription}`) };
-    }
-    return project;
-  });
+const projects = loadProjects();
 ---
 
 <RootLayout

@@ -24,7 +24,7 @@ const TerminalFrame = ({ className, fileName, fileMeta, statusBar, children }: T
       </div>
       {fileName && (
         // Stem and extension are keyed separately so only the part that
-        // actually changed replays the fade — switching marta.py to marta.cs
+        // actually changed replays the fade – switching marta.py to marta.cs
         // leaves "marta" untouched instead of blinking the whole name
         <span className='font-mono text-[11px] font-medium text-gray-700 dark:text-gray-300'>
           <span key={stem} className='animate-file-fade motion-reduce:animate-none'>{stem}</span>

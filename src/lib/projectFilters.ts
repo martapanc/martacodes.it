@@ -7,7 +7,7 @@ export type Category = (typeof CATEGORIES)[number];
 /**
  * The `tags` field grew organically: it mixes context (`work`, `uni`) with
  * technology (`react`, `java`) and one-offs (`gdpr`, `startup`), and spells the
- * same category two ways — `uni` on six projects, `university` on one. Rather
+ * same category two ways – `uni` on six projects, `university` on one. Rather
  * than filter on it directly, map the handful of context tags onto a fixed set
  * and ignore everything else. Technology filtering reads `tools` instead, which
  * is consistently named and already has icons mapped in Icons.ts.
@@ -72,7 +72,7 @@ const matchesQuery = (project: Project, query: string): boolean => {
 /**
  * Axes are ANDed, values within an axis are ORed: picking React *and* Python
  * widens the results rather than demanding both. That suits browsing, which is
- * what this page is for — the AND reading would return nothing for most pairs.
+ * what this page is for – the AND reading would return nothing for most pairs.
  */
 export const matchesFilters = (
   project: Project,
@@ -131,7 +131,7 @@ export const categoryCounts = (projects: Project[]): Map<Category, number> =>
   countBy(projects, categoriesOf) as Map<Category, number>;
 
 /**
- * Only years that actually have projects, newest first — 2015 and 2022 are
+ * Only years that actually have projects, newest first – 2015 and 2022 are
  * empty, and offering them as chips would just be dead options.
  */
 export const yearsByRecency = (

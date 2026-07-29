@@ -3,10 +3,10 @@
     "title": "Language Transfer Companion",
     "image": {
       "name": "language-transfer-companion.webp",
-      "url": "/images/language-transfer-companion.webp"
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785317449/Projects/language-transfer-companion_ceab9v.webp"
     },
     "shortDescription": "Unofficial companion to the Language Transfer audio courses: per-track topic lists and downloadable flashcards",
-    "mediumDescription": "<a href=\"https://www.languagetransfer.org\" target=\"_blank\">Language Transfer</a> offers free audio language courses that teach you to think in a new language, with nothing to read and nothing to memorise. This unofficial companion adds the two things the audio doesn't come with: a searchable topic list for every track, so you can find or review a lesson, and downloadable CSV flashcard decks for when you do want to drill the vocabulary. Spanish, German, Italian and French are covered so far. Built with Astro as a fully prerendered static site — no client-side framework.",
+    "mediumDescription": "<a href=\"https://www.languagetransfer.org\" target=\"_blank\">Language Transfer</a> offers free audio language courses that teach you to think in a new language, with nothing to read and nothing to memorise. This unofficial companion adds the two things the audio doesn't come with: a searchable topic list for every track, so you can find or review a lesson, and downloadable CSV flashcard decks for when you do want to drill the vocabulary. Spanish, German, Italian and French are covered so far. Built with Astro as a fully prerendered static site – no client-side framework.",
     "longDescription": "language-transfer-companion.md",
     "tools": ["astro", "typescript", "tailwind", "nodejs"],
     "date": "2026-07-25",
@@ -75,6 +75,136 @@
     }
   },
   {
+    "title": "AI Job Search",
+    "image": {
+      "name": "ai-job-search.webp",
+      "url": "/images/ai-job-search.webp"
+    },
+    "shortDescription": "Claude-driven pipeline that turns a job description into a grounded, tailored CV and cover letter",
+    "mediumDescription": "Paste a job description and get back a fit assessment, a tailored CV, a cover letter and drafted screening answers – all rendered to PDFs that match the Word-authored CV they replace. Every generated line has to cite an id from a corpus of real experience, and three Node scripts enforce that mechanically: unknown ids and uncited claims are rejected, house style and AI tells are flagged, and the rendered PDF is checked for text layer, reading order and keyword coverage. Anything that can't be traced back to the corpus gets deleted rather than softened.",
+    "longDescription": "ai-job-search.md",
+    "tools": ["nodejs", "typescript", "puppeteer", "bash"],
+    "date": "2026-07-24",
+    "tags": ["personal", "ai", "automation"],
+    "links": {}
+  },
+  {
+    "title": "Media Library Tools",
+    "image": {
+      "name": "media-library-tools.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785315743/Projects/Media_Library_Tools_ovxhak.webp"
+    },
+    "shortDescription": "Verifiable batch MP3 tag editing, built while rescuing a 12,000-track library",
+    "mediumDescription": "A Python toolkit for batch-editing tags across a large MP3 library without corrupting it. It diagnoses why albums split, fixes tag spam and mixed ID3 versions, and generates portable playlists – but the real feature is the safety core: every write dry-runs by default, backs up the original, and proves the audio bytes are untouched by hashing the MPEG payload with all tag containers stripped. You can't verify a tag write by comparing duration, which shifts on VBR files even when the audio is intact.",
+    "longDescription": "media-library-tools.md",
+    "tools": ["python", "bash"],
+    "date": "2026-07-20",
+    "tags": ["personal", "python", "cli"],
+    "links": {
+      "github": "https://github.com/martapanc/media-library-tools"
+    }
+  },
+  {
+    "title": "IDE Portfolio",
+    "image": {
+      "name": "ide-portfolio.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785316989/Projects/ide-portfolio_gawthn.webp"
+    },
+    "shortDescription": "An experiment in rendering a developer portfolio as a code editor",
+    "mediumDescription": "A portfolio that presents itself as an IDE: a file tree of index.tsx, about.md and cv.tsx, a tab bar, a status bar showing branch and build state, and a ⌘K command palette for navigating between \"files\". Built with Astro and React islands, with light and dark themes – the light one took longer, since a syntax palette designed for a dark editor collapses to unreadable contrast when you simply invert the background.",
+    "longDescription": "ide-portfolio.md",
+    "tools": ["astro", "react", "typescript", "css", "vercel"],
+    "date": "2026-05-26",
+    "tags": ["personal", "web", "astro", "react"],
+    "links": {
+      "publicUrl": "https://martas-ide-portfolio.vercel.app/",
+      "github": "https://github.com/martapanc/ide-portfolio"
+    }
+  },
+  {
+    "title": "Italy Job Hunter",
+    "image": {
+      "name": "job-hunter.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785316620/Projects/Italy_Job_Hunter_up5uyf.webp"
+    },
+    "shortDescription": "Fork of an AI job-hunting pipeline, retuned for signal quality over model quality",
+    "mediumDescription": "A fork of Simone Camerano's Italy Job Hunter, which searches the web with Tavily, triages results with a fast Groq model, analyses the survivors against your CV with DeepSeek-V3, and pushes match reports to Telegram. My additions target the false positives: a career-scan mode that visits curated company career pages directly with headless Playwright and reports only unseen postings, a day-of-week partitioned site list, geo-restriction triage for \"remote\" roles that aren't, and filters for stale results, forum hosts and login-walled domains.",
+    "longDescription": "job-hunter.md",
+    "tools": ["nodejs", "javascript", "telegram"],
+    "date": "2026-05-19",
+    "tags": ["personal", "ai", "automation"],
+    "links": {}
+  },
+  {
+    "title": "Linkarium",
+    "image": {
+      "name": "linkarium.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785317097/Projects/linkarium_kxqhnz.webp"
+    },
+    "shortDescription": "Drop your links, share the list – shareable link lists with automatic metadata scraping",
+    "mediumDescription": "Paste a pile of URLs, or a block of prose with links buried in it, and get back a clean shareable page with titles, descriptions, favicons and preview images already filled in. No signup needed to read a list. Built with Next.js 16, Supabase and Tailwind CSS 4 on Vercel, localised in English and Italian. The fiddliest part was the least glamorous: extracting URLs from arbitrary pasted text, where trailing punctuation and sentence parentheses quietly produce valid-but-wrong links.",
+    "longDescription": "linkarium.md",
+    "tools": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "supabase",
+      "vercel"
+    ],
+    "date": "2026-04-02",
+    "tags": ["personal", "web", "react"],
+    "links": {
+      "github": "https://github.com/martapanc/linkarium"
+    }
+  },
+  {
+    "title": "LinkedIn Job Filter",
+    "image": {
+      "name": "linkedin-job-filter.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785316883/Projects/LinkedIn_Job_Filter_firevr.webp"
+    },
+    "shortDescription": "Chrome extension that flags misleading \"remote\" job ads before you read them",
+    "mediumDescription": "An AI job-ad analyser that watches the LinkedIn job panel and injects a colour-coded verdict into each listing, with red flags, positives and key facts at a glance. Its headline check is the location reality check: does this \"remote\" role actually require local residency? Runs on Google Gemini's free tier or on a fully private local model via Ollama. Timezone comparisons are deliberately done in code rather than by the model – asking an LLM to do arithmetic on MST vs CET is a reliable way to get a confident wrong answer.",
+    "longDescription": "linkedin-job-filter.md",
+    "tools": ["chrome", "react", "typescript", "ollama"],
+    "date": "2026-03-20",
+    "tags": ["personal", "ai", "react"],
+    "links": {
+      "github": "https://github.com/martapanc/Linkedin-job-filter"
+    }
+  },
+  {
+    "title": "RapidAnd Order Tracker",
+    "image": {
+      "name": "rapidand-bot.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785316225/Projects/rapidand_saar6r.webp"
+    },
+    "shortDescription": "Telegram bot tracking supplier orders, designed to be a polite client of someone else's API",
+    "mediumDescription": "A Telegram bot that tracks orders on a supplier platform, written to avoid logging into a web app several times a day. The design constraint was staying a polite client of an API that isn't mine: it's manual-refresh by default, answering most commands from a local SQLite cache with no network call at all, behind a cooldown, a cache TTL and a hard daily call cap. Built with TypeScript, grammY and Zod, shipped as a Docker container running on a home NAS.",
+    "longDescription": "rapidand-bot.md",
+    "tools": ["typescript", "nodejs", "telegram", "sqlite", "docker"],
+    "date": "2025-12-02",
+    "tags": ["personal", "automation"],
+    "links": {}
+  },
+  {
+    "title": "Anki flashcard decks",
+    "image": {
+      "name": "anki-decks.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785315954/Projects/flashcards_lbuscx.webp"
+    },
+    "shortDescription": "Hand-built language flashcard decks kept as plain CSV, in Git rather than in an app",
+    "mediumDescription": "A growing collection of flashcard decks built while learning Spanish, French, Italian and German – around 600 hand-compiled thematic vocabulary cards, plus decks aligned to the Language Transfer audio courses and split by course part, so a deck maps onto the tracks you've actually listened to. Deliberately boring: no app, no schema, no build step. Two columns of comma-separated text in Git outlive whichever flashcard app I'm using this year. This repo is where Language Transfer Companion came from.",
+    "longDescription": "anki-decks.md",
+    "tools": [],
+    "date": "2025-12-01",
+    "tags": ["personal", "languages"],
+    "links": {
+      "github": "https://github.com/martapanc/anki-decks"
+    }
+  },
+  {
     "title": "Purrfect Price",
     "image": {
       "name": "purrfect-price.webp",
@@ -94,6 +224,38 @@
     "date": "2024-09-01",
     "tags": ["personal", "web", "react"],
     "links": {}
+  },
+  {
+    "title": "McGraw-Hill Flashcard Exporter",
+    "image": {
+      "name": "mcgraw-hill-flashcards.webp",
+      "url": "/images/mcgraw-hill-flashcards.webp"
+    },
+    "shortDescription": "Go tool that exports McGraw-Hill Language Lab flashcards as per-chapter CSV",
+    "mediumDescription": "McGraw-Hill publishes free companion flashcards for its language books through a web Language Lab that has no export, so you can't fold them into the spaced-repetition app you already use. This Go program downloads them and writes one CSV per chapter, ready to import into Anki or Brainscape – HTML stripped, chapter numbers zero-padded so files sort correctly, and the site's hidden \"Other\" language menu expanded automatically. No dependencies beyond the standard library.",
+    "longDescription": "mcgraw-hill-flashcards.md",
+    "tools": ["go"],
+    "date": "2024-02-14",
+    "tags": ["personal", "languages", "cli"],
+    "links": {
+      "github": "https://github.com/martapanc/mcgraw-hill-flashcards"
+    }
+  },
+  {
+    "title": "Real estate scraper",
+    "image": {
+      "name": "idealista-scraper.webp",
+      "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785317346/Projects/idealista-scraper_psgadu.webp"
+    },
+    "shortDescription": "Configurable multi-site property scraper, driven by selectors stored in SQLite",
+    "mediumDescription": "House hunting across two countries means comparing listings on a dozen portals, none of which export anything. This started as a pair of Python scrapers for Immobiliare and Idealista and grew into a configurable multi-site engine: CSS selectors, URL patterns and pagination rules live in SQLite tables rather than in code, so adding a new estate agent means inserting rows, not writing Python. Idealista fronts everything with bot protection – the practical lesson being that scraping is easy and staying unblocked is the whole problem.",
+    "longDescription": "idealista-scraper.md",
+    "tools": ["python", "sqlite"],
+    "date": "2023-09-09",
+    "tags": ["personal", "python"],
+    "links": {
+      "github": "https://github.com/martapanc/Idealista-Immobiliare-Scraper"
+    }
   },
   {
     "title": "Personal website 2.0",

@@ -67,7 +67,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
         {featured.length > 0 && (
           <>
             {/* The label only earns its space when there is a second group to
-                contrast against — filtering often leaves just one. */}
+                contrast against – filtering often leaves just one. */}
             {rest.length > 0 && (
               <h2 className='mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400'>
                 Featured

@@ -200,7 +200,7 @@ const Terminal = ({ codeSnippets, updatedAt }: CodeSnippetsProps) => {
               <span className='hidden sm:inline'>·</span>
               <span
                 className='hidden sm:inline'
-                title="psst — there's something waiting in the console"
+                title="psst – there's something waiting in the console"
               >
                 F12 👀
               </span>

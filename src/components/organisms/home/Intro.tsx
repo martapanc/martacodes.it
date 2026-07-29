@@ -18,7 +18,7 @@ export interface IntroProps {
   greeting: string;
   shortInfo: {
       title: string;
-      exp: number;
+      exp: string;
       currentlyAt: string;
   }
 }

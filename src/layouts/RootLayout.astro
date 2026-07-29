@@ -12,7 +12,7 @@ export interface Props {
 
 const {
   title = 'MartaCodes.it',
-  description = 'Marta Pancaldi — Full-Stack Software Engineer',
+  description = 'Marta Pancaldi – Full-Stack Software Engineer',
 } = Astro.props;
 ---
 
@@ -61,7 +61,7 @@ const {
       Inline and in the head on purpose: the `js-reveal` class has to land
       before first paint, or items flash in at full opacity and then get
       hidden. Everything stays in one script so there is no separate file that
-      can fail to load and leave the page permanently blank — and if anything
+      can fail to load and leave the page permanently blank – and if anything
       here throws, the catch drops the class and the page renders as plain,
       visible HTML.
     -->
@@ -94,7 +94,7 @@ const {
                 .forEach(function (entry, index) {
                   var el = entry.target;
                   io.unobserve(el);
-                  // Stagger with timers rather than animation-delay — see the
+                  // Stagger with timers rather than animation-delay – see the
                   // note in globals.css.
                   setTimeout(function () {
                     revealedAny = true;
@@ -106,7 +106,7 @@ const {
           );
 
           // Only arm once there is actually something to reveal. Every page
-          // here is `client:only`, so React may take a while to render — a
+          // here is `client:only`, so React may take a while to render – a
           // timer started up front would fire against an empty document and
           // switch the effect off before it ever ran.
           var armed = false;
@@ -143,7 +143,7 @@ const {
           };
 
           // The pages are `client:only="react"`, so none of this markup exists
-          // at DOMContentLoaded — it has to be picked up as React inserts it.
+          // at DOMContentLoaded – it has to be picked up as React inserts it.
           // Debounced to one scan per frame, since this watches the whole tree
           // and React re-renders on interaction.
           var queued = false;

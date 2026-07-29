@@ -48,7 +48,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
                   <span className='text-lg font-semibold'>
                     <>
                       {format(job.startDate)}
-                      &nbsp; — &nbsp;
+                      &nbsp; – &nbsp;
                       {job.isCurrentJob ? `present` : format(job.endDate)}
                     </>
                   </span>
@@ -82,7 +82,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
               <div className='flex justify-end'>
                 <span className='text-xs font-medium'>
                   {format(job.startDate)}
-                  &nbsp; — &nbsp;
+                  &nbsp; – &nbsp;
                   {job.isCurrentJob ? `present` : format(job.endDate)}
                 </span>
               </div>

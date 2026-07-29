@@ -60,7 +60,7 @@ const Education = ({ schools }: EducationProps) => {
 
                   <div className='flex flex-col justify-center'>
                     <span className='text-lg font-semibold'>
-                      {format(school.start)}&nbsp; — &nbsp;{format(school.end)}
+                      {format(school.start)}&nbsp; – &nbsp;{format(school.end)}
                     </span>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ const Education = ({ schools }: EducationProps) => {
                 <span className='me-8 text-sm font-normal'>{school.grade}</span>
 
                 <span className='text-sm font-normal'>
-                  {format(school.start)}&nbsp; — &nbsp;{format(school.end)}
+                  {format(school.start)}&nbsp; – &nbsp;{format(school.end)}
                 </span>
               </div>
             </div>

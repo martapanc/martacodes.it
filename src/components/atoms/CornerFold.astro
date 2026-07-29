@@ -15,7 +15,7 @@ const { href, ariaLabel } = Astro.props;
   underside and the flap share the exact same crease line and meet seamlessly:
   the flap's closing `Z` and the underside's hypotenuse are the same diagonal.
   Everything below/left of the curl stays transparent, so the page itself shows
-  through there — that gap is what makes the corner read as rolled rather than
+  through there – that gap is what makes the corner read as rolled rather than
   cut off.
 */}
 <a
@@ -72,7 +72,7 @@ const { href, ariaLabel } = Astro.props;
         the other, which is what made the curl read as a flat sticker.
 
         Both are built from SourceAlpha and combined with feMerge, rather than
-        chaining two feDropShadows — chaining would shadow the first shadow and
+        chaining two feDropShadows – chaining would shadow the first shadow and
         paint the result over the flap itself.
       */}
       <filter id='mc-corner-fold-shadow' x='-60%' y='-60%' width='240%' height='240%'>
@@ -97,7 +97,7 @@ const { href, ariaLabel } = Astro.props;
     {/*
       Pointer events live on the paths, not the <a>, which is why the anchor
       above is pointer-events-none. The anchor is a square, but the fold only
-      fills the corner of it — leaving the square clickable meant the expanded
+      fills the corner of it – leaving the square clickable meant the expanded
       fold swallowed clicks aimed at the theme toggle beneath it. Hover and
       activation still reach the anchor by bubbling up from these paths.
     */}
@@ -130,7 +130,7 @@ const { href, ariaLabel } = Astro.props;
 
   {/*
     The label is printed on the revealed page underneath the fold: it stays
-    hidden until hover, then fades in as the corner opens — it never peeks at
+    hidden until hover, then fades in as the corner opens – it never peeks at
     rest. The wrapper is a fixed size (matching the expanded fold, not the
     resting one) so the text holds one position through the whole animation
     instead of drifting as the fold grows, and it's clipped to the revealed

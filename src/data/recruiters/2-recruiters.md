@@ -27,7 +27,7 @@
 
 - 8+ years of work experience
 - Senior level
-- Experienced in mentoring engineers and leading small teams or feature squads — not looking for a full-time engineering manager role
+- Experienced in mentoring engineers and leading small teams or feature squads – not looking for a full-time engineering manager role
 
 <hr/>
 
@@ -80,7 +80,7 @@ and the projects I have been involved in.
   <summary>More on contracts & taxes</summary>
 
 - I’ll be working as a resident of Andorra, and my preferred setup is a B2B contract between your company and an Andorran legal entity.
-- If this is something you’d like to explore or have questions about, feel free to get in touch — I’m happy to discuss the details and see whether it’s a good fit.
+- If this is something you’d like to explore or have questions about, feel free to get in touch – I’m happy to discuss the details and see whether it’s a good fit.
 
 </details>
 

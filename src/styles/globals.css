@@ -65,7 +65,7 @@
 }
 
 /* One-shot fade for the homepage hero on load. No fill-mode and no resting
-   opacity:0 — if the animation never runs (reduced motion, no CSS animation
+   opacity:0 – if the animation never runs (reduced motion, no CSS animation
    support) the element just stays visible rather than stuck invisible. */
 @keyframes hero-fade {
   from { opacity: 0; }
@@ -357,7 +357,7 @@
 
 /* Children of a `[data-reveal-group]` fade up as they enter the viewport,
    staggered top to bottom. Scoped to `.js-reveal`, which the head script only
-   adds once it knows it can undo it — without JS nothing is ever hidden.
+   adds once it knows it can undo it – without JS nothing is ever hidden.
 
    Uses `animation` rather than `transition` deliberately: these elements
    already carry Tailwind `transition` utilities for their hover states, and a
@@ -367,7 +367,7 @@
 
    No animation-delay and no fill-mode, also deliberately. The stagger is
    scheduled in JS, so `opacity: 1` below is the real resting state rather than
-   just the animation's last keyframe — a fill-mode of `both` would outrank it
+   just the animation's last keyframe – a fill-mode of `both` would outrank it
    and pin the item at opacity 0 for the whole delay, leaving content invisible
    anywhere the animation clock doesn't advance (a background tab, an engine
    that drops the animation). */

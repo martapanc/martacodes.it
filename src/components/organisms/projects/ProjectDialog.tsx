@@ -47,7 +47,7 @@ const ProjectDialog = ({ project, onClose }: ProjectDialogProps) => {
       // however the dialog was dismissed.
       onClose={onClose}
       // A click landing on the dialog element itself is a click on the
-      // backdrop — anything inside hits a child instead.
+      // backdrop – anything inside hits a child instead.
       onClick={(event) => {
         if (event.target === ref.current) onClose();
       }}

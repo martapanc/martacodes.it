@@ -1,19 +1,12 @@
 ---
-import readCodeSnippets, { readMarkdown } from '@/lib/markdownUtils';
+import readCodeSnippets from '@/lib/markdownUtils';
+import { loadProjects } from '@/lib/loadProjects';
 import homePageData from '@/data/en/home.json';
-import projectsData from '@/data/projects/projects.json';
 
 import RootLayout from '@/layouts/RootLayout.astro';
 import HomePage from '@/components/pages/home-page';
 
-import type { Project } from '@/types/Project';
-
-const projects: Project[] = (projectsData as Project[]).map((project) => {
-  if (project.longDescription?.includes('.md')) {
-    return { ...project, longDescription: readMarkdown(`projects/${project.longDescription}`) };
-  }
-  return project;
-});
+const projects = loadProjects();
 
 const { snippets: codeSnippets, latestEditTimestamp } = readCodeSnippets();
 ---

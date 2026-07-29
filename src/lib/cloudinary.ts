@@ -2,7 +2,7 @@
  * Re-requests a Cloudinary image at a given width.
  *
  * Project images are stored with `w_648` baked into the URL, which is plenty
- * for a card but upscales visibly in the details dialog — that renders around
+ * for a card but upscales visibly in the details dialog – that renders around
  * 688px wide, so roughly 1400 device pixels on a 2x display.
  *
  * `c_limit` means the width is a ceiling rather than a target: an original
