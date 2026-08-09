@@ -3,6 +3,7 @@
 import * as React from 'react';
 
 import Heading from '@/components/atoms/headings/Heading';
+import SectionDivider from '@/components/atoms/SectionDivider';
 import CvCard from '@/components/organisms/cv/CvCard';
 import Education from '@/components/organisms/cv/Education';
 import Intro from '@/components/organisms/cv/Intro';
@@ -44,23 +45,23 @@ export default function CvPage({
 
           <Skills skills={skills} />
 
-          <hr />
+          <SectionDivider />
 
           <WorkExperience jobs={jobs} />
 
-          <hr />
+          <SectionDivider />
 
           <Education schools={schools} />
 
-          <hr />
+          <SectionDivider />
 
           <Languages languages={languages} />
 
-          <hr />
+          <SectionDivider />
 
           <Publications publications={publications} />
 
-          <hr />
+          <SectionDivider />
 
           <CvCard />
         </div>

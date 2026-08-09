@@ -18,7 +18,12 @@ const Intro = ({ intro }: IntroProps) => {
       <SectionHeading icon='https://res.cloudinary.com/dwrurydlt/image/upload/v1692734473/laptop_4a3ba3b30c.svg' title='Software Development' />
 
       <div className='mb-6 cv-intro-section text-justify'>
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+        <ReactMarkdown
+          rehypePlugins={[rehypeRaw]}
+          components={{
+            p: ({ ...props }) => <p className='last:my-2' {...props} />,
+          }}
+        >
           {intro.replace('8', noOfYears)}
         </ReactMarkdown>
       </div>

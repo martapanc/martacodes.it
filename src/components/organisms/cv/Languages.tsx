@@ -17,13 +17,13 @@ const Languages = ({ languages }: LanguageProps) => {
       <SectionHeading icon='https://res.cloudinary.com/dwrurydlt/image/upload/v1692894192/internet_60bf166c34.svg' title='Languages' />
 
       <div
-        className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 justify-items-center'
+        className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-4 lg:gap-4 justify-items-center'
         data-reveal-group
       >
         {languages.map((language, id) => (
           <div
             key={id}
-            className='flex flex-row items-center rounded-md p-4 shadow-md dark:bg-slate-900 w-full'
+            className='flex w-full flex-row items-center rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900'
           >
             <img
               src={language.flag}

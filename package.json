@@ -20,9 +20,6 @@
     "@astrojs/vercel": "^11",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
-    "@iconify-json/feather": "^1.2.1",
-    "@iconify-json/simple-icons": "^1.2.91",
-    "@iconify/react": "^6.0.2",
     "@storybook/react": "^10.5.3",
     "@tailwindcss/vite": "^4.3.0",
     "@theme-toggles/react": "^5.0.0-rc.0",
@@ -64,5 +61,12 @@
     "typed.js": "^3.0.0",
     "typescript": "^6.0.3",
     "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@iconify-json/feather": "^1.2.1",
+    "@iconify-json/simple-icons": "^1.2.93",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "unplugin-icons": "^23.0.1"
   }
 }

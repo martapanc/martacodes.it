@@ -1,12 +1,14 @@
-import { Icon, addCollection } from '@iconify/react';
-import feather from '@iconify-json/feather/icons.json';
-import simpleIcons from '@iconify-json/simple-icons/icons.json';
+import IconMail from '~icons/feather/mail';
+import IconGithub from '~icons/simple-icons/github';
+import IconGoodreads from '~icons/simple-icons/goodreads';
+import IconInstagram from '~icons/simple-icons/instagram';
+import IconLinkedin from '~icons/simple-icons/linkedin';
+import IconMedium from '~icons/simple-icons/medium';
+import IconSteam from '~icons/simple-icons/steam';
+import IconThreads from '~icons/simple-icons/threads';
+import IconYoutube from '~icons/simple-icons/youtube';
 
 import UnstyledLink from '@/components/atoms/links/UnstyledLink';
-
-// Register icon sets for client-side rendering
-addCollection(simpleIcons as Parameters<typeof addCollection>[0]);
-addCollection(feather as Parameters<typeof addCollection>[0]);
 
 export default function Footer() {
   return (
@@ -53,23 +55,21 @@ function SocialLinks() {
           href={'mailto:' + emailAddress}
           className='focus-visible:ring-primary-300 rounded-sm align-middle focus:outline-none focus-visible:ring'
         >
-          <Icon
-            icon='feather:mail'
+          <IconMail
             className='hover:text-primary-500 dark:hover:text-primary-300 h-7 w-7 align-middle text-blue-900 dark:text-gray-300'
             aria-label='Send an Email'
           />
         </a>
       </div>
-      {socialLinks.map((socialLink) => (
+      {socialLinks.map(({ href, icon: Icon, id }) => (
         <UnstyledLink
-          key={socialLink.id}
+          key={id}
           className='focus-visible:ring-primary-300 inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring'
-          href={socialLink.href}
-          aria-label={socialLink.id}
+          href={href}
+          aria-label={id}
         >
           <Icon
-            icon={socialLink.icon}
-            aria-label={socialLink.id}
+            aria-label={id}
             className='hover:text-primary-500 dark:hover:text-primary-300 my-auto h-6 w-6 align-middle text-blue-900 transition-colors dark:text-gray-300'
           />
         </UnstyledLink>
@@ -119,48 +119,48 @@ const footerLinks: FooterLink[] = [
 
 type SocialLink = {
   href: string;
-  icon: string;
+  icon: React.ComponentType<{ className?: string; 'aria-label'?: string }>;
   id: string;
 };
 const socialLinks: SocialLink[] = [
   {
     href: 'https://github.com/martapanc',
-    icon: 'simple-icons:github',
+    icon: IconGithub,
     id: 'Github',
   },
   {
     href: 'https://www.linkedin.com/in/martapancaldi',
-    icon: 'simple-icons:linkedin',
+    icon: IconLinkedin,
     id: 'Linkedin',
   },
   {
     href: 'https://www.instagram.com/pancakemarta',
-    icon: 'simple-icons:instagram',
+    icon: IconInstagram,
     id: 'Instagram',
   },
   {
     href: 'https://www.threads.net/@pancakemarta',
-    icon: 'simple-icons:threads',
+    icon: IconThreads,
     id: 'Threads',
   },
   {
     href: 'https://medium.com/@marta.panc',
-    icon: 'simple-icons:medium',
+    icon: IconMedium,
     id: 'Medium',
   },
   {
     href: 'https://www.goodreads.com/topolinamarta',
-    icon: 'simple-icons:goodreads',
+    icon: IconGoodreads,
     id: 'Goodreads',
   },
   {
     href: 'https://youtube.com/@pancakemarta',
-    icon: 'simple-icons:youtube',
+    icon: IconYoutube,
     id: 'Youtube',
   },
   {
     href: 'https://steamcommunity.com/id/martap/',
-    icon: 'simple-icons:steam',
+    icon: IconSteam,
     id: 'Steam',
   },
 ];

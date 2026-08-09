@@ -24,10 +24,10 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
         {jobs.map((job, id) => (
           <div
             key={id}
-            className='mb-4 rounded-md p-4 shadow-md dark:bg-slate-900'
+            className='mb-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900'
           >
             {/* Start Job Header - Desktop */}
-            <div className='hidden border-b-2 border-slate-200 pb-2 md:flex'>
+            <div className='hidden border-b border-slate-200 dark:border-slate-800 pb-2 md:flex'>
               <img
                 className='me-3 rounded-sm'
                 src={job.icon.url}
@@ -58,7 +58,7 @@ const WorkExperience = ({ jobs }: WorkExperienceProps) => {
             {/* End Job Header - Desktop*/}
 
             {/* Start Job Header - Mobile */}
-            <div className='flex flex-col border-b-2 border-slate-200 pb-2 md:hidden'>
+            <div className='flex flex-col border-b border-slate-200 dark:border-slate-800 pb-2 md:hidden'>
               <div className='flex'>
                 <img
                   className='me-3 rounded-sm'
