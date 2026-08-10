@@ -1,11 +1,13 @@
 'use client';
 
 import * as React from 'react';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import CompactSkillCard from '@/components/molecules/SkillCard/CompactSkillCard';
 import SkillCard from '@/components/molecules/SkillCard/SkillCard';
 import SkillDialog from '@/components/molecules/SkillCard/SkillDialog';
+import { useModalParam } from '@/hooks/useModalParam';
+import { slugify } from '@/lib/slug';
 
 import type { Skill } from '@/types/Skill';
 
@@ -14,7 +16,17 @@ export interface SkillsProps {
 }
 
 const Skills = ({ skills }: SkillsProps) => {
-  const [openSkill, setOpenSkill] = useState<Skill | null>(null);
+  const { value: openId, open, close } = useModalParam('id');
+
+  const openSkill = useMemo(
+    () => skills.find((skill) => slugify(skill.title) === openId) ?? null,
+    [skills, openId],
+  );
+
+  const openDialog = useCallback(
+    (skill: Skill) => open(slugify(skill.title)),
+    [open],
+  );
 
   const { core, rest } = useMemo(
     () => ({
@@ -49,14 +61,14 @@ const Skills = ({ skills }: SkillsProps) => {
               <CompactSkillCard
                 key={skill.title}
                 skill={skill}
-                onReadMore={setOpenSkill}
+                onReadMore={openDialog}
               />
             ))}
           </div>
         </>
       )}
 
-      <SkillDialog skill={openSkill} onClose={() => setOpenSkill(null)} />
+      <SkillDialog skill={openSkill} onClose={close} />
     </div>
   );
 };

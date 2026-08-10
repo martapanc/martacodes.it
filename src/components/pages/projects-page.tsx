@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import Heading from '@/components/atoms/headings/Heading';
 import CompactProjectCard from '@/components/organisms/projects/CompactProjectCard';
 import FeaturedProjectCard from '@/components/organisms/projects/FeaturedProjectCard';
 import ProjectDialog from '@/components/organisms/projects/ProjectDialog';
 import ProjectFilters from '@/components/organisms/projects/ProjectFilters';
+import { useModalParam } from '@/hooks/useModalParam';
+import { slugify } from '@/lib/slug';
 import {
   NO_FILTERS,
   categoryCounts,
@@ -24,7 +26,19 @@ type ProjectsPageProps = {
 
 export default function ProjectsPage({ projects }: ProjectsPageProps) {
   const [filters, setFilters] = useState<ProjectFilterState>(NO_FILTERS);
-  const [openProject, setOpenProject] = useState<Project | null>(null);
+  const { value: openId, open, close } = useModalParam('id');
+
+  // Resolved against every project rather than the filtered set, so a shared
+  // link opens its project whatever filters the visitor lands with.
+  const openProject = useMemo(
+    () => projects.find((project) => slugify(project.title) === openId) ?? null,
+    [projects, openId],
+  );
+
+  const openDialog = useCallback(
+    (project: Project) => open(slugify(project.title)),
+    [open],
+  );
 
   // Counts come from the full set, not the filtered one, so the chips keep
   // showing how much is behind each option rather than collapsing to 0 as you
@@ -78,7 +92,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
                 <FeaturedProjectCard
                   key={project.title}
                   project={project}
-                  onReadMore={setOpenProject}
+                  onReadMore={openDialog}
                 />
               ))}
             </div>
@@ -97,7 +111,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
                 <CompactProjectCard
                   key={project.title}
                   project={project}
-                  onReadMore={setOpenProject}
+                  onReadMore={openDialog}
                 />
               ))}
             </div>
@@ -120,7 +134,7 @@ export default function ProjectsPage({ projects }: ProjectsPageProps) {
         )}
       </div>
 
-      <ProjectDialog project={openProject} onClose={() => setOpenProject(null)} />
+      <ProjectDialog project={openProject} onClose={close} />
     </section>
   );
 }

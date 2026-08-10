@@ -2,7 +2,7 @@
   {
     "title": "Javascript / Typescript",
     "summary": "End-to-end typing on both sides of the stack, with Zod at the boundaries.",
-    "description": "TypeScript is where I spend most of my time these days, and I use it on both sides of the stack: React and Next.js on the front end, Node.js and Express on the back. I'm a firm believer in typing things end to end, and in validating anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects), a Next.js link-sharing app.",
+    "description": "TypeScript is where I spend most of my time these days, and I use it on both sides of the stack: React and Next.js on the front end, Node.js and Express on the back. I'm a firm believer in typing things end to end, and in validating anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects?id=linkarium), a Next.js link-sharing app.",
     "icons": [
       "Typescript",
       "Javascript",
@@ -46,7 +46,7 @@
   {
     "title": "AI-assisted development",
     "summary": "LLMs as a workflow, with guardrails and verification around them.",
-    "description": "Since 2024 I have used Claude daily as a working collaborator: navigating unfamiliar codebases, scaffolding boilerplate and weighing implementation approaches, always through the same review and test discipline as any other change. At Appetize I turned that into a team workflow, with guardrails around it: local context only and no proprietary data exposure.\n\nI also build *with* models: a [Chrome extension](/projects) that screens job ads via Gemini or a local Ollama model, and a CV pipeline where every generated line must cite a source in a Markdown evidence corpus.",
+    "description": "Since 2024 I have used Claude daily as a working collaborator: navigating unfamiliar codebases, scaffolding boilerplate and weighing implementation approaches, always through the same review and test discipline as any other change. At Appetize I turned that into a team workflow, with guardrails around it: local context only and no proprietary data exposure.\n\nI also build *with* models: a [Chrome extension](/projects?id=linkedin-job-filter) that screens job ads via Gemini or a local Ollama model, and a CV pipeline where every generated line must cite a source in a Markdown evidence corpus.",
     "icons": [
       "Claude",
       "ChatGPT",
@@ -85,7 +85,7 @@
   {
     "title": "Testing & automation",
     "summary": "Vitest, Playwright and Cucumber, plus headless browsers for the rest.",
-    "description": "Tests are the part of the job I'm least willing to negotiate on. At Appetize I expanded end-to-end coverage from 50% to 90%+ while still shipping iteratively, and I've written BDD suites with Cucumber on Java projects.\n\nOn personal projects I use Vitest for units and Playwright for end-to-end flows – the URL parser in [Linkarium](/projects) ended up with the densest coverage in the codebase for good reason. Headless browsers do double duty for me: Puppeteer renders PDF invoices in FlexInvoice, and drives scrapers for sites that fight back.",
+    "description": "Tests are the part of the job I'm least willing to negotiate on. At Appetize I expanded end-to-end coverage from 50% to 90%+ while still shipping iteratively, and I've written BDD suites with Cucumber on Java projects.\n\nOn personal projects I use Vitest for units and Playwright for end-to-end flows – the URL parser in [Linkarium](/projects?id=linkarium) ended up with the densest coverage in the codebase for good reason. Headless browsers do double duty for me: Puppeteer renders PDF invoices in [FlexInvoice](/projects?id=flexinvoice), and drives scrapers for sites that fight back.",
     "icons": [
       "Playwright",
       "Vitest",
@@ -97,7 +97,7 @@
   {
     "title": "Python",
     "summary": "My go-to for tooling: scrapers, batch editors, an MSc dissertation.",
-    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – and a configurable multi-site property scraper whose selectors live in SQLite rather than in code.",
+    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects?id=media-library-tools) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – and a [configurable multi-site property scraper](/projects?id=real-estate-scraper) whose selectors live in SQLite rather than in code.",
     "icons": [
       "Python",
       "FastAPI",
