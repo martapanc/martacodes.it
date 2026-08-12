@@ -97,7 +97,7 @@
   {
     "title": "Python",
     "summary": "My go-to for tooling: scrapers, batch editors, an MSc dissertation.",
-    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects?id=media-library-tools) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – and a [configurable multi-site property scraper](/projects?id=real-estate-scraper) whose selectors live in SQLite rather than in code.",
+    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects?id=media-library-tools) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – a [configurable multi-site property scraper](/projects?id=real-estate-scraper) whose selectors live in SQLite rather than in code, and the data pipeline behind [conju.gat](/projects?id=conju-gat), which turns verbecc's conjugation templates into a dataset validated form by form against the Softcatalà dictionary.",
     "icons": [
       "Python",
       "FastAPI",

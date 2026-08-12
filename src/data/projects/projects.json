@@ -89,6 +89,23 @@
     "links": {}
   },
   {
+    "title": "conju.gat",
+    "image": {
+      "name": "conjugat.webp",
+      "url": "/images/conjugat.png"
+    },
+    "shortDescription": "Catalan verb conjugation trainer where colour and shape encode which of 51 patterns a verb follows",
+    "mediumDescription": "Learning Catalan, I kept reaching for the same trick from my language notes: colour-coding verbs to keep the irregulars straight. conju.gat turns that habit into the whole interface. Every one of the 8,500+ verbs in the dataset carries a Miró-inspired colour-and-shape sign encoding which of 51 conjugation patterns it follows, so learning the sign teaches the whole family of verbs at once instead of one verb at a time. Three study modes – look up a verb's paradigm, conjugate aloud and self-check, or type all six forms with full accent support – share the same full-screen, one-cell-at-a-time layout, and progress is tracked locally to prioritise the verbs you get wrong most. The dataset is built from verbecc's conjugation templates and validated form by form against the Softcatalà dictionary, catching 29 structurally broken templates on common verbs like <code>ser</code> and <code>saber</code>. Built with Next.js 16, shipped as an installable, offline-capable PWA.",
+    "longDescription": "conjugat.md",
+    "tools": ["nextjs", "react", "typescript", "python"],
+    "date": "2026-08-12",
+    "tags": ["personal", "web", "nextjs", "languages"],
+    "links": {
+      "github": "https://github.com/martapanc/conju.gat",
+      "publicUrl": "https://conjugat.martacodes.it/"
+    }
+  },
+  {
     "title": "Media Library Tools",
     "image": {
       "name": "media-library-tools.webp",
