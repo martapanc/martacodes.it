@@ -8,7 +8,7 @@ Apple Magic Mouse
 
 Logitech MX Keys
 
-Huawei AD80HW 23.8” and Dell S2421H 24” screens
+2x Dell S2425HSM 24” screens
 
 ErGear Dual monitor stand
 
@@ -16,20 +16,18 @@ RØDE NT-USB microphone
 
 Sony WH-1000XM5 wireless headphones
 
+iPad Air 4th gen
+
 AirPods Pro 2nd gen
 
-iPad Air 4th gen
+Apple Watch Series 11
 
 **[Supernote A6X](https://supernote.eu/produit/bundle-a6x/)**: e-Ink ebook reader for note taking
 
 **[BOOX Palma](https://shop.boox.com/products/palma)**: phone-sized eReader running Android
 
-New Kindle Paperwhite (2018)
-
 iPhone 17 Pro
 
 Synology NAS DS720+
 
-**[AutoFull Ergonomic Gaming Chair](https://autofull.com/)** (Red)
-
-MALM Desk with pull-out panel, by Ikea
+**[Secretlab TITAN Evo](https://secretlab.eu/es/products/titan-evo-2022-series?sku=M07-E24SW-FBLUE1R)** (Frost blue)
