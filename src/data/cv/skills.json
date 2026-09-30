@@ -2,12 +2,13 @@
   {
     "title": "Javascript / Typescript",
     "summary": "End-to-end typing on both sides of the stack, with Zod at the boundaries.",
-    "description": "TypeScript is where I spend most of my time these days, and I use it on both sides of the stack: React and Next.js on the front end, Node.js and Express on the back. I'm a firm believer in typing things end to end, and in validating anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects?id=linkarium), a Next.js link-sharing app.",
+    "description": "TypeScript is where I spend most of my time these days, and I use it on both sides of the stack: React and Next.js on the front end, Node.js and Express on the back. I'm a firm believer in typing things end to end, and in validating anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects?id=linkarium), a Next.js link-sharing app, and [Postilla](/projects?id=postilla), a Fastify and PostgreSQL comment system whose hexagonal boundaries are enforced by lint rules and whose zod schemas generate the types, the client and the OpenAPI spec in one go.",
     "icons": [
       "Typescript",
       "Javascript",
       "Node.js",
       "Express",
+      "Fastify",
       "Zod"
     ],
     "rank": 1,
@@ -97,7 +98,7 @@
   {
     "title": "Python",
     "summary": "My go-to for tooling: scrapers, batch editors, an MSc dissertation.",
-    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects?id=media-library-tools) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – a [configurable multi-site property scraper](/projects?id=real-estate-scraper) whose selectors live in SQLite rather than in code, and the data pipeline behind [conju.gat](/projects?id=conju-gat), which turns verbecc's conjugation templates into a dataset validated form by form against the Softcatalà dictionary.",
+    "description": "I taught myself Python and it quickly became one of my favourite languages. I first used it to build an automated assessment tool for CompSci programming assignments, the focus of my MSc dissertation.\n\nLately I've been using it for production-grade backends too: [FlexTag](/projects?id=flextag), my company's asset register, is a FastAPI and PostgreSQL service held to `mypy --strict`, with a separate print service driving a label printer over USB.\n\nIt's still what I reach for when a job needs doing: a [toolkit](/projects?id=media-library-tools) for safely batch-editing the tags of a 12,000-track music library – every mutating command dry-runs, backs up and verifies the audio fingerprint afterwards – a [configurable multi-site property scraper](/projects?id=real-estate-scraper) whose selectors live in SQLite rather than in code, and the data pipeline behind [conju.gat](/projects?id=conju-gat), which turns verbecc's conjugation templates into a dataset validated form by form against the Softcatalà dictionary.",
     "icons": [
       "Python",
       "FastAPI",
@@ -123,7 +124,7 @@
   {
     "title": "Cloud & DevOps",
     "summary": "AWS, Docker and Kubernetes, with CI/CD from Jenkins to GitHub Actions.",
-    "description": "I've worked with AWS on production platforms, containerised applications with Docker and run them on Kubernetes, and supported a platform team through the containerisation of a large e-commerce application.\n\nOn the delivery side I've used Bamboo, Jenkins and GitHub Actions for CI/CD, and I deploy my own projects to Vercel, Netlify and a home NAS – the last one being a useful reminder that not everything needs a cloud bill.",
+    "description": "I've worked with AWS on production platforms, containerised applications with Docker and run them on Kubernetes, and supported a platform team through the containerisation of a large e-commerce application.\n\nOn the delivery side I've used Bamboo, Jenkins and GitHub Actions for CI/CD, and I deploy my own projects to Vercel, Netlify, Cloudflare Workers and a home NAS – the last one being a useful reminder that not everything needs a cloud bill. I'm currently learning Terraform by translating one of my Docker Compose deployments into it.",
     "icons": [
       "AWS",
       "Google Cloud Platform",
@@ -131,7 +132,10 @@
       "Docker",
       "Jenkins",
       "GitHub Actions",
-      "Vercel"
+      "Vercel",
+      "Cloudflare",
+      "Terraform",
+      "Netlify"
     ],
     "rank": 10
   },

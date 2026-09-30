@@ -5,6 +5,7 @@ import IconApachemaven from '~icons/simple-icons/apachemaven';
 import IconAstro from '~icons/simple-icons/astro';
 import IconBootstrap from '~icons/simple-icons/bootstrap';
 import IconClaude from '~icons/simple-icons/claude';
+import IconCloudflare from '~icons/simple-icons/cloudflare';
 import IconCss from '~icons/simple-icons/css';
 import IconCucumber from '~icons/simple-icons/cucumber';
 import IconDjango from '~icons/simple-icons/django';
@@ -13,6 +14,7 @@ import IconDotnet from '~icons/simple-icons/dotnet';
 import IconDrupal from '~icons/simple-icons/drupal';
 import IconExpress from '~icons/simple-icons/express';
 import IconFastapi from '~icons/simple-icons/fastapi';
+import IconFastify from '~icons/simple-icons/fastify';
 import IconFirebase from '~icons/simple-icons/firebase';
 import IconFlask from '~icons/simple-icons/flask';
 import IconGithubactions from '~icons/simple-icons/githubactions';
@@ -37,6 +39,7 @@ import IconOllama from '~icons/simple-icons/ollama';
 import IconOpenapiinitiative from '~icons/simple-icons/openapiinitiative';
 import IconOpenjdk from '~icons/simple-icons/openjdk';
 import IconPhp from '~icons/simple-icons/php';
+import IconNetlify from '~icons/simple-icons/netlify';
 import IconPlaywright from '~icons/simple-icons/playwright';
 import IconPostgresql from '~icons/simple-icons/postgresql';
 import IconPuppeteer from '~icons/simple-icons/puppeteer';
@@ -52,6 +55,7 @@ import IconStripe from '~icons/simple-icons/stripe';
 import IconSupabase from '~icons/simple-icons/supabase';
 import IconSwift from '~icons/simple-icons/swift';
 import IconTailwindcss from '~icons/simple-icons/tailwindcss';
+import IconTerraform from '~icons/simple-icons/terraform';
 import IconTypescript from '~icons/simple-icons/typescript';
 import IconVercel from '~icons/simple-icons/vercel';
 import IconVitest from '~icons/simple-icons/vitest';
@@ -82,12 +86,14 @@ export const skillIconMapping: Record<string, React.ComponentType<React.SVGProps
   "CSS": IconCss,
   "ChatGPT": IconOpenai,
   "Claude": IconClaude,
+  "Cloudflare": IconCloudflare,
   "Cucumber": IconCucumber,
   "Django": IconDjango,
   "Docker": IconDocker,
   "Drupal": IconDrupal,
   "Express": IconExpress,
   "FastAPI": IconFastapi,
+  "Fastify": IconFastify,
   "Firebase": IconFirebase,
   "Flask": IconFlask,
   "GitHub Actions": IconGithubactions,
@@ -106,6 +112,7 @@ export const skillIconMapping: Record<string, React.ComponentType<React.SVGProps
   "Maven": IconApachemaven,
   "MongoDB": IconMongodb,
   "MySQL": IconMysql,
+  "Netlify": IconNetlify,
   "NextJS": IconNextdotjs,
   "Node.js": IconNodedotjs,
   "Ollama": IconOllama,
@@ -125,6 +132,7 @@ export const skillIconMapping: Record<string, React.ComponentType<React.SVGProps
   "Supabase": IconSupabase,
   "Swift": IconSwift,
   "TailwindCSS": IconTailwindcss,
+  "Terraform": IconTerraform,
   "Typescript": IconTypescript,
   "Vercel": IconVercel,
   "Vitest": IconVitest,

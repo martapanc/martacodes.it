@@ -1,5 +1,145 @@
 [
   {
+    "title": "Taylor Pancaldi Technology Services",
+    "image": {
+      "name": "tpts.webp",
+      "url": "/images/tpts.webp"
+    },
+    "shortDescription": "Bilingual Catalan–English landing page for my engineering company",
+    "mediumDescription": "The static Astro landing page for my company's two engineering practices, Catalan first and English second. Both languages implement one typed <code>Copy</code> interface, so a missing or renamed key in either is a type error rather than a silently untranslated page.",
+    "longDescription": "tpts.md",
+    "tools": ["astro", "typescript", "css"],
+    "date": "2026-09-24",
+    "tags": ["work", "web", "astro"],
+    "links": {}
+  },
+  {
+    "title": "FlexTag",
+    "image": {
+      "name": "flextag.webp",
+      "url": "/images/flextag.webp"
+    },
+    "shortDescription": "Asset register for a small consultancy, with QR labels printed straight to a Brother label printer",
+    "mediumDescription": "What do we own, what did it cost, when did we buy it, and where's the invoice? FlexTag answers those for my company's hardware, and prints the QR labels that go on it – scan one with a phone to open its page. It's an exercise in professional-grade Python: a FastAPI and PostgreSQL API under <code>mypy --strict</code>, a phone-first Next.js frontend, and a separate service driving a Brother QL-800, with idempotency keys so a retry never produces a second sticker. One Jinja/WeasyPrint template renders both the PDF sheet and the Brother labels, and the tests decode every QR code rather than trusting it by eye.",
+    "longDescription": "flextag.md",
+    "tools": [
+      "python",
+      "fastapi",
+      "postgresql",
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwind",
+      "docker"
+    ],
+    "date": "2026-09-20",
+    "tags": ["work", "web", "python"],
+    "links": {}
+  },
+  {
+    "title": "LinkedIn Games Unlimited",
+    "image": {
+      "name": "linkedin-games.webp",
+      "url": "/images/linkedin-games.webp"
+    },
+    "shortDescription": "Unlimited Queens and Tango, with generated boards and difficulty measured by the logic they force",
+    "mediumDescription": "Clones of LinkedIn's daily Queens and Tango puzzles with generators that make as many boards as you want. Both work backwards from a finished grid; naively generated Queens boards are uniquely solvable only about 1% of the time, so instead of rerolling, each rival solution is killed by moving a single cell into another region – taking the yield to 31–59%. Difficulty is rated by the hardest deduction a logical solver is forced to use, the same ladder powers hints that explain rather than spoil, and a check proves no board ever needs a guess. Two offline-capable Next.js PWAs in a pnpm workspace, each deployed independently on Netlify.",
+    "longDescription": "linkedin-games.md",
+    "tools": ["nextjs", "react", "typescript", "tailwind", "netlify"],
+    "date": "2026-08-20",
+    "tags": ["personal", "web", "nextjs", "games"],
+    "links": {
+      "publicUrl": "https://queens-unlimited.netlify.app",
+      "github": "https://github.com/martapanc/linkedin-games"
+    }
+  },
+  {
+    "title": "Andorra Coaches",
+    "image": {
+      "name": "andorra-coaches.webp",
+      "url": "/images/andorra-coaches.webp"
+    },
+    "shortDescription": "Every coach between Andorra and the airports, from both operators, on one screen",
+    "mediumDescription": "Two operators run coaches between Andorra and Barcelona or Toulouse, each with its own site and search. This merges both into one chronological list with prices and seats where available, and links out to each operator's own booking page – no payments, no personal data, no logins. Neither operator has a public API, so each is wrapped in an adapter built from careful reconnaissance, running in a Cloudflare Worker behind a React PWA designed to be read at arm's length in an airport. Offline tests run against captured real responses, and weekly live contract tests fail with the exact anchor that moved.",
+    "longDescription": "andorra-coaches.md",
+    "tools": ["cloudflare", "react", "typescript", "nodejs"],
+    "date": "2026-08-20",
+    "tags": ["personal", "web", "react"],
+    "links": {}
+  },
+  {
+    "title": "Postilla",
+    "image": {
+      "name": "postilla.webp",
+      "url": "/images/postilla.webp"
+    },
+    "shortDescription": "Self-hosted comment system for static blogs, rewritten from the ground up after Waline",
+    "mediumDescription": "A self-hosted comment system for static blogs: an embeddable Vue widget, a moderation dashboard, and a Fastify and PostgreSQL API that serves both. It began as my fork of Waline and became a full rewrite once LeanCloud, its default datastore, announced its shutdown. The architecture is hexagonal with the boundaries enforced by lint rules, schemas are declared once in zod and become types, client and OpenAPI, and the design decisions – one database instead of nine, revocable sessions instead of a forever-JWT, an outbox without a queue library – are written up as ADRs. Feature-complete; cutover from the legacy deployment is next.",
+    "longDescription": "postilla.md",
+    "tools": ["typescript", "nodejs", "fastify", "postgresql", "vue", "docker"],
+    "date": "2026-08-19",
+    "tags": ["personal", "web"],
+    "links": {
+      "github": "https://github.com/martapanc/postilla"
+    }
+  },
+  {
+    "title": "Carouselizer",
+    "image": {
+      "name": "carouselizer.webp",
+      "url": "/images/carouselizer.webp"
+    },
+    "shortDescription": "Figma plugin that turns a YAML file into a ready-made Instagram carousel",
+    "mediumDescription": "A Figma plugin that builds Instagram carousels from a YAML or JSON file using the components already in the file. It auto-fits body text, splits slides that can't fit at a readable size by measuring candidates in a real frame, supports text, list, quote and stat slides, and previews everything before touching the document.",
+    "longDescription": "carouselizer.md",
+    "tools": ["typescript", "figma"],
+    "date": "2026-08-16",
+    "tags": ["personal", "design"],
+    "links": {}
+  },
+  {
+    "title": "A punt companion",
+    "image": {
+      "name": "a-punt-companion.webp",
+      "url": "/images/a-punt-companion.webp"
+    },
+    "shortDescription": "A study-first audio player for the A punt Catalan course, with a transcript for every track",
+    "mediumDescription": "A self-hosted player for the audio of the <i>A punt</i> Catalan course, built for studying rather than listening: tracks stop when they end, with repeat, A–B loops, speeds down to 0.6× and the transcript for every track. The app is one self-contained HTML file installed as a PWA and served over Tailscale. The Python preprocessing splits multi-column transcript PDFs by measuring each page's gutters from word positions, landing 98–99% of the text in the right track across 292 tracks.",
+    "longDescription": "a-punt-companion.md",
+    "tools": ["javascript", "html", "css", "python"],
+    "date": "2026-08-06",
+    "tags": ["personal", "web", "languages"],
+    "links": {}
+  },
+  {
+    "title": "Hoy Hablamos player",
+    "image": {
+      "name": "hoy-hablamos.webp",
+      "url": "/images/hoy-hablamos.webp"
+    },
+    "shortDescription": "A private study app for nearly 3,000 Spanish podcast episodes and their transcripts",
+    "mediumDescription": "Podcast apps are built for keeping up with the newest episode, not for studying a back catalogue. This private PWA holds all 2,961 episodes of the <i>Hoy Hablamos</i> Spanish podcast I have access to – about 35 GB of audio – with search, filters by series and listening status, star ratings, a speed-adjustable player, offline downloads and the transcript beside every episode. A single self-contained HTML file served over Tailscale, with Python scripts that fetch episodes and build the catalogue.",
+    "longDescription": "hoy-hablamos.md",
+    "tools": ["javascript", "html", "css", "python"],
+    "date": "2026-08-05",
+    "tags": ["personal", "web", "languages"],
+    "links": {}
+  },
+  {
+    "title": "gymextract",
+    "image": {
+      "name": "gymextract.webp",
+      "url": "/images/gymextract.webp"
+    },
+    "shortDescription": "Exports Technogym workout data as JSON, with a training dashboard on top",
+    "mediumDescription": "Technogym equipment logs every set, rep and treadmill second to mywellness.com, and there's no usable public API to get it back. This Python CLI uses the portal's internal endpoints to export each session as clean JSON – sets, weights, muscle scores and per-second cardio series – and replacing an HTML scrape with the structured data already in the session payload took strength-set capture from 0 of 75 exercises to 75 of 75. A daily launchd sync feeds a small React dashboard of strength progression, muscle balance and visit cadence.",
+    "longDescription": "gymextract.md",
+    "tools": ["python", "react", "typescript"],
+    "date": "2026-08-04",
+    "tags": ["personal", "python", "cli"],
+    "links": {}
+  },
+  {
     "title": "Language Transfer Companion",
     "image": {
       "name": "language-transfer-companion.webp",
@@ -22,8 +162,8 @@
       "name": "flexinvoice.webp",
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/f_auto,q_auto,w_648/v1773508154/flexinvoice-banner.webp"
     },
-    "shortDescription": "A simple and customisable web-based invoice generator",
-    "mediumDescription": "As a new freelancer managing my own company, I needed to create customized invoices for myself and my collaborators. Dissatisfied with basic Word templates and wanting to avoid complex software, I developed my own solution: a React template that is filled with JSON data and used to generate PDF invoices using Puppeteer. I'm also working on extending the functionality by automating the invoicing process as much as possible.",
+    "shortDescription": "A self-hosted invoicing tool: YAML data in, a single PDF with the invoice and its expense receipts out",
+    "mediumDescription": "As a new freelancer managing my own company, I needed tailored invoices without Word templates or a full accounting suite. What began as a React template printed to PDF with Puppeteer is now a small self-hosted stack: a Next.js rendering engine, and a React GUI and Python CLI backed by plain YAML data. Presets fill in the recurring parts, expenses import from bank CSVs, and their receipts – PDFs or photos – are merged into the same PDF as the invoice. It all deploys from pinned Docker images.",
     "longDescription": "flexinvoice.md",
     "tools": [
       "nextjs",
@@ -31,7 +171,10 @@
       "typescript",
       "tailwind",
       "nodejs",
-      "puppeteer"
+      "puppeteer",
+      "python",
+      "docker",
+      "terraform"
     ],
     "date": "2026-02-01",
     "tags": ["personal", "web", "react"],
@@ -94,8 +237,8 @@
       "name": "conjugat.webp",
       "url": "/images/conjugat.png"
     },
-    "shortDescription": "Catalan verb conjugation trainer where colour and shape encode which of 51 patterns a verb follows",
-    "mediumDescription": "Learning Catalan, I kept reaching for the same trick from my language notes: colour-coding verbs to keep the irregulars straight. conju.gat turns that habit into the whole interface. Every one of the 8,500+ verbs in the dataset carries a Miró-inspired colour-and-shape sign encoding which of 51 conjugation patterns it follows, so learning the sign teaches the whole family of verbs at once instead of one verb at a time. Three study modes – look up a verb's paradigm, conjugate aloud and self-check, or type all six forms with full accent support – share the same full-screen, one-cell-at-a-time layout, and progress is tracked locally to prioritise the verbs you get wrong most. The dataset is built from verbecc's conjugation templates and validated form by form against the Softcatalà dictionary, catching 29 structurally broken templates on common verbs like <code>ser</code> and <code>saber</code>. Built with Next.js 16, shipped as an installable, offline-capable PWA.",
+    "shortDescription": "Catalan verb conjugation trainer where colour and shape encode which of 85 patterns a verb follows, across ten tenses",
+    "mediumDescription": "Learning Catalan, I found myself colour-coding verbs in my notes to tell the irregulars apart; conju.gat turns that habit into the whole interface. Each of the 8,500+ verbs carries a Miró-inspired colour-and-shape sign encoding which of 85 conjugation patterns it follows. Three study modes (look up a paradigm, conjugate aloud and self-check, or type all six forms) share one full-screen, and progress is tracked per verb and tense to prioritise what you get wrong. The dataset treats the Softcatalà dictionary as the source of truth and verbecc's templates as a tiebreaker, resolving all 385k forms with zero cells left for manual review. Built with Next.js 16 as an offline-capable PWA.",
     "longDescription": "conjugat.md",
     "tools": ["nextjs", "react", "typescript", "python"],
     "date": "2026-08-12",
@@ -159,7 +302,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785317097/Projects/linkarium_kxqhnz.webp"
     },
     "shortDescription": "Drop your links, share the list – shareable link lists with automatic metadata scraping",
-    "mediumDescription": "Paste a pile of URLs, or a block of prose with links buried in it, and get back a clean shareable page with titles, descriptions, favicons and preview images already filled in. No signup needed to read a list. Built with Next.js 16, Supabase and Tailwind CSS 4 on Vercel, localised in English and Italian. The fiddliest part was the least glamorous: extracting URLs from arbitrary pasted text, where trailing punctuation and sentence parentheses quietly produce valid-but-wrong links.",
+    "mediumDescription": "Paste a pile of URLs, or a block of prose with links buried in it, and get back a clean shareable page with titles, descriptions, favicons and preview images already filled in – YouTube links get their real title and channel name too, via oEmbed. No signup needed to read a list. Built with Next.js 16, Supabase and Tailwind CSS 4 on Vercel, localised in English and Italian. The fiddliest part was the least glamorous: extracting URLs from arbitrary pasted text, where trailing punctuation and sentence parentheses quietly produce valid-but-wrong links.",
     "longDescription": "linkarium.md",
     "tools": [
       "nextjs",
@@ -212,7 +355,7 @@
       "url": "https://res.cloudinary.com/dwrurydlt/image/upload/v1785315954/Projects/flashcards_lbuscx.webp"
     },
     "shortDescription": "Hand-built language flashcard decks kept as plain CSV, in Git rather than in an app",
-    "mediumDescription": "A growing collection of flashcard decks built while learning Spanish, French, Italian and German – around 600 hand-compiled thematic vocabulary cards, plus decks aligned to the Language Transfer audio courses and split by course part, so a deck maps onto the tracks you've actually listened to. Deliberately boring: no app, no schema, no build step. Two columns of comma-separated text in Git outlive whichever flashcard app I'm using this year. This repo is where Language Transfer Companion came from.",
+    "mediumDescription": "A growing collection of flashcard decks built while learning Spanish, French, Italian, German and now Catalan – around 600 hand-compiled thematic vocabulary cards, decks aligned to the Language Transfer audio courses and split by course part, and 800 Italian–Catalan cards following the units of the <i>A punt</i> coursebook, so a deck always maps onto what you've actually studied. Deliberately boring: no app, no schema, no build step. Two columns of comma-separated text in Git outlive whichever flashcard app I'm using this year. This repo is where Language Transfer Companion came from.",
     "longDescription": "anki-decks.md",
     "tools": [],
     "date": "2025-12-01",
