@@ -139,6 +139,17 @@
   /*    U+FEFF, U+FFFD;*/
   /*}*/
 
+  /*
+    A modal <dialog> makes the page inert but doesn't stop it scrolling, so a
+    wheel or swipe that reaches the end of the dialog's content carries on to the
+    page behind. Lock the page while any modal is open. scrollbar-gutter keeps the
+    space the scrollbar occupied, so hiding it doesn't shift the layout sideways.
+  */
+  html:has(dialog[open]:modal) {
+    overflow: hidden;
+    scrollbar-gutter: stable;
+  }
+
   .cursor-newtab {
     cursor:
       url('/images/new-tab.png') 10 10,

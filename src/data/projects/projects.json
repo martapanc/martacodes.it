@@ -20,7 +20,7 @@
       "url": "/images/flextag.webp"
     },
     "shortDescription": "Asset register for a small consultancy, with QR labels printed straight to a Brother label printer",
-    "mediumDescription": "What do we own, what did it cost, when did we buy it, and where's the invoice? FlexTag answers those for my company's hardware, and prints the QR labels that go on it – scan one with a phone to open its page. It's an exercise in professional-grade Python: a FastAPI and PostgreSQL API under <code>mypy --strict</code>, a phone-first Next.js frontend, and a separate service driving a Brother QL-800, with idempotency keys so a retry never produces a second sticker. One Jinja/WeasyPrint template renders both the PDF sheet and the Brother labels, and the tests decode every QR code rather than trusting it by eye.",
+    "mediumDescription": "What do we own, what did it cost, when did we buy it, and where's the invoice? FlexTag answers those for my company's hardware, and prints the QR labels that go on it – scan one with a phone to open its page. It's an exercise in professional-grade Python: a FastAPI and PostgreSQL API under <code>mypy --strict</code>, a phone-first Next.js frontend, and a separate service driving a Brother QL-800, with idempotency keys so a retry never produces a second sticker.",
     "longDescription": "flextag.md",
     "tools": [
       "python",
@@ -238,7 +238,7 @@
       "url": "/images/conjugat.png"
     },
     "shortDescription": "Catalan verb conjugation trainer where colour and shape encode which of 85 patterns a verb follows, across ten tenses",
-    "mediumDescription": "Learning Catalan, I found myself colour-coding verbs in my notes to tell the irregulars apart; conju.gat turns that habit into the whole interface. Each of the 8,500+ verbs carries a Miró-inspired colour-and-shape sign encoding which of 85 conjugation patterns it follows. Three study modes (look up a paradigm, conjugate aloud and self-check, or type all six forms) share one full-screen, and progress is tracked per verb and tense to prioritise what you get wrong. The dataset treats the Softcatalà dictionary as the source of truth and verbecc's templates as a tiebreaker, resolving all 385k forms with zero cells left for manual review. Built with Next.js 16 as an offline-capable PWA.",
+    "mediumDescription": "Learning Catalan, I found myself colour-coding verbs in my notes to tell the irregulars apart; conju.gat turns that habit into the whole interface. Each of the 8,500+ verbs carries a Miró-inspired colour-and-shape sign encoding which of 85 conjugation patterns it follows. Three study modes (look up a paradigm, conjugate aloud and self-check, or type all six forms) share one full-screen, and progress is tracked per verb and tense to prioritise what you get wrong.",
     "longDescription": "conjugat.md",
     "tools": ["nextjs", "react", "typescript", "python"],
     "date": "2026-08-12",
