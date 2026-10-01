@@ -31,33 +31,50 @@ export const ToolIcons = ({
   tools,
   className,
   size = '1.25em',
+  max,
 }: {
   tools: string[];
   className?: string;
   size?: string;
-}) => (
-  <IconContext.Provider value={{ size }}>
-    <ul
-      className={clsxm(
-        'flex flex-wrap items-center gap-2 text-slate-600 dark:text-slate-300',
-        className,
-      )}
-      aria-label='Built with'
-    >
-      {tools.map((tool) => {
-        const Icon = toolIconMapping[tool];
-        if (!Icon) return null;
-        return (
-          <li key={tool} title={toolLabel(tool)}>
-            <span role='img' aria-label={toolLabel(tool)}>
-              <Icon />
-            </span>
+  /** Show at most this many icons, collapsing the rest into a "+N" chip. */
+  max?: number;
+}) => {
+  const iconTools = tools.filter((tool) => toolIconMapping[tool]);
+  const shown = max === undefined ? iconTools : iconTools.slice(0, max);
+  const hidden = iconTools.slice(shown.length).map(toolLabel);
+
+  return (
+    <IconContext.Provider value={{ size }}>
+      <ul
+        className={clsxm(
+          'flex flex-wrap items-center gap-2 text-slate-600 dark:text-slate-300',
+          className,
+        )}
+        aria-label='Built with'
+      >
+        {shown.map((tool) => {
+          const Icon = toolIconMapping[tool];
+          return (
+            <li key={tool} title={toolLabel(tool)}>
+              <span role='img' aria-label={toolLabel(tool)}>
+                <Icon />
+              </span>
+            </li>
+          );
+        })}
+        {hidden.length > 0 && (
+          <li
+            title={hidden.join(', ')}
+            aria-label={`and ${hidden.join(', ')}`}
+            className='rounded-full bg-slate-200 px-1.5 font-mono text-xs leading-5 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
+          >
+            +{hidden.length}
           </li>
-        );
-      })}
-    </ul>
-  </IconContext.Provider>
-);
+        )}
+      </ul>
+    </IconContext.Provider>
+  );
+};
 
 export const LinkIcons = ({
   links,

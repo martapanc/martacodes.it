@@ -2,7 +2,7 @@
   {
     "title": "Javascript / Typescript",
     "summary": "End-to-end typing on both sides of the stack, with Zod at the boundaries.",
-    "description": "TypeScript is where I spend most of my time these days, and I use it on both sides of the stack: React and Next.js on the front end, Node.js and Express on the back. I'm a firm believer in typing things end to end, and in validating anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects?id=linkarium), a Next.js link-sharing app, and [Postilla](/projects?id=postilla), a Fastify and PostgreSQL comment system whose hexagonal boundaries are enforced by lint rules and whose zod schemas generate the types, the client and the OpenAPI spec in one go.",
+    "description": "TypeScript is where I spend most of my time these days, on both sides of the stack: React and Next.js on the front end, Node.js, Express and Fastify on the back. I type things end to end and validate anything that crosses a boundary at runtime – Zod schemas for API responses, form payloads and environment config have saved me more debugging hours than I can count.\n\nRecent examples: [Linkarium](/projects?id=linkarium), a Next.js link-sharing app, and [Postilla](/projects?id=postilla), a Fastify and PostgreSQL comment system whose hexagonal boundaries are enforced by lint rules and whose Zod schemas generate the types, the client and the OpenAPI spec in one go.",
     "icons": [
       "Typescript",
       "Javascript",
@@ -17,7 +17,7 @@
   {
     "title": "React, Next.js & Astro",
     "summary": "React by default, plus Angular and Vue on production work.",
-    "description": "React is my default, whether as a Next.js app, as Astro islands, or as a Chrome extension UI. I led the rebuild of the [appetize.io](https://appetize.io) marketing site in AstroJS, taking Lighthouse performance from ~60% to 90%+ and accessibility, best practices and SEO from ~75% to 95–100%.\n\nI've also worked with the other two major front-end frameworks – Angular on an accounting platform, Vue on e-commerce work – so I stay comfortable picking up whichever one a team already uses.",
+    "description": "React is my default, whether as a Next.js app, as Astro islands, or as a Chrome extension UI. I led the rebuild of the [appetize.io](https://appetize.io) marketing site in AstroJS, taking Lighthouse performance from ~60% to 90%+ and accessibility, best practices and SEO from ~75% to 95–100%.\n\nOn my own projects I lean towards offline-capable PWAs: [Andorra Coaches](/projects?id=andorra-coaches), a React timetable designed to be read at arm's length in an airport, and [LinkedIn Games Unlimited](/projects?id=linkedin-games-unlimited), two Next.js puzzle apps. I've also shipped Angular on an accounting platform and Vue on e-commerce work, so I'm comfortable with whichever one a team already uses.",
     "icons": [
       "React",
       "NextJS",
@@ -32,7 +32,7 @@
   {
     "title": "Java & Spring Boot",
     "summary": "Spring Boot APIs and production platforms, since university.",
-    "description": "Java has been with me since university and through most of my career: migrating legacy systems to Spring-based APIs at Booking.com, and building a production accounting platform at Resourcify that the operations team used daily to reconcile thousands of records.\n\nSpring Boot is my go-to for backend work, usually alongside Hibernate, Maven or Gradle, and Cucumber for behaviour-driven tests.",
+    "description": "Java has been with me since university and through most of my career: migrating legacy systems to Spring-based APIs at Booking.com, and building a production accounting platform at Resourcify that the operations team used daily to reconcile thousands of records. Spring Boot is my go-to for backend work, usually alongside Hibernate, Maven or Gradle, and Cucumber for behaviour-driven tests.\n\nThe JVM is also where I picked up Kotlin, while collecting all 500 [Advent of Code](/projects?id=all-star-advent-of-code) stars. And [Werner's](/projects?id=werner-s-panini-burgers) began as a uni project on servlets, JSP and Hibernate, which I later rebuilt in Next.js with the original kept alongside for comparison.",
     "icons": [
       "Java",
       "Spring",
@@ -47,7 +47,7 @@
   {
     "title": "AI-assisted development",
     "summary": "LLMs as a workflow, with guardrails and verification around them.",
-    "description": "Since 2024 I have used Claude daily as a working collaborator: navigating unfamiliar codebases, scaffolding boilerplate and weighing implementation approaches, always through the same review and test discipline as any other change. At Appetize I turned that into a team workflow, with guardrails around it: local context only and no proprietary data exposure.\n\nI also build *with* models: a [Chrome extension](/projects?id=linkedin-job-filter) that screens job ads via Gemini or a local Ollama model, and a CV pipeline where every generated line must cite a source in a Markdown evidence corpus.",
+    "description": "Since 2024 I have used Claude daily as a working collaborator: navigating unfamiliar codebases, scaffolding boilerplate and weighing implementation approaches, always through the same review and test discipline as any other change. At Appetize I turned that into a team workflow, with guardrails around it: local context only and no proprietary data exposure.\n\nI also build *with* models: a [Chrome extension](/projects?id=linkedin-job-filter) that screens job ads via Gemini or a local Ollama model, and a [CV pipeline](/projects?id=ai-job-search) where every generated line must cite a source in a Markdown evidence corpus – anything that can't be traced back gets deleted rather than softened.",
     "icons": [
       "Claude",
       "ChatGPT",

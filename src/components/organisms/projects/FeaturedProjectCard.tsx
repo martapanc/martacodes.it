@@ -42,7 +42,7 @@ const FeaturedProjectCard = ({ project, onReadMore }: FeaturedProjectCardProps) 
       </div>
 
       <div className='mt-auto flex flex-wrap items-center justify-between gap-3 pt-2'>
-        <ToolIcons tools={project.tools} size='1.4em' />
+        <ToolIcons tools={project.tools} size='1.4em' max={5} />
         <div className='flex items-center gap-4'>
           <LinkIcons links={project.links} size='1.4em' />
           {project.longDescription && (
