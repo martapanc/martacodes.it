@@ -41,7 +41,6 @@ export default function RecruitersPage({
   const config = {
     displayTitle: true,
     currency: 'EUR',
-    forexMultiplier: 1,
   };
 
   return (
