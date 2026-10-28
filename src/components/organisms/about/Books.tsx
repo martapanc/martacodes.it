@@ -20,23 +20,24 @@ const Books = ({ books }: BookProps) => {
         <h2>Best books ever written</h2>
       </div>
 
-      <ul className='scroll-mandatory relative -mx-4 flex w-[100vw] snap-x gap-3 overflow-x-auto px-4 pb-6 dark:bg-slate-900 md:mx-0 md:w-full md:px-0'>
+      <ul className='scroll-mandatory relative -mx-4 flex w-screen snap-x gap-3 overflow-x-auto px-4 pb-6 dark:bg-slate-900 md:mx-0 md:w-full md:px-0'>
         {books.map((book, id) => (
           <li
             key={id}
-            className='mt-2 h-[168px] w-[120px] shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600'
+            className='mt-2 h-41.5 w-30 shrink-0 snap-center overflow-hidden rounded-lg bg-transparent p-1 transition-all hover:bg-linear-to-r hover:from-blue-300 hover:to-blue-600'
           >
             <a
               href={book.goodreadsLink}
               target='_blank'
               rel='noopener noreferrer'
+              className='block'
             >
               <img
-                className='rounded-md'
+                className='aspect-5/7 w-full rounded-md object-cover'
                 alt={book.title}
                 src={book.cover}
-                width={114}
-                height={114}
+                width={112}
+                height={160}
               />
             </a>
           </li>

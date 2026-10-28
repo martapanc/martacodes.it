@@ -1,7 +1,7 @@
 [
   {
     "title": "The Lord of the Rings",
-    "author": "Tolkien",
+    "author": "Tolkien, J.R.R.",
     "goodreadsLink": "https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings",
     "genre": "Fiction",
     "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692798464/lotr_9279421c8e.webp"
@@ -61,5 +61,33 @@
     "goodreadsLink": "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer",
     "genre": "Non-fiction",
     "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1692798464/pragmatic_581747698d.webp"
+  },
+  {
+    "title": "Man's Search for Meaning",
+    "author": "Frankl, Viktor",
+    "goodreadsLink": "https://www.goodreads.com/book/show/4069.Man_s_Search_for_Meaning",
+    "genre": "Non-fiction",
+    "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1793192588/frankl_jai2ia.webp"
+  },
+  {
+    "title": "The Demon-Haunted World",
+    "author": "Sagan, Carl",
+    "goodreadsLink": "https://www.goodreads.com/book/show/17349.The_Demon_Haunted_World",
+    "genre": "Non-fiction",
+    "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1793192588/sagan_tsnfgh.webp"
+  },
+  {
+    "title": "The Scout Mindset",
+    "author": "Galef, Julia",
+    "goodreadsLink": "https://www.goodreads.com/book/show/42041926-the-scout-mindset",
+    "genre": "Non-fiction",
+    "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1793192588/galef_cdl931.webp"
+  },
+  {
+    "title": "His Dark Materials",
+    "author": "Pullman, Philip",
+    "goodreadsLink": "https://www.goodreads.com/book/show/119322.The_Golden_Compass",
+    "genre": "Fiction",
+    "cover": "https://res.cloudinary.com/dwrurydlt/image/upload/v1793193051/pullman_csi2c0.webp"
   }
 ]
