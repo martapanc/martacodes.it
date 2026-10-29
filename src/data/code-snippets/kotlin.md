@@ -1,6 +1,6 @@
 ```
 val softwareEngineer = SoftwareEngineer(
-    name = "Marta Pancaldi",
+    name = "Marta",
     skills = listOf("Java", "Python", "Kotlin"),
     favouriteAnimal = '🐢'
 )

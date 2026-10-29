@@ -1,6 +1,6 @@
 ```
 {
-  "name": "Marta Pancaldi",
+  "name": "Marta",
   "role": "Software Engineer",
   "skills": ["Java", "Python", "TypeScript"],
   "favouritePet": "Hedgehog"

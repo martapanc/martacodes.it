@@ -1,6 +1,6 @@
 ```
 <data>
-  <name>Marta Pancaldi</name>
+  <name>Marta</name>
   <role>Software Engineer</role>
   <skills>
     <skill>Java</skill>

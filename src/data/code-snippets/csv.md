@@ -1,4 +1,4 @@
 ```
 name,role,likesDarkMode,countriesVisited
-Marta Pancaldi,Software Engineer,true,34
+Marta,Software Engineer,true,34
 ```

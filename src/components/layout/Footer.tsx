@@ -81,7 +81,7 @@ function SocialLinks() {
 function Copyright() {
   const year = new Date().getFullYear();
 
-  return <div className='mt-10 flex md:mt-0'>© {year} ~ Marta Pancaldi</div>;
+  return <div className='mt-10 flex md:mt-0'>© {year} ~ MartaCodes.it</div>;
 }
 
 type FooterLink = {
